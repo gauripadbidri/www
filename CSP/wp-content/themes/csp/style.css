@@ -1,0 +1,583 @@
+/*
+Theme Name: wpbootstrap
+Theme URI: http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial
+Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
+Version: 1.8.30
+Author: GMCS
+Author URI: http://teamtreehouse.com/
+Version: 1.0
+Tags: responsive, white, bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+
+@import url('bootstrap/css/bootstrap.min.css'); 
+@import url('bootstrap/css/bootstrap-responsive.css');
+
+body {
+    margin-top:20px;    
+}
+#navigation.navbar-default {
+    border: none;
+}
+#navigation ul{
+    float: right;
+    
+}
+#navigation ul li {
+      color: #05a8e1;
+}
+/*  page-home */
+@media (min-width: 995px) {
+    .home #image-section .col-md-4 {
+        width: 21.333333%;
+    }
+}
+
+#network{
+  background-color: #ce6631 ;  
+  color :#fff;
+  width: 32%;
+  margin-left:14px;
+  padding-top:5px;
+  height:100%;
+}
+
+#body_left {
+    margin-top:20px;
+}
+
+#backup{
+    background-color: #659a40;
+   color :#fff;
+   width: 32%;
+   margin-left: 10px;
+   padding-top:5px;
+   height:100%;
+}
+
+#cloud{
+    background-color: #5590cc;
+   color :#fff;
+   width: 32%;
+   margin-left: 10px;
+   padding-top:5px;
+   height:100%;
+}
+
+#cloud span, #network span, #backup span {
+   color:white !important;
+}
+
+#image_info span {
+      color:black !important;
+      font-weight:bold;
+}
+/* image text */
+
+#image_info{
+    
+    position: absolute;
+    right: 30px;
+    height:97.5%;
+    opacity: 0.5;
+    background-color: whitesmoke;
+    color:black;
+}
+
+#image_info h5{
+    color: black;
+}
+
+/* mouseover */
+
+#image-section  
+{
+    position :relative;
+    height:400px;
+    margin-bottom:10px;
+}
+
+#image-section img {
+    max-height:100%;
+    width:100%;
+}
+#close_open 
+{
+    left:0px;
+    bottom:0px;
+    position:absolute;
+    opacity : 0.8;
+    background-color: White;
+}
+
+#s2  
+{
+    display : none;
+}
+
+/* end mouseover */
+
+
+
+.content-col-main {
+   float:left;
+   width:66%;
+   padding:1%;
+   border: 1px dotted #ccc;
+   background: #fff;
+}
+
+.content-col-side {
+   float:right;
+   width:29%;
+   padding:1%;
+   border: 1px dotted #ccc;
+   background: #fff;
+}
+
+img { /* Makes sure your images stay within their columns */
+   max-width: 100%;
+   width: auto;
+   height: auto;
+}
+
+.retail-content { 
+margin-left: 10px;
+}
+
+.news-content{
+     padding: 20px 0px 20px;
+     border-bottom: 1px solid #6f6f6f;
+}
+.news-content p{
+    font-size: 12px;
+    color:white;
+    margin: 0;
+    padding: 0;
+}
+
+.news-content span {
+color:white !important;
+}
+
+.news-title{
+    font-size: 15px;
+    color:white;
+}
+
+.singleNews span, .singleNews h1
+{
+    color: rgb(136, 136, 136) !important;
+}
+
+.singleNews .bgColor
+{
+    background-color:black;
+    border-radius : 5px;
+}
+/* Retail */
+
+.retail #retailImgSection, .newsSingle #newsImgSection {
+height:300px;
+}
+
+.retail_text span, #image-description span, .news_text span {
+    color:white !important;
+}
+.retail #bottom_left,.newsSingle #bottom_left {
+margin-left:40px;
+}
+.retail #image-description, .newsSingle #image-description {
+    height:100%;
+}
+
+.retail #image-section, .cloud #image-section, .newsSingle #image-section {
+    position :relative;
+    height:100%;
+    margin-bottom:0px;
+}
+
+.retail #image-section img, .cloud #image-section img, .newsSingle #image-section img {
+    height:100%;
+}
+
+.retail_title, .news_title {
+    font-size: 22px;
+    
+} 
+.retail_text, .news_text{
+    
+    color:white;
+}
+#bottom_left div{
+    margin-top: 20px;
+}
+#contact {
+    margin-top: 20px;
+}
+/* news */
+
+#news { 
+font-size: 25px;
+}
+
+
+/* Contact */
+
+#contact{
+    font-size: 25px;
+}
+
+.contactTemplate {
+        font-size: 15px;
+        margin-top:10px;
+}
+
+.contact-address {
+    margin-top:10px;
+}
+#contact-email {
+    color:#2a9fd6;
+}
+
+/*  menu bar */
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+  border: none;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu {
+  height: 33px;
+  display: block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu > ul {
+  list-style: inside none;
+  margin: 0;
+  padding-left: 10px;
+}
+#cssmenu > ul > li {
+  list-style: inside none;
+  float: left;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu.align-center > ul {
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  float: none;
+  margin-left: -3px;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+#cssmenu > ul > li > a {
+  outline: none;
+  display: block;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  /*text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);*/
+  font-weight: 700;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-right: 1px solid #080808;
+  color: #2a9fd6;
+  padding: 12px 20px 12px 10px;
+}
+#cssmenu > ul > li > a:after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  right: -2px;
+  z-index: 99;
+  border-color: #3c3c3c;
+}
+#cssmenu > ul > li.has-sub > a:before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 6px;
+  border: 5px solid transparent;
+  border-top: 5px solid #2a9fd6;
+}
+#cssmenu ul li > ul,
+#cssmenu ul li > div {
+  display: none;
+  width: auto;
+  position: absolute;
+  top: 38px;
+  background: #cccccc;
+  border-radius: 0 0 5px 5px;
+  z-index: 999;
+}
+#cssmenu ul li > ul li {
+  display: block;
+  list-style: inside none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu ul li > ul li a {
+  outline: none;
+  display: block;
+  position: relative;
+  font: 10pt Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 8px 20px;
+}
+#cssmenu li.has-sub.active {
+  background: #cccccc;
+}
+#cssmenu li.has-sub.active .parentContainer {
+  display: block;
+  top: 41px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#cssmenu li.has-sub.active .parentContainer .container { 
+  display: block; 
+  padding: 10px;
+  /*width: 200px;*/
+  width: auto;
+  border-radius: 0;
+  position: relative;
+  float: left;
+}
+#cssmenu li.has-sub.active .parentContainer .container:hover { 
+  background-color: #b4b4b4;
+}
+#cssmenu li.has-sub.active .parentContainer .container .title{ 
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-weight: 800;
+}
+#cssmenu li.has-sub.active .parentContainer .container .item-data a{
+  font-size: 11px;
+  color: #000000;
+}
+#cssmenu li.has-sub.active .parentContainer .container  .items{
+  margin-top: 7px;
+}
+#cssmenu li.has-sub.active .parentContainer .container .items {
+  /*width: 200px;*/
+  width:auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#cssmenu li.has-sub.active .parentContainer {
+ right: 8px;
+}
+#cssmenu li.has-sub.active .parentContainer .container { 
+  max-width: 205px;
+  min-width: 125px;
+}
+/*=============== for sub menu ==================== */
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+    float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.dropdown-submenu a {
+  color: #ffffff;
+}
+.dropdown-submenu a {
+    color: #888888;
+    line-height: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+
+/*  end menu bar classes */ 
+
+/* begin of cloud page */
+
+.datacontainer {
+    padding-top: 24px;
+    padding-left: 38px;
+}
+
+.cloud #datatitle {
+    height:345px;
+}
+
+.cloud .imageInfoSection {
+    height:100%;
+}
+/* PAGE:: CLOUD
+ for generated content */
+.datacontainer .title {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.datacontainer .title:before{
+    content: "";
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    border: 0.3em solid #5590cc;
+    position: relative;
+    border-radius: 2.55em;
+}
+.vAlignCenter {
+    vertical-align:super;
+    color:#5590cc;
+}
+
+.cloud span:not(.vAlignCenter) {
+    color:white !important;
+}
+/* end of cloud page */
+
+/* PAGE:: Open-Close opaque DIV*/
+#open_close  
+{
+    position: absolute;
+    float: left;
+    bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 2.428571;
+    color: white;
+    font-size: 12px;
+    background: white;
+    padding-left: 20px;
+    opacity : 0.6;
+}
+#open_close .close-container 
+{
+    position:relative;
+    top: 10px;
+}
+#open_close .open-container 
+{
+    display : none;
+}
+#open_close .open-container p {
+    margin: 0px;
+}
+#open_close .open-container #playicon:before{
+    content: "";
+    font-size: 0px;
+    border-top: 6px solid transparent;
+    border-left: 8px solid #797979;
+    border-bottom: 6px solid transparent;
+    position: relative;
+    left: 8px;
+    top: -6px;
+}
+#open_close .open-container #playicon{
+    background:#44402F;
+    height:15px;
+    width:15px;
+    border-radius: 10px;
+    padding-right: 12px;
+    padding-top: 2px;
+    margin-right: 10px;
+}
+/* end of Open-Close opaque DIV */
+
+/*Media Queries*/
+
+@media (min-width: 990px) {
+     #colorSection {
+        height:160px;
+    }
+}
+
+@media (max-width: 990px) {
+     #network {
+         margin-left:0px;
+    }
+
+    #image-section {
+    height:auto;}
+    .retail #bottom_left, .newsSingle #bottom_left {
+        margin-left:0px;
+    }
+
+    .mediaClear {
+    clear:both;}
+
+    #cloud, #network, #backup {
+    width:100%;
+    margin-left:10px;
+    margin-bottom:10px;
+    }
+}
+
+/*Vimeo Video Dialog */
+ .ui-dialog-titlebar {
+    float: right;
+    border: 0;
+    padding: 0;
+}
+.ui-dialog-titlebar-close {
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 999;
+}
+.ui-widget-overlay 
+{
+    background-image:none;
+    background-color:black;
+ }
+ #dialog {
+     overflow:hidden;
+     z-index:999999999999999;
+     background-color:black;
+ }
+
+ #btnDone {
+     float:right;
+     text-decoration:none;
+ }
+

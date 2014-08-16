@@ -1,0 +1,78 @@
+<?php
+/*
+  Template Name: Retail
+  MultiEdit: ImageInfo,LeftRow1,LeftRow2,LeftRow3,RightRow1,RightRow2
+ */
+?>
+
+<?php get_header(); ?>
+<section id="body">
+    <div class="container retail">
+
+        <section id="retailImgSection" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
+            <div id="image-section" class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0px">
+              <?php
+                $argsThumb = array(
+                 'posts_per_page' => 1,
+                 'order'          => 'ASC',
+                 'post_type'      => 'attachment',
+                 'post_parent'    => $post->ID,
+                 'post_mime_type' => 'image',
+                 'post_status'    => null
+                );
+                $attachments = get_posts($argsThumb);
+                if ($attachments) {
+                 foreach ($attachments as $attachment) {
+                  echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
+                 }
+                } else {
+                  echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/retail.png" />';
+                }
+            ?>
+              <div id="dialogContainer">
+                <?php get_template_part('content', 'opaqueDiv');?>
+              </div>
+            </div>
+            <div id="image-description" style="background-color: gray;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 visible-lg visible-md hidden-sm hidden-xs">
+                <p><h3><?php echo rwmb_meta('meta_RetailImageHeader'); ?></h3></p><span style="color: white;"><?php multieditDisplay("ImageInfo") ?></span>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
+        </section>
+        <section id="2" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <section id="bottom_left" class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                    <div>
+                        <span class="retail_title"><?php echo rwmb_meta('meta_LeftRow1Text'); ?></span><span class="retail_text"><?php multieditDisplay("LeftRow1") ?></span>
+                    </div>
+                    <div>
+                        <span class="retail_title"><?php echo rwmb_meta('meta_LeftRow2Text'); ?></span><span class="retail_text"><?php multieditDisplay("LeftRow2") ?></span>
+                    </div>
+                    <div>
+                        <span class="retail_title"><?php echo rwmb_meta('meta_LeftRow3Text'); ?></span><span class="retail_text"><?php multieditDisplay("LeftRow3") ?></span>
+                    </div>
+            </section>
+
+            <section id="bottom_right" class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+                <div id="contact">
+                    <span class="retail_title">Help Desk</span>
+                    <?php get_template_part('template','contact'); ?>
+                </div>
+                <hr class="clearboth" />
+                <div id="retail_sidebar">
+                    <div>
+                        <span class="retail_title"><?php echo rwmb_meta("meta_RightRow1Text") ?></span><span class="retail_text"><?php multieditDisplay("RightRow1") ?> </span>
+                    </div>
+                    <hr class="clearboth" />
+                    <div> 
+                        <span class="retail_title"><?php echo rwmb_meta("meta_RightRow2Text") ?></span><span class="retail_text"><?php multieditDisplay("RightRow2") ?> </span>
+
+
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+    </div>
+</section>
+<?php get_footer(); ?>
