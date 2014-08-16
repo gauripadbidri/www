@@ -25,8 +25,8 @@
             if (target && (!target.className || (target.className && target.className.toLowerCase() !== "menyitem" &&
                 target.className.toLowerCase() !== "chember-1"))) {
                 (element.length > 0) ? (element[0].style.display = "none") : "";
-                $(".desktop-menu .menyItem").each(function (index, element) {
-                    element.style.background = "#000000";
+                $(".desktop-menu .menyItem").each(function (index, elementItem) {
+                    $(elementItem).removeAttr('style');
                 });
             }
         });
