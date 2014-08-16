@@ -42,7 +42,7 @@
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
     </section>
     <section id="2" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <section id="bottom_left" class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+      <section id="bottom_left" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
         <div>
           <span class="news_title">
             <h3>
@@ -59,7 +59,7 @@
         </div>
       </section>
 
-      <section id="bottom_right" class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+      <section id="bottom_right" class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
         <div id="contact">
           <span class="news_title">Help Desk</span>
           <?php get_template_part('template','contact'); ?>

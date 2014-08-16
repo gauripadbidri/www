@@ -103,23 +103,16 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
 
                     <div id="news_content">
                         <?php
-                        $args = array('post_type' => 'news');
-
-                        $loop = new WP_Query($args);
-
-                        echo '<div class="run-list-page">';
-                        while ($loop->have_posts()) : $loop->the_post();
-
-
-                            echo '<div class="run_list_news">';
-                            //			echo '<div>'.get_the_date().'</div>';
-                            echo '<div class="news-content"><span class="news-title">' . get_the_title() . ': </span>'; //get_the_post_thumbnail($loop->ID,'thumbnail');
-
-                            $content_srt = get_the_content();
-
-                            echo run_get_counted_word($content_srt) . '<a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
-                        endwhile;
-                        echo '</div>';
+                          $args = array('post_type' => 'news', 'posts_per_page' => 5);
+                          $loop = new WP_Query($args);
+                          echo '<div class="run-list-page">';
+                            while ($loop->have_posts()) : $loop->the_post();
+                                echo '<div class="run_list_news">';
+                                echo '<div class="news-content"><span class="news-title">' . get_the_title() . ': </span>'; 
+                                $content_srt = get_the_content();
+                                echo run_get_counted_word($content_srt) . '<a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
+                            endwhile;
+                          echo '</div>';
                         ?>
                     </div><!--footer 2 end-->
 

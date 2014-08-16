@@ -31,7 +31,10 @@
                 }
             ?>
               <div id="dialogContainer">
-                <?php get_template_part('content', 'opaqueDiv');?>
+                <?php 
+                  if (!is_page( 'Help Desk' ))
+                    get_template_part('content', 'opaqueDiv');
+                ?>
               </div>
             </div>
             <div id="image-description" style="background-color: gray;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 visible-lg visible-md hidden-sm hidden-xs">
@@ -40,7 +43,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
         </section>
         <section id="2" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <section id="bottom_left" class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+            <section id="bottom_left" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
                     <div>
                         <span class="retail_title"><?php echo rwmb_meta('meta_LeftRow1Text'); ?></span><span class="retail_text"><?php multieditDisplay("LeftRow1") ?></span>
                     </div>
@@ -52,7 +55,7 @@
                     </div>
             </section>
 
-            <section id="bottom_right" class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+            <section id="bottom_right" class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                 <div id="contact">
                     <span class="retail_title">Help Desk</span>
                     <?php get_template_part('template','contact'); ?>
@@ -60,13 +63,25 @@
                 <hr class="clearboth" />
                 <div id="retail_sidebar">
                     <div>
-                        <span class="retail_title"><?php echo rwmb_meta("meta_RightRow1Text") ?></span><span class="retail_text"><?php multieditDisplay("RightRow1") ?> </span>
+                        <?php if (is_page ('Help Desk') ) {
+                           echo '<span class="retail_title">Corporate Headquarters</span>';
+                           echo '<span class="retail_text">' . get_template_part('template', 'headquarters') . '</span>';
+                          } else {
+                           echo '<span class="retail_title">' . rwmb_meta("meta_RightRow1Text") . '</span>';
+                           echo '<span class="retail_text">' . multieditDisplay("RightRow1") . '</span>';
+                          }
+                        ?>
                     </div>
                     <hr class="clearboth" />
-                    <div> 
-                        <span class="retail_title"><?php echo rwmb_meta("meta_RightRow2Text") ?></span><span class="retail_text"><?php multieditDisplay("RightRow2") ?> </span>
-
-
+                    <div>
+                      <?php if (is_page ('Help Desk') ) {
+                           echo '<span class="retail_title">Corporate Emails</span>';
+                           echo '<span class="retail_text">' . get_template_part('template', 'emails') . '</span>';
+                          } else {
+                           echo '<span class="retail_title">' . rwmb_meta("meta_RightRow2Text") . '</span>';
+                           echo '<span class="retail_text">' . multieditDisplay("RightRow2") . '</span>';
+                          }
+                        ?>
                     </div>
                 </div>
             </section>

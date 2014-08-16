@@ -7,12 +7,7 @@
  */
 ?>
 <div class="contactTemplate">
-<div class="contact-phone">(949) 732-1300</div>
-<div class="contact-address">
-    18 Technology Drive, Suite 118 <br/>
-    Irvine, California 92618
-</div>
-<div id="contact-email">[contact] @ [cspnetworks.com]</div>
-
+  <div class="contact-phone">Sales: (866) 909-0888</div>
+  <div class="contact-phone">Fax: (949) 732-1340</div>
 </div>
 

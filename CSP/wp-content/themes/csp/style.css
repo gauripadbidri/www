@@ -240,8 +240,13 @@ font-size: 25px;
 .contact-address {
     margin-top:10px;
 }
-#contact-email {
+#contact-email, .contact-email {
     color:#2a9fd6;
+}
+
+.contact-email span {
+    color:white;
+    font-weight:normal;
 }
 
 /*  menu bar */
