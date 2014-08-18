@@ -23,7 +23,7 @@ function run_get_counted_word( $new_string, $str_chr_count = 140 ) {
 
 <?php get_header(); ?>
 <section id="body">
-    <section class="col-md-offset-1 col-lg-12 col-md-12">
+    <section class="col-lg-offset-1 col-md-offset-1 col-lg-12 col-md-12">
         <div id="image-section" class=" col-lg-10 col-md-7 img-responsive">
         </div>
         <div class="col-lg-3 col-md-3">
