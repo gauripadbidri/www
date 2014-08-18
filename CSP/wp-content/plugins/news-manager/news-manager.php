@@ -517,7 +517,7 @@ class News_Manager
 		$labels_news = array(
 			'name' => _x('News', 'post type general name', 'news-manager'),
 			'singular_name' => _x('News', 'post type singular name', 'news-manager'),
-			'menu_name' => __('News', 'news-manager'),
+			'menu_name' => __('News & Events', 'news-manager'),
 			'all_items' => __('All News', 'news-manager'),
 			'add_new' => __('Add New', 'news-manager'),
 			'add_new_item' => __('Add New News', 'news-manager'),
