@@ -81,7 +81,7 @@ body {
 #image_info{
     
     position: absolute;
-    right: 30px;
+    right: 27px;
     height:97.5%;
     opacity: 0.5;
     background-color: whitesmoke;
@@ -99,6 +99,7 @@ body {
     position :relative;
     height:400px;
     margin-bottom:10px;
+    padding-right:12px;
 }
 
 #image-section img {
@@ -528,9 +529,12 @@ font-size: 25px;
     }
 
     #image-section {
-    height:auto;}
+    height:auto;
+    }
+
     .retail #bottom_left, .newsSingle #bottom_left {
         margin-left:0px;
+        padding:0px;
     }
 
     .mediaClear {
@@ -538,8 +542,32 @@ font-size: 25px;
 
     #cloud, #network, #backup {
     width:100%;
-    margin-left:10px;
+    margin-left:0px;
     margin-bottom:10px;
+    }
+
+    #bottom_right, #body_left, #body_right {
+        padding:0px !important;
+    }
+
+    body {
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0px;
+        padding-left:0px;
+    }
+    .container {
+        padding-right:0px;
+        padding-left:0px;
+    }
+
+    #image-section {
+        padding-right:0px;
+        padding-left:0px;
+    }
+
+    .datacontainer {
+        padding-left:0px;
     }
 }
 
