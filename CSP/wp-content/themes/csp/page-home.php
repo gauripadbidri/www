@@ -29,7 +29,6 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
 ?>
 
 <?php get_header(); ?>
-<?php // multieditDisplay("Right")?>
 <section id="body">    
   <div class="container home">
 
@@ -128,7 +127,6 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                 </section>
                 </div>
         </section>
-
 
     </div>
 </section>

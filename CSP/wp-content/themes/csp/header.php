@@ -26,11 +26,11 @@
     </div>
     <div id="page">
 
-        <header class="container ">
+        <header class="container">
             <div class="col-md-12 ">
                 <div id="logo" class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
                     <a href="home">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_csp.gif" />
+                        <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_csp.gif" />
                     </a>
                 </div>
                 <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-12 col-xs-12 navbar navbar-default pull-right">

@@ -649,3 +649,16 @@ font-size: 25px;
     background-color:gray;
 }
 
+footer {
+    margin-top:50px;
+}
+footer .menuPosition {
+    float:right;
+    color:#2a9fd6; 
+    font-weight:bold;
+    font-size:12px;
+}
+
+header button.navbar-toggle, header button.navbar-toggle:hover {
+background-color:#2a9fd6; 
+}
