@@ -8,16 +8,16 @@
 ?>
 <div class="contactTemplate">
   <div class="contact-email">
-    <span>Sales: </span>[sales] @ [cspnetworks.net]
+    <span>Sales: </span>sales [at] cspnetworks.net
   </div>
   <div class="contact-email">
-    <span>General Inquires: </span>[info] @ [cspnetworks.net]
+    <span>General Inquires: </span>info [at] cspnetworks.net
   </div>
   <div class="contact-email">
 
   </div>
   <div class="contact-email">
-    <span>Help Desk/Support: </span>[helpdesk] @ [cspnetworks.net]
+    <span>Help Desk: </span>helpdesk [@] cspnetworks.net
   </div>
   <div class="contact-email">
     <span>Help Desk/Support Web: </span> www.supportrightnow.net

@@ -530,6 +530,35 @@ font-size: 25px;
 }
 
 @media (max-width: 990px) {
+    #logo {
+        padding-left:0px;
+    }
+    #navigation ul {
+        float:none;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+        background-color:#888888;
+    }
+
+    .navbar-default .navbar-nav li>a:hover {
+        background-color:#888888;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        padding-left:5px;
+        margin-left:25px;
+        font-size:12px;
+    }
+    #navbar-main {
+        height:auto !important;
+        box-shadow:none;
+        border:none;
+        clear:both;
+    }
+
+    .navbar-default {
+        border:none;
+    }
+
      #network {
          margin-left:0px;
     }
@@ -575,6 +604,10 @@ font-size: 25px;
     .datacontainer {
         padding-left:0px;
     }
+    .navbar {
+        margin-bottom:0px;
+        height:auto;
+    }
 }
 
 /*Vimeo Video Dialog */
@@ -605,4 +638,14 @@ font-size: 25px;
      text-decoration:none;
      border:none;
  }
+
+ /* mobile menu */
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
+#navbar-collapse-1 li a.mainMenuOption:hover {
+    background-color:gray;
+}
 
