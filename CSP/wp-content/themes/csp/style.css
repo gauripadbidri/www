@@ -651,12 +651,14 @@ font-size: 25px;
 
 footer {
     margin-top:50px;
+    margin-bottom:20px;
 }
-footer .menuPosition {
-    float:right;
+footer li {
+    float:left;
     color:#2a9fd6; 
     font-weight:bold;
     font-size:12px;
+    margin-right:20px;
 }
 
 header button.navbar-toggle, header button.navbar-toggle:hover {
