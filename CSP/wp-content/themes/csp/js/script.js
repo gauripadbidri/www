@@ -64,13 +64,13 @@
         $('.testimonial').on('click', function (e) {
 
             $("#dialog").dialog({
-                autoOpen: true,
+                autoOpen: false,
                 modal: true,
                 resizable: false,
                 position: { my: "50%", at: "50%" },
-                maxWidth: 600,
+                maxWidth: 800,
                 maxHeight: 500,
-                width: 600,
+                width: 800,
                 height: 500,
                 closeOnEscape: true
             });
@@ -86,7 +86,6 @@
 
             return false;
         });
-
 
         $("#open_close .case_study").click(function () {
             alert('Case Study');

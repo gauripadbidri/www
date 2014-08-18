@@ -23,6 +23,11 @@ body {
 #navigation.navbar-default {
     border: none;
 }
+
+a:hover {
+    text-decoration:none;
+}
+
 #navigation ul{
     float: right;
     
@@ -30,6 +35,7 @@ body {
 #navigation ul li {
       color: #05a8e1;
 }
+
 /*  page-home */
 @media (min-width: 995px) {
     .home #image-section .col-md-4 {
@@ -597,5 +603,6 @@ font-size: 25px;
  #btnDone {
      float:right;
      text-decoration:none;
+     border:none;
  }
 
