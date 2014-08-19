@@ -9,14 +9,9 @@
 /* for get the X words from perticuler string */
 
 function run_get_counted_word($new_string, $str_chr_count = 140) {
-
-
-
     $new_string_arr = explode(' ', $new_string);
     $return_str = '';
     for ($i = 0; $i < count($new_string_arr); $i++) {
-
-
         if (strlen($return_str . ' ' . $new_string_arr[$i]) >= $str_chr_count) {
             break;
         } else {
@@ -109,15 +104,12 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                                 echo '<div class="run_list_news">';
                                 echo '<div class="news-content"><span class="news-title">' . get_the_title() . ': </span>'; 
                                 $content_srt = get_the_content();
-                                echo run_get_counted_word($content_srt) . '<a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
+                                echo run_get_counted_word($content_srt, 300) . '<a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
                             endwhile;
                           echo '</div>';
                         ?>
                     </div><!--footer 2 end-->
-
-                </div>
-
-               
+                </div>               
             </section>
             <section id="body_right" class="mediaClear col-md-4 col-lg-4">
                     <div id="contact">
@@ -127,7 +119,6 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                 </section>
                 </div>
         </section>
-
     </div>
 </section>
 <?php get_footer(); ?>
