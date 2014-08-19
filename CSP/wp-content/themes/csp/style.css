@@ -176,6 +176,11 @@ color:white !important;
     color:white;
 }
 
+.news-text {
+    font-size: 13px;
+    color:white;
+}
+
 .singleNews span, .singleNews h1
 {
     color: rgb(136, 136, 136) !important;
@@ -252,7 +257,7 @@ font-size: 25px;
 }
 
 .contact-email span {
-    color:white;
+    color:#888888;
     font-weight:normal;
 }
 

@@ -104,7 +104,7 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                                 echo '<div class="run_list_news">';
                                 echo '<div class="news-content"><span class="news-title">' . get_the_title() . ': </span>'; 
                                 $content_srt = get_the_content();
-                                echo run_get_counted_word($content_srt, 300) . '<a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
+                                echo '<span class="news-text">' .run_get_counted_word($content_srt, 250) . '</span><a href=' . get_permalink() . '>&nbsp;Read More</a></div>';
                             endwhile;
                           echo '</div>';
                         ?>

@@ -87,7 +87,7 @@
 										</ul>
 									</li>
 									<li class="dropdown open">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+										<a href="about" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
 										<ul id="mob1" class="dropdown-menu">
 												 <li><a href="#">Michael Chen, CEO/President </a></li>
 												 <li><a href="#">Ryan Dillon, Chief Operating Officer </a></li>
@@ -164,7 +164,7 @@
                                 </div>
                             </li>
                             <li class="arrowClass">
-                                <a class="menyItem" href="#">About</a>
+                                <a class="menyItem" href="about">About</a>
                                 <div class="chember-1">
                                     <div class="inner-chamber">
                                         <div>Company & Leadership</div>
