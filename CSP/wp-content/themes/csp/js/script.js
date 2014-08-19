@@ -67,7 +67,7 @@
                 autoOpen: false,
                 modal: true,
                 resizable: false,
-                position: { my: "50%", at: "50%" },
+                position: { my: "30%", at: "50%" },
                 maxWidth: 800,
                 maxHeight: 500,
                 width: 800,

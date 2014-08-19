@@ -28,15 +28,15 @@
 
         <header class="container">
             <div class="col-md-12 ">
-                <div id="logo" class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <a href="home">
                         <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_csp.gif" />
                     </a>
                 </div>
-                <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-12 col-xs-12 navbar navbar-default pull-right">
+                <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-8 col-xs-12 navbar navbar-default pull-right">
 
                     <!-- Mobile View -->
-                     <div class='visible-xs hidden-sm hidden-lg hidden-md'>
+                     <div class='visible-xs'>
 						<div class="navbar navbar-default">
 							<div class="navbar-header" style="float:left;">
 								<button style="width:100%;" title="Click for Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
@@ -103,7 +103,7 @@
 					</div>
 
                     <!-- desktop view -->
-                    <div class="desktop-menu visible-lg visible-md hidden-sm hidden-xs">
+                    <div class="desktop-menu hidden-xs">
                         <ul>
                             <li><a class="menyItem" href="home">Home</a></li>
                             <li class="arrowClass">

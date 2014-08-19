@@ -8,7 +8,7 @@
 
 ?>
 
-<div id="open_close" class="col-md-4 col-lg-4 col-sm-4 col-xm-4 visible-lg visible-md hidden-sm hidden-xs">
+<div id="open_close" class="col-md-4 col-lg-4 col-sm-4 col-xm-4 hidden-sm hidden-xs">
     <span class="close-container">
       <p style="color:white; font-weight:bold;">CSP Networks</p>
     </span>

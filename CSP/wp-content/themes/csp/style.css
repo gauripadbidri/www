@@ -664,3 +664,6 @@ footer li {
 header button.navbar-toggle, header button.navbar-toggle:hover {
 background-color:#2a9fd6; 
 }
+.navbar-toggle .icon-bar {
+    width:auto;
+}

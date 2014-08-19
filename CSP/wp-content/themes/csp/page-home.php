@@ -55,7 +55,7 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
             ?>
               <?php get_template_part('content', 'opaqueDiv');?>
             </div>
-            <div id="image_info" class="col-lg-3 col-md-3 pull-right visible-lg visible-md hidden-sm hidden-xs">
+            <div id="image_info" class="col-lg-3 col-md-3 pull-right hidden-sm hidden-xs">
                 <h5><?php echo rwmb_meta('meta_ImageText'); ?></h5>
                 <p><?php multieditDisplay("ImageInfo") ?></p>
             </div>
