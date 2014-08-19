@@ -27,7 +27,7 @@
     <div id="page">
 
         <header class="container">
-            <div class="col-md-12 ">
+            <div class="col-md-12">
                 <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <a href="home">
                         <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_csp.gif" />
