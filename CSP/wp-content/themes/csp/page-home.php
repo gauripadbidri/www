@@ -57,16 +57,7 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                 </div>
         </section>
         <section id="colorSection" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-            <div>
-            <div id="network" class="col-md-4 col-lg-4  col-sm-12 col-xs-12">
-                 <div>
-                   <h5><?php echo rwmb_meta('meta_OrangeText'); ?>
-                   </h5>
-                   <p>
-                     <?php multieditDisplay("OrangeSection") ?>
-                   </p>
-                 </div>
-            </div>
+            <div>            
             <div id="backup" class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
                 <div>
                   <h5>
@@ -85,6 +76,16 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                     <?php multieditDisplay("BlueSection") ?>
                   </p>
                 </div> 
+            </div>
+            <div id="network" class="col-md-4 col-lg-4  col-sm-12 col-xs-12">
+              <div>
+                <h5>
+                  <?php echo rwmb_meta('meta_OrangeText'); ?>
+                </h5>
+                <p>
+                  <?php multieditDisplay("OrangeSection") ?>
+                </p>
+              </div>
             </div>
                 </div>
         </section>
