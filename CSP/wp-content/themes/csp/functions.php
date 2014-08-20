@@ -73,16 +73,10 @@ function excerpt_read_more_link($output) {
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
-?>
-
-
-<?php 
 /* This is to STRIP Images from the Cotnent Section. This is done for NEWS Section.*/
 add_filter('the_content', 'strip_images',2);
 
 function strip_images($content){
    return preg_replace('/<img[^>]+./','',$content);
 }
-
 ?>
-
