@@ -20,7 +20,7 @@
               echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
              }
             } else {
-              echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/default_news.png" />';
+              echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/default_news.gif" />';
             }
         ?>
         <?php get_template_part('content', 'opaqueDiv');?>
