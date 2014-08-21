@@ -28,7 +28,7 @@
                   echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
                  }
                 } else {
-                  echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/Cloud_Closed_img1.jpg" />';
+                  echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/Cloud_Closed.jpg" />';
                 }
             ?>
               <div id="dialogContainer">
