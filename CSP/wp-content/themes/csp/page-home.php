@@ -42,10 +42,10 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                 $attachments = get_posts($argsThumb);
                 if ($attachments) {
                  foreach ($attachments as $attachment) {
-                  echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
+                  echo '<img id="news-img gauri" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
                  }
                 } else {
-                  echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/default_news.gif" />';
+                  echo '<img id="news-img gauri1" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/home.jpg" />';
                 }
             ?>
               <?php get_template_part('content', 'opaqueDiv');?>
