@@ -18,7 +18,15 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 @import url('bootstrap/css/bootstrap-responsive.css');*/
 
 body {
-    margin-top:20px;    
+    margin-top:20px; 
+    background-color:black;   
+}
+
+h3 {
+color:white;}
+
+#navigation {
+background-color:black;
 }
 #navigation.navbar-default {
     border: none;
@@ -219,10 +227,14 @@ margin-left:40px;
 
 .retail_title, .news_title {
     font-size: 22px;
+    color:#888888;
     
-} 
+}
+
+#retail_sidebar, #news, .contact-phone, .contact-address {
+ color:#888888;
+}
 .retail_text, .news_text{
-    
     color:white;
 }
 #bottom_left div{
@@ -242,6 +254,7 @@ font-size: 25px;
 
 #contact{
     font-size: 25px;
+    color: #888888;
 }
 
 .contactTemplate {
@@ -562,6 +575,7 @@ font-size: 25px;
 
     .navbar-default {
         border:none;
+        background-color:black;
     }
 
      #network {
@@ -668,6 +682,7 @@ footer li {
 
 header button.navbar-toggle, header button.navbar-toggle:hover {
 background-color:#2a9fd6; 
+border:none;
 }
 .navbar-toggle .icon-bar {
     width:auto;
