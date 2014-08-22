@@ -53,11 +53,6 @@
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
 										<ul class="dropdown-menu">
-												<li><a href="#">Managed IT Services</a></li>
-												<li><a href="#">Managed Security Services</a></li>
-												<li><a href="#">Application Performance Services</a></li>
-												<li><a href="#">Projects</a></li>
-											<li class="divider"></li>
 												<li><a href="#">Backup</a></li>
 												<li><a href="#">Recovery</a></li>
 												<li><a href="#">IT Continuity</a></li>
@@ -67,6 +62,11 @@
 												<li><a href="#">Software</a></li>
 												<li><a href="#">Email</a></li>
 												<li><a href="#">Security</a></li>
+											<li class="divider"></li>
+												<li><a href="#">Managed IT Services</a></li>
+												<li><a href="#">Managed Security Services</a></li>
+												<li><a href="#">Application Performance Services</a></li>
+												<li><a href="#">Projects</a></li>
 											<li class="divider"></li>
 										</ul>
 									</li>
@@ -111,15 +111,6 @@
                                 <a class="menyItem" href="#">Solution</a>
                                 <div class="chember-1">
                                     <div class="inner-chamber">
-                                        <div>NETWORKS</div>
-                                        <ul class="list-holder">
-                                            <li><a href="#">Managed IT Services</a></li>
-                                            <li><a href="#">Managed Security Services</a></li>
-                                            <li><a href="#">Application Performance Services</a></li>
-                                            <li><a href="#">Projects</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-chamber">
                                         <div>BACKUP</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Backup</a></li>
@@ -135,6 +126,15 @@
                                             <li><a href="#">Software</a> </li>
                                             <li><a href="#">Email</a></li>
                                             <li><a href="#">Security</a></li>
+                                        </ul>
+                                    </div>
+									<div class="inner-chamber">
+                                        <div>NETWORKS</div>
+                                        <ul class="list-holder">
+                                            <li><a href="#">Managed IT Services</a></li>
+                                            <li><a href="#">Managed Security Services</a></li>
+                                            <li><a href="#">Application Performance Services</a></li>
+                                            <li><a href="#">Projects</a></li>
                                         </ul>
                                     </div>
                                 </div>
