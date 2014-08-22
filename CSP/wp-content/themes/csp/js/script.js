@@ -29,6 +29,8 @@
                     $(elementItem).removeAttr('style');
                 });
             }
+
+            return false;
         });
 
         $(".menyItem").click(function (e) {
