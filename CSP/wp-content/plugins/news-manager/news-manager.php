@@ -113,7 +113,7 @@ class News_Manager
 		add_action('plugins_loaded', array(&$this, 'load_textdomain'));
 		add_action('admin_footer', array(&$this, 'edit_screen_icon'));
 		add_action('admin_enqueue_scripts', array(&$this, 'admin_scripts_styles'));
-		add_action('wp_enqueue_scripts', array(&$this, 'front_scripts_styles'));
+		//add_action('wp_enqueue_scripts', array(&$this, 'front_scripts_styles'));
 		add_action('admin_notices', array(&$this, 'news_admin_notices'));
 
 		//filters

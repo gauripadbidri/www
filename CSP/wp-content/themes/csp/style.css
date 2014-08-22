@@ -664,6 +664,9 @@ font-size: 25px;
     overflow-y: visible;
 }
 
+h4, h5 {
+font-size:20px;}
+
 #navbar-collapse-1 li a.mainMenuOption:hover {
     background-color:gray;
 }
