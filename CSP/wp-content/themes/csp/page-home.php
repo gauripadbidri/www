@@ -3,9 +3,7 @@
   Template Name: Home
   MultiEdit: OrangeSection,GreenSection,BlueSection,ImageInfo
  */
-?>
 
-<?php
 /* for get the X words from perticuler string */
 
 function run_get_counted_word($new_string, $str_chr_count = 140) {
@@ -21,12 +19,11 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
 
     return $return_str . "";
 }
-?>
 
-<?php get_header(); ?>
+get_header();
+?>
 <section id="body">    
   <div class="container home">
-
         <section id="1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div>
             <div id="image-section" class=" col-lg-12 col-md-12 ">
@@ -45,7 +42,7 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
                   echo '<img id="news-img gauri" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
                  }
                 } else {
-                  echo '<img id="news-img gauri1" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/home.jpg" />';
+                  echo '<img id="news-img gauri1" class="img-responsive" src="/wp-content/themes/csp/images/home.jpg" />';
                 }
             ?>
               <?php get_template_part('content', 'opaqueDiv');?>

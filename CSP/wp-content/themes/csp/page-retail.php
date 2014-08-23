@@ -27,7 +27,7 @@
                   echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
                  }
                 } else {
-                  echo '<img id="news-img" class="img-responsive" src="'.get_stylesheet_directory_uri().'/images/retail.jpg" />';
+                  echo '<img id="news-img" class="img-responsive" src="/wp-content/themes/csp/images/retail.jpg" />';
                 }
             ?>
               <div id="dialogContainer">

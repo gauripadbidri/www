@@ -1,7 +1,5 @@
-﻿
-(function ($) {
+﻿(function ($) {
     $(document).ready(function () {
-
         // Close Button JQuery Dialog Close
         $("#btnDone").on('click', function () {
             // Remove is mandatory as Dialog Close WILL not dispose thr IFrame and the Video still runs in the background.

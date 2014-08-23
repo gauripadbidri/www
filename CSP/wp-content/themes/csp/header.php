@@ -8,14 +8,8 @@
     <meta name="author" content="">
     <!--styles -->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/css-menu.css" />
-	<!--Included CDN URL's for jQuery -->    
-    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/ui-darkness/jquery-ui.min.css" rel="stylesheet">
-
-    <?php wp_head(); ?>
-
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/style.min.css" />
+    <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/css-menu.min.css" />
 </head>
 
 <body>
@@ -31,7 +25,7 @@
             <div class="col-md-12">
                 <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <a href="home">
-                        <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_csp.gif" />
+                        <img class="img-responsive" src="/wp-content/themes/csp/images/logo_csp.gif" />
                     </a>
                 </div>
                 <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-8 col-xs-12 navbar navbar-default pull-right">
