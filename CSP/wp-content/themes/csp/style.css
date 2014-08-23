@@ -549,6 +549,14 @@ font-size: 25px;
     #logo {
         padding-left:0px;
     }
+    #image_info {
+        position:initial;
+        margin-bottom:10px;
+    }
+
+    .cloud .imageInfoSection {
+     height:auto;
+    }
     #navigation ul {
         float:none;
     }

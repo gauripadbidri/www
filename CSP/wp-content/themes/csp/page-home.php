@@ -47,7 +47,7 @@ get_header();
             ?>
               <?php get_template_part('content', 'opaqueDiv');?>
             </div>
-            <div id="image_info" class="col-lg-3 col-md-3 pull-right hidden-sm hidden-xs">
+            <div id="image_info" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 pull-right">
                 <h5><?php echo rwmb_meta('meta_ImageText'); ?></h5>
                 <p><?php multieditDisplay("ImageInfo") ?></p>
             </div>

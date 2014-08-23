@@ -35,7 +35,7 @@
                 <?php get_template_part('content', 'opaqueDiv');?>
               </div>
             </div>
-            <div style="background-color: #5590cc;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageInfoSection hidden-sm hidden-xs">
+            <div style="background-color: #5590cc;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageInfoSection">
                 <p>
                     <h3><?php echo rwmb_meta('meta_CloudImageHeader'); ?></h3>
                 </p>
