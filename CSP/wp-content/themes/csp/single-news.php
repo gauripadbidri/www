@@ -25,7 +25,7 @@
         ?>
         <?php get_template_part('content', 'opaqueDiv');?>
       </div>
-      <div id="image-description" style="background-color: gray;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+      <div id="image-description" style="background-color: gray;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <p>
           <h3>
             <?php the_title(); ?>

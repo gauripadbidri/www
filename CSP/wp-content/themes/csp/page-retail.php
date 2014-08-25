@@ -37,8 +37,13 @@
                 ?>
               </div>
             </div>
-            <div id="image-description" style="background-color: gray;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 hidden-sm hidden-xs">
-                <p><h3><?php echo rwmb_meta('meta_RetailImageHeader'); ?></h3></p><span style="color: white;"><?php multieditDisplay("ImageInfo") ?></span>
+            <div id="image-description" style="background-color: gray; " class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <p>
+                    <h3><?php echo rwmb_meta('meta_RetailImageHeader'); ?></h3>
+                </p>
+                <span style="color: white;">
+                   <?php multieditDisplay("ImageInfo") ?>  
+                </span>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
         </section>
@@ -55,7 +60,7 @@
                     </div>
             </section>
 
-            <section id="bottom_right" class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+            <section id="bottom_right" class="col-md-offset-1 col-lg-offset-1 col-md-4 col-lg-4 col-sm-12 col-xs-12">
                 <div id="contact">
                     <span class="retail_title">Help Desk</span>
                     <?php get_template_part('template','contact'); ?>

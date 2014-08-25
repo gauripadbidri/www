@@ -23,18 +23,18 @@
 
         <header class="container">
             <div class="col-md-12">
-                <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
                     <a href="home">
                         <img class="img-responsive" src="/wp-content/themes/csp/images/logo_csp.gif" />
                     </a>
                 </div>
-                <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-8 col-xs-12 navbar navbar-default pull-right">
+                <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-8 col-xs-8 navbar navbar-default pull-right">
 
                     <!-- Mobile View -->
                      <div class='visible-xs'>
 						<div class="navbar navbar-default">
 							<div class="navbar-header" style="float:left;">
-								<button style="width:100%;" title="Click for Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+								<button id="mob_Btn" style="width:100%;" title="Click for Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
@@ -103,9 +103,9 @@
                             <li><a class="menyItem" href="home">Home</a></li>
                             <li class="arrowClass">
                                 <a class="menyItem" href="#">Solution</a>
-                                <div class="chember-1">
+                                <div class="chember-1 col-md-12">
                                     <div class="inner-chamber">
-                                        <div>BACKUP</div>
+                                        <div>&nbsp;&nbsp;BACKUP</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Backup</a></li>
                                             <li><a href="#">Recovery</a></li>
@@ -114,7 +114,7 @@
                                         </ul>
                                     </div>
                                     <div class="inner-chamber">
-                                        <div>CLOUD</div>
+                                        <div>&nbsp;&nbsp;CLOUD</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Infrastructure</a></li>
                                             <li><a href="#">Software</a> </li>
@@ -123,7 +123,7 @@
                                         </ul>
                                     </div>
 									<div class="inner-chamber">
-                                        <div>NETWORKS</div>
+                                        <div>&nbsp;&nbsp;NETWORKS</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Managed IT Services</a></li>
                                             <li><a href="#">Managed Security Services</a></li>
@@ -135,9 +135,9 @@
                             </li>
                             <li class="arrowClass">
                                 <a class="menyItem" href="#">Experience</a>
-                                <div class="chember-1">
+                                <div class="chember-1 col-md-12">
                                     <div class="inner-chamber">
-                                        <div>VERTICALS</div>
+                                        <div>&nbsp;&nbsp;VERTICALS</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Retail</a></li>
                                             <li><a href="#">Warehouse/Manufacturer</a></li>
@@ -149,7 +149,7 @@
                                         </ul>
                                     </div>
                                     <div class="inner-chamber">
-                                        <div>CASE STUDIES</div>
+                                        <div>&nbsp;&nbsp;CASE STUDIES</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Pharmaceuticals - Glumetrics</a></li>
                                             <li><a href="#">Manufacturer - OleumTech</a></li>
@@ -160,16 +160,16 @@
                             </li>
                             <li class="arrowClass">
                                 <a class="menyItem" href="about">About</a>
-                                <div class="chember-1">
+                                <div class="chember-1 col-md-12">
                                     <div class="inner-chamber">
-                                        <div>Company & Leadership</div>
+                                        <div>&nbsp;&nbsp;COMPANY & LEADERSHIP</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Michael Chen, CEO/President </a></li>
                                             <li><a href="#">Ryan Dillon, Chief Operating Officer </a></li>
                                         </ul>
                                     </div>
                                     <div class="inner-chamber">
-                                        <div>Careers</div>
+                                        <div>&nbsp;&nbsp;CAREERS</div>
                                         <ul class="list-holder">
                                             <li><a href="#">System Administrator</a></li>
                                         </ul>

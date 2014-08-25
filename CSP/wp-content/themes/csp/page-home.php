@@ -24,9 +24,9 @@ get_header();
 ?>
 <section id="body">    
   <div class="container home">
-        <section id="1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div>
-            <div id="image-section" class=" col-lg-12 col-md-12">
+        <section id="datatitle" class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12" style="background:whitesmoke; height:5px"></div>
+            <div id="image-section" class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0px;">
               <?php
                 $argsThumb = array(
                  'posts_per_page' => 1,
@@ -45,13 +45,19 @@ get_header();
                   echo '<img id="news-img" class="img-responsive" src="/wp-content/themes/csp/images/home.jpg" />';
                 }
             ?>
+              <div id="dialogContainer">
               <?php get_template_part('content', 'opaqueDiv');?>
             </div>
-            <div id="image_info" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 pull-right">
-                <h5><?php echo rwmb_meta('meta_ImageText'); ?></h5>
-                <p><?php multieditDisplay("ImageInfo") ?></p>
             </div>
+            <div style="background-color: #ddd;color: black;" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 imageInfoSection">
+                <p>
+                    <h3><?php echo rwmb_meta('meta_ImageText'); ?></h3>
+                </p>
+                <span >
+                  <?php multieditDisplay("ImageInfo") ?>
+                </span>
                 </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
         </section>
         <section id="colorSection" class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div>            
@@ -87,10 +93,10 @@ get_header();
                 </div>
         </section>
         
-        <section id="3" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section id="home_news" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div id="bodycontent">
             <section id="body_left" class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
-                <div  class="col-md-offset-1">
+                <div>
                     <div id="news">News & Events</div>
 
                     <div id="news_content">

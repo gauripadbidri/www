@@ -48,9 +48,9 @@
 .chember-1 .inner-chamber
 {
     float :left;
-    margin: 10px 0 10px 10px;
-    color: white;
-    font-weight:bold;
+    margin: 15px 0 10px 15px;
+    color: #ddd;
+   
 }
 /*.chember-1 .inner-chamber:hover{
     background: #b4b4b4;
@@ -61,6 +61,10 @@
     padding: 0px;
 }
 
+ .chember-1 .inner-chamber ul li { 
+	margin-top : 3px;
+ }
+
 .arrowClass a.menyItem
 {
     background-image: url('../images/darrow.gif');
@@ -69,7 +73,21 @@
     padding-right: 10px;
 }
     .chember-1 .list-holder a {
-    color:white;
+    color:#ddd;
     font-size:12px;
     font-weight:normal;
-    }
+    }@media (max-width: 1198px) {
+	.chember-1	{
+		width : 85%;
+	}
+}
+@media (max-width: 1150px) {
+	.chember-1	{
+		width : 75%;
+	}
+}
+@media (max-width: 990px) {
+	.chember-1	{
+		width : 94%;
+	}
+}
