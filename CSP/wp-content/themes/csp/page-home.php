@@ -26,7 +26,7 @@ get_header();
   <div class="container home">
         <section id="1" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div>
-            <div id="image-section" class=" col-lg-12 col-md-12 ">
+            <div id="image-section" class=" col-lg-12 col-md-12">
               <?php
                 $argsThumb = array(
                  'posts_per_page' => 1,
@@ -39,10 +39,10 @@ get_header();
                 $attachments = get_posts($argsThumb);
                 if ($attachments) {
                  foreach ($attachments as $attachment) {
-                  echo '<img id="news-img gauri" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
+                  echo '<img id="news-img" class="img-responsive" src="'.wp_get_attachment_url($attachment->ID, 'thumbnail', false, false).'" />';
                  }
                 } else {
-                  echo '<img id="news-img gauri1" class="img-responsive" src="/wp-content/themes/csp/images/home.jpg" />';
+                  echo '<img id="news-img" class="img-responsive" src="/wp-content/themes/csp/images/home.jpg" />';
                 }
             ?>
               <?php get_template_part('content', 'opaqueDiv');?>
