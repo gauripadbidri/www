@@ -26,7 +26,7 @@ RewriteRule . /index.php [L]
         Header append Vary User-Agent env=!dont-vary
     </IfModule>
     <IfModule mod_filter.c>
-        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext image/gif image/jpg image/png image/jpeg  image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon application/json
     <IfModule mod_mime.c>
         # DEFLATE by extension
         AddOutputFilter DEFLATE js css htm html xml
