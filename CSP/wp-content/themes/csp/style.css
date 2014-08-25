@@ -564,8 +564,9 @@ padding-left: 8px;
 
 @media (min-width: 990px) {
      #colorSection {
-        height:160px;
+        height:auto;
     }
+
 }
 @media (max-width: 768px) {
  #logo {
