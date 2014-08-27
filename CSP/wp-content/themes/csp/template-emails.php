@@ -17,7 +17,7 @@
 
   </div>
   <div class="contact-email">
-    <span>Help Desk: </span>helpdesk [@] cspnetworks.net
+    <span>Help Desk: </span>helpdesk [at] cspnetworks.net
   </div>
   <div class="contact-email">
     <span>Help Desk Web: </span> <a target="blank" href="http://www.supportrightnow.net">www.supportrightnow.net</a>

@@ -73,6 +73,7 @@ $table_prefix  = 'csp_';
  * language support.
  */
 define('WPLANG', '');
+define ('EMPTY_TRASH_DAYS', 7);
 
 /**
  * For developers: WordPress debugging mode.
