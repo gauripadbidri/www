@@ -82,16 +82,7 @@
 											<li class="divider"></li>
 										</ul>
 									</li>
-									<li class="dropdown open">
-										<a href="about" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-										<ul id="mob1" class="dropdown-menu">
-												 <li><a href="#">Michael Chen, CEO/President </a></li>
-												 <li><a href="#">Ryan Dillon, Chief Operating Officer </a></li>
-											<li class="divider"></li>
-												<li><a href="#">System Administrator</a></li>
-											<li class="divider"></li>
-										</ul>
-									</li>
+									<li><a href="about">About</a></li>  
 									<li><a href="contact">Contact</a></li>
 								</ul>
 							</div>
@@ -162,24 +153,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="arrowClass">
-                                <a class="menyItem" href="about">About</a>
-                                <div class="chember-1 col-md-12">
-                                    <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;COMPANY & LEADERSHIP</div>
-                                        <ul class="list-holder">
-                                            <li><a href="#">Michael Chen, CEO/President </a></li>
-                                            <li><a href="#">Ryan Dillon, Chief Operating Officer </a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;CAREERS</div>
-                                        <ul class="list-holder">
-                                            <li><a href="#">System Administrator</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+                            <li><a class="menyItem" href="about">About</a></li>
                             <li><a class="menyItem" href="contact">Contact</a></li>
                         </ul>
                     </div>
