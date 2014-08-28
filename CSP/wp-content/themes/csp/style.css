@@ -518,6 +518,7 @@ font-size: 25px;
 .vAlignCenter {
     vertical-align:super;
     color:#5590cc;
+    margin-left:5px;
 }
 
 .cloud span:not(.vAlignCenter) {
