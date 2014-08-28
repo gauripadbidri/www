@@ -23,17 +23,18 @@
 
         <header class="container">
             <div class="col-md-12">
-                <div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <div id="logo" class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
                     <a href="home">
                         <img class="img-responsive" src="/wp-content/themes/csp/images/logo_csp.gif" />
                     </a>
                 </div>
-                <div id="navigation" class="col-md-offset-1 col-lg-5 col-md-9 col-sm-8 col-xs-8 navbar navbar-default pull-right">
-
                     <!-- Mobile View -->
                      <div class='visible-xs'>
 						<div class="navbar navbar-default">
-							<div class="navbar-header" style="float:left;">
+						<a href="home" style="float:left;">
+                        <img class="img-responsive" src="/wp-content/themes/csp/images/logo_csp.gif" />
+						</a>
+							<div class="navbar-header pull-right">
 								<button id="mob_Btn" style="width:100%;" title="Click for Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
@@ -96,6 +97,9 @@
 							</div>
 						</div>
 					</div>
+
+                    
+                <div id="navigation" class="col-md-offset-1 col-lg-6 col-md-9 col-sm-9 navbar navbar-default pull-right desktop-menu hidden-xs">
 
                     <!-- desktop view -->
                     <div class="desktop-menu hidden-xs">

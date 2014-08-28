@@ -43,6 +43,10 @@ a:hover {
 #navigation ul li {
       color: #05a8e1;
 }
+.list-unstyled{
+	margin-left:15px;
+
+}
 
 /*  page-home */
 @media (min-width: 995px) {
@@ -50,8 +54,10 @@ a:hover {
        /* width: 21.333333%; */
     }
 }
+
 #colorSection{
  margin-top : 16px;
+ margin-bottom: 3%;
 }
 
 #network{
@@ -550,38 +556,16 @@ font-size: 25px;
 #open_close a {
     text-decoration:none;
 }
-.list-holder li a {
-padding : 5px 10px 5px 10px;
-}
-
-.alignMenuSubHeader {
-padding-left: 8px;
-}
-
 /* end of Open-Close opaque DIV */
 
 /*Media Queries*/
 
 @media (min-width: 990px) {
      #colorSection {
-        height:auto;
+        height:160px;
     }
-
 }
-@media (max-width: 768px) {
- #logo {
-        padding-left:0px;
-		float:right;
-		padding-right: 0px;
-    }
-#logo img{
-float:right;
-}
-#navigation button {
-margin-top:0px;}
-
-
-}
+ 
 
 
 
