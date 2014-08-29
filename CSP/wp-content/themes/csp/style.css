@@ -13,14 +13,27 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/
 
 This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
 */
-
+html {
+	font-family: "Open Sans",sans-serif;
+}
 body {
     margin-top:20px; 
     background-color:black;   
+	font-family: "Open Sans",sans-serif;
 }
 
 h3 {
-color:white;}
+color:white;
+margin-top:0px;
+}
+
+h4 {
+    margin-top:0px;
+}
+
+#image-description {
+   padding:20px;
+}
 
 .home h3 {
 color:black;
@@ -31,7 +44,10 @@ background-color:black;
 #navigation.navbar-default {
     border: none;
 }
-
+a#btnDone:focus {
+	outline-color :black;
+	outline-style: none;
+}
 a:hover {
     text-decoration:none;
 }
@@ -59,7 +75,9 @@ a:hover {
  margin-top : 16px;
  margin-bottom: 3%;
 }
-
+#colorSection h5{
+	margin-top: 0px;
+}
 #network{
   background-color: #ce6631 ;  
   color :#fff;
@@ -94,7 +112,12 @@ a:hover {
 #cloud span, #network span, #backup span {
    color:white !important;
 }
-
+#cloud , #network , #backup {
+	padding: 10px;
+}
+#cloud p, #network p, #backup p{
+	margin-bottom: 0px;
+}
 #image_info span {
       color:black !important;
       font-weight:bold;
@@ -499,6 +522,7 @@ font-size: 25px;
 
 .cloud .imageInfoSection ,.home .imageInfoSection{
     height:100%;
+    padding:20px;
 }
 /* PAGE:: CLOUD
  for generated content */
@@ -565,6 +589,10 @@ font-size: 25px;
      #colorSection {
         height:160px;
     }
+	#cloud, #backup,#network {
+		min-height:160px;
+                max-height:160px;
+	} 
 }
  
 

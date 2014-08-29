@@ -2,6 +2,9 @@
 {
     background-color: #000000;
 } 
+.desktop-menu a:focus,.home a:focus,.cloud a:focus,.retail a:focus{
+	outline-style: none; /* Smit changes */
+}
 .desktop-menu > ul 
 {
      list-style :none;

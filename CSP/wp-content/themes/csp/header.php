@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!--styles -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/style.min.css" />
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/css-menu.min.css" />
