@@ -772,3 +772,7 @@ border:none;
 .navbar-toggle .icon-bar {
     width:auto;
 }
+
+.textColor {
+color:#ccc;
+}

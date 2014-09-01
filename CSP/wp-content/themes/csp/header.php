@@ -101,7 +101,7 @@
                                 <a class="menyItem" href="#">Solution</a>
                                 <div class="chember-1 col-md-12">
                                     <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;BACKUP</div>
+                                        <div class="textColor">&nbsp;&nbsp;BACKUP</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Backup</a></li>
                                             <li><a href="#">Recovery</a></li>
@@ -110,7 +110,7 @@
                                         </ul>
                                     </div>
                                     <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;CLOUD</div>
+                                        <div class="textColor">&nbsp;&nbsp;CLOUD</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Infrastructure</a></li>
                                             <li><a href="#">Software</a> </li>
@@ -119,7 +119,7 @@
                                         </ul>
                                     </div>
 									<div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;NETWORKS</div>
+                                        <div class="textColor">&nbsp;&nbsp;NETWORKS</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Managed IT Services</a></li>
                                             <li><a href="#">Managed Security Services</a></li>
@@ -133,7 +133,7 @@
                                 <a class="menyItem" href="#">Experience</a>
                                 <div class="chember-1 col-md-12">
                                     <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;VERTICALS</div>
+                                        <div class="textColor">&nbsp;&nbsp;VERTICALS</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Retail</a></li>
                                             <li><a href="#">Warehouse/Manufacturer</a></li>
@@ -145,7 +145,7 @@
                                         </ul>
                                     </div>
                                     <div class="inner-chamber">
-                                        <div>&nbsp;&nbsp;CASE STUDIES</div>
+                                        <div class="textColor">&nbsp;&nbsp;CASE STUDIES</div>
                                         <ul class="list-holder">
                                             <li><a href="#">Pharmaceuticals - Glumetrics</a></li>
                                             <li><a href="#">Manufacturer - OleumTech</a></li>
