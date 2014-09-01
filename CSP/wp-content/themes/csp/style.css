@@ -709,6 +709,10 @@ font-size: 25px;
         margin-bottom:0px;
         height:auto;
     }
+
+    footer .pull-right {
+    float:none !important;
+    }
 }
 
 /*Vimeo Video Dialog */
