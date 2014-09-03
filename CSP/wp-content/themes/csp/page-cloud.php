@@ -6,7 +6,7 @@
 ?>
 
 <?php get_header(); ?>
-<section id="body">
+<section id="body" class="cloud-template">
     <div class="container cloud">
         
         <!-- upper image container -->
@@ -49,12 +49,14 @@
             <div class="row datacontainer ">
                 <section  class="col-md-6 col-lg-6 col-sm-12 col-xs-12 sectiondata">
                     <div class="title">
+						<!--[if lt IE 9]> <img src="/wp-content/themes/csp/images/Cloud_Open_im4.jpg" style="margin-top:-20px;"/> <![endif]-->
                       <span class="vAlignCenter"><?php echo rwmb_meta('meta_Row1Col1Text'); ?></span>
                     </div>
                     <div> <?php multieditDisplay("Row1Col1Text") ?> </div>
                 </section>
                 <section class="col-md-6 col-lg-6 col-sm-12 col-xs-12 sectiondata">
                     <div class="title">
+					<!--[if lt IE 9]> <img src="/wp-content/themes/csp/images/Cloud_Open_im4.jpg" style="margin-top:-20px;"/> <![endif]-->
                       <span class="vAlignCenter"><?php echo rwmb_meta('meta_Row1Col2Text'); ?></span>
                     </div>
                     <div><?php multieditDisplay("Row1Col2Text") ?></div>
@@ -63,12 +65,14 @@
             <div class="row datacontainer ">
                 <section class="col-md-6 col-lg-6 col-sm-12 col-xs-12 sectiondata">
                     <div class="title">
+					<!--[if lt IE 9]> <img src="/wp-content/themes/csp/images/Cloud_Open_im4.jpg" style="margin-top:-20px;"/> <![endif]-->
                       <span class="vAlignCenter"><?php echo rwmb_meta('meta_Row2Col1Text'); ?></span>
                     </div>
                     <div><?php multieditDisplay("Row2Col1Text") ?></div>
                 </section>
                 <section class="col-md-6 col-lg-6 col-sm-12 col-xs-12 sectiondata">
                     <div class="title">
+					<!--[if lt IE 9]> <img src="/wp-content/themes/csp/images/Cloud_Open_im4.jpg" style="margin-top:-20px;"/> <![endif]-->
                       <span class="vAlignCenter"><?php echo rwmb_meta('meta_Row2Col2Text'); ?></span>
                     </div>
                     <div><?php multieditDisplay("Row2Col2Text") ?></div>

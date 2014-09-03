@@ -11,6 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/style.min.css" />
     <link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/css-menu.min.css" />
+<!--[if lt IE 9]> 
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/wp-content/themes/csp/css/css-ie8.min.css" />
+	<![endif]-->
 </head>
 
 <body>

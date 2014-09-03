@@ -22,7 +22,7 @@ function run_get_counted_word($new_string, $str_chr_count = 140) {
 
 get_header();
 ?>
-<section id="body">    
+<section id="body" class="home-template">    
   <div class="container home">
         <section id="datatitle" class="col-lg-12 col-md-12">
             <div class="col-lg-12 col-md-12" style="background:whitesmoke; height:5px"></div>

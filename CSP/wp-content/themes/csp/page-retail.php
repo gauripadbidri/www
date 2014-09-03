@@ -6,7 +6,7 @@
 ?>
 
 <?php get_header(); ?>
-<section id="body">
+<section id="body" class="retail-template">
     <div class="container retail">
 
         <section id="retailImgSection" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -47,7 +47,7 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:whitesmoke; height:5px"></div>
         </section>
-        <section id="2" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section id="retail2" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <section id="bottom_left" class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
                     <div>
                         <span class="retail_title"><?php echo rwmb_meta('meta_LeftRow1Text'); ?></span><span class="retail_text"><?php multieditDisplay("LeftRow1") ?></span>

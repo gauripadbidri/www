@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="body">
+<section id="body" class="news-template">
   <div class="container newsSingle">
 
     <section id="newsImgSection" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
