@@ -53,16 +53,19 @@
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Solutions <b class="caret"></b></a>
 										<ul class="dropdown-menu">
+												<li class="textColor padLeft22">&nbsp;&nbsp;BACKUP</li>												
 												<li><a href="#">Backup</a></li>
 												<li><a href="#">Recovery</a></li>
 												<li><a href="#">IT Continuity</a></li>
 												<li><a href="#">Archiving</a></li>
 											<li class="divider"></li>
+												<li class="textColor padLeft22">&nbsp;&nbsp;CLOUD</li>			
 												<li><a href="#">Infrastructure</a></li>
 												<li><a href="#">Software</a></li>
 												<li><a href="#">Email</a></li>
 												<li><a href="#">Security</a></li>
 											<li class="divider"></li>
+												<li class="textColor padLeft22">&nbsp;&nbsp;NETWORKS</li>			
 												<li><a href="#">Managed IT Services</a></li>
 												<li><a href="#">Managed Security Services</a></li>
 												<li><a href="#">Application Performance Services</a></li>
@@ -73,6 +76,7 @@
 									<li class="dropdown open">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Experience <b class="caret"></b></a>
 										<ul class="dropdown-menu">
+												<li class="textColor padLeft22">&nbsp;&nbsp;VERTICALS</li>			
 												<li><a href="#">Retail</a></li>
 												<li><a href="#">Warehouse/Manufacturer</a></li>
 												<li><a href="#">Pharmaceuticals</a></li>
@@ -81,6 +85,7 @@
 												<li><a href="#">Media</a></li>
 												<li><a href="#">Transportation</a></li>
 											<li class="divider"></li>
+												<li class="textColor padLeft22">&nbsp;&nbsp;CASE STUDIES</li>			
 												<li><a href="#">Pharmaceuticals - Glumetrics</a></li>
 												<li><a href="#">Manufacturer - OleumTech</a></li>
 												<li><a href="#">Media - Radius60 Studios</a></li>

@@ -93,4 +93,16 @@
 	.chember-1	{
 		width : 94%;
 	}
+}#navbar-main { 
+	z-index : 999999999;
+	background-color: black;
+	/*max-height:340px !important; */
+	Overflow-y :auto;
+	overflow-x:hidden;
+	position :absolute;
+	top:100%;
+	width:100%;
+}
+.padLeft22 {
+padding-left:22px;
 }
