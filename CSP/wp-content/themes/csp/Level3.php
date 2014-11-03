@@ -1,14 +1,13 @@
 <?php
 /*
-  Template Name: Cloud
+  Template Name: Level 3
  * MultiEdit: CloudImageText,Row1Col1Text,Row1Col2Text,Row2Col1Text,Row2Col2Text
  */
 ?>
 
 <?php get_header(); ?>
 <section id="body" class="cloud-template">
-    <div class="container cloud">
-        
+    <div class="container cloud">        
         <!-- upper image container -->
         <section id="datatitle" class="col-lg-12 col-md-12">
             <div class="col-lg-12 col-md-12" style="background:whitesmoke; height:5px"></div>

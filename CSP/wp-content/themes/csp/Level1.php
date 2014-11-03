@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Home
+  Template Name: Level 1
   MultiEdit: OrangeSection,GreenSection,BlueSection,ImageInfo
  */
 

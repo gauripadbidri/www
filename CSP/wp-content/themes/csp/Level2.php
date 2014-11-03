@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: Retail
+  Template Name: Level 2
   MultiEdit: ImageInfo,LeftRow1,LeftRow2,LeftRow3,RightRow1,RightRow2
  */
 ?>
