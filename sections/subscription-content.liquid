@@ -1,0 +1,59 @@
+<div class="page-width">
+<span class="h2 password-content__title">{{ section.settings.header | escape }}</span>
+  <h1>{{ section.settings.header | escape }}</h1>
+
+   {% if page.content.size > 0 %}
+        <div class="rte">
+          {{ page.content }}
+        </div>
+      {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "de": "Titel",
+    "en": "Subscription Content",
+    "es": "Encabezado",
+    "fr": "En-tête",
+    "it": "Header",
+    "ja": "ヘッダー",
+    "nl": "Koptekst",
+    "pt-BR": "Cabeçalho",
+    "zh-CN": "标头",
+    "zh-TW": "標頭"
+  },
+  "settings": [
+   
+    {
+      "type": "text",
+      "id": "header",
+      "label": {
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "Coming Soon...",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    }
+  ]
+}
+{% endschema %}
