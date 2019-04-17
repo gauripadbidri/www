@@ -1,6 +1,6 @@
 {
   "current": {
-    "color_text": "#000000",
+    "color_text": "#eb7b18",
     "color_body_text": "#0d80f3",
     "color_sale_text": "#557b97",
     "color_button": "#557b97",
@@ -15,9 +15,9 @@
     "color_borders": "#e8e9eb",
     "color_body_bg": "#fff",
     "type_header_font": "work_sans_n6",
-    "type_header_base_size": 26,
+    "type_header_base_size": 36,
     "type_base_font": "work_sans_n4",
-    "type_base_size": 16,
+    "type_base_size": 20,
     "type_bold_product_titles": false,
     "share_image": "",
     "share_facebook": true,
@@ -109,7 +109,7 @@
         "settings": {
           "slideshow_height": "adapt",
           "text_size": "medium",
-          "text_alignment": "center center",
+          "text_alignment": "right bottom",
           "show_overlay": true,
           "autorotate": false,
           "autorotate_speed": 5
@@ -182,7 +182,7 @@
       "subscription-content": {
         "type": "subscription-content",
         "settings": {
-          "gauri_color_text": "#de1514",
+          "gauri_color_text": "#e32c2b",
           "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
         }
       },
@@ -216,6 +216,14 @@
         "settings": {
           "show_share_buttons": true,
           "social_message": "Spread the word"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "list",
+          "blog_show_author": true,
+          "blog_show_date": true
         }
       }
     },
