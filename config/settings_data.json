@@ -1,6 +1,6 @@
 {
   "current": {
-    "color_text": "#def217",
+    "color_text": "#000000",
     "color_body_text": "#0d80f3",
     "color_sale_text": "#557b97",
     "color_button": "#557b97",
@@ -175,19 +175,14 @@
       "subscription-header": {
         "type": "subscription-header",
         "settings": {
-          "logo": "",
-          "logo_max_width": 100,
           "header": "Gauri Sanil Padbidri"
         }
       },
       "subscription-content": {
         "type": "subscription-content",
         "settings": {
-          "newsletter_enable": true,
-          "newsletter_form_heading": "Be the first to know when we launch.",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
-          "newsletter_placeholder": "Email address",
-          "newsletter_button_text": "Notify me"
+          "gauri_color_text": "#de1514",
+          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
         }
       },
       "subscription-footer": {

@@ -1,21 +1,26 @@
 {% comment %}
   Password message which you can edit on http://www.shopify.com/admin/online_store/preferences
 {% endcomment %}
-<div class="password-content">
+<style>
+.gauri_header {
+          color: {{ section.settings.gauri_color_text }};
+        }
+</style>
+<div class="password-content gauri">
   {% unless shop.password_message == blank %}
     <div class="password-message">
       {{ shop.password_message }}
     </div>
   {% endunless %}
 </div>
-
+<div class="gauri_header">This is Subscription Content</div>
 {% if section.settings.newsletter_enable %}
   <div class="password-content password-content--rte">
-    <p class="h4">
+    <p class="h4 gauri_header">
       {{ section.settings.newsletter_form_heading | escape }}
     </p>
     {% if section.settings.newsletter_form_subheading != blank %}
-      <div class="password__form-subheading rte">{{ section.settings.newsletter_form_subheading }}</div>
+      <div class="password__form-subheading rte gauri_header">{{ section.settings.newsletter_form_subheading }}</div>
     {% endif %}
   </div>
   {% form 'customer', id: 'ContactPassword', class: 'contact-form form-single-field' %}
@@ -75,50 +80,22 @@
   },
   "settings": [
     {
-      "type": "checkbox",
-      "id": "newsletter_enable",
-      "label": {
-        "de": "Newsletter Signup zeigen",
-        "en": "Show newsletter signup",
-        "es": "Mostrar suscripción al boletín",
-        "fr": "Afficher l'inscription à la newsletter",
-        "it": "Mostra iscrizione alla newsletter",
-        "ja": "メールマガジンの登録を表示する",
-        "nl": "Aanmelden voor nieuwsbrief weergeven",
-        "pt-BR": "Exibir assinatura da newsletter",
-        "zh-CN": "显示新闻通讯注册",
-        "zh-TW": "顯示訂閱電子報"
+        "type": "color",
+        "id": "gauri_color_text",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Sub Heading Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#3d4246"
       },
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "newsletter_form_heading",
-      "label": {
-        "de": "Newsletter-Formular Titel",
-        "en": "Newsletter form heading",
-        "es": "Título del formulario del boletín",
-        "fr": "Titre du formulaire d'inscription à la newsletter",
-        "it": "Intestazione del modulo della newsletter",
-        "ja": "メールマガジンフォームの見出し",
-        "nl": "Kop van nieuwsbriefformulier",
-        "pt-BR": "Título do formulário da newsletter",
-        "zh-CN": "标题中的新闻通讯",
-        "zh-TW": "電子報表單標題"
-      },
-      "default": {
-        "de": "Seien Sie der Erste, der von unserem Launch erfährt.",
-        "en": "Be the first to know when we launch.",
-        "es": "Entérate de nuestros lanzamientos antes que los demás.",
-        "fr": "Faites partie des premières personnes à être informées de notre lancement.",
-        "it": "Sii il primo a sapere quando effettueremo il lancio.",
-        "ja": "ストアに関する最新情報をメールでお知らせします。",
-        "nl": "Kom als eerste te weten wanneer we van start gaan.",
-        "pt-BR": "Seja o primeiro a saber quando lançarmos.",
-        "zh-CN": "成为第一批知道我们何时推出新内容的客户。",
-        "zh-TW": "搶先收到產品發佈消息。"
-      }
-    },
     {
       "type": "richtext",
       "id": "newsletter_form_subheading",
@@ -145,62 +122,6 @@
         "pt-BR": "<p>Uma frase curta que descreve o que alguém receberá ao assinar</p>",
         "zh-CN": "<p>一个简短的句子，用于描述订阅者将收到的内容</p>",
         "zh-TW": "<p>簡短說明訂閱者可收到之內容</p>"
-      }
-    },
-    {
-      "type": "text",
-      "id": "newsletter_placeholder",
-      "label": {
-        "de": "Newsletter-Platzhalter Text",
-        "en": "Newsletter placeholder text",
-        "es": "Texto de marcador de posición del boletín",
-        "fr": "Paramètre fictif de la newsletter",
-        "it": "Testo del segnaposto della Newsletter",
-        "ja": "メールマガジンのプレースホルダテキスト",
-        "nl": "Plaatsaanduidingstekst nieuwsbrief",
-        "pt-BR": "Texto do marcador de posição da newsletter",
-        "zh-CN": "新闻稿占位符文本",
-        "zh-TW": "電子報預留位置文字"
-      },
-      "default": {
-        "de": "E-Mail-Adresse",
-        "en": "Email address",
-        "es": "Dirección de correo electrónico",
-        "fr": "Adresse e-mail",
-        "it": "Indirizzo email",
-        "ja": "メールアドレス",
-        "nl": "E-mailadres",
-        "pt-BR": "E-mail",
-        "zh-CN": "电子邮件地址",
-        "zh-TW": "電子郵件地址"
-      }
-    },
-    {
-      "type": "text",
-      "id": "newsletter_button_text",
-      "label": {
-        "de": "Newsletter-Button Text",
-        "en": "Newsletter button text",
-        "es": "Texto del botón del boletín",
-        "fr": "Texte du bouton de la newsletter",
-        "it": "Testo del pulsante Newsletter",
-        "ja": "メールマガジンボタンのテキスト",
-        "nl": "Tekst knop nieuwsbrief",
-        "pt-BR": "Texto do botão da newsletter",
-        "zh-CN": "新闻稿按钮文本",
-        "zh-TW": "電子報按鈕文字"
-      },
-      "default": {
-        "de": "Sagen Sie mir Bescheid",
-        "en": "Notify me",
-        "es": "Notificarme",
-        "fr": "Je souhaite être informé(e)",
-        "it": "Avvisami",
-        "ja": "通知を受け取る",
-        "nl": "Laat het me weten",
-        "pt-BR": "Notifique-me",
-        "zh-CN": "通知我",
-        "zh-TW": "通知我"
       }
     }
   ]
