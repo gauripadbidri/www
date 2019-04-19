@@ -5,6 +5,9 @@
 .gauri_header {
           color: {{ section.settings.gauri_color_text }};
         }
+  .gauri2_header {
+          color: {{ section.settings.gauri2_color_text }};
+        }
 </style>
 <div class="password-content gauri">
   {% unless shop.password_message == blank %}
@@ -16,7 +19,7 @@
 <div class="gauri_header">This is Subscription Content</div>
 {% if section.settings.newsletter_enable %}
   <div class="password-content password-content--rte">
-    <p class="h4 gauri_header">
+    <p class="h4 gauri2_header">
       {{ section.settings.newsletter_form_heading | escape }}
     </p>
     {% if section.settings.newsletter_form_subheading != blank %}
@@ -85,6 +88,23 @@
         "label": {
           "de": "Titel und Links",
           "en": "Sub Heading Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#3d4246"
+    },
+{
+        "type": "color",
+        "id": "gauri2_color_text",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Sub Heading Color2",
           "es": "Títulos y enlaces",
           "fr": "En-têtes et liens",
           "it": "Titoli e link",
