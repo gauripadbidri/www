@@ -1,9 +1,9 @@
 {
   "current": {
-    "color_text": "#eb7b18",
-    "color_body_text": "#0d80f3",
-    "color_sale_text": "#557b97",
-    "color_button": "#557b97",
+    "color_text": "#3d4246",
+    "color_body_text": "#69727b",
+    "color_sale_text": "#557B97",
+    "color_button": "#557B97",
     "color_button_text": "#fff",
     "color_small_button_text_border": "#3d4246",
     "color_text_field_text": "#000",
@@ -14,66 +14,25 @@
     "image_overlay_opacity": 40,
     "color_borders": "#e8e9eb",
     "color_body_bg": "#fff",
+    "color_header_bg": "#68CFE0",
     "type_header_font": "work_sans_n6",
-    "type_header_base_size": 36,
+    "type_header_base_size": 26,
     "type_base_font": "work_sans_n4",
-    "type_base_size": 20,
+    "type_base_size": 16,
     "type_bold_product_titles": false,
-    "share_image": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
-    "social_tumblr_link": "",
-    "social_snapchat_link": "",
-    "social_youtube_link": "",
-    "social_vimeo_link": "",
-    "favicon": "",
-    "checkout_header_image": "",
-    "checkout_logo_image": "",
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#fafafa",
-    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-    "checkout_accent_color": "#197bbd",
-    "checkout_button_color": "#197bbd",
-    "checkout_error_color": "#e32c2b",
     "sections": {
       "header": {
         "type": "header",
         "settings": {
-          "align_logo": "left",
-          "logo": "",
-          "logo_max_width": 100,
-          "main_linklist": "main-menu",
-          "message": false,
-          "home_page_only": true,
-          "message_text": "Where it prints",
-          "message_link": "",
-          "color_bg": "#7796a8",
-          "color_text": "#fff"
         }
       },
       "hero": {
         "type": "hero",
         "settings": {
-          "image": "",
-          "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "medium",
-          "text_size": "large",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "button_label": "",
-          "button_link": ""
+          "text_size": "large"
         }
       },
       "slideshow": {
@@ -82,23 +41,11 @@
           "slideshow-0": {
             "type": "image",
             "settings": {
-              "image": "",
-              "alignment": "center center",
-              "slide_title": "Image slide",
-              "subheading": "Tell your brand's story through images",
-              "button_label": "",
-              "button_link": ""
             }
           },
           "slideshow-1": {
             "type": "image",
             "settings": {
-              "image": "",
-              "alignment": "center center",
-              "slide_title": "Image slide",
-              "subheading": "Tell your brand's story through images",
-              "button_label": "",
-              "button_link": ""
             }
           }
         },
@@ -107,34 +54,17 @@
           "slideshow-1"
         ],
         "settings": {
-          "slideshow_height": "adapt",
-          "text_size": "medium",
-          "text_alignment": "right bottom",
-          "show_overlay": true,
-          "autorotate": false,
-          "autorotate_speed": 5
         }
       },
       "featured-collections": {
         "type": "collection",
         "settings": {
-          "title": "Featured collection",
-          "collection": "frontpage",
-          "grid": 3,
-          "rows": 2,
-          "show_vendor": false,
-          "show_view_all": false
+          "collection": "frontpage"
         }
       },
       "feature-row": {
         "type": "feature-row",
         "settings": {
-          "image": "",
-          "layout": "left",
-          "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-          "button_label": "",
-          "button_link": ""
         }
       },
       "footer": {
@@ -143,21 +73,16 @@
           "link_list": {
             "type": "link_list",
             "settings": {
-              "title": "Quick links",
-              "menu": "footer"
             }
           },
           "text": {
             "type": "text",
             "settings": {
-              "title": "Talk about your business",
-              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
             }
           },
           "newsletter": {
             "type": "newsletter",
             "settings": {
-              "title": "Newsletter"
             }
           }
         },
@@ -167,63 +92,6 @@
           "newsletter"
         ],
         "settings": {
-          "show_payment_icons": false,
-          "color_footer_bg": "#f5f5f5",
-          "color_footer_text": "#3d4246"
-        }
-      },
-      "subscription-header": {
-        "type": "subscription-header",
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/beach-towel-in-wind.jpg",
-          "header": "Gauri Sanil Padbidri"
-        }
-      },
-      "subscription-content": {
-        "type": "subscription-content",
-        "settings": {
-          "gauri_color_text": "#e32c2b",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
-        }
-      },
-      "subscription-footer": {
-        "type": "subscription-footer",
-        "settings": {
-          "show_share_buttons": true,
-          "social_message": "Spread the word"
-        }
-      },
-      "password-header": {
-        "type": "password-header",
-        "settings": {
-          "logo": "",
-          "logo_max_width": 100,
-          "header": "Coming Soon"
-        }
-      },
-      "password-content": {
-        "type": "password-content",
-        "settings": {
-          "newsletter_enable": true,
-          "newsletter_form_heading": "Be the first to know when we launch.",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
-          "newsletter_placeholder": "Email address",
-          "newsletter_button_text": "Notify me"
-        }
-      },
-      "password-footer": {
-        "type": "password-footer",
-        "settings": {
-          "show_share_buttons": true,
-          "social_message": "Spread the word"
-        }
-      },
-      "blog-template": {
-        "type": "blog-template",
-        "settings": {
-          "layout": "list",
-          "blog_show_author": true,
-          "blog_show_date": true
         }
       }
     },

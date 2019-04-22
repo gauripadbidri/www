@@ -362,6 +362,7 @@ $transition-link-hover: 0.1s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 
 // Backgrounds
 $color-body: {{ settings.color_body_bg }};
+$color-header-bg: {{ settings.color_header_bg }};
 $color-bg: {{ settings.color_body_bg }};
 $color-drawer-background: rgba(0, 0, 0, 0.6);
 $color-bg-alt: {{ settings.color_body_text | color_modify: 'alpha', 0.05 }};
@@ -2443,7 +2444,7 @@ textarea {
 .site-nav {
   position: relative;
   padding: 0;
-  text-align: center;
+  text-align: left;
   margin: 25px 0;
 
   a {
@@ -4023,7 +4024,7 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 
 /*================ MODULES ================*/
 .site-header {
-  background-color: $color-body;
+  background-color: $color-header-bg;
   position: relative;
   padding: 0 $gutter-site;
 
@@ -4853,7 +4854,7 @@ $nav-button-padding: 15px;
 .site-header__mobile-nav {
   z-index: 999;
   position: relative;
-  background-color: $color-body;
+  background-color: $color-header-bg;
 
   @include media-query($small) {
     @include display-flexbox();

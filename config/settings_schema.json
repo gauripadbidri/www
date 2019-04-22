@@ -348,6 +348,23 @@
           "zh-TW": "背景"
         },
         "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_header_bg",
+        "label": {
+          "de": "Schriftfarbe",
+          "en": "Background",
+          "es": "Fondo",
+          "fr": "Couleur de fond",
+          "it": "Sfondo",
+          "ja": "背景",
+          "nl": "Achtergrond",
+          "pt-BR": "Plano de fundo",
+          "zh-CN": "背景",
+          "zh-TW": "背景"
+        },
+        "default": "#68CFE0"
       }
     ]
   },
