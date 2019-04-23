@@ -1,25 +1,35 @@
-{%- if paginate.pages > 1 -%}
-  <div class="Pagination Text--subdued">
-    <div class="Pagination__Nav">
-      {%- if paginate.previous -%}
-        <a class="Pagination__NavItem Link Link--primary" rel="prev" title="{{ 'general.pagination.previous_page' | t }}" href="{{ paginate.previous.url | remove: 'view=ajax' }}{{ hash }}">
-          {%- include 'icon' with 'select-arrow-left' -%}
-        </a>
-      {%- endif -%}
-
-      {%- for part in paginate.parts -%}
-        {%- if part.is_link -%}
-          <a href="{{ part.url | remove: 'view=ajax' }}{{ hash }}" class="Pagination__NavItem Link Link--primary" title="{{ 'general.pagination.go_to_page' | t: page: part.title }}">{{ part.title }}</a>
-        {%- else -%}
-          <span class="Pagination__NavItem {% if part.title == paginate.current_page %}is-active{% endif %}">{{ part.title }}</span>
-        {%- endif -%}
-      {%- endfor -%}
-
-      {%- if paginate.next -%}
-        <a class="Pagination__NavItem Link Link--primary" rel="next" title="{{ 'general.pagination.next_page' | t }}" href="{{ paginate.next.url | remove: 'view=ajax' }}{{ hash }}">
-          {%- include 'icon' with 'select-arrow-right' -%}
-        </a>
-      {%- endif -%}
-    </div>
-  </div>
-{%- endif -%}
+<ul class="list--inline pagination">
+  {% unless paginate.previous.is_link %}
+    <li aria-hidden="true">
+      <button class="btn btn--tertiary btn--narrow" disabled>
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+      </button>
+    </li>
+    {% else %}
+    <li>
+      <a href="{{ paginate.previous.url }}" class="btn btn--tertiary btn--narrow">
+        {% include 'icon-arrow-left' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+      </a>
+    </li>
+  {% endunless %}
+  <li class="pagination__text">
+    {{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}
+  </li>
+  {% unless paginate.next.is_link %}
+    <li aria-hidden="true">
+      <button class="btn btn--tertiary btn--narrow" disabled>
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+      </button>
+    </li>
+  {% else %}
+    <li>
+      <a href="{{ paginate.next.url }}" class="btn btn--tertiary btn--narrow">
+        {% include 'icon-arrow-right' %}
+        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+      </a>
+    </li>
+  {% endunless %}
+</ul>

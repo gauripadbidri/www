@@ -1,0 +1,310 @@
+<style>
+        .header_kit_name_color {
+          color: {{ section.settings.header_kit_name_color }};
+          text-transform: uppercase;
+        }
+
+        .sub_header_kit_name_color {
+          color: {{ section.settings.sub_header_kit_name_color }};
+        }
+
+        .sub_header_kit_price_color {
+          color: {{ section.settings.sub_header_kit_price_color }};
+        }
+
+        .sub_header_kit_shipping_color {
+          color: {{ section.settings.sub_header_kit_shipping_color }};
+          text-transform: uppercase;
+        }
+</style>
+<div class="password-content" style="background-color:#68cfe0">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="header_kit_name_color">{{ section.settings.header_kit_name }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="sub_header_kit_name_color">{{ section.settings.sub_header_kit_name }}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="sub_header_kit_price_color">{{ section.settings.sub_header_kit_currency }}{{ section.settings.sub_header_kit_price }}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="sub_header_kit_shipping_color">{{ section.settings.sub_header_kit_shipping_type }}</h4>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" name="user_email" />
+    </div>    
+    <div class="col-md-12">
+      <button id="register_to_shopify_and_newsletter"></button>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": {
+    "de": "Titel",
+    "en": "Subscription Header",
+    "es": "Encabezado",
+    "fr": "En-tête",
+    "it": "Header",
+    "ja": "ヘッダー",
+    "nl": "Koptekst",
+    "pt-BR": "Cabeçalho",
+    "zh-CN": "标头",
+    "zh-TW": "標頭"
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+      
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "label": {
+        "de": "Titel",
+        "en": "Subscription Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "Coming Soon",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    },{
+      "type": "text",
+      "id": "header_kit_name",
+      "label": {
+        "de": "Titel",
+        "en": "Kit Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "V Basic Kit",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    },
+    {
+        "type": "color",
+        "id": "header_kit_name_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Sub Heading Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },
+    {
+        "type": "color",
+        "id": "sub_header_kit_price_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Sub Heading Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },
+    {
+        "type": "color",
+        "id": "sub_header_kit_name_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Sub Heading Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },
+    {
+        "type": "color",
+        "id": "sub_header_kit_shipping_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Shipping Text Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "sub_header_kit_name",
+      "label": {
+        "de": "Titel",
+        "en": "Kit Sub Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "Get ready to start your daily vaginal routine",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    },
+    {
+      "type": "text",
+      "id": "sub_header_kit_currency",
+      "label": {
+        "de": "Titel",
+        "en": "Kit Currency",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "$",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    },
+    {
+      "type": "text",
+      "id": "sub_header_kit_price",
+      "label": {
+        "de": "Titel",
+        "en": "Kit Price",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "35",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    },
+    {
+      "type": "text",
+      "id": "sub_header_kit_shipping_type",
+      "label": {
+        "de": "Titel",
+        "en": "Shipping Type",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Demnächst",
+        "en": "Free Shipping",
+        "es": "Próximamente",
+        "fr": "En construction",
+        "it": "Presto disponibile",
+        "ja": "間もなく公開",
+        "nl": "Binnenkort",
+        "pt-BR": "Em breve",
+        "zh-CN": "即将推出",
+        "zh-TW": "即將推出"
+      }
+    }
+  ]
+}
+{% endschema %}
