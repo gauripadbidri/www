@@ -1,7 +1,7 @@
 {
   "current": {
-    "color_text": "#eb7b18",
-    "color_body_text": "#0d80f3",
+    "color_text": "#3d4246",
+    "color_body_text": "#69727b",
     "color_sale_text": "#557b97",
     "color_button": "#557b97",
     "color_button_text": "#fff",
@@ -16,9 +16,9 @@
     "color_body_bg": "#fff",
     "color_header_bg": "#68cfe0",
     "type_header_font": "work_sans_n6",
-    "type_header_base_size": 36,
-    "type_base_font": "archivo_n4",
-    "type_base_size": 20,
+    "type_header_base_size": 26,
+    "type_base_font": "work_sans_n4",
+    "type_base_size": 16,
     "type_bold_product_titles": false,
     "share_image": "",
     "share_facebook": true,
@@ -52,12 +52,12 @@
         "type": "header",
         "settings": {
           "align_logo": "left",
-          "logo": "shopify:\/\/shop_images\/cropped-GMCS-LOGO-3.png",
+          "logo": "shopify:\/\/shop_images\/QV-OfficialLogo-2018-white.png",
           "logo_max_width": 100,
           "main_linklist": "main-menu",
           "message": false,
           "home_page_only": true,
-          "message_text": "Where it prints",
+          "message_text": "Announce something here",
           "message_link": "",
           "color_bg": "#7796a8",
           "color_text": "#fff"
@@ -66,15 +66,15 @@
       "hero": {
         "type": "hero",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "medium",
           "text_size": "large",
-          "title": "Image with text overlay",
-          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
-          "button_label": "",
-          "button_link": ""
+          "title": "V BASIC KIT",
+          "text": "<p>Get ready to start your daily vaginal routine<\/p>",
+          "button_label": "Get Started",
+          "button_link": "shopify:\/\/pages\/subscription"
         }
       },
       "slideshow": {
@@ -110,7 +110,7 @@
         "settings": {
           "slideshow_height": "adapt",
           "text_size": "medium",
-          "text_alignment": "right bottom",
+          "text_alignment": "center center",
           "show_overlay": true,
           "autorotate": false,
           "autorotate_speed": 5
@@ -171,61 +171,6 @@
           "show_payment_icons": false,
           "color_footer_bg": "#f5f5f5",
           "color_footer_text": "#3d4246"
-        }
-      },
-      "subscription-header": {
-        "type": "subscription-header",
-        "settings": {
-          "logo": "shopify:\/\/shop_images\/QV-3-11-19-VBasic.jpg",
-          "header": "Gauri Sanil Padbidri"
-        }
-      },
-      "subscription-content": {
-        "type": "subscription-content",
-        "settings": {
-          "gauri_color_text": "#e32c2b",
-          "gauri2_color_text": "#3d4246",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
-        }
-      },
-      "subscription-footer": {
-        "type": "subscription-footer",
-        "settings": {
-          "show_share_buttons": true,
-          "social_message": "Spread the word"
-        }
-      },
-      "password-header": {
-        "type": "password-header",
-        "settings": {
-          "logo": "",
-          "logo_max_width": 100,
-          "header": "Coming Soon"
-        }
-      },
-      "password-content": {
-        "type": "password-content",
-        "settings": {
-          "newsletter_enable": true,
-          "newsletter_form_heading": "Be the first to know when we launch.",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
-          "newsletter_placeholder": "Email address",
-          "newsletter_button_text": "Notify me"
-        }
-      },
-      "password-footer": {
-        "type": "password-footer",
-        "settings": {
-          "show_share_buttons": true,
-          "social_message": "Spread the word"
-        }
-      },
-      "blog-template": {
-        "type": "blog-template",
-        "settings": {
-          "layout": "list",
-          "blog_show_author": true,
-          "blog_show_date": true
         }
       }
     },
