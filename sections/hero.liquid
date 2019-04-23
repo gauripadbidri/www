@@ -31,11 +31,10 @@
             <h2 class="h1 mega-title{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h2>
           {%- endif -%}
           {%- if section.settings.text != blank -%}
-            <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
+            <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
           {%- endif -%}
-          {%- if section.settings.kit_currency != blank and section.settings.kit_price != blank -%}
             <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
-          {%- endif -%}
+          
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
             <a href="{{ section.settings.button_link }}" class="btn hero__btn">
               {{ section.settings.button_label | escape }}
@@ -454,7 +453,35 @@
       },
       "default": {
         "de": "Foto mit überlegtem Text",
-        "en": "Image with text overlay",
+        "en": "$",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      }
+    },
+    {
+      "type": "text",
+      "id": "kit_price",
+      "label": {
+        "de": "Titel",
+        "en": "Kit Price",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Foto mit überlegtem Text",
+        "en": "35",
         "es": "Imagen con texto",
         "fr": "Image avec superposition de texte",
         "it": "Immagine con testo",

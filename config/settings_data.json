@@ -72,6 +72,8 @@
           "hero_size": "medium",
           "text_size": "large",
           "title": "V BASIC KIT",
+          "kit_currency": "$",
+          "kit_price": "350",
           "text": "<p>Get ready to start your daily vaginal routine<\/p>",
           "button_label": "GET STARTED",
           "button_link": "shopify:\/\/pages\/subscription"
