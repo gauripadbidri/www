@@ -9,22 +9,25 @@
 }
 </style>
 {%- if section.settings.hero_layout == 'full_width' and section.settings.hero_size == 'adapt' -%}
-  {%- if section.settings.image.aspect_ratio == blank -%}
-    {%- assign min_aspect_ratio = 2.0 -%}
-  {%- else -%}
-    {%- assign min_aspect_ratio = section.settings.image.aspect_ratio -%}
-  {%- endif -%}
-  {%- assign wrapper_height = 100 | divided_by: min_aspect_ratio -%}
-  {%- style -%}
-    .hero-{{ section.id }} {
-      height: {{- wrapper_height -}}vw !important;
-    }
+    {%- if section.settings.image.aspect_ratio == blank -%}
+      {%- assign min_aspect_ratio = 2.0 -%}
+    {%- else -%}
+      {%- assign min_aspect_ratio = section.settings.image.aspect_ratio -%}
+    {%- endif -%}
+    {%- assign wrapper_height = 100 | divided_by: min_aspect_ratio -%}
+    {%- style -%}
+      .hero-{{ section.id }} {
+        height: {{- wrapper_height -}}vw !important;
+      }
   {%- endstyle -%}
 {%- endif -%}
+
+
 <div data-section-id="{{ section.id }}" data-section-type="hero-section">
   {%- if section.settings.hero_layout == 'fixed_width' -%}
     <div class="page-width">
   {%- endif -%}
+
   {%- if section.settings.hero_layout == 'fixed_width' and section.settings.hero_size ==  'adapt' -%}
     {%- assign slide_width = 1090 -%}
     {%- assign min_aspect_ratio = section.settings.image.aspect_ratio | default: 2.0 -%}
@@ -32,9 +35,9 @@
          id="Hero-{{ section.id }}"
          data-layout="{{ section.settings.hero_layout }}">
       {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-      {%- if section.settings.image.width < max_width -%}
-        {%- assign slide_width = section.settings.image.width -%}
-      {%- endif -%}
+        {%- if section.settings.image.width < max_width -%}
+          {%- assign slide_width = section.settings.image.width -%}
+        {%- endif -%}
       <div class="hero-fixed-width__content">
         <div class="page-width text-center">
           {%- if section.settings.title != blank -%}
@@ -78,7 +81,7 @@
       </noscript>
     </div>
   {%- else -%}
-    <div class="hero hero--{{ section.settings.hero_size }} hero-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+    <div class="gaurip hero hero--{{ section.settings.hero_size }} hero-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
          id="Hero-{{ section.id }}"
          data-layout="{{ section.settings.hero_layout }}"
          {%- if section.settings.image -%}

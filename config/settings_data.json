@@ -73,6 +73,8 @@
     "checkout_accent_color": "#0097ce",
     "checkout_button_color": "#0097ce",
     "checkout_error_color": "#e32c2b",
+    "color_image_overlay_text": "#fff",
+    "type_header_base_size": 26,
     "sections": {
       "sidebar-menu": {
         "type": "sidebar-menu",
@@ -513,7 +515,7 @@
           "button_label": "GET STARTED",
           "kit_currency": "$",
           "kit_price": "35",
-          "button_link": "",
+          "button_link": "shopify:\/\/pages\/subscription",
           "email_textbox_background": "#68cfe0",
           "email_text_color": "#fff"
         }
@@ -924,6 +926,7 @@
       "text_light_color": "#6a6a6a",
       "link_color": "#6a6a6a",
       "background": "#efefef",
+      "color_image_overlay_text": "#fff",
       "light_background": "#ffffff",
       "product_on_sale_color": "#f94c43",
       "button_background": "#1c1b1b",
