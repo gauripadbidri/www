@@ -74,7 +74,7 @@
         </span>
       {%- endif -%}
       <noscript>
-        <div class="hero-fixed-width__image"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+        <div class="hero-fixed-width__image"{% if section.settings.image %} style="background-image: url({{ section.settings.image | img_url: '2048x' }}); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
       </noscript>
     </div>
   {%- else -%}
@@ -85,7 +85,7 @@
          data-bgset="{% include 'bgset', image: section.settings.image %}"
          data-sizes="auto"
          data-parent-fit="cover"
-         style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+         style="background-position: {{ section.settings.alignment }}; background-image: url({{ section.settings.image | img_url: '300x300' }});"
          {%- endif -%}>
     {%- if section.settings.image == blank -%}
       <div class="placeholder-background">
