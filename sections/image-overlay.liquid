@@ -8,6 +8,7 @@
     color: {{ section.settings.email_text_color }};
 }
 </style>
+
 {%- if section.settings.hero_layout == 'full_width' and section.settings.hero_size == 'adapt' -%}
     {%- if section.settings.image.aspect_ratio == blank -%}
       {%- assign min_aspect_ratio = 2.0 -%}
@@ -83,12 +84,13 @@
   {%- else -%}
     <div class="gaurip hero hero--{{ section.settings.hero_size }} hero-{{ section.id }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
          id="Hero-{{ section.id }}"
+         data-src="{{ img_url }}"
          data-layout="{{ section.settings.hero_layout }}"
          {%- if section.settings.image -%}
-         data-bgset="{% include 'bgset', image: section.settings.image %}"
-         data-sizes="auto"
-         data-parent-fit="cover"
-         style="background-position: {{ section.settings.alignment }}; background-image: url({{ section.settings.image | img_url: '300x300' }});"
+            data-bgset="{% include 'bgset', image: section.settings.image %}"
+            data-sizes="auto"
+            data-parent-fit="cover"
+            style="background-position: {{ section.settings.alignment }}; background-image: url({{ section.settings.image | img_url: '1296x' }});"
          {%- endif -%}>
     {%- if section.settings.image == blank -%}
       <div class="placeholder-background">

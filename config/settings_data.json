@@ -75,6 +75,7 @@
     "checkout_error_color": "#e32c2b",
     "color_image_overlay_text": "#fff",
     "type_header_base_size": 26,
+    "type_base_size": 16,
     "sections": {
       "sidebar-menu": {
         "type": "sidebar-menu",
@@ -508,8 +509,8 @@
           "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
-          "hero_size": "x-large",
-          "text_size": "medium",
+          "hero_size": "medium",
+          "text_size": "large",
           "title": "V BASIC KIT",
           "text": "<p>Get ready for your daily vaginal routine.<\/p>",
           "button_label": "GET STARTED",
