@@ -2,7 +2,8 @@
 
 #btn_email_to_shopifyregister_and_newsletter {
   padding:10px 20px;
-  background-color:red;
+  background-color: {{ section.settings.btn_get_started_bg_color }};
+  color:{{ section.settings.btn_get_started_color }};
 }
 
 .input_box_color {
@@ -666,6 +667,40 @@
         "label": {
           "de": "Titel und Links",
           "en": "Shipping Type Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },    
+    {
+        "type": "color",
+        "id": "btn_get_started_bg_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Button Get Startd Background",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#0992f4"
+    },    
+    {
+        "type": "color",
+        "id": "btn_get_started_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Button Get Startd Text Color",
           "es": "Títulos y enlaces",
           "fr": "En-têtes et liens",
           "it": "Titoli e link",
