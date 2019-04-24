@@ -509,16 +509,18 @@
           "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
-          "hero_size": "medium",
+          "hero_size": "x-large",
           "text_size": "large",
           "title": "V BASIC KIT",
           "text": "<p>Get ready for your daily vaginal routine.<\/p>",
           "button_label": "GET STARTED",
           "kit_currency": "$",
           "kit_price": "35",
+          "shipping_type": "FREE SHIPPING",
           "button_link": "shopify:\/\/pages\/subscription",
           "email_textbox_background": "#68cfe0",
-          "email_text_color": "#fff"
+          "email_text_color": "#fff",
+          "shipping_type_color": "#ffffff"
         }
       },
       "1552607708117": {

@@ -1,11 +1,30 @@
 <style>
+
+#btn_email_to_shopifyregister_and_newsletter {
+  padding:10px 20px;
+  background-color:red;
+}
+
 .input_box_color {
     background-color:{{ section.settings.email_textbox_background }};
     color: {{ section.settings.email_text_color }};
+    border: 1px solid white;
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom:35px;
 }
 
 .input_box_color::placeholder{
     color: {{ section.settings.email_text_color }};
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.shipping_type_color {
+  color: {{ section.settings.shipping_type_color }};
+  margin-bottom: 10px;
 }
 </style>
 
@@ -50,9 +69,12 @@
           {%- if section.settings.kit_currency != blank and section.settings.kit_price != blank -%}
             <div>{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
           {%- endif -%}
+          {%- if section.settings.shipping_type != blank -%}
+            <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-shipping--large{% endif %} shipping_type_color">{{ section.settings.shipping_type }}</div>
+          {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
             <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
-            <a href="{{ section.settings.button_link }}" class="btn hero__btn">
+            <a href="{{ section.settings.button_link }}"  id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
               {{ section.settings.button_label | escape }}
             </a>
           {%- endif -%}
@@ -107,10 +129,13 @@
           {%- endif -%}                  
           {%- if section.settings.kit_currency != blank and section.settings.kit_price != blank -%}
             <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
+          {%- endif -%}          
+          {%- if section.settings.shipping_type != blank -%}
+            <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-shipping--large{% endif %} shipping_type_color">{{ section.settings.shipping_type }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
             <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
-            <a href="{{ section.settings.button_link }}" class="btn hero__btn">
+            <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
               {{ section.settings.button_label | escape }}
             </a>
           {%- endif -%}
@@ -558,6 +583,34 @@
       }
     },
     {
+      "type": "text",
+      "id": "shipping_type",
+      "label": {
+        "de": "Titel",
+        "en": "Shipping Type",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "nl": "Kop",
+        "pt-BR": "Título",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "de": "Foto mit überlegtem Text",
+        "en": "FREE SHIPPING",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      }
+    },
+    {
       "type": "url",
       "id": "button_link",
       "label": {
@@ -589,14 +642,30 @@
           "zh-TW": "標題和連結"
         },
         "default": "#68cfe0"
-    },
-    
+    },    
     {
         "type": "color",
         "id": "email_text_color",
         "label": {
           "de": "Titel und Links",
           "en": "Email Text Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#fff"
+    },
+    {
+        "type": "color",
+        "id": "shipping_type_color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Shipping Type Color",
           "es": "Títulos y enlaces",
           "fr": "En-têtes et liens",
           "it": "Titoli e link",
