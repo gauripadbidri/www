@@ -1,0 +1,5 @@
+{% assign sprReviews = product.metafields.spr.reviews %}
+{% if sprReviews != blank %}
+    <h1>Show Some PDA</h1>
+<div id="shopify-product-reviews" data-id="{{product.id}}">{{ sprReviews }}</div>
+{% endif %}

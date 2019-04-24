@@ -1,0 +1,119 @@
+<!--Justin W. @brandable-->
+<section class="video-hero video-hero-{{ section.id }}"
+         data-section-id="{{ section.id }}">
+    <div class="hero hero--main">
+          <video autoplay="true" class="js-switchVideoSrc is-playing" loop="true" muted="" playsinline="" src="{{ section.settings.video-link-url }}" webkit-playsinline=""></video>
+            <div class="hero__content hero__content--white js-scroll js-scroll--fade is-in-view is-past-half is-past-quarter is-past-bottom">
+        <div class="video-heading">
+          <h1 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1" style="color: {{ section.settings.color_heading }}; font-size:{{ section.settings.heading_font_size }}rem;">{{ section.settings.slide-title }}</h1>
+        </div>
+        <div class="video-tagline">
+          <h3 class="SectionHeader__SubHeading Heading u-h6" style="color: {{ section.settings.color_tagline }}; font-size: {{ section.settings.subheading_font_size }}rem;">{{ section.settings.slide-tagline }}</h3>
+        </div>
+        <a class="ButtonGroup__Item Button Button--secondary" href="{{ section.settings.slide-link-url }}" style="background-color: {{ section.settings.color_button }}; color: {{ section.settings.color_link }};">{{ section.settings.slide-link-title }}</a>
+      </div>
+      </div>
+</section>
+
+
+<style>
+  .video-hero-{{ section.id }} .button {
+        background: {{ section.settings.color_button }} !important;
+        border-color: {{ section.settings.color_button }} !important;
+        color: {{ section.settings.color_link }} !important;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Video Hero",
+	"class": "section--video-hero",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "2000 x 1100px recommended"
+        },
+        {
+          "type": "url",
+          "id": "video-link-url",
+          "label": "Local Video Link"
+        },
+        {
+          "type": "text",
+          "id": "slide-title",
+          "label": "Heading",
+          "default": "Video-Hero"
+        },{
+            "type": "range",
+            "id": "heading_font_size",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Heading Font Size",
+            "default": 3
+        }, 
+      {
+        "type": "color",
+        "id": "color_heading",
+        "label": "Heading Color",
+        "default": "#ffffff"
+      },
+        {
+          "type": "text",
+          "id": "slide-tagline",
+          "label": "Subheading"
+        }, {
+            "type": "range",
+            "id": "subheading_font_size",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Subheading Font Size",
+            "default": 2
+        },
+      {
+        "type": "color",
+        "id": "color_tagline",
+        "label": "Tagline Color",
+        "default": "#ffffff"
+      },
+        {
+          "type": "url",
+          "id": "slide-link-url",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "slide-link-title",
+          "label": "Button label",
+          "default": "Link to content"
+        },
+      {
+        "type": "color",
+        "id": "color_link",
+        "label": "Link Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_button",
+        "label": "Button Color",
+        "default": "#ffffff"
+      }
+      ],
+    "presets": [{
+      "name": "Video hero",
+      "category": "Video"
+    }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

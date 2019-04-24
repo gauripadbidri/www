@@ -1,0 +1,835 @@
+/* ====== Custom SCSS from Justin ====== */
+
+// COLORS =====================================================
+$color-white: #fff;
+$color-black: #222;
+$color-blue: #0097CE;
+$color-lightblue: #36C9FF;
+$color-pink: #FF40B4;
+$color-green: #38D430;
+$color-lightgreen: #52EF1C;
+$color-snow: #fafafa;
+$color-darkgrey: #525252;
+$color-trans: rgba(0, 0, 0, 0);
+
+// FONTS =====================================================
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:400,500,600,900');
+
+$heading: 'Saira Condensed',
+sans-serif;
+$body: 'Saira Condensed',
+sans-serif;
+
+h1,
+h2,
+h3,
+.Rte h3,
+h4,
+h5,
+h6,
+.Heading {
+  font-family: $heading;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h1 .Heading,
+h2 .Heading,
+.u-h1,
+.u-h2,
+.Rte h1,
+.Rte h2 {
+  font-weight: 900;
+  font-size: 2.1rem;
+  margin-bottom: 2.1rem;
+  letter-spacing: 1px;
+}
+
+h3,
+h4,
+h3 .Heading,
+h4 .Heading,
+.ArticleItem__Title,
+.ProductItem__Title,
+.SectionHeader__SubHeading,
+.u-h3,
+.u-h4 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+body,
+p,
+ol,
+ul,
+li {
+  font-family: $heading;
+  line-height: 1.2;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+strong {
+  text-transform: uppercase;
+}
+
+.Price {
+  color: $color-blue;
+}
+
+.Button {
+  padding: 3px 35px;
+  border: none;
+}
+
+.Button--primary {
+  border: 1px solid $color-blue;
+  color: $color-white;
+  background-color: $color-blue;
+
+  &:hover {
+    color: $color-lightblue;
+  }
+}
+
+.Button--secondary {
+  border: 1px solid $color-blue;
+  color: $color-white;
+  background-color: $color-blue;
+
+  &:hover {
+    color: $color-lightblue;
+  }
+}
+
+.Button {
+  &::before {
+    display: none;
+  }
+}
+
+.Cart__Checkout {
+  background-color: $color-blue;
+  color: white;
+}
+
+a[href*="/account/login"] {
+  display: none !important;
+}
+
+.SidebarMenu__Nav {
+  .Collapsible__Inner {
+    overflow: visible;
+    height: auto;
+  }
+}
+
+// RESPONSIVE =====================================================
+
+$tablet-min: 641px;
+$laptop-min: 1008px;
+$max-width: 2080px;
+
+// PADDINGS ====================================================
+
+
+// MARGINS =====================================================
+
+
+
+// GRADIENTS ===================================================
+
+@mixin gradient {
+
+  $time: 20s;
+
+  width: 100vw;
+  height: auto;
+  color: #fff;
+  background: linear-gradient(-45deg, $color-green, $color-blue, $color-pink);
+  background-size: 1000% 100%;
+  -webkit-animation: Gradient $time ease infinite;
+  -moz-animation: Gradient $time ease infinite;
+  animation: Gradient $time ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@mixin static_gradient {
+  background: linear-gradient(to right, $color-pink, $color-blue, $color-green);
+}
+
+// CUSTOM CSS =================================================
+
+// GLOBAL ================================
+
+.Button,
+.shopify-payment-button__button--unbranded,
+#shopify-product-reviews .spr-summary-actions-newreview,
+#shopify-product-reviews .spr-button-primary:not(input),
+#shopify-product-reviews input.spr-button-primary,
+#shopify-product-reviews .spr-pagination-prev>a,
+#shopify-product-reviews .spr-pagination-next>a {
+  transition: none !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-family: $body;
+
+  &:before {
+    transition: none !important;
+  }
+}
+
+.shopify-section--footer {
+  @include static_gradient;
+
+  .Footer {
+    background: $color-trans;
+    color: white;
+
+    .Heading {
+      color: white;
+    }
+
+    .Form__Input {
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+#shopify-section-announcement {
+  #section-announcement {
+
+    @include static_gradient;
+  }
+}
+
+.NewsletterPopup {
+  @include static_gradient;
+}
+
+.ProductItem__Title,
+ArticleItem__Title {
+  font-weight: 600 !important;
+}
+
+.FeatureText {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.Section {
+
+  .text-image-text {
+
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+      "right-top"
+      "left-img"
+      "left-top"
+      "right-img"
+      "left-bot"
+      "right-bot"
+      "button";
+    justify-items: center;
+    text-align: center;
+
+    .title-container {
+      grid-area: title;
+      justify-self: center;
+    }
+
+    .content-lt {
+      grid-area: left-top;
+    }
+
+    .image-l {
+      grid-area: left-img;
+    }
+
+    .content-lb {
+      grid-area: left-bot;
+    }
+
+    .content-rt {
+      grid-area: right-top;
+    }
+
+    .image-r {
+      grid-area: right-img;
+    }
+
+    .content-rb {
+      grid-area: right-bot;
+    }
+
+    .button-container {
+      grid-area: button;
+      justify-self: center;
+    }
+
+    .images {
+      width: 100%;
+    }
+
+    .Rte {
+      margin: 6% 17%;
+    }
+  }
+
+
+
+  @media (min-width: $laptop-min) {
+
+    .Container {
+      width: 70vw;
+    }
+
+    .two-columns {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "title title"
+        "left-top right-top"
+        "left-img right-img"
+        "left-bot right-bot"
+        "button button";
+      grid-column-gap: 5rem;
+    }
+
+    .Rte {
+      max-width: 14rem;
+    }
+  }
+}
+
+.video-hero {
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero--main {
+    max-height: calc(100vh - 65px);
+
+    height: 150vw;
+
+    .video {
+      width: 100%;
+      height: 100%;
+
+      &::before {
+        content: " ";
+        background-color: $color-lightblue;
+        opacity: .3;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+
+    video {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      max-width: 66.66667vh;
+      max-height: 150vw;
+      opacity: 1;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: opacity .4s;
+    }
+
+    .hero__content {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(-50%);
+      text-align: center;
+      box-sizing: border-box;
+      padding-left: 20px;
+      padding-right: 20px;
+      transition: opacity .8s cubic-bezier(.39, .575, .565, 1) .2s;
+      opacity: 1;
+
+      div {
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: 1600px) {
+        top: 45%;
+      }
+    }
+  }
+
+  @media screen and (min-width: $laptop-min) {
+    .hero--main {
+      position: relative;
+      overflow: hidden;
+      height: 56.25vw;
+      max-height: 1080px;
+    }
+  }
+}
+
+.icon-row-w-text {
+  .Container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+
+    .icons-container {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      justify-content: center;
+      height: auto;
+      margin: 1rem 0;
+
+      .icon-text-container {
+        flex: 1 150px;
+        text-align: center;
+        margin-bottom: 2rem;
+
+        img {
+          height: 100px;
+        }
+      }
+    }
+  }
+}
+
+.featured-bundle {
+  select {
+    color: initial;
+  }
+
+  .SectionFooter {
+    max-width: 400px;
+    margin: auto;
+
+    button {
+      margin: auto;
+    }
+  }
+}
+
+.rc_popup {
+  display: none !important;
+}
+
+.rc_select {
+  color: $color-black;
+}
+
+.Footer {
+
+  .Footer__Copyright {
+    margin: auto;
+  }
+
+  .Footer__Inner {
+
+    .Footer__Block--links {
+      h2 {
+        display: none;
+      }
+    }
+
+
+    @media (min-width: $laptop-min) {
+      width: 80vw;
+      margin: auto;
+      max-width: 1000px;
+
+      .Footer__Block {
+        flex-grow: 1;
+      }
+
+      .Footer__Block--newsletter {
+        flex-grow: 2;
+      }
+    }
+
+    form {
+      .Button {
+        background-color: $color-white;
+        color: $color-blue;
+      }
+    }
+  }
+}
+
+.video-container {
+  margin-bottom: 3rem;
+
+  .Button {
+    background-color: $color-blue;
+    color: $color-white;
+  }
+}
+
+#section-header {
+  .Icon--nav {
+    height: 25px;
+    width: 22px;
+  }
+}
+
+.bundle-product-info {
+
+  .ProductItem__Title {
+    margin-bottom: .3rem;
+  }
+
+  h2 {
+    &:last-child {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      font-weight: 500;
+    }
+  }
+}
+
+.Slideshow__ImageContainer {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.WalmartProducts {
+
+  .ProductItem__Title {
+    margin-bottom: .3rem;
+  }
+
+  h2 {
+    &:last-child {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      font-weight: 500;
+    }
+  }
+}
+
+  .ProductItem__Info {
+    .ProductItem__Title {
+      margin-bottom: .3rem;
+    }
+
+    h2 {
+      &:last-of-type {
+        font-size: 1rem;
+        margin: 0 0 1rem 0;
+        font-weight: 500;
+      }
+    }
+  }
+
+.icons-container-carousel {
+  width: 100%;
+
+  .previous {
+    left: 0;
+    top: 36%;
+  }
+
+  .next {
+    right: 0;
+    top: 36%;
+  }
+
+  .icon-text-container-caroucell {
+    padding: 2rem 3rem 0rem;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+  }
+
+  .flickity-viewport {
+    transition: height 0.5s;
+  }
+
+
+
+  @media (min-width: $laptop-min) {
+    .flickity-slider {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .icon-text-container-caroucell {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+// HOMEPAGE ==================================
+
+
+// SHOP ======================================
+
+
+// Product Page ==============================
+
+.Product {
+  .Product__Wrapper {
+
+    h1,
+    h2 {
+      margin-bottom: .5rem;
+    }
+
+    h2,
+    h3 {
+      font-weight: 500;
+      letter-spacing: 0px;
+      font-size: 1.7rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    h3 {
+      text-transform: inherit;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .shopify-product-reviews {
+      h1 {
+        text-align: center;
+      }
+    }
+
+
+    .ProductForm__AddToCart {
+      padding: 14px 28px;
+      width: 100%;
+    }
+
+    .shopify-payment-button__button {
+      display: none;
+    }
+
+    .ProductForm__Variants {
+      display: flex;
+      justify-content: center;
+
+      .ProductForm__QuantitySelector {
+        background-color: $color-blue;
+        color: $color-white;
+        font-weight: 900;
+
+        svg {
+          stroke-width: 3.5px;
+        }
+      }
+    }
+
+    .Product__ActionList,
+    .Product__QuickNav {
+      display: none;
+    }
+
+    .Product__Tabs {
+      .Collapsible {
+        border-top: 1px solid $color-blue;
+
+        &:last-child {
+          border-bottom: 1px solid $color-blue;
+        }
+
+        .Collapsible__Button {
+          font-size: 1.4rem;
+          font-weight: 900;
+
+          .Collapsible__Plus {
+            &::before {
+              height: 2px;
+            }
+
+            &::after {
+              width: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $laptop-min) {
+    .Product__Wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "main sidebar"
+        "main content"
+        "reviews reviews";
+      width: 100%;
+      max-width: $max-width;
+
+      .ProductMeta {
+        text-align: center;
+      }
+
+      .Product__Gallery {
+        grid-area: main;
+      }
+
+      .Product__InfoWrapper {
+        grid-area: sidebar;
+        position: relative;
+
+        .Product__Info {
+          position: static;
+          padding-bottom: 1rem;
+          padding-top: 50px;
+        }
+      }
+
+      .Product__Aside {
+        grid-area: content;
+        min-height: 0px !important;
+
+        .Product__Tabs {
+          margin-top: 2rem;
+        }
+      }
+
+      .shopify-product-reviews {
+        grid-area: reviews;
+
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.Kit {
+
+  .shopify-payment-button {
+    display: none;
+  }
+
+  .kit-product-image {
+    display: none;
+  }
+}
+
+#mc_embed_signup {
+
+  margin-top: 3rem;
+
+  #mc_embed_signup_scroll {
+    h2 {
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0px;
+      font-size: 1.7rem;
+      text-transform: none;
+    }
+
+    .mc-field-group {
+      width: 100%;
+
+      input {
+        font-family: $body;
+        border-radius: 0;
+        border-color: $color-blue;
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+
+  .clear {
+    text-align: center;
+
+    .button {
+      font-family: $body;
+      border-radius: 0;
+      background-color: $color-blue;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      padding: 14px 28px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+
+
+/* ====== End of Custom SCSS from Justin ====== */

@@ -1,0 +1,9 @@
+  <div class="product_image_container">
+    {%- for product in collections.all.products -%}
+    {% if product.tags contains title %}
+      <div class="kit-product-image" data-item="{{ product.handle }}">
+        <img src="{{ product | img_url: '1000x' }}">
+    </div>
+    {%- endif -%}
+    {%- endfor -%}
+</div>
