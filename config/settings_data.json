@@ -270,7 +270,7 @@
           "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
-          "hero_size": "x-large",
+          "hero_size": "medium",
           "text_size": "medium",
           "title": "V BASIC KIT",
           "text": "<p>Get ready for your daily vaginal routine.<\/p>",
@@ -622,6 +622,9 @@
         "settings": {
           "title": "Product kit collection",
           "layout_mode": "grid",
+          "show_product_info": true,
+          "show_sold_out": true,
+          "show_vendor": false,
           "grid_mobile_items_per_row": "2",
           "grid_desktop_items_per_row": 4
         }
