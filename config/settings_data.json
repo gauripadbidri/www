@@ -80,7 +80,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "",
+          "primary_menu": "main-menu",
           "secondary_menu": "main-menu",
           "show_social_media": true
         }

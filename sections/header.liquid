@@ -70,7 +70,7 @@ HEADER CONTENT
       --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
-      {%- unless use_sidebar_menu -%}
+     {%- unless use_sidebar_menu -%}
         {%- assign main_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
         {%- assign main_menu = linklists[main_menu_handle] -%}
 
@@ -249,7 +249,7 @@ HEADER CONTENT
         </nav>
 
         {{- currency_conversion_select -}}
-      {%- endunless -%}
+       {%- endunless -%}
     </div>
 
     {%- capture header_logo -%}
