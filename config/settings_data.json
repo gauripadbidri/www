@@ -4,7 +4,7 @@
     "text_color": "#0097ce",
     "text_light_color": "#36c9ff",
     "link_color": "#36c9ff",
-    "background": "#ffffff",
+    "background": "#fff",
     "light_background": "#ffffff",
     "product_on_sale_color": "#ff40b4",
     "button_background": "#0097ce",
@@ -58,9 +58,9 @@
     "social_linkedin": "",
     "social_snapchat": "",
     "social_fancy": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/android-icon-192x192.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/QV-OfficialLogo-2018-gradient.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
     "checkout_body_background_image": "",
@@ -73,14 +73,13 @@
     "checkout_accent_color": "#0097ce",
     "checkout_button_color": "#0097ce",
     "checkout_error_color": "#e32c2b",
-    "color_image_overlay_text": "#fff",
     "type_header_base_size": 26,
     "type_base_size": 16,
     "sections": {
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "",
+          "primary_menu": "main-menu-left",
           "secondary_menu": "main-menu",
           "show_social_media": true
         }
@@ -103,7 +102,7 @@
           "logo": "",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
-          "navigation_menu": "",
+          "navigation_menu": "main-menu-left",
           "navigation_style": "inline",
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
@@ -118,13 +117,13 @@
           "1552602046282": {
             "type": "links",
             "settings": {
-              "menu": ""
+              "menu": "footer-left"
             }
           },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": ""
+              "menu": "footer-right"
             }
           },
           "footer-2": {
@@ -251,8 +250,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "",
-              "mobile_image": "",
+              "image": "shopify:\/\/shop_images\/Homepage_Subbanner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Web_Subbanner2.jpg",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "So why use dirty ingredients? We don't.",
@@ -318,10 +317,10 @@
           "text_color": "#fff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "",
+          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "",
+          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "ADD QUEEN V TO YOUR ROUTINE",
           "link_url": "shopify:\/\/collections\/our-products",
@@ -450,7 +449,7 @@
           "1552416598996-0": {
             "type": "bundle",
             "settings": {
-              "product": "",
+              "product": "v-basic-kit",
               "title": ""
             }
           }
@@ -471,7 +470,7 @@
           "1552416619565-0": {
             "type": "bundle",
             "settings": {
-              "product": "",
+              "product": "v-busy-kit",
               "title": ""
             }
           }
@@ -485,11 +484,15 @@
           "choose_image": "3"
         }
       },
+      "imageOverlay": {
+        "type": "image-overlay",
+        "settings": {
+        }
+      },
       "1552603766602": {
         "type": "video-hero",
-        "disabled": true,
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-0246.png",
           "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
           "slide-title": "Self-Care for Everywhere",
           "heading_font_size": 3,
@@ -503,33 +506,13 @@
           "color_button": "#0097ce"
         }
       },
-      "imageOverlay": {
-        "type": "image-overlay",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
-          "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "x-large",
-          "text_size": "large",
-          "title": "V BASIC KIT",
-          "text": "<p>Get ready for your daily vaginal routine.<\/p>",
-          "button_label": "GET STARTED",
-          "kit_currency": "$",
-          "kit_price": "35",
-          "shipping_type": "FREE SHIPPING",
-          "button_link": "shopify:\/\/pages\/subscription",
-          "email_textbox_background": "#68cfe0",
-          "email_text_color": "#fff",
-          "shipping_type_color": "#ffffff"
-        }
-      },
       "1552607708117": {
         "type": "blog-w-video",
         "blocks": {
           "1552607708117-0": {
             "type": "blog",
             "settings": {
-              "blog": ""
+              "blog": "our-blog"
             }
           }
         },
@@ -610,7 +593,7 @@
           "1553108836073-0": {
             "type": "collection",
             "settings": {
-              "collection": "",
+              "collection": "our-products",
               "title": "",
               "grid_items_count": 50,
               "button_text": "View all products"
@@ -634,7 +617,7 @@
       "video-hero": {
         "type": "video-hero",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-0246.png",
           "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
           "slide-title": "Self-Care for Everywhere",
           "heading_font_size": 3,
@@ -656,10 +639,10 @@
           "text_color": "#fff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "",
+          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "",
+          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "ADD QUEEN V TO YOUR ROUTINE",
           "link_url": "https:\/\/www.walmart.com\/store\/finder",
@@ -826,7 +809,7 @@
           "1553623108782": {
             "type": "collection",
             "settings": {
-              "collection": "",
+              "collection": "available-at-walmart-1",
               "title": "",
               "grid_items_count": 50,
               "button_text": ""
@@ -855,8 +838,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "",
-              "mobile_image": "",
+              "image": "shopify:\/\/shop_images\/Homepage_Subbanner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Web_Subbanner2.jpg",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "So why use dirty ingredients? We don't.",
@@ -906,6 +889,15 @@
           "reviews_enabled": true,
           "featured_image_size": "large"
         }
+      },
+      "product-kit-collection": {
+        "type": "product-kit-collection",
+        "settings": {
+          "title": "Product kit collection",
+          "layout_mode": "grid",
+          "grid_mobile_items_per_row": "2",
+          "grid_desktop_items_per_row": 4
+        }
       }
     },
     "content_for_index": [
@@ -919,7 +911,8 @@
       "1552070312069",
       "1552607708117",
       "1552070321786",
-      "1549048078762"
+      "1549048078762",
+      "product-kit-collection"
     ]
   },
   "presets": {
@@ -929,7 +922,6 @@
       "text_light_color": "#6a6a6a",
       "link_color": "#6a6a6a",
       "background": "#efefef",
-      "color_image_overlay_text": "#fff",
       "light_background": "#ffffff",
       "product_on_sale_color": "#f94c43",
       "button_background": "#1c1b1b",
