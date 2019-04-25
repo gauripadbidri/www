@@ -80,7 +80,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "main-menu",
+          "primary_menu": "",
           "secondary_menu": "main-menu",
           "show_social_media": true
         }
@@ -233,52 +233,6 @@
           "apparition_delay": 5
         }
       },
-      "1549048078762": {
-        "type": "instagram-feed",
-        "settings": {
-          "subheading": "",
-          "title": "Follow us",
-          "access_token": "4473772344.6a7999e.57e79b8d85c84903984f62173b123d02",
-          "image_count": 15,
-          "button_text": "",
-          "button_url": ""
-        }
-      },
-      "1549926237969": {
-        "type": "slideshow",
-        "blocks": {
-          "1549926237969-0": {
-            "type": "image",
-            "settings": {
-              "video-link-url": "",
-              "image": "",
-              "mobile_image": "",
-              "apply_overlay": false,
-              "content_position": "middleCenter",
-              "subheading": "So why use dirty ingredients? We don't.",
-              "title": "Vagina is not a dirty word.",
-              "button_1_text": "View All Products",
-              "button_1_link": "shopify:\/\/collections\/our-products",
-              "button_2_text": "",
-              "button_2_link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1549926237969-0"
-        ],
-        "settings": {
-          "show_fullscreen": true,
-          "show_arrow": false,
-          "autoplay": true,
-          "cycle_speed": 5,
-          "text_color": "#ffffff",
-          "button_color": "#0097ce",
-          "button_color_hover": "#36c9ff",
-          "heading_font_size": 3,
-          "subheading_font_size": 2
-        }
-      },
       "blog-template": {
         "type": "blog-template",
         "settings": {
@@ -310,188 +264,13 @@
           "show_share_buttons": true
         }
       },
-      "1552009889546": {
-        "type": "text-image-text",
-        "settings": {
-          "title": "LET’S TALK ABOUT YOU AND V",
-          "subheading": "",
-          "text_color": "#fff",
-          "background_color": "#ff40b4",
-          "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "",
-          "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
-          "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "",
-          "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
-          "link_text": "ADD QUEEN V TO YOUR ROUTINE",
-          "link_url": "shopify:\/\/collections\/our-products",
-          "color_link": "#ff40b4",
-          "color_button": "#ffffff"
-        }
-      },
-      "1552070312069": {
-        "type": "icon-row-w-text",
-        "blocks": {
-          "1552416721743": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/forwomenbywomen.svg?2661",
-              "caption": "for women by women"
-            }
-          },
-          "1552416724166": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/USA.svg?2661",
-              "caption": "manufactured in the USA"
-            }
-          },
-          "1552416725708": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/gynecologist.svg?2661",
-              "caption": "gynecologist-recommended"
-            }
-          },
-          "1552416727012": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/phbalanced.svg?2661",
-              "caption": "pH-balanced"
-            }
-          },
-          "1552416728441": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/betterforyouingredients.svg?2661",
-              "caption": "better-for-you ingredients"
-            }
-          },
-          "1552495888094": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/dermatologist.svg?2661",
-              "caption": "dermatologist-recommended"
-            }
-          }
-        },
-        "block_order": [
-          "1552416721743",
-          "1552416724166",
-          "1552416725708",
-          "1552416727012",
-          "1552416728441",
-          "1552495888094"
-        ],
-        "settings": {
-          "title": "No Shame In Our Game",
-          "subheading": "",
-          "background_color": "#0097ce",
-          "button_color": "#fff",
-          "row_icons": "shame",
-          "order": "bottom",
-          "button_text": "Let's Get Started",
-          "button_link": "shopify:\/\/collections\/our-products"
-        }
-      },
-      "1552070321786": {
-        "type": "icon-row-w-text",
-        "blocks": {
-          "1552416759213": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/BETCHES.svg?2661",
-              "caption": "\"It’s basically the Glossier of vaginas.\""
-            }
-          },
-          "1552416761366": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/BUZZFEED.svg?2661",
-              "caption": "\"I never write reviews but I was surprised by how good it was.\""
-            }
-          },
-          "1552416762683": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/FORBES.svg?2661",
-              "caption": "\"Queen V is taking on the stigma associated with feminine hygiene.\""
-            }
-          },
-          "1552496107422": {
-            "type": "icon",
-            "settings": {
-              "svg": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/BUSTLE.svg?2661",
-              "caption": "\"An in-your-face, vagina-positive, product line.\""
-            }
-          }
-        },
-        "block_order": [
-          "1552416759213",
-          "1552416761366",
-          "1552416762683",
-          "1552496107422"
-        ],
-        "settings": {
-          "title": "As Seen In...",
-          "subheading": "",
-          "background_color": "#38d430",
-          "button_color": "#fff",
-          "row_icons": "as-seen",
-          "order": "top",
-          "button_text": "",
-          "button_link": ""
-        }
-      },
-      "1552416598996": {
-        "type": "featured-bundle",
-        "disabled": true,
-        "blocks": {
-          "1552416598996-0": {
-            "type": "bundle",
-            "settings": {
-              "product": "",
-              "title": ""
-            }
-          }
-        },
-        "block_order": [
-          "1552416598996-0"
-        ],
-        "settings": {
-          "title": "",
-          "layout_mode": "carousel",
-          "choose_image": "1"
-        }
-      },
-      "1552416619565": {
-        "type": "featured-bundle",
-        "disabled": true,
-        "blocks": {
-          "1552416619565-0": {
-            "type": "bundle",
-            "settings": {
-              "product": "",
-              "title": ""
-            }
-          }
-        },
-        "block_order": [
-          "1552416619565-0"
-        ],
-        "settings": {
-          "title": "",
-          "layout_mode": "carousel",
-          "choose_image": "3"
-        }
-      },
       "imageOverlay": {
         "type": "image-overlay",
         "settings": {
           "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
-          "hero_size": "x-large",
+          "hero_size": "medium",
           "text_size": "medium",
           "title": "V BASIC KIT",
           "text": "<p>Get ready for your daily vaginal routine.<\/p>",
@@ -505,50 +284,6 @@
           "shipping_type_color": "#fff",
           "btn_get_started_bg_color": "#0992f4",
           "btn_get_started_color": "#fff"
-        }
-      },
-      "1552603766602": {
-        "type": "video-hero",
-        "disabled": true,
-        "settings": {
-          "image": "",
-          "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
-          "slide-title": "Self-Care for Everywhere",
-          "heading_font_size": 3,
-          "color_heading": "#ffffff",
-          "slide-tagline": "V on Top of your Health with our Daily Essentials",
-          "subheading_font_size": 1,
-          "color_tagline": "#ffffff",
-          "slide-link-url": "shopify:\/\/collections\/our-products",
-          "slide-link-title": "Let's Get Started",
-          "color_link": "#ffffff",
-          "color_button": "#0097ce"
-        }
-      },
-      "1552607708117": {
-        "type": "blog-w-video",
-        "blocks": {
-          "1552607708117-0": {
-            "type": "blog",
-            "settings": {
-              "blog": ""
-            }
-          }
-        },
-        "block_order": [
-          "1552607708117-0"
-        ],
-        "settings": {
-          "subheading": "",
-          "title": "Our Blog",
-          "show_category": false,
-          "button_link": "shopify:\/\/blogs\/our-blog",
-          "button_text": "View all articles",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=00ua8lHP1y4",
-          "video_heading": "TASTE TESTING LUBES",
-          "video_text": "Our team taste tasted flavored lubes and it didn't go as well as we thought...",
-          "video_button_url": "https:\/\/www.youtube.com\/watch?v=00ua8lHP1y4",
-          "video_button_text": "View Video"
         }
       },
       "product-template-custom": {
@@ -604,33 +339,6 @@
           "tab_page_2_handle": "",
           "reviews_enabled": true,
           "featured_image_size": "large"
-        }
-      },
-      "1553108836073": {
-        "type": "featured-collections",
-        "blocks": {
-          "1553108836073-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "title": "",
-              "grid_items_count": 50,
-              "button_text": "View all products"
-            }
-          }
-        },
-        "block_order": [
-          "1553108836073-0"
-        ],
-        "settings": {
-          "title": "",
-          "layout_mode": "carousel",
-          "show_product_info": true,
-          "show_sold_out": false,
-          "show_vendor": false,
-          "show_color_swatch": false,
-          "grid_mobile_items_per_row": "2",
-          "grid_desktop_items_per_row": 4
         }
       },
       "video-hero": {
@@ -921,16 +629,6 @@
     },
     "content_for_index": [
       "imageOverlay",
-      "1552603766602",
-      "1553108836073",
-      "1552416598996",
-      "1552009889546",
-      "1552416619565",
-      "1549926237969",
-      "1552070312069",
-      "1552607708117",
-      "1552070321786",
-      "1549048078762",
       "product-kit-collection"
     ]
   },
