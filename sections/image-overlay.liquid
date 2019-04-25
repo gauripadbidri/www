@@ -26,7 +26,6 @@
 
 .shipping_type_color {
   color: {{ section.settings.shipping_type_color }};
-  margin-bottom: 10px;
 }
 </style>
 
@@ -69,10 +68,10 @@
             <div class="marginBottom20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.text }}</div>
           {%- endif -%}         
           {%- if section.settings.kit_currency != blank and section.settings.kit_price != blank -%}
-            <div>{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
+            <div class="marginTop20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
           {%- endif -%}
            {%- if section.settings.shipping_type != blank -%}
-            <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} shipping_type_color">{{ section.settings.shipping_type }}</div>
+            <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom20 shipping_type_color">{{ section.settings.shipping_type }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
             <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
@@ -130,10 +129,10 @@
             <div class="rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.text }}</div>
           {%- endif -%}                  
           {%- if section.settings.kit_currency != blank and section.settings.kit_price != blank -%}
-            <div class="marginBottom20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
+            <div class="marginTop20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
           {%- endif -%}
            {%- if section.settings.shipping_type != blank -%}
-            <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} shipping_type_color">{{ section.settings.shipping_type }}</div>
+            <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom20 shipping_type_color">{{ section.settings.shipping_type }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
             <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
