@@ -115,16 +115,10 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "1552602046282": {
-            "type": "links",
-            "settings": {
-              "menu": ""
-            }
-          },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": ""
+              "menu": "custom-footer-menu"
             }
           },
           "footer-2": {
@@ -136,7 +130,6 @@
           }
         },
         "block_order": [
-          "1552602046282",
           "footer-1",
           "footer-2"
         ],
@@ -269,8 +262,8 @@
         "settings": {
           "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "medium",
+          "hero_layout": "fixed_width",
+          "hero_size": "x-large",
           "text_size": "medium",
           "title": "V BASIC KIT",
           "text": "<p>Get ready for your daily vaginal routine.<\/p>",
@@ -619,12 +612,23 @@
       },
       "product-kit-collection": {
         "type": "product-kit-collection",
+        "blocks": {
+          "1556192577918": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "title": "",
+              "grid_items_count": 8,
+              "button_text": "View all products"
+            }
+          }
+        },
+        "block_order": [
+          "1556192577918"
+        ],
         "settings": {
           "title": "Product kit collection",
           "layout_mode": "grid",
-          "show_product_info": true,
-          "show_sold_out": true,
-          "show_vendor": false,
           "grid_mobile_items_per_row": "2",
           "grid_desktop_items_per_row": 4
         }
