@@ -1,0 +1,132 @@
+<div data-section-id="{{ section.id }}" data-section-type="hero-section">
+    <div class="row">
+        <div class="step-title"><h1>{{section.settings.step-title}}</h1>
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": {
+      "de": "Foto mit überlegtem Text",
+      "en": "Step One Settings",
+      "es": "Imagen con texto",
+      "fr": "Image avec texte",
+      "it": "Immagine con testo",
+      "ja": "テキストオーバーレイ付き画像",
+      "nl": "Foto met tekstoverlay",
+      "pt-BR": "Imagem com texto",
+      "zh-CN": "带文本叠加的图片",
+      "zh-TW": "附文字疊加的圖片"
+    },
+    "class": "index-section index-section--flush",
+    "settings":  [
+    {
+      "type": "text",
+      "id": "step-title",
+      "label": {
+        "de": "Foto",
+        "en": "Step One",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      },
+      "default": {
+        "de": "Foto mit überlegtem Text",
+        "en": "Step One Settings",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      }
+    },
+    {
+        "type": "select",
+        "id": "title_text_size",
+        "label": {
+          "de": "Textgröße",
+          "en": "Title Text size",
+          "es": "Tamaño del texto",
+          "fr": "Taille du texte",
+          "it": "Dimensione testo",
+          "ja": "文字サイズ",
+          "nl": "Tekengrootte",
+          "pt-BR": "Tamanho do texto",
+          "zh-CN": "文本大小",
+          "zh-TW": "文字尺寸"
+        },
+        "default": "medium",
+        "options": [
+          {
+            "label": {
+              "de": "Mitte",
+              "en": "Medium",
+              "es": "Mediano",
+              "fr": "Moyenne",
+              "it": "Medium",
+              "ja": "中",
+              "nl": "Gemiddeld",
+              "pt-BR": "Médio",
+              "zh-CN": "中等",
+              "zh-TW": "中等"
+            },
+            "value": "medium"
+          },
+          {
+            "label": {
+              "de": "Groß",
+              "en": "Large",
+              "es": "Grande",
+              "fr": "Grande",
+              "it": "Large",
+              "ja": "大",
+              "nl": "Groot",
+              "pt-BR": "Grande",
+              "zh-CN": "大",
+              "zh-TW": "大型"
+            },
+            "value": "large"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Foto mit überlegtem Text",
+        "en": "V BASIC KIT",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      },
+      "category": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      }
+    }
+  ]
+}
+{% endschema %}

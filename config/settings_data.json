@@ -629,8 +629,31 @@
         "settings": {
           "title": "Product kit collection",
           "layout_mode": "grid",
+          "show_product_info": true,
+          "show_sold_out": true,
+          "show_vendor": false,
           "grid_mobile_items_per_row": "2",
           "grid_desktop_items_per_row": 4
+        }
+      },
+      "step-one": {
+        "type": "step-one",
+        "settings": {
+          "step-title": "STEP ONE"
+        }
+      },
+      "subscription-content": {
+        "type": "subscription-content",
+        "settings": {
+          "gauri_color_text": "#3d4246",
+          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+        }
+      },
+      "subscription-footer": {
+        "type": "subscription-footer",
+        "settings": {
+          "show_share_buttons": true,
+          "social_message": "Spread the word"
         }
       }
     },
