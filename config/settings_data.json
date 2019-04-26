@@ -639,7 +639,8 @@
       "step-one": {
         "type": "step-one",
         "settings": {
-          "step-title": "STEP ONE"
+          "step-title": "STEP ONE",
+          "title_text_size": "medium"
         }
       },
       "subscription-content": {
