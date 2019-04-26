@@ -12410,7 +12410,7 @@ $duration: .4s;
     100% { height: $checkbox-height * 1.2; }
 }
 
-input[type=checkbox]{
+input[type=radio]{
     display:none;
 }
 
@@ -12473,7 +12473,7 @@ input[type=checkbox]{
     }
 }
 
-input[type=checkbox]:checked + .check-box,
+input[type=radio]:checked + .check-box,
 .check-box.checked{
     border-color:$unchecked-color;
     
@@ -12492,5 +12492,11 @@ input[type=checkbox]:checked + .check-box,
         -webkit-animation: dothatopcheck $duration ease 0s forwards;
         animation: dothatopcheck $duration ease 0s forwards;
     }
+}
+
+/*Step One Styles*/
+
+.marginLeft20 {
+  margin-left:20px;
 }
 
