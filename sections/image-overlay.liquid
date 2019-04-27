@@ -1,8 +1,5 @@
 <style>
 
-  .marginBottom40 {
-    margin-bottom:40px;
-  }
 
   #btn_email_to_shopifyregister_and_newsletter {
     padding:10px 50px;
@@ -74,9 +71,10 @@
               <div class="marginTop20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
             {%- endif -%}
              {%- if section.settings.shipping_type != blank -%}
-              <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom40 shipping_type_color">{{ section.settings.shipping_type }}</div>
+              <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom20 shipping_type_color">{{ section.settings.shipping_type }}</div>
             {%- endif -%}
             {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+              <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
               <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
                 {{ section.settings.button_label | escape }}
               </a>
@@ -134,9 +132,10 @@
               <div class="marginTop20 rte-setting mega-subtitle mega-subtitle--{{section.settings.text_size}}">{{ section.settings.kit_currency }}{{ section.settings.kit_price }}</div>
             {%- endif -%}
              {%- if section.settings.shipping_type != blank -%}
-              <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom40 shipping_type_color">{{ section.settings.shipping_type }}</div>
+              <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom20 shipping_type_color">{{ section.settings.shipping_type }}</div>
             {%- endif -%}
             {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+              <div><input type="text" class="input_box_color" id="email_to_shopifyregister_and_newsletter" placeholder="Enter your email address"/></div>
               <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
                 {{ section.settings.button_label | escape }}
               </a>

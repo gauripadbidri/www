@@ -58,9 +58,9 @@
     "social_linkedin": "",
     "social_snapchat": "",
     "social_fancy": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/android-icon-192x192.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/QV-OfficialLogo-2018-gradient.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
     "checkout_body_background_image": "",
@@ -80,7 +80,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "",
+          "primary_menu": "main-menu-left",
           "secondary_menu": "main-menu",
           "show_social_media": true
         }
@@ -103,7 +103,7 @@
           "logo": "",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
-          "navigation_menu": "",
+          "navigation_menu": "main-menu-left",
           "navigation_style": "inline",
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
@@ -115,10 +115,16 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "1552602046282": {
+            "type": "links",
+            "settings": {
+              "menu": "footer-left"
+            }
+          },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": "custom-footer-menu"
+              "menu": "footer-right"
             }
           },
           "footer-2": {
@@ -130,6 +136,7 @@
           }
         },
         "block_order": [
+          "1552602046282",
           "footer-1",
           "footer-2"
         ],
@@ -260,23 +267,6 @@
       "imageOverlay": {
         "type": "image-overlay",
         "settings": {
-          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
-          "alignment": "center",
-          "hero_layout": "fixed_width",
-          "hero_size": "x-large",
-          "text_size": "medium",
-          "title": "V BASIC KIT",
-          "text": "<p>Get ready for your daily vaginal routine.<\/p>",
-          "button_label": "LET'S GET STARTED",
-          "kit_currency": "$",
-          "kit_price": "35",
-          "shipping_type": "FREE SHIPPING",
-          "button_link": "shopify:\/\/pages\/subscription",
-          "email_textbox_background": "#68cfe0",
-          "email_text_color": "#fff",
-          "shipping_type_color": "#fff",
-          "btn_get_started_bg_color": "#0992f4",
-          "btn_get_started_color": "#fff"
         }
       },
       "product-template-custom": {
@@ -337,7 +327,7 @@
       "video-hero": {
         "type": "video-hero",
         "settings": {
-          "image": "",
+          "image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-0246.png",
           "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
           "slide-title": "Self-Care for Everywhere",
           "heading_font_size": 3,
@@ -359,10 +349,10 @@
           "text_color": "#fff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "",
+          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "",
+          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "ADD QUEEN V TO YOUR ROUTINE",
           "link_url": "https:\/\/www.walmart.com\/store\/finder",
@@ -529,7 +519,7 @@
           "1553623108782": {
             "type": "collection",
             "settings": {
-              "collection": "",
+              "collection": "available-at-walmart-1",
               "title": "",
               "grid_items_count": 50,
               "button_text": ""
@@ -558,8 +548,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "",
-              "mobile_image": "",
+              "image": "shopify:\/\/shop_images\/Homepage_Subbanner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Web_Subbanner2.jpg",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "So why use dirty ingredients? We don't.",
@@ -612,20 +602,6 @@
       },
       "product-kit-collection": {
         "type": "product-kit-collection",
-        "blocks": {
-          "1556192577918": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "title": "",
-              "grid_items_count": 8,
-              "button_text": "View all products"
-            }
-          }
-        },
-        "block_order": [
-          "1556192577918"
-        ],
         "settings": {
           "title": "Product kit collection",
           "layout_mode": "grid",
@@ -634,27 +610,6 @@
           "show_vendor": false,
           "grid_mobile_items_per_row": "2",
           "grid_desktop_items_per_row": 4
-        }
-      },
-      "step-one": {
-        "type": "step-one",
-        "settings": {
-          "step-title": "STEP ONE",
-          "title_text_size": "medium"
-        }
-      },
-      "subscription-content": {
-        "type": "subscription-content",
-        "settings": {
-          "gauri_color_text": "#3d4246",
-          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
-        }
-      },
-      "subscription-footer": {
-        "type": "subscription-footer",
-        "settings": {
-          "show_share_buttons": true,
-          "social_message": "Spread the word"
         }
       }
     },
