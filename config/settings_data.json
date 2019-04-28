@@ -118,13 +118,13 @@
           "1552602046282": {
             "type": "links",
             "settings": {
-              "menu": ""
+              "menu": "custom-footer-menu"
             }
           },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": ""
+              "menu": "custom-footer-menu"
             }
           },
           "footer-2": {
