@@ -118,13 +118,13 @@
           "1552602046282": {
             "type": "links",
             "settings": {
-              "menu": "custom-footer-menu"
+              "menu": ""
             }
           },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": "custom-footer-menu"
+              "menu": ""
             }
           },
           "footer-2": {
@@ -901,7 +901,7 @@
       "image-overlay": {
         "type": "image-overlay",
         "settings": {
-          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
+          "image": "shopify:\/\/shop_images\/V-Basic-Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "medium",
