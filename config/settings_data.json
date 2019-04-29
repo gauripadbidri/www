@@ -923,12 +923,6 @@
       "custom-carousal": {
         "type": "custom-carousal",
         "settings": {
-          "step-title": "STEP 1",
-          "title-color": "#0097ce",
-          "question-color": "#0097ce",
-          "question-title": "What is your typical hygiene routine?",
-          "title_text_size": "medium",
-          "question_text_size": "medium"
         }
       },
       "subscription-content": {
@@ -943,6 +937,27 @@
         "settings": {
           "show_share_buttons": true,
           "social_message": "Spread the word"
+        }
+      },
+      "step-one": {
+        "type": "step-one",
+        "settings": {
+          "step-title": "STEP 1",
+          "title-color": "#0097ce",
+          "question-color": "#0097ce",
+          "question-title": "What is your typical hygiene routine?",
+          "title_text_size": "medium",
+          "question_text_size": "medium",
+          "option-information-text-size": "medium",
+          "select-options-1": "CLEAN QUEEN",
+          "select-options-1-description": "Receive your kit every month.",
+          "select-options-1-info-1": "You could spend hours getting ready.",
+          "select-options-1-info-2": "You run out of products frequently.",
+          "select-options-1-info-3": "You take supplements daily.",
+          "select-options-2": "PRETTY CLEAN",
+          "select-options-2-description": "Receive your kit every 2 months.",
+          "select-options-3-description": "Receive your kit every 3 months.",
+          "select-options-3": "CLEAN ENOUGH"
         }
       }
     },

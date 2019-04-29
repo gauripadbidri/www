@@ -10,28 +10,45 @@
         </div>
 
         <div class="marginTop40 clearBoth">
-            <div class="width30" style="float:left;">
+            <div class="width30 marginTop40" style="float:left;">
                 <input name="hygeine" type="radio" id="cbtest1" />
                 <label for="cbtest1" class="check-box"></label>     
-                <div class="clearBoth marginTop40">
-                    <label>CLEAN QUEEN</label> 
+                <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
+                    <label>{{section.settings.select-options-1}}</label> 
                 </div>
-                <div class="clearBoth marginTop40">
-                    <label>CLEAN QUEEN</label> 
+                <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
+                    <label>{{section.settings.select-options-1-description}}</label> 
+                </div>
+                <div style="text-align:left; margin-left:18%;">
+                  <div class="clearBoth marginTop40 info-text-{{section.settings.option-information-text-size}}">
+                      <span class="step-one-tick" style="color: {{section.settings.option-1-tick-color}}">&#10003;</span><label>{{section.settings.select-options-1-info-1}}</label> 
+                  </div>
+                  <div class="clearBoth marginTop20 info-text-{{section.settings.option-information-text-size}}"> 
+                      <span class="step-one-tick" style="color: {{section.settings.option-1-tick-color}}">&#10003;</span><label>{{section.settings.select-options-1-info-2}}</label> 
+                  </div> 
+                  <div class="clearBoth marginTop20 info-text-{{section.settings.option-information-text-size}}"> 
+                      <span class="step-one-tick" style="color: {{section.settings.option-1-tick-color}}">&#10003;</span><label>{{section.settings.select-options-1-info-3}}</label> 
+                  </div>
                 </div>
             </div>          
-            <div class="width30" style="float:left;">
+            <div class="width30 marginTop40" style="float:left;">
                 <input name="hygeine" type="radio" id="cbtest2" />
                 <label for="cbtest2" class="check-box"></label>
-                <div class="clearBoth marginTop40">
-                    <label>PRETTY CLEAN</label> 
+                <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
+                    <label>{{section.settings.select-options-2}}</label> 
+                </div>
+                <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
+                    <label>{{section.settings.select-options-2-description}}</label> 
                 </div>
             </div>
-            <div class="width30" style="float:left;"> 
+            <div class="width30 marginTop40" style="float:left;"> 
                 <input name="hygeine" type="radio" id="cbtest3" />
                 <label for="cbtest3" class="check-box"></label>
-                <div class="clearBoth marginTop40">
-                    <label>CLEAN ENOUGH</label>
+                <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
+                    <label>{{section.settings.select-options-3}}</label>
+                </div>
+                <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
+                    <label>{{section.settings.select-options-3-description}}</label> 
                 </div>
             </div>
         </div>
@@ -99,6 +116,57 @@
         },
         "default": "#0097ce"
     },
+    {
+      "type": "color",
+      "id": "option-1-tick-color",
+      "label": {
+        "de": "Titel und Links",
+        "en": "Option 1 Tick Color",
+        "es": "Títulos y enlaces",
+        "fr": "En-têtes et liens",
+        "it": "Titoli e link",
+        "ja": "見出しとリンク",
+        "nl": "Koppen en links",
+        "pt-BR": "Títulos e links",
+        "zh-CN": "标题和链接",
+        "zh-TW": "標題和連結"
+      },
+      "default": "#0097ce"
+  },
+  {
+    "type": "color",
+    "id": "option-2-tick-color",
+    "label": {
+      "de": "Titel und Links",
+      "en": "Option 2 Tick Color",
+      "es": "Títulos y enlaces",
+      "fr": "En-têtes et liens",
+      "it": "Titoli e link",
+      "ja": "見出しとリンク",
+      "nl": "Koppen en links",
+      "pt-BR": "Títulos e links",
+      "zh-CN": "标题和链接",
+      "zh-TW": "標題和連結"
+    },
+    "default": "#0097ce"
+},
+{
+  "type": "color",
+  "id": "option-3-tick-color",
+  "label": {
+    "de": "Titel und Links",
+    "en": "Option 3 Tick Color",
+    "es": "Títulos y enlaces",
+    "fr": "En-têtes et liens",
+    "it": "Titoli e link",
+    "ja": "見出しとリンク",
+    "nl": "Koppen en links",
+    "pt-BR": "Títulos e links",
+    "zh-CN": "标题和链接",
+    "zh-TW": "標題和連結"
+  },
+  "default": "#0097ce"
+},
     {
         "type": "color",
         "id": "question-color",
@@ -241,6 +309,404 @@
             "value": "large"
           }
         ]
+      },
+      {
+        "type": "select",
+        "id": "option-text-size",
+        "label": {
+          "de": "Textgröße",
+          "en": "Options Text Size",
+          "es": "Tamaño del texto",
+          "fr": "Taille du texte",
+          "it": "Dimensione testo",
+          "ja": "文字サイズ",
+          "nl": "Tekengrootte",
+          "pt-BR": "Tamanho do texto",
+          "zh-CN": "文本大小",
+          "zh-TW": "文字尺寸"
+        },
+        "default": "medium",
+        "options": [
+          {
+            "label": {
+              "de": "Mitte",
+              "en": "Medium",
+              "es": "Mediano",
+              "fr": "Moyenne",
+              "it": "Medium",
+              "ja": "中",
+              "nl": "Gemiddeld",
+              "pt-BR": "Médio",
+              "zh-CN": "中等",
+              "zh-TW": "中等"
+            },
+            "value": "medium"
+          },
+          {
+            "label": {
+              "de": "Groß",
+              "en": "Large",
+              "es": "Grande",
+              "fr": "Grande",
+              "it": "Large",
+              "ja": "大",
+              "nl": "Groot",
+              "pt-BR": "Grande",
+              "zh-CN": "大",
+              "zh-TW": "大型"
+            },
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "option-description-size",
+        "label": {
+          "de": "Textgröße",
+          "en": "Options Description Size",
+          "es": "Tamaño del texto",
+          "fr": "Taille du texte",
+          "it": "Dimensione testo",
+          "ja": "文字サイズ",
+          "nl": "Tekengrootte",
+          "pt-BR": "Tamanho do texto",
+          "zh-CN": "文本大小",
+          "zh-TW": "文字尺寸"
+        },
+        "default": "medium",
+        "options": [
+          {
+            "label": {
+              "de": "Mitte",
+              "en": "Medium",
+              "es": "Mediano",
+              "fr": "Moyenne",
+              "it": "Medium",
+              "ja": "中",
+              "nl": "Gemiddeld",
+              "pt-BR": "Médio",
+              "zh-CN": "中等",
+              "zh-TW": "中等"
+            },
+            "value": "medium"
+          },
+          {
+            "label": {
+              "de": "Groß",
+              "en": "Large",
+              "es": "Grande",
+              "fr": "Grande",
+              "it": "Large",
+              "ja": "大",
+              "nl": "Groot",
+              "pt-BR": "Grande",
+              "zh-CN": "大",
+              "zh-TW": "大型"
+            },
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "option-information-text-size",
+        "label": {
+          "de": "Textgröße",
+          "en": "Option Information  Text size",
+          "es": "Tamaño del texto",
+          "fr": "Taille du texte",
+          "it": "Dimensione testo",
+          "ja": "文字サイズ",
+          "nl": "Tekengrootte",
+          "pt-BR": "Tamanho do texto",
+          "zh-CN": "文本大小",
+          "zh-TW": "文字尺寸"
+        },
+        "default": "medium",
+        "options": [
+          {
+            "label": {
+              "de": "Mitte",
+              "en": "Medium",
+              "es": "Mediano",
+              "fr": "Moyenne",
+              "it": "Medium",
+              "ja": "中",
+              "nl": "Gemiddeld",
+              "pt-BR": "Médio",
+              "zh-CN": "中等",
+              "zh-TW": "中等"
+            },
+            "value": "medium"
+          },
+          {
+            "label": {
+              "de": "Groß",
+              "en": "Large",
+              "es": "Grande",
+              "fr": "Grande",
+              "it": "Large",
+              "ja": "大",
+              "nl": "Groot",
+              "pt-BR": "Grande",
+              "zh-CN": "大",
+              "zh-TW": "大型"
+            },
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "select-options-1",
+        "label": {
+          "de": "Foto",
+          "en": "Option 1",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "CLEAN QUEEN",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-1-description",
+        "label": {
+          "de": "Foto",
+          "en": "Option 1 One-Liner",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "Receive your kit every month.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-1-info-1",
+        "label": {
+          "de": "Foto",
+          "en": "Option 1 Info 1",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "You could spend hours getting ready.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-1-info-2",
+        "label": {
+          "de": "Foto",
+          "en": "Option 1 Info 1",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "You run out of products frequently.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-1-info-3",
+        "label": {
+          "de": "Foto",
+          "en": "Option 1 Info 1",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "You take supplements daily.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-2",
+        "label": {
+          "de": "Foto",
+          "en": "Option 2",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "PRETTY CLEAN",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },{
+        "type": "text",
+        "id": "select-options-2-description",
+        "label": {
+          "de": "Foto",
+          "en": "Option 2 One-Liner",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "Receive your kit every 2 months.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-3-description",
+        "label": {
+          "de": "Foto",
+          "en": "Option 3 One-Liner",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "Receive your kit every 3 months.",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
+      },
+      {
+        "type": "text",
+        "id": "select-options-3",
+        "label": {
+          "de": "Foto",
+          "en": "Option 3",
+          "es": "Imagen",
+          "fr": "Image",
+          "it": "Immagine",
+          "ja": "画像",
+          "nl": "Afbeelding",
+          "pt-BR": "Imagem",
+          "zh-CN": "图片",
+          "zh-TW": "圖片"
+        },
+        "default": {
+          "de": "Foto mit überlegtem Text",
+          "en": "CLEAN ENOUGH",
+          "es": "Imagen con texto",
+          "fr": "Image avec superposition de texte",
+          "it": "Immagine con testo",
+          "ja": "テキストオーバーレイ付き画像",
+          "nl": "Foto met tekstoverlay",
+          "pt-BR": "Imagem com sobreposição de texto",
+          "zh-CN": "带文本叠加的图片",
+          "zh-TW": "附文字疊加的圖片"
+        }
       }
   ],
   "presets": [
