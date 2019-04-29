@@ -8,6 +8,9 @@
         <div class="marginTop40 question-title-{{section.settings.question_text_size}}">
             <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
         </div>
+        <div class="marginTop20">
+            <a id="skipStep2" class="anchor-style-{{section.settings.question_text_size}}" href="#" >NO THANKS!</a>
+        </div>
     </div>
 </div>
 
@@ -54,25 +57,47 @@
         "zh-CN": "带文本叠加的图片",
         "zh-TW": "附文字疊加的圖片"
       }
-    }
-  ],
-  "presets": [
+    },
     {
-      "name": {
-        "de": "Foto mit überlegtem Text",
-        "en": "V BASIC KIT",
-        "es": "Imagen con texto",
-        "fr": "Image avec superposition de texte",
-        "it": "Immagine con testo",
-        "ja": "テキストオーバーレイ付き画像",
-        "nl": "Foto met tekstoverlay",
-        "pt-BR": "Imagem com sobreposição de texto",
-        "zh-CN": "带文本叠加的图片",
-        "zh-TW": "附文字疊加的圖片"
+        "type": "color",
+        "id": "title-color",
+        "label": {
+          "de": "Titel und Links",
+          "en": "Step Title Color",
+          "es": "Títulos y enlaces",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "nl": "Koppen en links",
+          "pt-BR": "Títulos e links",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#0097ce"
+    },
+    {
+      "type": "color",
+      "id": "question-color",
+      "label": {
+        "de": "Titel und Links",
+        "en": "Step Question Color",
+        "es": "Títulos y enlaces",
+        "fr": "En-têtes et liens",
+        "it": "Titoli e link",
+        "ja": "見出しとリンク",
+        "nl": "Koppen en links",
+        "pt-BR": "Títulos e links",
+        "zh-CN": "标题和链接",
+        "zh-TW": "標題和連結"
       },
-      "category": {
+      "default": "#0097ce"
+  },
+  {
+      "type": "text",
+      "id": "question-title",
+      "label": {
         "de": "Foto",
-        "en": "Image",
+        "en": "Step One",
         "es": "Imagen",
         "fr": "Image",
         "it": "Immagine",
@@ -81,7 +106,117 @@
         "pt-BR": "Imagem",
         "zh-CN": "图片",
         "zh-TW": "圖片"
+      },
+      "default": {
+        "de": "Foto mit überlegtem Text",
+        "en": "Have your eye on anything else?",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
       }
+    },
+    {
+      "type": "select",
+      "id": "title_text_size",
+      "label": {
+        "de": "Textgröße",
+        "en": "Title Text size",
+        "es": "Tamaño del texto",
+        "fr": "Taille du texte",
+        "it": "Dimensione testo",
+        "ja": "文字サイズ",
+        "nl": "Tekengrootte",
+        "pt-BR": "Tamanho do texto",
+        "zh-CN": "文本大小",
+        "zh-TW": "文字尺寸"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "de": "Mitte",
+            "en": "Medium",
+            "es": "Mediano",
+            "fr": "Moyenne",
+            "it": "Medium",
+            "ja": "中",
+            "nl": "Gemiddeld",
+            "pt-BR": "Médio",
+            "zh-CN": "中等",
+            "zh-TW": "中等"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "de": "Groß",
+            "en": "Large",
+            "es": "Grande",
+            "fr": "Grande",
+            "it": "Large",
+            "ja": "大",
+            "nl": "Groot",
+            "pt-BR": "Grande",
+            "zh-CN": "大",
+            "zh-TW": "大型"
+          },
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "question_text_size",
+      "label": {
+        "de": "Textgröße",
+        "en": "Step Question Text size",
+        "es": "Tamaño del texto",
+        "fr": "Taille du texte",
+        "it": "Dimensione testo",
+        "ja": "文字サイズ",
+        "nl": "Tekengrootte",
+        "pt-BR": "Tamanho do texto",
+        "zh-CN": "文本大小",
+        "zh-TW": "文字尺寸"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "de": "Mitte",
+            "en": "Medium",
+            "es": "Mediano",
+            "fr": "Moyenne",
+            "it": "Medium",
+            "ja": "中",
+            "nl": "Gemiddeld",
+            "pt-BR": "Médio",
+            "zh-CN": "中等",
+            "zh-TW": "中等"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "de": "Groß",
+            "en": "Large",
+            "es": "Grande",
+            "fr": "Grande",
+            "it": "Large",
+            "ja": "大",
+            "nl": "Groot",
+            "pt-BR": "Grande",
+            "zh-CN": "大",
+            "zh-TW": "大型"
+          },
+          "value": "large"
+        }
+      ]
     }
   ]
 }

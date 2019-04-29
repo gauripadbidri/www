@@ -912,7 +912,7 @@
           "kit_currency": "$",
           "kit_price": "35",
           "shipping_type": "FREE SHIPPING",
-          "button_link": "shopify:\/\/pages\/subscription",
+          "button_link": "shopify:\/\/pages\/steps",
           "email_textbox_background": "#68cfe0",
           "email_text_color": "#fff",
           "shipping_type_color": "#fff",
@@ -975,6 +975,12 @@
         "type": "step-two",
         "settings": {
           "step-title": "STEP 2"
+        }
+      },
+      "step-three": {
+        "type": "step-three",
+        "settings": {
+          "step-title": "STEP 3"
         }
       }
     },

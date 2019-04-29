@@ -3,6 +3,7 @@
         <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
             <!-- Flickity HTML init -->
             <div class="carousel">
+                <!-- <div class="carousel-cell">{% section 'image-overlay' %}</div> -->
                 <div class="carousel-cell">{% section 'step-one' %}</div>
                 <div class="carousel-cell">{% section 'step-two' %}</div>
                 <div class="carousel-cell">{% section 'step-three' %}</div>
@@ -10,8 +11,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script>
     $(function() {
@@ -30,13 +29,28 @@
         };
 
         var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
-        var $carousel = $('.carousel').flickity() 
-                        .flickity( 'select', sliderIndex);
+        var $carousel = $('.carousel').flickity({
+            'prevNextButtons': false,
+            'pageDots': false,
+            'select': sliderIndex
+        });
 
         $('input[name=step-one-hygeine]').on('change', function() {
             userOptions['hygeineType'] = $(this).val();
             userSelectedSlide = userSelectedSlide + 1;
             $carousel.flickity('next');
+        });
+
+        $('#btn_email_to_shopifyregister_and_newsletter').click(function(){
+            userSelectedSlide = userSelectedSlide + 1;
+            $carousel.flickity('next');
+            return false;
+        });
+
+        $('#skipStep2').click(function (){
+            userSelectedSlide = userSelectedSlide + 1;
+            $carousel.flickity('next');
+            return false;
         });
     });
 </script>
