@@ -94,8 +94,10 @@
             <p class="ProductItem__Vendor Heading">{{ product.vendor }}</p>
             {%- endif -%}
 
-            <h2 class="ProductItem__Title Heading">
+            <h2 class="ProductItem__Title Heading u-h2">
+                {% include 'split' %}
                 <a>{{ product.title }}</a>
+                  {{ desc[0] }}
             </h2>
         </div>
         {%- endif -%}
