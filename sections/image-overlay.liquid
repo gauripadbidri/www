@@ -115,7 +115,7 @@
               data-bgset="{% include 'bgset', image: section.settings.image %}"
               data-sizes="auto"
               data-parent-fit="cover"
-              style="background-position: {{ section.settings.alignment }}; background-image: url({{ section.settings.image | img_url: '1296x' }});"
+              style="background-position: 50% 80%; max-height:100vh; background-image: url({{ section.settings.image | img_url: '1296x' }});"
            {%- endif -%}>
       {%- if section.settings.image == blank -%}
         <div class="placeholder-background">

@@ -13,34 +13,29 @@
 </div>
 
 <script>
-    $(function() {debugger;
-        userSlideOneSelectedOption = 2; //TODO : Save and read it from localStorage
-        var $radios = $('input:radio[name=step-one-hygeine]');
-          /*  if($radios.is(':checked') === false) {
-                $radios.filter('[value="'+ userSlideOneSelectedOption + '"]').prop('checked', true);
-            }*/
+    $(function() {
         var maxSlides = 3;
-        var userSelectedSlide = 3; //TODO : Save and read it from localStorage
+        var userSelectedSlide = 3;
         var userOptions = {
             currentSlideSelected : userSelectedSlide,
             hygeineType : 0,
             addons:[],
         };
-       /* var addonProduct = {
+        var addonProduct = {
             name:'',
             id:'',
             quantity: '',
             addType: '' // Subscription or One Time
-        };*/
+        };
 
         var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
         var $carousel = $('.carousel').flickity({
             'prevNextButtons': false,
             'pageDots': false,
-            'select': 2
+            'select': sliderIndex
         });
 
-        $('input[name=step-one-hygeine]').on('change', function() {
+       $('input[name=step-one-hygeine]').on('change', function() {
             userOptions['hygeineType'] = $(this).val();
             userSelectedSlide = userSelectedSlide + 1;
             $carousel.flickity('next');
