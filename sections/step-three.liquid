@@ -1,0 +1,88 @@
+
+<div data-section-id="{{ section.id }}" data-section-type="hero-section">
+    <div class="row textAlignCenter">
+        <div class="marginTop40 step-title-{{section.settings.title_text_size}}">
+            <span class="step-title-{{section.settings.title_text_size}}" style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
+        </div>
+
+        <div class="marginTop40 question-title-{{section.settings.question_text_size}}">
+            <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": {
+      "de": "Foto mit überlegtem Text",
+      "en": "STEP Three Settings",
+      "es": "Imagen con texto",
+      "fr": "Image avec texte",
+      "it": "Immagine con testo",
+      "ja": "テキストオーバーレイ付き画像",
+      "nl": "Foto met tekstoverlay",
+      "pt-BR": "Imagem com texto",
+      "zh-CN": "带文本叠加的图片",
+      "zh-TW": "附文字疊加的圖片"
+    },
+    "class": "index-section index-section--flush",
+    "settings":  [
+    {
+      "type": "text",
+      "id": "step-title",
+      "label": {
+        "de": "Foto",
+        "en": "Step 3",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      },
+      "default": {
+        "de": "Foto mit überlegtem Text",
+        "en": "Step 3 Settings",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Foto mit überlegtem Text",
+        "en": "V BASIC KIT",
+        "es": "Imagen con texto",
+        "fr": "Image avec superposition de texte",
+        "it": "Immagine con testo",
+        "ja": "テキストオーバーレイ付き画像",
+        "nl": "Foto met tekstoverlay",
+        "pt-BR": "Imagem com sobreposição de texto",
+        "zh-CN": "带文本叠加的图片",
+        "zh-TW": "附文字疊加的圖片"
+      },
+      "category": {
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fr": "Image",
+        "it": "Immagine",
+        "ja": "画像",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      }
+    }
+  ]
+}
+{% endschema %}

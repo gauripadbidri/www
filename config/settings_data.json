@@ -944,20 +944,37 @@
         "settings": {
           "step-title": "STEP 1",
           "title-color": "#0097ce",
+          "option-1-tick-color": "#0097ce",
+          "option-2-tick-color": "#ff43b3",
+          "option-3-tick-color": "#c0efb4",
           "question-color": "#0097ce",
           "question-title": "What is your typical hygiene routine?",
           "title_text_size": "medium",
           "question_text_size": "medium",
+          "option-text-size": "medium",
+          "option-description-size": "medium",
           "option-information-text-size": "medium",
           "select-options-1": "CLEAN QUEEN",
           "select-options-1-description": "Receive your kit every month.",
           "select-options-1-info-1": "You could spend hours getting ready.",
           "select-options-1-info-2": "You run out of products frequently.",
           "select-options-1-info-3": "You take supplements daily.",
+          "select-options-2-info-1": "You spend about a half hour getting ready.",
+          "select-options-2-info-2": "You usually keep your bathroom stocked.",
+          "select-options-2-info-3": "You take supplements when you remember.",
+          "select-options-3-info-1": "You roll out of bed and out the door.",
+          "select-options-3-info-2": "You rarely try new products.",
+          "select-options-3-info-3": "You don’t take any supplements.",
           "select-options-2": "PRETTY CLEAN",
           "select-options-2-description": "Receive your kit every 2 months.",
           "select-options-3-description": "Receive your kit every 3 months.",
           "select-options-3": "CLEAN ENOUGH"
+        }
+      },
+      "step-two": {
+        "type": "step-two",
+        "settings": {
+          "step-title": "STEP 2"
         }
       }
     },
