@@ -919,6 +919,31 @@
           "btn_get_started_bg_color": "#0992f4",
           "btn_get_started_color": "#fff"
         }
+      },
+      "custom-carousal": {
+        "type": "custom-carousal",
+        "settings": {
+          "step-title": "STEP 1",
+          "title-color": "#0097ce",
+          "question-color": "#0097ce",
+          "question-title": "What is your typical hygiene routine?",
+          "title_text_size": "medium",
+          "question_text_size": "medium"
+        }
+      },
+      "subscription-content": {
+        "type": "subscription-content",
+        "settings": {
+          "gauri_color_text": "#3d4246",
+          "newsletter_form_subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+        }
+      },
+      "subscription-footer": {
+        "type": "subscription-footer",
+        "settings": {
+          "show_share_buttons": true,
+          "social_message": "Spread the word"
+        }
       }
     },
     "content_for_index": [

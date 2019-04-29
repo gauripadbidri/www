@@ -11949,7 +11949,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .hero {
   position: relative;
- /* height: 475px;*/
+  height: 475px;
   display: table;
   width: 100%;
   background: {
@@ -11962,7 +11962,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 .hero__inner {
     position: relative;
     display: table-cell;
-    /*padding: 75px 0;*/
+    padding: 75px 0;
     z-index: 2;
     text-align: center;
 }
@@ -11980,11 +11980,11 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .hero--adapt,
 .hero-fixed-width__image {
- /* max-height: 100vh;*/
+  max-height: 100vh;
 }
 
 
-/*.hero--x-small {
+.hero--x-small {
   height: 94px;
 }
 
@@ -12002,7 +12002,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .hero--x-large {
   height: 582px;
-}*/
+}
 
 .mega-title,
 .mega-subtitle {
@@ -12185,10 +12185,10 @@ $vertical-spacing-two-products-per-row  : 0px;
  @media screen and (min-width: 768px) {
    .hero--adapt,
    .hero-fixed-width__image {
-   /*   max-height: 80vh;*/
+      max-height: 80vh;
     } 
 
-   /* .hero--x-small {
+    .hero--x-small {
       height: 125px;
     }
 
@@ -12206,7 +12206,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
     .hero--x-large {
       height: 775px;
-    }*/
+    }
 
     .mega-title,
     .mega-subtitle {
@@ -12245,10 +12245,10 @@ $vertical-spacing-two-products-per-row  : 0px;
 @media screen and (min-width: 992px) {
   .hero--adapt,
    .hero-fixed-width__image {
-    /*  max-height: 80vh;*/
+      max-height: 80vh;
     } 
 
-   /* .hero--x-small {
+    .hero--x-small {
       height: 125px;
     }
 
@@ -12266,7 +12266,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
     .hero--x-large {
       height: 775px;
-    }*/
+    }
 
     .mega-title,
     .mega-subtitle {
@@ -12302,7 +12302,7 @@ $vertical-spacing-two-products-per-row  : 0px;
     }
 
     .hero {
-     /* height: 1230px;*/
+      height: 1230px;
     }
 }
 
@@ -12310,10 +12310,10 @@ $vertical-spacing-two-products-per-row  : 0px;
 @media screen and (min-width: 1200px) { 
   .hero--adapt,
   .hero-fixed-width__image {
-    /* max-height: 80vh;*/
+     max-height: 80vh;
    } 
 
- /*  .hero--x-small {
+   .hero--x-small {
      height: 125px;
    }
 
@@ -12332,7 +12332,7 @@ $vertical-spacing-two-products-per-row  : 0px;
    .hero--x-large {
      height: 775px;
    }
-*/
+
    .mega-title,
    .mega-subtitle {
      text-shadow: 0 0 4px $color-text-shadow;
@@ -12363,7 +12363,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 
    .hero {
-  /*  height: 1230px;*/
+    height: 1230px;
   }
 
   .input_box_color{
@@ -12515,34 +12515,12 @@ input[type=radio]:checked + .check-box,
   width:33%;
 }
 
-.object-fit_fill { object-fit: fill }
-.object-fit_contain { object-fit: contain }
-.object-fit_cover { object-fit: cover }
-.object-fit_none { object-fit: none }
-.object-fit_scale-down { object-fit: scale-down }
+/* CAROUSAL flickity.css */
 
-
-.imageCustom img { max-height: 100vh; }
-
-.imageCustom img[class] { 
+.carousel-cell {
   width: 100%;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 
-.original-image {
-  margin-bottom: 50px;
-}
-
-.imageCustom {
-  float: left;
-  width: 100%;
-  margin: 0 30px 20px 0;
-  
-  &:nth-child(2n) {
-    clear: left;
-  }
-  
-  &:nth-child(2n+1){
-    margin-right: 0;
-  }
-}
 
