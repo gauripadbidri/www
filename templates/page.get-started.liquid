@@ -1,6 +1,7 @@
 <style>
 /* CAROUSAL flickity.css */
 
+
 .wrapper-Icon--undo-icon-v2 {
   background-color: #fff;
   border-radius: 50%;
@@ -73,13 +74,13 @@
           $carousel.flickity('next');
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function(){
+      $('#btn_email_to_shopifyregister_and_newsletter').on('click', function(){
           userSelectedSlide = userSelectedSlide + 1;
           $carousel.flickity('next');
           return false;
       });
 
-      $('#skipStep2').click(function (){
+      $('#skipStep2').on('click', function (){
           userSelectedSlide = userSelectedSlide + 1;
           $carousel.flickity('next');
           return false;
