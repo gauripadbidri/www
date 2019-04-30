@@ -1,0 +1,25 @@
+<div class="ProductMeta">
+    {%- if section.settings.show_vendor and product.vendor != blank -%}
+    <h2 class="ProductMeta__Vendor Heading u-h6">
+        {%- assign vendor_handle = product.vendor | handle -%}
+        {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+        {%- unless collection_for_vendor.empty? -%}
+        <a>{{ product.vendor }}</a>
+        {%- else -%}
+        {{- product.vendor -}}
+        {%- endunless -%}
+    </h2>
+    {%- endif -%}
+
+    <h1 class="ProductMeta__Title Heading u-h2 product-info-desktop">
+        {{- product.title -}}
+        <!-- {{ desc[0] }} -->
+    </h1>
+
+    {%- if show_description and product.description != blank -%}
+    <div class="ProductMeta__Description">
+        {{ product.description }}
+    </div>
+    {%- endif -%}
+</div>

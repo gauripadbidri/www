@@ -144,6 +144,20 @@
                 {%- endif -%}
             </div>
 
+            {% for block in section.blocks %}  
+                <div {{ block.shopify_attributes }} class="Modal Modal--show-product-info" id="product-info-dialog" aria-hidden="true" role="dialog" data-scrollable>
+                    <div class="Modal__Content">
+                        <div id="product-info-data" class="product-info-data-wrapper"> 
+                        </div>
+                    </div>
+
+                        <button aria-expanded="false" class="Modal__Close Modal__Close--outside Round-button-color RoundButton RoundButton--small" data-animate-bottom
+                        data-action="close-modal">
+                            {% include 'icon' with 'close' %}
+                        </button>
+                </div>            
+            {% endfor %}
+                
         </div>
     {%- endfor -%}
 </section>
@@ -271,3 +285,71 @@
 }
 
 {% endschema %}
+
+<style>
+    .Modal--show-product-info h2 {
+      font-weight: 500;
+      letter-spacing: 0px;
+      font-size: 1.7rem;
+    }
+
+    .Modal--show-product-info .ProductMeta__Title{
+        margin-bottom: 0.1rem;
+    }
+    .Modal--show-product-info{
+        width: 1000px !important;
+    }
+
+    .Modal--show-product-info .ProductMeta__Description .Rte{
+        max-width : none;   
+    }
+
+    .Modal--show-product-info .Round-button-color{
+        border:1px solid #0097ce;
+        opacity: 1;
+    }
+    
+    
+</style>
+
+<script>
+
+    $(function () {
+
+        $(".product-kit-collection .ProductItem__Wrapper").click(function (ev) {
+            if (ev.currentTarget.attributes['data-handle']) {
+                $.get('/products/' + ev.currentTarget.attributes['data-handle'].value + '?view=ajax', function (data) {
+                    $("#product-info-data").html(data);
+                    var element = document.querySelector('.product-info-slider');
+                    
+                    var flickitySlider = new Flickity(element, {
+                        //options
+                        "prevNextButtons": false,
+                        "adaptiveHeight": true,
+                        "dragThreshold": 8,
+                        "arrowShape": { "x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25 },
+                        cellAlign: 'center',
+                        contain: true,
+                        pageDots: true
+                    });
+
+                    var sliderNav = document.querySelector('.product-info-nav');
+                    if (sliderNav) {
+                        var flickitySliderNav = new Flickity(sliderNav, {
+                            contain: true,
+                            "prevNextButtons": false,
+                            "adaptiveHeight": true,
+                            pageDots: false,
+                            cellAlign: 'left',
+                            // draggable : false,
+                            "arrowShape": { "x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25 },
+                            asNavFor: '.product-info-slider' // 'product-info-slider' //'.carousel-main',//: '.product-info-slider',
+                        });
+                    }
+                });
+            }
+        });
+
+    })
+
+</script>

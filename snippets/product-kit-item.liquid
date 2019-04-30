@@ -1,5 +1,5 @@
 <div class="ProductItem {% if use_horizontal %}ProductItem--horizontal{% endif %}">
-    <div class="ProductItem__Wrapper">
+    <div class="ProductItem__Wrapper" data-handle="{{product.handle}}" data-action="open-modal" aria-controls="product-info-dialog">
         {%- comment -%}
         We are using LazySizes to efficiently choose the most appropriate image in the set. However, because internally
         LazySizes uses srcset, we need to make
@@ -40,7 +40,7 @@
 
                 <img class="ProductItem__Image ProductItem__Image--alternate Image--lazyLoad Image--fadeIn"
                     data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto"
-                    alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}">
+                    alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}" data-handle="{{product.handle}}">
                 {%- endif -%}
 
                 {%- include 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: product.featured_image -%}
@@ -48,14 +48,14 @@
 
                 <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}"
                     data-widths="[{{ supported_sizes }}]" data-sizes="auto"
-                    alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+                    alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}" data-handle="{{product.handle}}">
                 <span class="Image__Loader"></span>
 
                 <noscript>
                     <img class="ProductItem__Image ProductItem__Image--alternate"
-                        src="{{ product.images[1] | img_url: '600x' }}" alt="{{ product.images[1].alt | escape }}">
+                        src="{{ product.images[1] | img_url: '600x' }}" alt="{{ product.images[1].alt | escape }}" data-handle="{{product.handle}}">
                     <img class="ProductItem__Image" src="{{ product.featured_image | img_url: '600x' }}"
-                        alt="{{ product.featured_image.alt | escape }}">
+                        alt="{{ product.featured_image.alt | escape }}" data-handle="{{product.handle}}">
                 </noscript>
                 {%- include 'icon' with 'info-icon' -%}
             </div>
