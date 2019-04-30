@@ -1,4 +1,29 @@
 <style>
+.clearBoth {
+    clear:both;
+}
+
+.width30 {
+  width:33%;
+}
+
+
+.info-text-medium {
+  font-size: 1em;
+}
+
+.info-text-large {
+  font-size: 1.2em;
+}
+
+.option-text-medium  {
+  font-size: 1.4em;
+}
+
+.option-text-large  {
+  font-size: 1.2em;
+}
+
 .step-one-tick {
   font-weight:bold;
   margin-right:5px;
@@ -19,13 +44,36 @@
   display: none;
 }
 .option-description-medium{
+  font-size: 1.2em;
+  width: 150px;
   text-align: center;
   display: block;
   margin: auto;
 }
+
+
+.option-description-large {
+  font-size: 1.2em;
+  width: 150px;
+  margin-left: 30%;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
 .step-one .marginLeft18{
   margin: auto !important;
   display: table;
+}
+@media screen and (min-width: 576px) { 
+  .width30 {
+    width:100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .width30 {
+    width:100%;
+  }
 }
 @media only screen and (max-width: 600px) {
 
@@ -47,6 +95,11 @@
     height: 1.5em;
     width: 1.5em;
   }
+}
+@media screen and (min-width: 768px) {    
+    .width30 {
+      width:33%;
+    }
 }
 /* Checkmark style starts */
 @-moz-keyframes dothabottomcheck {
@@ -195,6 +248,7 @@
         </div>
 
         <div class="marginTop40 clearBoth">
+            {% include 'icon' with 'undo-icon-v2' %} 
             <div class="width30 marginTop40" style="float:left;">
                 <input name="step-one-hygeine" type="radio" id="cbtest1" value="1" />
                 <label for="cbtest1" class="check-box"></label>     
