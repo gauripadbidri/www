@@ -142,24 +142,23 @@
                         </div>
                     {%- endif -%}
                 {%- endif -%}
-            </div>
-
-            {% for block in section.blocks %}  
-                <div {{ block.shopify_attributes }} class="Modal Modal--show-product-info" id="product-info-dialog" aria-hidden="true" role="dialog" data-scrollable>
-                    <div class="Modal__Content">
-                        <div id="product-info-data" class="product-info-data-wrapper"> 
-                        </div>
-                    </div>
-
-                        <button aria-expanded="false" class="Modal__Close Modal__Close--outside Round-button-color RoundButton RoundButton--small" data-animate-bottom
-                        data-action="close-modal">
-                            {% include 'icon' with 'close' %}
-                        </button>
-                </div>            
-            {% endfor %}
-                
+            </div>   
         </div>
     {%- endfor -%}
+    {% for block in section.blocks %}
+        <div class="Modal Modal--show-product-info" id="product-info-dialog" aria-hidden="true" role="dialog" data-scrollable>
+            <div class="Modal__Content">
+                <label>{{block.settings.gauriText}}</label>
+                <div id="product-info-data" class="product-info-data-wrapper"> 
+                </div>
+            </div>
+
+                <button aria-expanded="false" class="Modal__Close Modal__Close--outside Round-button-color RoundButton RoundButton--small" data-animate-bottom
+                data-action="close-modal">
+                    {% include 'icon' with 'close' %}
+                </button>
+        </div>
+    {% endfor %}
 </section>
 
 {%- capture hack -%}
@@ -174,7 +173,7 @@
 {
     "name": "Product Kit Collection",
     "class": "shopify-section--bordered",
-    "max_blocks": 2,
+    "max_blocks": 15,
     "settings": [
         {
             "type": "text",
@@ -210,8 +209,7 @@
             "id": "show_vendor",
             "label": "Show vendor",
             "default": false
-        }
-        ,
+        },
         {
             "type": "header",
             "content": "Grid",
@@ -248,12 +246,14 @@
                     "type": "collection",
                     "id": "collection",
                     "label": "Collection"
-                }, {
+                },
+                {
                     "type": "text",
                     "id": "title",
                     "label": "Heading",
                     "info": "If none is set, collection title is used."
-                }, {
+                }, 
+                {
                     "type": "range",
                     "id": "grid_items_count",
                     "min": 2,
@@ -266,6 +266,18 @@
                     "id": "button_text",
                     "label": "Button text",
                     "default": "View all products"
+                }
+            ]
+        },
+        {
+            "type":"text",
+            "name": "Some Text Here",
+            "settings": [
+                {
+                    "id": "gauriText",
+                    "type": "text",
+                    "label": "Button text GAURI",
+                    "default": "Click here"
                 }
             ]
         }
