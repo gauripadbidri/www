@@ -12043,18 +12043,6 @@ $vertical-spacing-two-products-per-row  : 0px;
 }
 
 
-.marginBottom20 {
-  margin-bottom:20px;
-}
-
-.marginTop20 {
-  margin-top:10px;
-}
-
-.marginTop40 {
-  margin-top:40px;
-}
-
 .product-kit-collection {
  
   padding-bottom: 0 !important;
@@ -12085,9 +12073,11 @@ $vertical-spacing-two-products-per-row  : 0px;
   }
 }
 
-.textAlignCenter {
-  text-align:center;
-}
+
+
+
+
+
 .step-title-medium {
   font-size:1.6em;
   font-weight: 700;
@@ -12168,23 +12158,10 @@ $vertical-spacing-two-products-per-row  : 0px;
   margin-left: 30%;
 }
 
-.step-one-tick {
-  font-weight:bold;
-  margin-right:5px;
-}
-
-/* CAROUSAL flickity.css */
-
-.carousel-cell {
-  width: 100%;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-
 .marginLeft18 {
   margin-left:18%;
 }
+
 .anchor-style-medium {
   font-size:1.2em;
   text-decoration:underline;
@@ -12396,11 +12373,6 @@ $vertical-spacing-two-products-per-row  : 0px;
     #btn_email_to_shopifyregister_and_newsletter{
       padding: 10px 60px !important;
     }
-/*
-    .hero {
-      height: 1230px;
-    }*/
-    
 
     .marginLeft18 {
       margin-left:18%;
@@ -12474,130 +12446,3 @@ $vertical-spacing-two-products-per-row  : 0px;
      padding: 10px 60px !important;
    }
 }
-
-/*================ Animated Checkbox Styles ================*/
-/* Made by Jimmy Gillam */
-$checked-color: #FF43B3;
-$unchecked-color: #0097ce;
-$checkbox-width: 50px;
-$checkbox-height: 50px;
-$background-color: #667788;
-$font-color: #efefef;
-$duration: .4s;
-
-/* Checkmark style starts */
-
-@-moz-keyframes dothabottomcheck{
-    0% { height: 0; }
-    100% { height: $checkbox-height/2; }
-}
-
-@-webkit-keyframes dothabottomcheck{
-    0% { height: 0; }
-    100% { height: $checkbox-height/2; }
-}
-
-@keyframes dothabottomcheck{
-    0% { height: 0; }
-    100% { height: $checkbox-height/2;  }
-}
-
-@keyframes dothatopcheck{
-    0% { height: 0; }
-    50% { height: 0; }
-    100% { height: $checkbox-height * 1.2; }
-}
-@-webkit-keyframes dothatopcheck{
-    0% { height: 0; }
-    50% { height: 0; }
-    100% { height: $checkbox-height * 1.2; }
-}
-@-moz-keyframes dothatopcheck{
-    0% { height: 0; }
-    50% { height: 0; }
-    100% { height: $checkbox-height * 1.2; }
-}
-
-input[type=radio]{
-    display:none;
-}
-
-.check-box {
-    height: $checkbox-height;
-    width: $checkbox-width;
-    background-color: transparent;
-    border: 3px solid $unchecked-color;
-    position: relative;
-    display: inline-block;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -moz-transition: border-color ease $duration/2;
-    -o-transition: border-color ease $duration/2;
-    -webkit-transition: border-color ease $duration/2;
-    transition: border-color ease $duration/2;
-    cursor:pointer;
-
-    &::before, &::after {
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        position: absolute;
-        height: 0;
-        width: 12px;
-        background-color: $checked-color;
-        display: inline-block;
-        -moz-transform-origin: left top;
-        -ms-transform-origin: left top;
-        -o-transform-origin: left top;
-        -webkit-transform-origin: left top;
-        transform-origin: left top;
-        border-radius: 5px;
-        content: ' ';
-        -webkit-transition: opacity ease .5;
-        -moz-transition: opacity ease .5;
-        transition: opacity ease .5;
-    }
-
-    &::before {
-        top:$checkbox-height * .72;
-        left: $checkbox-height * .41;
-        -moz-transform: rotate(-135deg);
-        -ms-transform: rotate(-135deg);
-        -o-transform: rotate(-135deg);
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-
-    &::after {
-        top: $checkbox-height * .37;
-        left: $checkbox-height * .05;
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-}
-
-input[type=radio]:checked + .check-box,
-.check-box.checked{
-    border-color:$unchecked-color;
-    
-    &::after{
-        height: $checkbox-height * .5;
-        -moz-animation: dothabottomcheck $duration/2 ease 0s forwards;
-        -o-animation: dothabottomcheck $duration/2 ease 0s forwards;
-        -webkit-animation: dothabottomcheck $duration/2 ease 0s forwards;
-        animation: dothabottomcheck $duration/2 ease 0s forwards;
-    }
-     
-    &::before{
-        height: $checkbox-height * 1.2;
-        -moz-animation: dothatopcheck $duration ease 0s forwards;
-        -o-animation: dothatopcheck $duration ease 0s forwards;
-        -webkit-animation: dothatopcheck $duration ease 0s forwards;
-        animation: dothatopcheck $duration ease 0s forwards;
-    }
-}
-

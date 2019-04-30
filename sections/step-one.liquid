@@ -1,3 +1,154 @@
+<style>
+.step-one-tick {
+  font-weight:bold;
+  margin-right:5px;
+}
+
+.marginTop40 {
+  margin-top:40px;
+}
+
+.marginTop20 {
+  margin-top:10px;
+}
+
+.textAlignCenter {
+  text-align:center;
+}
+/* Checkmark style starts */
+@-moz-keyframes dothabottomcheck {
+	 0% {
+		 height: 0;
+	}
+	 100% {
+		 height: 25px;
+	}
+}
+ @-webkit-keyframes dothabottomcheck {
+	 0% {
+		 height: 0;
+	}
+	 100% {
+		 height: 25px;
+	}
+}
+ @keyframes dothabottomcheck {
+	 0% {
+		 height: 0;
+	}
+	 100% {
+		 height: 25px;
+	}
+}
+ @keyframes dothatopcheck {
+	 0% {
+		 height: 0;
+	}
+	 50% {
+		 height: 0;
+	}
+	 100% {
+		 height: 60px;
+	}
+}
+ @-webkit-keyframes dothatopcheck {
+	 0% {
+		 height: 0;
+	}
+	 50% {
+		 height: 0;
+	}
+	 100% {
+		 height: 60px;
+	}
+}
+ @-moz-keyframes dothatopcheck {
+	 0% {
+		 height: 0;
+	}
+	 50% {
+		 height: 0;
+	}
+	 100% {
+		 height: 60px;
+	}
+}
+ input[type=radio] {
+	 display: none;
+}
+ .check-box {
+	 height: 50px;
+	 width: 50px;
+	 background-color: transparent;
+	 border: 3px solid #0097ce;
+	 position: relative;
+	 display: inline-block;
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	 -moz-transition: border-color ease 0.2s;
+	 -o-transition: border-color ease 0.2s;
+	 -webkit-transition: border-color ease 0.2s;
+	 transition: border-color ease 0.2s;
+	 cursor: pointer;
+}
+ .check-box::before, .check-box::after {
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	 position: absolute;
+	 height: 0;
+	 width: 12px;
+	 background-color: #ff43b3;
+	 display: inline-block;
+	 -moz-transform-origin: left top;
+	 -ms-transform-origin: left top;
+	 -o-transform-origin: left top;
+	 -webkit-transform-origin: left top;
+	 transform-origin: left top;
+	 border-radius: 5px;
+	 content: ' ';
+	 -webkit-transition: opacity ease 0.5;
+	 -moz-transition: opacity ease 0.5;
+	 transition: opacity ease 0.5;
+}
+ .check-box::before {
+	 top: 36px;
+	 left: 20.5px;
+	 -moz-transform: rotate(-135deg);
+	 -ms-transform: rotate(-135deg);
+	 -o-transform: rotate(-135deg);
+	 -webkit-transform: rotate(-135deg);
+	 transform: rotate(-135deg);
+}
+ .check-box::after {
+	 top: 18.5px;
+	 left: 2.5px;
+	 -moz-transform: rotate(-45deg);
+	 -ms-transform: rotate(-45deg);
+	 -o-transform: rotate(-45deg);
+	 -webkit-transform: rotate(-45deg);
+	 transform: rotate(-45deg);
+}
+ input[type=radio]:checked + .check-box, .check-box.checked {
+	 border-color: #0097ce;
+}
+ input[type=radio]:checked + .check-box::after, .check-box.checked::after {
+	 height: 25px;
+	 -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+	 -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+	 -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+	 animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+ input[type=radio]:checked + .check-box::before, .check-box.checked::before {
+	 height: 60px;
+	 -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+	 -o-animation: dothatopcheck 0.4s ease 0s forwards;
+	 -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+	 animation: dothatopcheck 0.4s ease 0s forwards;
+}
+ 
+</style>
 
 <div data-section-id="{{ section.id }}" id="{{ section.id }}" data-section-type="hero-section">
     <div class="row textAlignCenter">

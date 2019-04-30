@@ -118,13 +118,13 @@
           "1552602046282": {
             "type": "links",
             "settings": {
-              "menu": "custom-footer-menu"
+              "menu": ""
             }
           },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": "custom-footer-menu"
+              "menu": ""
             }
           },
           "footer-2": {
@@ -898,6 +898,28 @@
           "grid_desktop_items_per_row": 4
         }
       },
+      "image-overlay": {
+        "type": "image-overlay",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/V-Basic-Bundle.jpg",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "medium",
+          "title": "V BASIC KIT",
+          "text": "<p>Get ready for your daily vaginal routine.<\/p>",
+          "button_label": "LET'S GET STARTED",
+          "kit_currency": "$",
+          "kit_price": "35",
+          "shipping_type": "FREE SHIPPING",
+          "button_link": "",
+          "email_textbox_background": "#68cfe0",
+          "email_text_color": "#fff",
+          "shipping_type_color": "#fff",
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_color": "#fff"
+        }
+      },
       "step-one": {
         "type": "step-one",
         "settings": {
@@ -944,34 +966,12 @@
       "step-three": {
         "type": "step-three",
         "settings": {
-          "step-title": "STEP 3",
+          "step-title": "Step 3",
           "title-color": "#0097ce",
           "question-color": "#0097ce",
           "question-title": "Check out what you’re getting.",
           "title_text_size": "medium",
           "question_text_size": "medium"
-        }
-      },
-      "image-overlay": {
-        "type": "image-overlay",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/V-Basic-Bundle.jpg",
-          "alignment": "center",
-          "hero_layout": "full_width",
-          "hero_size": "medium",
-          "text_size": "medium",
-          "title": "V BASIC KIT",
-          "text": "<p>Get ready for your daily vaginal routine.<\/p>",
-          "button_label": "LET'S GET STARTED",
-          "kit_currency": "$",
-          "kit_price": "35",
-          "shipping_type": "FREE SHIPPING",
-          "button_link": "shopify:\/\/pages\/steps",
-          "email_textbox_background": "#68cfe0",
-          "email_text_color": "#fff",
-          "shipping_type_color": "#fff",
-          "btn_get_started_bg_color": "#0992f4",
-          "btn_get_started_color": "#fff"
         }
       }
     },
