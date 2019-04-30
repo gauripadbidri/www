@@ -15,6 +15,39 @@
 .textAlignCenter {
   text-align:center;
 }
+.desktop-info--icon{
+  display: none;
+}
+.option-description-medium{
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+.step-one .marginLeft18{
+  margin: auto !important;
+  display: table;
+}
+@media only screen and (max-width: 600px) {
+
+  .hideMobile{
+    display: none;
+  }
+  .desktop-info--icon{
+    display: block;
+   
+  }
+  .step-one  .marginLeft18{
+    display: none;
+  }
+  .desktop-info--icon img{
+    background: blue;
+  }
+
+  .desktop-info--icon .Icon--info-icon-v2{
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
 /* Checkmark style starts */
 @-moz-keyframes dothabottomcheck {
 	 0% {
@@ -148,9 +181,10 @@
 	 animation: dothatopcheck 0.4s ease 0s forwards;
 }
  
+ 
 </style>
 
-<div data-section-id="{{ section.id }}" id="{{ section.id }}" data-section-type="hero-section">
+<div data-section-id="{{ section.id }}" id="{{ section.id }}" class="step-one" data-section-type="hero-section">
     <div class="row textAlignCenter">
         <div class="marginTop40 step-title-{{section.settings.title_text_size}}">
             <span class="step-title-{{section.settings.title_text_size}}" style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
@@ -170,7 +204,10 @@
                 <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
                     <label>{{section.settings.select-options-1-description}}</label> 
                 </div>
-                <div class="marginLeft18" style="text-align:left">
+                <div class="clearBoth marginTop20 desktop-info--icon">
+                    {% include 'icon' with 'info-icon-v2' %} 
+                </div>
+                <div class="marginLeft18 hideMobile" style="text-align:left">
                   <div class="clearBoth marginTop40 info-text-{{section.settings.option-information-text-size}}">
                       <span class="step-one-tick" style="color: {{section.settings.option-1-tick-color}}">&#10003;</span><label>{{section.settings.select-options-1-info-1}}</label> 
                   </div>
@@ -191,7 +228,11 @@
                 <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
                     <label>{{section.settings.select-options-2-description}}</label> 
                 </div>
-                <div class="marginLeft18" style="text-align:left">
+                <div class="clearBoth marginTop20 desktop-info--icon">
+                    {% include 'icon' with 'info-icon-v2' %} 
+                </div>
+                
+                <div class="marginLeft18 hideMobile" style="text-align:left">
                     <div class="clearBoth marginTop40 info-text-{{section.settings.option-information-text-size}}">
                         <span class="step-one-tick" style="color: {{section.settings.option-2-tick-color}}">&#10003;</span><label>{{section.settings.select-options-2-info-1}}</label> 
                     </div>
@@ -212,7 +253,10 @@
                 <div class="clearBoth marginTop20 option-description-{{section.settings.option-description-size}}">
                     <label>{{section.settings.select-options-3-description}}</label> 
                 </div>
-                <div class="marginLeft18" style="text-align:left">
+                <div class="clearBoth marginTop20 desktop-info--icon">
+                    {% include 'icon' with 'info-icon-v2' %} 
+                </div>
+                <div class="marginLeft18 hideMobile" style="text-align:left">
                     <div class="clearBoth marginTop40 info-text-{{section.settings.option-information-text-size}}">
                         <span class="step-one-tick" style="color: {{section.settings.option-3-tick-color}}">&#10003;</span><label>{{section.settings.select-options-3-info-1}}</label> 
                     </div>

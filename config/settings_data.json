@@ -973,6 +973,11 @@
           "title_text_size": "medium",
           "question_text_size": "medium"
         }
+      },
+      "modal": {
+        "type": "modal",
+        "settings": {
+        }
       }
     },
     "content_for_index": [

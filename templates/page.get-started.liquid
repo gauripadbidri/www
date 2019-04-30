@@ -6,22 +6,28 @@
   margin-right: 10px;
   border-radius: 5px;
 }
+.get-started-carousel .grid-cell-padding{
+    padding-left: 0;
+}
 </style>
 <div class="page-width">
   <div class="grid">
       <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
           <!-- Flickity HTML init -->
-          <div class="carousel">
-              <div class="carousel-cell">{% section 'image-overlay' %}</div>
-              <div class="carousel-cell">{% section 'step-one' %}</div>
-              <div class="carousel-cell">{% section 'step-two' %}</div>
-              <div class="carousel-cell">{% section 'step-three' %}</div>
+          <div class="carousel get-started-carousel">
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'image-overlay' %}</div>
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-one' %}</div>
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-two' %}</div>
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
           </div>
-          {%section 'product-kit-collection' %}
+         
       </div>
   </div>
+  <div class="grid">
+  {%section 'product-kit-collection' %}
+  </div>
+  {%section 'modal' %}
 </div>
-{%section 'modal' %}
 
 <script>
   $(function() {
@@ -43,7 +49,9 @@
       var $carousel = $('.carousel').flickity({
           'prevNextButtons': false,
           'pageDots': false,
-          'select': sliderIndex
+          'select': sliderIndex,
+          draggable: false,
+          adaptiveHeight: true
       });
 
      $('input[name=step-one-hygeine]').on('change', function() {
