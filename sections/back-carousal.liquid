@@ -1,0 +1,83 @@
+
+<style>
+    #go-previous-step {
+        margin-left:10px;
+        padding: 15px;
+        width: 50px;
+        border-radius:50%;
+        background-color: {{ section.settings.btn_get_started_bg_color }};
+        color:{{ section.settings.btn_get_started_color }};
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        left:0;
+    }
+    #go-next-step {
+        margin-right:10px;
+        padding: 15px;
+        width: 50px;
+        border-radius:50%;
+        background-color: {{ section.settings.btn_get_started_bg_color }};
+        color:{{ section.settings.btn_get_started_color }};
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        right:0;
+    }
+</style>
+<div>
+    <div class="previous">
+        <a href="#" class="carousalBack" id="go-previous-step">{{ section.settings.button_back_label | escape }}</a>
+    </div>
+    <div class="next">
+        <a href="#" class="carousalBack" id="go-next-step">{{ section.settings.button_next_label | escape }}</a>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": {
+        "en": "Carousal Button Config"
+    },
+    "class": "carousalBack",
+    "settings": [
+        {
+            "type": "color",
+            "id": "btn_get_started_bg_color",
+            "label": {
+            "en": "Back Btn BG Color"
+            },
+            "default": "#0992f4"
+        },    
+        {
+            "type": "color",
+            "id": "btn_get_started_color",
+            "label": {
+            "en": "Back Btn Text Color"
+            },
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "button_back_label",
+            "label": {
+              "en": "Back Button label"
+            },
+            "default": {              
+              "en": "<<"		
+            }
+        }, 
+        {
+            "type": "text",
+            "id": "button_next_label",
+            "label": {
+              "en": "Next Button label"
+            },
+            "default": {              
+              "en": ">>"		
+            }
+        }
+    ]
+}
+{% endschema %}

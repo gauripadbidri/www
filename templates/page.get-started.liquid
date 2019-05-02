@@ -9,17 +9,13 @@
 .get-started-carousel .grid-cell-padding{
     padding-left: 0;
 }
-
-#go-previous-step {
-    padding:10px 50px;
-    background-color: {{ section.settings.btn_get_started_bg_color }};
-    color:{{ section.settings.btn_get_started_color }};
-}
 </style>
 <div class="page-width">
   <div class="grid">
       <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
           <!-- Flickity HTML init -->
+          
+          {% section 'back-carousal' %}
           <div class="carousel get-started-carousel">
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
                 {% section 'image-overlay' %}
@@ -30,19 +26,17 @@
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-two' %}</div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
           </div>
-          <div>
-              <a href="#" id="go-previous-step">GO BACK</a>
-          </div>
-         
       </div>
   </div>
   {%section 'modal' %}
 </div>
 
+
+
 <script>
   $(function() {
       var maxSlides = 3;
-      var userSelectedSlide = 3;
+      var userSelectedSlide = 1;
       var userOptions = {
           currentSlideSelected : userSelectedSlide,
           hygeineType : 0,
@@ -56,6 +50,34 @@
       };
 
       var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
+      
+      if(userSelectedSlide <= 1){
+          $("#go-previous-step").css ('display', 'none');
+          $("#go-next-step").css ('display', 'none');
+      }
+
+      $("#go-previous-step").on('click', function(){
+          userSelectedSlide = userSelectedSlide - 1;
+          if(userSelectedSlide <= 1){
+              $("#go-previous-step").css ('display', 'none');
+              $("#go-next-step").css ('display', 'none');
+          } else {
+            $("#go-previous-step").css ('display', 'block');
+            $("#go-next-step").css ('display', 'block');
+          }
+          $carousel.flickity('previous', false, false);
+      });
+
+      $("#go-next-step").on('click', function(){
+          userSelectedSlide = userSelectedSlide + 1;
+          if(userSelectedSlide <= 1){
+              $("#go-next-step").css ('display', 'none');
+          } else {
+            $("#go-next-step").css ('display', 'block');
+          }
+          $carousel.flickity('next', false, false);
+      });
+
       var $carousel = $('.get-started-carousel').flickity({
           'prevNextButtons': false,
           'pageDots': false,
@@ -71,7 +93,8 @@
           $carousel.flickity('next', false, false);
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function(){
+      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
+        $("#go-previous-step").css ('display', 'block');
           userSelectedSlide = userSelectedSlide + 1;
           $carousel.flickity('next', false, false);
           return false;
