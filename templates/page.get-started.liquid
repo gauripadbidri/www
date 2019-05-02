@@ -61,6 +61,14 @@ function getCookie(cookieName) {
     return "";
 }
 
+function deleteCookie(cname) {
+    var d = new Date(); //Create an date object
+    d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+    var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+    window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
+ 
+}
+
   $(function() {
 
       var cName = "testgmcscookie";
@@ -80,20 +88,36 @@ function getCookie(cookieName) {
       };
 
       var isCookiePresent = checkCookie(cName);
-      if(true == isCookiePresent){
+      alert(isCookiePresent);
+      if(true == isCookiePresent) {
           // get Cookie Value
           userOptions = JSON.parse(getCookie(cName));
-          alert(userOptions);
-          alert(userOptions["currentSlideSelected"] );
+          userSelectedSlide = userOptions["currentSlideSelected"];
+         // userSelectedSlide = userSelectedSlide + 1;
+          hygeineType = userOptions["hygeineType"];
+          if(hygeineType !== "0"){
+            $("input[name=step-one-hygeine]").val([hygeineType]);
+          }
       } else {
-          setCookie(cName, )
+          setCookie(cName, userOptions);
       }
-      var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
+      var sliderIndex = userSelectedSlide; // It is always current Slide number - 1 -> just like array index
       // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
-      if(userSelectedSlide < 1 || userSelectedSlide >= 3){
+      if(userSelectedSlide <= 1 || userSelectedSlide >= 3){
           $("#go-previous-step").css ('display', 'none');
           $("#go-next-step").css ('display', 'none');
-      }
+      }      
+
+      var $carousel = $('.get-started-carousel').flickity({
+          'prevNextButtons': false,
+          'pageDots': false,
+          'draggable': false,
+          'fade': true,
+          'adaptiveHeight': true
+      });  
+      alert(sliderIndex);
+        // Go to user selected Slide
+        $carousel.flickity( 'select', sliderIndex, false, false );
 
       $("#go-previous-step").on('click', function() {
         currentSlideSelected = currentSlideSelected - 1;
@@ -103,6 +127,8 @@ function getCookie(cookieName) {
             $("#go-previous-step").css ('display', 'block');
             $("#go-next-step").css ('display', 'block');
           }
+          userOptions["currentSlideSelected"] = currentSlideSelected;
+          setCookie(cName, userOptions);
           $carousel.flickity('previous', false, false);
       });
 
@@ -119,30 +145,30 @@ function getCookie(cookieName) {
             $("#go-previous-step").css ('display', 'block');
             $("#go-next-step").css ('display', 'block');
           }
+          userOptions["currentSlideSelected"] = currentSlideSelected;
+          setCookie(cName, userOptions);
           $carousel.flickity('next', false, false);
-      });
+      });    
 
-      var $carousel = $('.get-started-carousel').flickity({
-          'prevNextButtons': false,
-          'pageDots': false,
-          'draggable': false,
-          'fade': true,
-          'adaptiveHeight': true
-      });
-
-      // Go to user selected Slide
-      $carousel.flickity( 'select', sliderIndex, false, false );
      $('input[name=step-one-hygeine]').on('change', function() {debugger;
+          userOptions = JSON.parse(getCookie(cName));
           userOptions['hygeineType'] = $(this).val();
+          userSelectedSlide = userOptions["currentSlideSelected"];
           currentSlideSelected = currentSlideSelected + 1;
+          alert(currentSlideSelected);
+          userOptions["currentSlideSelected"] = currentSlideSelected;
           $carousel.flickity('next', false, false);
           $("#go-previous-step").css ('display', 'block');
           $("#go-next-step").css ('display', 'block');
+          setCookie(cName, userOptions);
       });
 
       $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
-        currentSlideSelected = currentSlideSelected + 1;
+          currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
+          userOptions["currentSlideSelected"] = currentSlideSelected;
+          alert('Started Click - ' + currentSlideSelected);
+          setCookie(cName, userOptions);
           return false;
       });
 
@@ -156,7 +182,8 @@ function getCookie(cookieName) {
         }
             $("#go-next-step").css ('display', 'none');
         } 
-        
+          userOptions["currentSlideSelected"] = currentSlideSelected;
+          setCookie(cName, userOptions);
           $carousel.flickity('next', false, false);
           return false;
       });
