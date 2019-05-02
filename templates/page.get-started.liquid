@@ -52,7 +52,7 @@
 
       var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
       // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
-      if(userSelectedSlide <= 1 || userSelectedSlide >= 3){
+      if(userSelectedSlide < 1 || userSelectedSlide >= 3){
           $("#go-previous-step").css ('display', 'none');
           $("#go-next-step").css ('display', 'none');
       }
@@ -61,7 +61,7 @@
         currentSlideSelected = currentSlideSelected - 1;
           if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
               $("#go-previous-step").css ('display', 'none');
-              $("#go-next-step").css ('display', 'none');
+              //$("#go-next-step").css ('display', 'none');
           } else {
             $("#go-previous-step").css ('display', 'block');
             $("#go-next-step").css ('display', 'block');
@@ -75,6 +75,7 @@
             $("#go-previous-step").css ('display', 'none');
             $("#go-next-step").css ('display', 'none');
           } else {
+            $("#go-previous-step").css ('display', 'block');
             $("#go-next-step").css ('display', 'block');
           }
           $carousel.flickity('next', false, false);
@@ -90,14 +91,14 @@
       });
 
      $('input[name=step-one-hygeine]').on('change', function() {debugger;
-        $("#go-previous-step").css ('display', 'block');
           userOptions['hygeineType'] = $(this).val();
           currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
+          $("#go-previous-step").css ('display', 'block');
+          $("#go-next-step").css ('display', 'block');
       });
 
       $('#btn_email_to_shopifyregister_and_newsletter').click(function() {debugger;
-//        $("#go-previous-step").css ('display', 'block');
         currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
           return false;
