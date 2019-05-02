@@ -1,20 +1,6 @@
 <style>
 /* CAROUSAL flickity.css */
 
-
-.wrapper-Icon--undo-icon-v2 {
-  background-color: #fff;
-  border-radius: 50%;
-  float: left;
-  width: 50px;
-  height: 50px;
-  padding-top: 10px;
-  margin-left:20px;
-}
-
-.Icon--undo-icon-v2 {
-  color: #0097ce;
-}
 .carousel-cell {
   width: 100%;
   margin-right: 10px;
@@ -23,22 +9,32 @@
 .get-started-carousel .grid-cell-padding{
     padding-left: 0;
 }
+
+#go-previous-step {
+    padding:10px 50px;
+    background-color: {{ section.settings.btn_get_started_bg_color }};
+    color:{{ section.settings.btn_get_started_color }};
+}
 </style>
 <div class="page-width">
   <div class="grid">
       <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
           <!-- Flickity HTML init -->
-          <div class="carousel get-started-carousel">   
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'image-overlay' %}</div>
+          <div class="carousel get-started-carousel">
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+                {% section 'image-overlay' %}
+                {% section 'product-kit-collection' %}
+                
+            </div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-one' %}</div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-two' %}</div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
           </div>
+          <div>
+              <a href="#" id="go-previous-step">GO BACK</a>
+          </div>
          
       </div>
-  </div>
-  <div class="grid">
-  {%section 'product-kit-collection' %}
   </div>
   {%section 'modal' %}
 </div>
@@ -60,29 +56,30 @@
       };
 
       var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
-      var $carousel = $('.carousel').flickity({
+      var $carousel = $('.get-started-carousel').flickity({
           'prevNextButtons': false,
           'pageDots': false,
           'select': sliderIndex,
           draggable: false,
+          fade: true,
           adaptiveHeight: true
       });
 
      $('input[name=step-one-hygeine]').on('change', function() {
           userOptions['hygeineType'] = $(this).val();
           userSelectedSlide = userSelectedSlide + 1;
-          $carousel.flickity('next');
+          $carousel.flickity('next', false, false);
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').on('click', function(){
+      $('#btn_email_to_shopifyregister_and_newsletter').click(function(){
           userSelectedSlide = userSelectedSlide + 1;
-          $carousel.flickity('next');
+          $carousel.flickity('next', false, false);
           return false;
       });
 
-      $('#skipStep2').on('click', function (){
+      $('#skipStep2').click(function (){
           userSelectedSlide = userSelectedSlide + 1;
-          $carousel.flickity('next');
+          $carousel.flickity('next', false, false);
           return false;
       });
   });

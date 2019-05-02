@@ -270,3 +270,34 @@
 }
 
 {% endschema %}
+{% stylesheet 'scss' %}
+
+.product-kit-collection {
+ 
+    padding-bottom: 0 !important;
+  
+    .ProductListWrapper{
+      margin: 20px;
+    }
+    .SectionHeader__Heading{
+      font-weight: normal;
+      text-transform:lowercase;
+    }
+  
+    .SectionHeader__Heading::first-letter {
+      text-transform: capitalize;
+    }
+    
+    .ProductItem__Wrapper{
+      cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .product-kit-collection {
+   
+        .ProductListWrapper{
+          margin: 1px;
+        }
+    }
+}
+{% endstylesheet %}

@@ -1,29 +1,4 @@
 <style>
-.clearBoth {
-    clear:both;
-}
-
-.width30 {
-  width:33%;
-}
-
-
-.info-text-medium {
-  font-size: 1em;
-}
-
-.info-text-large {
-  font-size: 1.2em;
-}
-
-.option-text-medium  {
-  font-size: 1.4em;
-}
-
-.option-text-large  {
-  font-size: 1.2em;
-}
-
 .step-one-tick {
   font-weight:bold;
   margin-right:5px;
@@ -44,56 +19,13 @@
   display: none;
 }
 .option-description-medium{
-  font-size: 1.2em;
-  width: 150px;
   text-align: center;
   display: block;
   margin: auto;
 }
-
-
-.option-description-large {
-  font-size: 1.2em;
-  width: 150px;
-  margin-left: 30%;
-  text-align: center;
-  display: block;
-  margin: auto;
-}
-
 .step-one .marginLeft18{
   margin: auto !important;
   display: table;
-}
-
-
-.step-title-medium {
-  font-size:1.6em;
-  font-weight: 700;
-}
-
-.step-title-large {
-  font-size: 2em;
-  font-weight: 800;
-}
-
-.question-title-medium {
-  font-size: 1.3em;
-}
-
-.question-title-large {
-  font-size: 1.8em;
-}
-
-@media screen and (min-width: 576px) { 
-  .width30 {
-    width:100%;
-  }
-}
-@media screen and (max-width: 576px) {
-  .width30 {
-    width:100%;
-  }
 }
 @media only screen and (max-width: 600px) {
 
@@ -115,11 +47,6 @@
     height: 1.5em;
     width: 1.5em;
   }
-}
-@media screen and (min-width: 768px) {    
-    .width30 {
-      width:33%;
-    }
 }
 /* Checkmark style starts */
 @-moz-keyframes dothabottomcheck {
@@ -348,16 +275,7 @@
 {% schema %}
 {
     "name": {
-      "de": "Foto mit überlegtem Text",
-      "en": "Step One Settings",
-      "es": "Imagen con texto",
-      "fr": "Image avec texte",
-      "it": "Immagine con testo",
-      "ja": "テキストオーバーレイ付き画像",
-      "nl": "Foto met tekstoverlay",
-      "pt-BR": "Imagem com texto",
-      "zh-CN": "带文本叠加的图片",
-      "zh-TW": "附文字疊加的圖片"
+      "en": "Step One Settings"
     },
     "class": "index-section index-section--flush",
     "settings":  [
@@ -365,44 +283,17 @@
       "type": "text",
       "id": "step-title",
       "label": {
-        "de": "Foto",
-        "en": "STEP 1",
-        "es": "Imagen",
-        "fr": "Image",
-        "it": "Immagine",
-        "ja": "画像",
-        "nl": "Afbeelding",
-        "pt-BR": "Imagem",
-        "zh-CN": "图片",
-        "zh-TW": "圖片"
+        "en": "Step One"
       },
       "default": {
-        "de": "Foto mit überlegtem Text",
-        "en": "Step One Settings",
-        "es": "Imagen con texto",
-        "fr": "Image avec superposition de texte",
-        "it": "Immagine con testo",
-        "ja": "テキストオーバーレイ付き画像",
-        "nl": "Foto met tekstoverlay",
-        "pt-BR": "Imagem com sobreposição de texto",
-        "zh-CN": "带文本叠加的图片",
-        "zh-TW": "附文字疊加的圖片"
+        "en": "Step One Settings"
       }
     },
     {
         "type": "color",
         "id": "title-color",
         "label": {
-          "de": "Titel und Links",
-          "en": "Step Title Color",
-          "es": "Títulos y enlaces",
-          "fr": "En-têtes et liens",
-          "it": "Titoli e link",
-          "ja": "見出しとリンク",
-          "nl": "Koppen en links",
-          "pt-BR": "Títulos e links",
-          "zh-CN": "标题和链接",
-          "zh-TW": "標題和連結"
+          "en": "Step Title Color"
         },
         "default": "#0097ce"
     },
@@ -410,16 +301,7 @@
       "type": "color",
       "id": "option-1-tick-color",
       "label": {
-        "de": "Titel und Links",
-        "en": "Option 1 Tick Color",
-        "es": "Títulos y enlaces",
-        "fr": "En-têtes et liens",
-        "it": "Titoli e link",
-        "ja": "見出しとリンク",
-        "nl": "Koppen en links",
-        "pt-BR": "Títulos e links",
-        "zh-CN": "标题和链接",
-        "zh-TW": "標題和連結"
+        "en": "Option 1 Tick Color"
       },
       "default": "#0097ce"
   },
@@ -427,16 +309,7 @@
     "type": "color",
     "id": "option-2-tick-color",
     "label": {
-      "de": "Titel und Links",
-      "en": "Option 2 Tick Color",
-      "es": "Títulos y enlaces",
-      "fr": "En-têtes et liens",
-      "it": "Titoli e link",
-      "ja": "見出しとリンク",
-      "nl": "Koppen en links",
-      "pt-BR": "Títulos e links",
-      "zh-CN": "标题和链接",
-      "zh-TW": "標題和連結"
+      "en": "Option 2 Tick Color"
     },
     "default": "#ff43b3"
 },
@@ -444,16 +317,7 @@
   "type": "color",
   "id": "option-3-tick-color",
   "label": {
-    "de": "Titel und Links",
-    "en": "Option 3 Tick Color",
-    "es": "Títulos y enlaces",
-    "fr": "En-têtes et liens",
-    "it": "Titoli e link",
-    "ja": "見出しとリンク",
-    "nl": "Koppen en links",
-    "pt-BR": "Títulos e links",
-    "zh-CN": "标题和链接",
-    "zh-TW": "標題和連結"
+    "en": "Option 3 Tick Color"
   },
   "default": "#C0EFB4"
 },
@@ -461,16 +325,7 @@
         "type": "color",
         "id": "question-color",
         "label": {
-          "de": "Titel und Links",
-          "en": "Step Question Color",
-          "es": "Títulos y enlaces",
-          "fr": "En-têtes et liens",
-          "it": "Titoli e link",
-          "ja": "見出しとリンク",
-          "nl": "Koppen en links",
-          "pt-BR": "Títulos e links",
-          "zh-CN": "标题和链接",
-          "zh-TW": "標題和連結"
+          "en": "Step Question Color"
         },
         "default": "#0097ce"
     },
@@ -478,16 +333,7 @@
         "type": "text",
         "id": "question-title",
         "label": {
-          "de": "Foto",
-          "en": "Step One",
-          "es": "Imagen",
-          "fr": "Image",
-          "it": "Immagine",
-          "ja": "画像",
-          "nl": "Afbeelding",
-          "pt-BR": "Imagem",
-          "zh-CN": "图片",
-          "zh-TW": "圖片"
+          "en": "STEP 1"
         },
         "default": {
           "de": "Foto mit überlegtem Text",

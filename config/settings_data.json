@@ -923,7 +923,7 @@
       "step-one": {
         "type": "step-one",
         "settings": {
-          "step-title": "STEP 1",
+          "step-title": "Step One Settings",
           "title-color": "#0097ce",
           "option-1-tick-color": "#0097ce",
           "option-2-tick-color": "#ff43b3",
@@ -955,7 +955,7 @@
       "step-two": {
         "type": "step-two",
         "settings": {
-          "step-title": "STEP 2",
+          "step-title": "Step 2 Settings",
           "title-color": "#0097ce",
           "question-color": "#0097ce",
           "question-title": "Have your eye on anything else?",
@@ -966,7 +966,7 @@
       "step-three": {
         "type": "step-three",
         "settings": {
-          "step-title": "STEP 3",
+          "step-title": "Step 3",
           "title-color": "#0097ce",
           "question-color": "#0097ce",
           "question-title": "Check out what you’re getting.",
