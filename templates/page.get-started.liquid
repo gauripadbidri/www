@@ -57,7 +57,7 @@
           $("#go-next-step").css ('display', 'none');
       }
 
-      $("#go-previous-step").on('click', function(){
+      $("#go-previous-step").on('click', function() {
         currentSlideSelected = currentSlideSelected - 1;
           if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
               $("#go-previous-step").css ('display', 'none');
@@ -68,7 +68,7 @@
           $carousel.flickity('previous', false, false);
       });
 
-      $("#go-next-step").on('click', function(){
+      $("#go-next-step").on('click', function() {
         currentSlideSelected = currentSlideSelected + 1;
           if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
             if (currentSlideSelected == 3) {
