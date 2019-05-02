@@ -10,6 +10,7 @@
     padding-left: 0;
 }
 </style>
+
 <div class="page-width">
   <div class="grid">
       <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
@@ -30,11 +31,39 @@
   </div>
   {%section 'modal' %}
 </div>
-
-
-
 <script>
+function checkCookie(cookieName) {
+    var cookie = getCookie(cookieName);
+    if (cookie == "") {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function setCookie(cookieName, cvalue) {
+    var cookieContent = cookieName + "=" + JSON.stringify(cvalue) ; 
+    document.cookie = cookieContent;    
+}
+  
+function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
   $(function() {
+
+      var cName = "testgmcscookie";
       var maxSlides = 3;
       var userSelectedSlide = 0;
       var currentSlideSelected = userSelectedSlide;
@@ -50,6 +79,15 @@
           addType: '' // Subscription or One Time
       };
 
+      var isCookiePresent = checkCookie(cName);
+      if(true == isCookiePresent){
+          // get Cookie Value
+          userOptions = JSON.parse(getCookie(cName));
+          alert(userOptions);
+          alert(userOptions["currentSlideSelected"] );
+      } else {
+          setCookie(cName, )
+      }
       var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
       // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
       if(userSelectedSlide < 1 || userSelectedSlide >= 3){
