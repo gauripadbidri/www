@@ -87,12 +87,13 @@
       var $carousel = $('.get-started-carousel').flickity({
           'prevNextButtons': false,
           'pageDots': false,
-          'select': sliderIndex,
-          draggable: false,
-          fade: true,
-          adaptiveHeight: true
+          'draggable': false,
+          'fade': true,
+          'adaptiveHeight': true
       });
 
+      // Go to user selected Slide
+      $carousel.flickity( 'select', sliderIndex, false, false );
      $('input[name=step-one-hygeine]').on('change', function() {debugger;
           userOptions['hygeineType'] = $(this).val();
           currentSlideSelected = currentSlideSelected + 1;
