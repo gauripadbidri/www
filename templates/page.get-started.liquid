@@ -34,7 +34,7 @@
 
 
 <script>
-  $(function() {debugger;
+  $(function() {
       var maxSlides = 3;
       var userSelectedSlide = 0;
       var currentSlideSelected = userSelectedSlide;
@@ -57,11 +57,10 @@
           $("#go-next-step").css ('display', 'none');
       }
 
-      $("#go-previous-step").on('click', function(){debugger;
+      $("#go-previous-step").on('click', function(){
         currentSlideSelected = currentSlideSelected - 1;
           if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
               $("#go-previous-step").css ('display', 'none');
-              //$("#go-next-step").css ('display', 'none');
           } else {
             $("#go-previous-step").css ('display', 'block');
             $("#go-next-step").css ('display', 'block');
@@ -69,10 +68,14 @@
           $carousel.flickity('previous', false, false);
       });
 
-      $("#go-next-step").on('click', function(){debugger;
+      $("#go-next-step").on('click', function(){
         currentSlideSelected = currentSlideSelected + 1;
           if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
-            $("#go-previous-step").css ('display', 'none');
+            if (currentSlideSelected == 3) {
+                $("#go-previous-step").css ('display', 'block');                
+            } else {
+                $("#go-previous-step").css ('display', 'none');
+            }            
             $("#go-next-step").css ('display', 'none');
           } else {
             $("#go-previous-step").css ('display', 'block');
@@ -98,18 +101,23 @@
           $("#go-next-step").css ('display', 'block');
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {debugger;
+      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
         currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
           return false;
       });
 
-      $('#skipStep2').click(function (){debugger;
+      $('#skipStep2').click(function (){
         currentSlideSelected = currentSlideSelected + 1;
-        if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
+        if(currentSlideSelected <= 1 || currentSlideSelected >= 3) {
+            if (currentSlideSelected == 3){
+            $("#go-previous-step").css ('display', 'block');            
+        } else {
             $("#go-previous-step").css ('display', 'none');
+        }
             $("#go-next-step").css ('display', 'none');
-          }
+        } 
+        
           $carousel.flickity('next', false, false);
           return false;
       });

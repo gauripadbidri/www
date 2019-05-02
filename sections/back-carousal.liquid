@@ -1,5 +1,24 @@
 
 <style>
+    .previous i, .next i {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    .previous a, .next a {
+        text-align: center;    
+    }
+    .next .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .previous .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+
     #go-previous-step {
         margin-left:10px;
         padding: 15px;
@@ -27,10 +46,18 @@
 </style>
 <div>
     <div class="previous">
-        <a href="#" class="carousalBack" id="go-previous-step">{{ section.settings.button_back_label | escape }}</a>
+    {%- if section.settings.button_back_label != blank -%}
+        <a href="#" class="carousalBack" id="go-previous-step"><b>{{ section.settings.button_back_label | escape }}</b></a>
+    {%- else -%}
+        <a href="#" class="carousalBack" id="go-previous-step"><b><i class="arrow left"></i></b></a>
+    {%- endif -%}
     </div>
     <div class="next">
-        <a href="#" class="carousalBack" id="go-next-step">{{ section.settings.button_next_label | escape }}</a>
+        {%- if section.settings.button_next_label != blank -%}
+            <a href="#" class="carousalBack" id="go-next-step"><b>{{ section.settings.button_next_label | escape }}</b></a>
+            {%- else -%}
+            <a href="#" class="carousalBack" id="go-next-step"><b><i class="arrow right"></i></b></a>
+    {%- endif -%}
     </div>
 </div>
 

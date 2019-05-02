@@ -978,6 +978,15 @@
         "type": "modal",
         "settings": {
         }
+      },
+      "back-carousal": {
+        "type": "back-carousal",
+        "settings": {
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_color": "#fff",
+          "button_back_label": "",
+          "button_next_label": ""
+        }
       }
     },
     "content_for_index": [
