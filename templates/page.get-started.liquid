@@ -34,9 +34,10 @@
 
 
 <script>
-  $(function() {
+  $(function() {debugger;
       var maxSlides = 3;
-      var userSelectedSlide = 1;
+      var userSelectedSlide = 0;
+      var currentSlideSelected = userSelectedSlide;
       var userOptions = {
           currentSlideSelected : userSelectedSlide,
           hygeineType : 0,
@@ -50,15 +51,15 @@
       };
 
       var sliderIndex = userSelectedSlide - 1; // It is always current Slide number - 1 -> just like array index
-      
-      if(userSelectedSlide <= 1){
+      // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
+      if(userSelectedSlide <= 1 || userSelectedSlide >= 3){
           $("#go-previous-step").css ('display', 'none');
           $("#go-next-step").css ('display', 'none');
       }
 
-      $("#go-previous-step").on('click', function(){
-          userSelectedSlide = userSelectedSlide - 1;
-          if(userSelectedSlide <= 1){
+      $("#go-previous-step").on('click', function(){debugger;
+        currentSlideSelected = currentSlideSelected - 1;
+          if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
               $("#go-previous-step").css ('display', 'none');
               $("#go-next-step").css ('display', 'none');
           } else {
@@ -68,10 +69,11 @@
           $carousel.flickity('previous', false, false);
       });
 
-      $("#go-next-step").on('click', function(){
-          userSelectedSlide = userSelectedSlide + 1;
-          if(userSelectedSlide <= 1){
-              $("#go-next-step").css ('display', 'none');
+      $("#go-next-step").on('click', function(){debugger;
+        currentSlideSelected = currentSlideSelected + 1;
+          if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
+            $("#go-previous-step").css ('display', 'none');
+            $("#go-next-step").css ('display', 'none');
           } else {
             $("#go-next-step").css ('display', 'block');
           }
@@ -87,21 +89,26 @@
           adaptiveHeight: true
       });
 
-     $('input[name=step-one-hygeine]').on('change', function() {
+     $('input[name=step-one-hygeine]').on('change', function() {debugger;
+        $("#go-previous-step").css ('display', 'block');
           userOptions['hygeineType'] = $(this).val();
-          userSelectedSlide = userSelectedSlide + 1;
+          currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
-        $("#go-previous-step").css ('display', 'block');
-          userSelectedSlide = userSelectedSlide + 1;
+      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {debugger;
+//        $("#go-previous-step").css ('display', 'block');
+        currentSlideSelected = currentSlideSelected + 1;
           $carousel.flickity('next', false, false);
           return false;
       });
 
-      $('#skipStep2').click(function (){
-          userSelectedSlide = userSelectedSlide + 1;
+      $('#skipStep2').click(function (){debugger;
+        currentSlideSelected = currentSlideSelected + 1;
+        if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
+            $("#go-previous-step").css ('display', 'none');
+            $("#go-next-step").css ('display', 'none');
+          }
           $carousel.flickity('next', false, false);
           return false;
       });
