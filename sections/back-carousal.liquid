@@ -6,6 +6,13 @@
         display: inline-block;
         padding: 3px;
     }
+    div.sticky {
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:100;
+    }
+
     .previous a, .next a {
         text-align: center;    
     }
@@ -45,14 +52,14 @@
     }
 </style>
 <div>
-    <div class="previous">
+    <div class="sticky previous">
     {%- if section.settings.button_back_label != blank -%}
         <a href="#" class="carousalBack" id="go-previous-step"><b>{{ section.settings.button_back_label | escape }}</b></a>
     {%- else -%}
         <a href="#" class="carousalBack" id="go-previous-step"><b><i class="arrow left"></i></b></a>
     {%- endif -%}
     </div>
-    <div class="next">
+    <div class="sticky next">
         {%- if section.settings.button_next_label != blank -%}
             <a href="#" class="carousalBack" id="go-next-step"><b>{{ section.settings.button_next_label | escape }}</b></a>
             {%- else -%}
