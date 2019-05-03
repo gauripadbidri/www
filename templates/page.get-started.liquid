@@ -136,8 +136,13 @@ function deleteCookie(cname) {
       $(".next").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
-        currentSlideSelected = userSelectedSlide + 1;
-        userOptions["currentSlideSelected"] = currentSlideSelected;
+        userSelectedSlide = userSelectedSlide + 1;
+        userOptions["currentSlideSelected"] = userSelectedSlide;
+        if(userSelectedSlide == 3) {
+            $("#go-next-step").css ('display', 'none');      
+          } else {
+            $("#go-next-step").css ('display', 'block');  
+          }
         setCookie(cName, userOptions);
         $carousel.flickity('next', false, false);
       });    
@@ -163,10 +168,18 @@ function deleteCookie(cname) {
       });
 
       $('#skipStep2').click(function (){
-        currentSlideSelected = currentSlideSelected + 1;
-        userOptions["currentSlideSelected"] = currentSlideSelected;
+        userOptions = JSON.parse(getCookie(cName));
+        userSelectedSlide = userOptions["currentSlideSelected"];
+        userSelectedSlide = userSelectedSlide + 1;
+
+        userOptions["currentSlideSelected"] = userSelectedSlide;
         setCookie(cName, userOptions);
         $carousel.flickity('next', false, false);
+        if(userSelectedSlide == 3) {
+            $("#go-next-step").css ('display', 'none');      
+          } else {
+            $("#go-next-step").css ('display', 'block');  
+          }
         return false;
       });
   });
