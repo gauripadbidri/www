@@ -7,13 +7,14 @@
         padding: 3px;
     }
     div.sticky {
-        position:fixed;
-        top:0;
+        /*position:fixed;*/
+        position:absolute;
+        top:50%;
         width:100%;
         z-index:100;
     }
 
-    .previous a, .next a {
+    .previous span, .next span {
         text-align: center;    
     }
     .next .right {
@@ -50,20 +51,24 @@
         top: 50%;
         right:0;
     }
+    #go-next-step:disabled,
+    #go-next-step[disabled] {
+        background-color:gray;
+    }
 </style>
 <div>
     <div class="sticky previous">
     {%- if section.settings.button_back_label != blank -%}
-        <a href="#" class="carousalBack" id="go-previous-step"><b>{{ section.settings.button_back_label | escape }}</b></a>
+        <span href="#" class="carousalBack" id="go-previous-step"><b>{{ section.settings.button_back_label | escape }}</b></span>
     {%- else -%}
-        <a href="#" class="carousalBack" id="go-previous-step"><b><i class="arrow left"></i></b></a>
+        <span href="#" class="carousalBack" id="go-previous-step"><b><i class="arrow left"></i></b></span>
     {%- endif -%}
     </div>
     <div class="sticky next">
         {%- if section.settings.button_next_label != blank -%}
-            <a href="#" class="carousalBack" id="go-next-step"><b>{{ section.settings.button_next_label | escape }}</b></a>
+            <span href="#" class="carousalBack" id="go-next-step"><b>{{ section.settings.button_next_label | escape }}</b></span>
             {%- else -%}
-            <a href="#" class="carousalBack" id="go-next-step"><b><i class="arrow right"></i></b></a>
+            <span href="#" class="carousalBack" id="go-next-step"><b><i class="arrow right"></i></b></span>
     {%- endif -%}
     </div>
 </div>
