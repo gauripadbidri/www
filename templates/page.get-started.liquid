@@ -77,7 +77,7 @@ function deleteCookie(cname) {
       var currentSlideSelected = userSelectedSlide;
       var userOptions = {
           currentSlideSelected : userSelectedSlide,
-          hygeineType : 0,
+          hygeineType : "0",
           addons:[],
       };
       var addonProduct = {
@@ -92,28 +92,27 @@ function deleteCookie(cname) {
           // get Cookie Value
           userOptions = JSON.parse(getCookie(cName));
           userSelectedSlide = userOptions["currentSlideSelected"];
-         // userSelectedSlide = userSelectedSlide + 1;
           hygeineType = userOptions["hygeineType"];
           if(hygeineType !== "0"){
+            // Mark user selected hygeine option
             $("input[name=step-one-hygeine]").val([hygeineType]);
           }
       } else {
           setCookie(cName, userOptions);
       }
       
-      var sliderIndex = userSelectedSlide; // It is always current Slide number - 1 -> just like array index
       // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
-      if(userSelectedSlide <= 1 || userSelectedSlide > 3){
+      if(userSelectedSlide < 1 || userSelectedSlide > 3 ) {
           $("#go-previous-step").css ('display', 'none');
-          $("#go-next-step").css ('display', 'none');
-          if(userSelectedSlide == 1 && hygeineType !== "0") {
-            $("#go-next-step").css ('display', 'block');
+          $("#go-next-step").css ('display', 'none');          
+      } else {
+          $("#go-previous-step").css ('display', 'block');
+          if(userSelectedSlide == 3) {
+            $("#go-next-step").css ('display', 'none');      
+          } else {
+            $("#go-next-step").css ('display', 'block');  
           }
       }
-      if(userSelectedSlide == 3) {
-            $("#go-next-step").css ('display', 'none');
-          
-        }
       
       var $carousel = $('.get-started-carousel').flickity({
           'prevNextButtons': false,
@@ -123,41 +122,24 @@ function deleteCookie(cname) {
           'adaptiveHeight': true
       });  
         // Go to user selected Slide
-        $carousel.flickity( 'select', sliderIndex, false, false );
+        $carousel.flickity( 'select', userSelectedSlide, false, false );
 
-      $("#go-previous-step").on('click', function() {
+      $(".previous").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
         currentSlideSelected = userSelectedSlide - 1;
-          if(currentSlideSelected <= 1 || currentSlideSelected >= 3){ 
-              $("#go-previous-step").css ('display', 'none');
-          } else {
-            $("#go-previous-step").css ('display', 'block');
-            $("#go-next-step").css ('display', 'block');
-          }
-          userOptions["currentSlideSelected"] = currentSlideSelected;
-          setCookie(cName, userOptions);
-          $carousel.flickity('previous', false, false);
+        userOptions["currentSlideSelected"] = currentSlideSelected;
+        setCookie(cName, userOptions);
+        $carousel.flickity('previous', false, false);
       });
 
-      $("#go-next-step").on('click', function() {
+      $(".next").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
         currentSlideSelected = userSelectedSlide + 1;
-          if(currentSlideSelected <= 1 || currentSlideSelected >= 3){
-            if (currentSlideSelected == 3) {
-                $("#go-previous-step").css ('display', 'block');                
-            } else {
-                $("#go-previous-step").css ('display', 'none');
-            }            
-            $("#go-next-step").css ('display', 'none');
-          } else {
-            $("#go-previous-step").css ('display', 'block');
-            $("#go-next-step").css ('display', 'block');
-          }
-          userOptions["currentSlideSelected"] = currentSlideSelected;
-          setCookie(cName, userOptions);
-          $carousel.flickity('next', false, false);
+        userOptions["currentSlideSelected"] = currentSlideSelected;
+        setCookie(cName, userOptions);
+        $carousel.flickity('next', false, false);
       });    
 
      $('input[name=step-one-hygeine]').on('change', function() {
@@ -167,8 +149,6 @@ function deleteCookie(cname) {
           currentSlideSelected = userSelectedSlide + 1;
           userOptions["currentSlideSelected"] = currentSlideSelected;
           $carousel.flickity('next', false, false);
-          $("#go-previous-step").css ('display', 'block');
-          $("#go-next-step").css ('display', 'block');
           setCookie(cName, userOptions);
       });
 
@@ -177,23 +157,17 @@ function deleteCookie(cname) {
           $carousel.flickity('next', false, false);
           userOptions["currentSlideSelected"] = currentSlideSelected;
           setCookie(cName, userOptions);
+          $("#go-previous-step").css ('display', 'block');
+          $("#go-next-step").css ('display', 'block');  
           return false;
       });
 
       $('#skipStep2').click(function (){
         currentSlideSelected = currentSlideSelected + 1;
-        if(currentSlideSelected <= 1 || currentSlideSelected >= 3) {
-            if (currentSlideSelected == 3){
-            $("#go-previous-step").css ('display', 'block');            
-        } else {
-            $("#go-previous-step").css ('display', 'none');
-        }
-            $("#go-next-step").css ('display', 'none');
-        } 
-          userOptions["currentSlideSelected"] = currentSlideSelected;
-          setCookie(cName, userOptions);
-          $carousel.flickity('next', false, false);
-          return false;
+        userOptions["currentSlideSelected"] = currentSlideSelected;
+        setCookie(cName, userOptions);
+        $carousel.flickity('next', false, false);
+        return false;
       });
   });
 </script>
