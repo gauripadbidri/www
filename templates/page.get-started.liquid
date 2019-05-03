@@ -129,11 +129,16 @@ function deleteCookie(cname) {
         userSelectedSlide = userOptions["currentSlideSelected"];
         userSelectedSlide = userSelectedSlide - 1;
         userOptions["currentSlideSelected"] = userSelectedSlide;
-        if(userSelectedSlide == 3) {
+        if(userSelectedSlide < 1 || userSelectedSlide > 3 ) {
+            $("#go-previous-step").css ('display', 'none');
+            $("#go-next-step").css ('display', 'none');          
+        } else {
+          if(userSelectedSlide == 3) {
             $("#go-next-step").css ('display', 'none');      
           } else {
             $("#go-next-step").css ('display', 'block');  
           }
+        }
         setCookie(cName, userOptions);
         $carousel.flickity('previous', false, false);
       });
@@ -163,7 +168,9 @@ function deleteCookie(cname) {
       });
 
       $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
-          currentSlideSelected = currentSlideSelected + 1;
+          userOptions = JSON.parse(getCookie(cName));
+          userSelectedSlide = userOptions["currentSlideSelected"];
+          currentSlideSelected = userSelectedSlide + 1;
           $carousel.flickity('next', false, false);
           userOptions["currentSlideSelected"] = currentSlideSelected;
           setCookie(cName, userOptions);
