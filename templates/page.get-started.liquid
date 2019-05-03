@@ -32,6 +32,7 @@
   {%section 'modal' %}
 </div>
 <script>
+  // Cookie Code
 function checkCookie(cookieName) {
     var cookie = getCookie(cookieName);
     if (cookie == "") {
@@ -66,7 +67,6 @@ function deleteCookie(cname) {
     d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
     var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
     window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
- 
 }
 
   $(function() {
@@ -89,7 +89,7 @@ function deleteCookie(cname) {
 
       var isCookiePresent = checkCookie(cName);
       if(true == isCookiePresent) {
-          // get Cookie Value
+          // get user selection for ALL Steps
           userOptions = JSON.parse(getCookie(cName));
           userSelectedSlide = userOptions["currentSlideSelected"];
           hygeineType = userOptions["hygeineType"];
@@ -127,8 +127,13 @@ function deleteCookie(cname) {
       $(".previous").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
-        currentSlideSelected = userSelectedSlide - 1;
-        userOptions["currentSlideSelected"] = currentSlideSelected;
+        userSelectedSlide = userSelectedSlide - 1;
+        userOptions["currentSlideSelected"] = userSelectedSlide;
+        if(userSelectedSlide == 3) {
+            $("#go-next-step").css ('display', 'none');      
+          } else {
+            $("#go-next-step").css ('display', 'block');  
+          }
         setCookie(cName, userOptions);
         $carousel.flickity('previous', false, false);
       });
