@@ -1,0 +1,88 @@
+<div class="grid">
+    {% for block in section.blocks %}
+    <div class="grid-item">
+        {% case block.type %}
+
+        {% when 'first-section' %}
+        {% include 'snippet_first-section' %}
+
+        {% when 'second-section' %}
+        {% include 'snippet_second-section' %}
+
+        {% when 'third-section' %}
+        {% include 'snippet_third-section' %}
+
+        {% when 'fourth-section' %}
+        {% include 'snippet_fourth-section' %}
+
+        {% endcase %}
+    </div>
+    {% endfor %}
+</div>
+{% schema %}
+{
+    "blocks": [
+    {
+        "type": "first-section",
+        "name": "First Section",
+        "settings": [
+            {
+            "id": "imageOne",
+            "type": "image_picker",
+            "label": "Image"
+        }
+        ]
+    },
+    {
+        "type": "second-section",
+        "name": "Second Section",
+        "settings": [
+            {
+            "id": "imageOne",
+            "type": "image_picker",
+            "label": "Image"
+        }
+        ]
+    },
+    {
+        "type": "third-section",
+        "name": "Third Section",
+        "settings": [
+            {
+            "id": "imageOne",
+            "type": "image_picker",
+            "label": "Image"
+        }
+        ]
+    },
+        { 
+        "type": "fourth-section",
+        "name": "Fourth Section", 
+        "settings": [ 
+            {
+            "id": "imageOne",
+            "type": "image_picker",
+            "label": "Image"
+        }
+        ]
+    } 
+    ]
+}
+{% endschema %}
+
+{% style %}
+    .grid {
+        display: flex;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .grid-item {
+        margin-right: 24px;
+    }
+    
+    .grid-item:last-of-type {
+        margin-right: 0px;
+    }
+
+{% endstyle %}

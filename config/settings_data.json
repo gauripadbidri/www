@@ -902,14 +902,14 @@
         "type": "back-carousal",
         "settings": {
           "btn_get_started_bg_color": "#0992f4",
-          "btn_get_started_arrow_color": "#ffffff",
+          "btn_get_started_arrow_color": "#fff",
           "btn_get_started_color": "#fff"
         }
       },
       "image-overlay": {
         "type": "image-overlay",
         "settings": {
-          "image": "shopify:\/\/shop_images\/V-Basic-Bundle.jpg",
+          "image": "",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "medium",
