@@ -125,8 +125,8 @@ function deleteCookie(cname) {
           'fade': true,
           'adaptiveHeight': true
       });  
-        // Go to user selected Slide
-        $carousel.flickity( 'select', userSelectedSlide, false, false );
+        // Go to user selected Slide - without animation
+        $carousel.flickity( 'select', userSelectedSlide, false, true );
 
       $(".previous").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
