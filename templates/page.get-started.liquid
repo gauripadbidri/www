@@ -15,7 +15,7 @@
   <div class="grid">
       <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
           <!-- Flickity HTML init -->
-          
+         
           {% section 'back-carousal' %}
           <div class="carousel get-started-carousel">
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
@@ -24,12 +24,18 @@
                 
             </div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-one' %}</div>
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-two' %}</div>
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+                {% section 'step-two' %}
+                {% section 'product-subscription-collection-template' %} 
+              </div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
+
           </div>
+          
       </div>
   </div>
   {%section 'modal' %}
+  
 </div>
 <script>
   // Cookie Code
@@ -123,10 +129,16 @@ function deleteCookie(cname) {
           'pageDots': false,
           'draggable': false,
           'fade': true,
-          'adaptiveHeight': true
+          'adaptiveHeight': true,
+          'resize': true
       });  
+
+      // var html = $('#collection-filter-drawer').clone();
+      // $("body").append(html)
+      // $('#collection-filter-drawer').remove();
+
         // Go to user selected Slide - without animation
-        $carousel.flickity( 'select', userSelectedSlide, false, true );
+      $carousel.flickity( 'select', userSelectedSlide, false, true );
 
       $(".previous").on('click', function() {
         userOptions = JSON.parse(getCookie(cName));
@@ -211,6 +223,23 @@ function deleteCookie(cname) {
           }
         return false;
       });
+
+      $('#viewAllProd').on('click', function () {
+
+      $.get('/collections/subscription-product?view=ajax', function (data) {
+
+        $("#viewAllProductListing").html(data);
+        //$('.js .ProductList--grid .ProductItem').css('visibility', 'visible');
+        $carousel.flickity('reloadCells')
+
+      });
+    });
+
   });
 </script>
-    
+    <style>
+      .js .ProductList--grid .ProductItem {
+          visibility: visible !important;
+      }
+      
+    </style>

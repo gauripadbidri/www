@@ -90,7 +90,7 @@
                 }
             });
 
-            $(document.body).on('click', '.gettng-started-btn' ,function(){
+            $(document.body).on('click', '.gettng-started-btn' ,function(){ 
                 document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click();
                 var flikityCarousel = getCarousel();
                 
@@ -114,8 +114,7 @@
                 $("#go-next-step").css ('display', 'block');  
 
                 $('.gettng-started-btn').css('display','none');
-            })
-    
-        })
+            });    
+        });
     
 {% endjavascript %}
