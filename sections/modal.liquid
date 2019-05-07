@@ -92,12 +92,26 @@
 
             $(document.body).on('click', '.gettng-started-btn' ,function(){
                 document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click();
-
                 var flikityCarousel = getCarousel();
                 
-                if(flikityCarousel.selectedIndex == 0){
+                <!-- if(flikityCarousel.selectedIndex == 0){
                     flikityCarousel.select(1);
+                } -->
+
+                userOptions = JSON.parse(getCookie(cName));
+                userSelectedSlide = userOptions["currentSlideSelected"];
+                var hygeineType =  userOptions['hygeineType'];
+                currentSlideSelected = userSelectedSlide + 1;
+                if(currentSlideSelected == 1 && hygeineType == 0) {
+                    // Do NOT proceed till user selects an option
+                    $("#go-next-step").attr('disabled', 'disabled'); 
                 }
+                flikityCarousel.select(1);
+               // $carousel.flickity('next', false, false);
+                userOptions["currentSlideSelected"] = currentSlideSelected;
+                setCookie(cName, userOptions);
+                $("#go-previous-step").css ('display', 'block');
+                $("#go-next-step").css ('display', 'block');  
 
                 $('.gettng-started-btn').css('display','none');
             })
