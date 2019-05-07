@@ -2088,8 +2088,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         var newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + '?variant=' + variant.id;
-
         window.history.replaceState({ path: newUrl }, '', newUrl);
+        
       }
 
       /**
@@ -4758,9 +4758,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (history.replaceState) {
           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
           var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
-          if(window.location.href.indexOf('/pages/get-started') ===-1){
-             window.history.pushState({ path: newUrl }, '', newUrl);
-           }
+
+          window.history.pushState({ path: newUrl }, '', newUrl);
         }
 
         var formData = new FormData();
