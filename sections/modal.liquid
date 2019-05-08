@@ -47,7 +47,8 @@
                 return $('.get-started-carousel').data('flickity');
             }
 
-            $(".product-kit-collection .ProductItem__Wrapper").on('click',function (ev) {
+            $(document.body).on('click', '[aria-controls="product-info-dialog"]' ,function(ev){
+        
                 if (ev.currentTarget.attributes['data-handle']) {
                     $.get('/products/' + ev.currentTarget.attributes['data-handle'].value + '?view=ajax', function (data) {
                         $("#product-info-data").html(data);
@@ -91,14 +92,6 @@
             });
 
             $(document.body).on('click', '.gettng-started-btn' ,function(){
-                var cName = "testgmcscookie";
-				var userOptions = JSON.parse(getCookie("testgmcscookie"));
-                var userSelectedSlide = userOptions["currentSlideSelected"];
-                var hygeineType =  userOptions['hygeineType'];
-                var currentSlideSelected = userSelectedSlide + 1;
-                userOptions["currentSlideSelected"] = currentSlideSelected;
-                setCookie(cName, userOptions);
-
                 document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click();
 
                 var flikityCarousel = getCarousel();
@@ -108,14 +101,8 @@
                 }
 
                 $('.gettng-started-btn').css('display','none');
-                
-                if(currentSlideSelected == 1 && hygeineType == 0) {
-                    // Do NOT proceed till user selects an option
-                    $("#go-next-step").attr('disabled', 'disabled'); 
-                }                
-                $("#go-previous-step").css ('display', 'block');
-                $("#go-next-step").css ('display', 'block'); 
-            });    
-        });
+            })
+    
+        })
     
 {% endjavascript %}
