@@ -4756,18 +4756,18 @@ alert('Sort by Changed');
         }
 
         // We also rewrite the URL if browser supports it
-         if (history.replaceState) {alert('Gauri from Theme.JS');
+         //if (history.replaceState) {
            var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
-           var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
-
-           window.history.pushState({ path: newUrl }, '', newUrl);
-         }
+           var newUrl = this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
+           alert('Gauri from Theme.JS - ' + newUrl);
+         //  window.history.pushState({ path: newUrl }, '', newUrl);
+        // }
 
         var formData = new FormData();
         formData.append('view', 'ajax');
         formData.append('sort_by', this.currentSortBy);
-alert(location.pathname + '?view=ajax&sort_by=' + this.currentSortBy);
-        fetch(location.pathname + '?view=ajax&sort_by=' + this.currentSortBy, {
+        alert(this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy);
+        fetch(this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy, {
           credentials: 'same-origin',
           method: 'GET'
         }).then(function (response) {
