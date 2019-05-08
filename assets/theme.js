@@ -4650,7 +4650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (this.currentSortBy === sortBy) {
           return;
         }
-
+alert('Sort by Changed');
         this.currentSortBy = sortBy;
         this._reloadProducts();
       }
@@ -4719,6 +4719,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         if (this.currentTags.sort().join(',') !== this.temporaryTags.sort().join(',')) {
           this.currentTags = this.temporaryTags.slice();
+          alert('Reloading Products');
           this._reloadProducts();
         }
 
@@ -4734,7 +4735,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_reloadProducts',
       value: function _reloadProducts() {
         var _this37 = this;
-
+alert('Calling RELOAD PRODUCTS');
         document.dispatchEvent(new CustomEvent('theme:loading:start'));
 
         var filterElement = this.toolbarElement.querySelector('.CollectionToolbar__Item--filter');
@@ -4755,7 +4756,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         // We also rewrite the URL if browser supports it
-        if (history.replaceState) {
+        if (history.replaceState) {alert('Gauri from Theme.JS');
           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
           var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
 
