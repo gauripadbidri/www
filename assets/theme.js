@@ -2088,8 +2088,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         var newUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + '?variant=' + variant.id;
+
         window.history.replaceState({ path: newUrl }, '', newUrl);
-        
       }
 
       /**

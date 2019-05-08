@@ -101,25 +101,6 @@
             </h2>
         </div>
         {%- endif -%}
-        
-        {%- if show_price_info -%}
-        <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %} Heading">
-            {%- if product.compare_at_price > product.price -%}
-                <span class="ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
-                <span class="ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-            {%- elsif product.price_varies -%}
-                {%- capture formatted_min_price -%}
-                    <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
-                {%- endcapture -%}
-                {%- capture formatted_max_price -%}
-                    <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
-                {%- endcapture -%}
-                <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
-            {%- else -%}
-                <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
-            {%- endif -%}
-        </div>
-        {%- endif -%}
     </div>
 
     {%- if use_horizontal -%}
@@ -127,36 +108,3 @@
         class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'collection.product.view_product' | t }}</a>
     {%- endif -%}
 </div>
-{%- if show_Buttons ==true -%}
-<div class="bottom-buttons">
-    <div>
-        <a class="Button button-add-to-kit">ADD TO EVERY KIT</a>
-    </div>
-    <div class="add-only-kit-div">
-        <a class="add-only-kit">ADD TO THIS KIT ONLY</a>
-    </div>
-</div>
-{%- endif -%}
-
- <style>
-     .button-add-to-kit{
-         background: #0097ce;
-         color:white;
-         border: 1px solid #0097ce;
-         padding: 4px 16px;
-         margin: 5px;
-         cursor: pointer;
-     }
-
-     .add-only-kit{
-        cursor: pointer;
-        text-decoration: underline;
-     }
-     .bottom-buttons{
-         text-align: center;
-         margin-top: 10px;
-     }
-     .add-only-kit-div{
-        margin-top: 10px;
-     }
-</style>

@@ -18,7 +18,7 @@
 
 {%- capture collection_inner -%}
   {%- comment -%}This is the common part to both template{%- endcomment -%}
-  
+
   {%- if collection.products_count > 0 -%}
     {%- paginate collection.products by section.settings.grid_items_per_page -%}
       <div class="ProductListWrapper">
@@ -43,33 +43,6 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- capture collection_subscription_inner -%}
-  {%- comment -%}This is the common part to both template{%- endcomment -%}
-
-  {%- if collection.products_count > 0 -%}
-    {%- paginate collection.products by section.settings.grid_items_per_page -%}
-      <div class="ProductListWrapper">
-        <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
-          {%- for product in collection.products -%}
-            <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
-              {%- include 'product-kit-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true,show_Buttons: true, show_price_info : true -%}
-            </div>
-          {%- endfor -%}
-        </div>
-      </div>
-
-      {%- include 'pagination' -%}
-    {%- endpaginate -%}
-  {%- else -%}
-    <div class="EmptyState">
-      <div class="Container">
-        <h1 class="EmptyState__Title Heading u-h5">{{ 'collection.general.no_products' | t }}</h1>
-        <button class="EmptyState__Action Button Button--primary" data-action="reset-tags">{{ 'collection.general.reset' | t }}</button>
-      </div>
-    </div>
-  {%- endif -%}
-{%- endcapture -%}
-
 {%- if template == 'collection.ajax' -%}
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
@@ -77,13 +50,8 @@
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
-  {%-  assign collectionUrl =  request.path -%}
   {%- layout none -%}
-  {%- if collectionUrl contains "/collections/subscription-product" -%}
-      {{- collection_subscription_inner -}}
-  {%- else -%}
-    {{- collection_inner -}}
-  {%- endif -%}  
+  {{- collection_inner -}}
 
 {%- else -%}
   {%- comment -%}
