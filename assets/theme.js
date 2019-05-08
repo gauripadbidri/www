@@ -1396,7 +1396,7 @@ alert('IS VISIBLE');
         this.pageOverlayElement.addEventListener('click', this._closeListener);
 
         this.isOpen = true;
-
+alert('About to call OnOpen()');
         this.onOpen(); // Call the callback to allow other code to hook their logic
 
         return false;
