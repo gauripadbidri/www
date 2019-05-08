@@ -4735,7 +4735,7 @@ alert('Sort by Changed');
       key: '_reloadProducts',
       value: function _reloadProducts() {
         var _this37 = this;
-alert('Calling RELOAD PRODUCTS');
+        alert('Calling RELOAD PRODUCTS');
         document.dispatchEvent(new CustomEvent('theme:loading:start'));
 
         var filterElement = this.toolbarElement.querySelector('.CollectionToolbar__Item--filter');
@@ -4756,12 +4756,12 @@ alert('Calling RELOAD PRODUCTS');
         }
 
         // We also rewrite the URL if browser supports it
-        if (history.replaceState) {alert('Gauri from Theme.JS');
-          var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
-          var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
+        // if (history.replaceState) {alert('Gauri from Theme.JS');
+        //   var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
+        //   var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
 
-          window.history.pushState({ path: newUrl }, '', newUrl);
-        }
+        //   window.history.pushState({ path: newUrl }, '', newUrl);
+        // }
 
         var formData = new FormData();
         formData.append('view', 'ajax');
