@@ -1390,7 +1390,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // other browsers, this is the only way to achieve that
         disableBodyScroll(true, '[data-scrollable]');
         __WEBPACK_IMPORTED_MODULE_0__helper_Accessibility__["default"].trapFocus(this.element, 'drawer');
-
+alert('IS VISIBLE');
         // We attach an event to the page overlay to close it
         this.pageOverlayElement.classList.add('is-visible');
         this.pageOverlayElement.addEventListener('click', this._closeListener);
