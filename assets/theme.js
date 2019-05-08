@@ -4756,17 +4756,17 @@ alert('Sort by Changed');
         }
 
         // We also rewrite the URL if browser supports it
-        // if (history.replaceState) {alert('Gauri from Theme.JS');
-        //   var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
-        //   var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
+         if (history.replaceState) {alert('Gauri from Theme.JS');
+           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
+           var newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
 
-        //   window.history.pushState({ path: newUrl }, '', newUrl);
-        // }
+           window.history.pushState({ path: newUrl }, '', newUrl);
+         }
 
         var formData = new FormData();
         formData.append('view', 'ajax');
         formData.append('sort_by', this.currentSortBy);
-
+alert(location.pathname + '?view=ajax&sort_by=' + this.currentSortBy);
         fetch(location.pathname + '?view=ajax&sort_by=' + this.currentSortBy, {
           credentials: 'same-origin',
           method: 'GET'
@@ -4774,10 +4774,11 @@ alert('Sort by Changed');
           response.text().then(function (content) {
             var tempElement = document.createElement('div');
             tempElement.innerHTML = content;
-
+            alert(content);
+            alert(tempElement.innerHTML);
             _this37.collectionInnerElement.innerHTML = tempElement.querySelector('.shopify-section').innerHTML;
             document.dispatchEvent(new CustomEvent('theme:loading:end'));
-
+            //alert(_this37.collectionInnerElement.innerHTML);
             _this37._setupAnimation();
 
             // We scroll to the top
