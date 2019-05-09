@@ -5,7 +5,9 @@
   position: absolute !important;
   top: 30% !important;
 }*/
-
+.ProductItem__PriceList {
+  opacity: 1 !important;
+}
 .carousel-cell {
   width: 100%;
   margin-right: 10px;
@@ -83,7 +85,7 @@ function deleteCookie(cname) {
 }
 
   $(function() {
-  //  $("#shopify-section-product-subscription-collection-template").css('display', 'none');
+    $("#shopify-section-product-subscription-collection-template").css('display', 'none');
       var cName = "testgmcscookie";
       var maxSlides = 3;
       var userSelectedSlide = 0;
@@ -217,6 +219,8 @@ function deleteCookie(cname) {
 
       $("#cta-custom-button").on('click', function(){
         $("#shopify-section-product-subscription-collection-template").toggle();
+        $carousel.flickity('reloadCells');
+        return false;
       });
 
       $('#skipStep2').click(function (){

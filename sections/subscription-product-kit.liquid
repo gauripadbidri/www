@@ -21,7 +21,7 @@
     }
 {%- endcapture -%}
 
-<section class="Section Section--spacingNormal featured-collections featured-product-kit-collection" data-section-id="{{ section.id }}" data-section-type="featured-collections" data-settings='{{ section_settings }}'>
+<section class="Section featured-collections featured-product-kit-collection" data-section-id="{{ section.id }}" data-section-type="featured-collections" data-settings='{{ section_settings }}'>
     <header class="SectionHeader SectionHeader--center">
         <div class="Container">
             {%- if section.settings.title != blank -%}
@@ -45,11 +45,6 @@
             {%- else -%}
                 {%- assign collection = collections[section.blocks.first.settings.collection] -%}
 
-                {%- if collection != empty -%}
-                    <h2 class="SectionHeader__Heading Heading u-h1">{{ section.blocks.first.settings.title | default: collection.title }}</h2>
-                {%- else -%}
-                    <h2 class="SectionHeader__Heading Heading u-h1">{{ 'home_page.onboarding.collection_title' | t }}</h2>
-                {%- endif -%}
             {%- endif -%}
         </div>
     </header>

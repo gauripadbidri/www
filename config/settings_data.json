@@ -977,7 +977,7 @@
           "1557391164645": {
             "type": "collection",
             "settings": {
-              "collection": "v-basic-kit-collection",
+              "collection": "four-in-a-colelction",
               "title": "",
               "grid_items_count": 8,
               "button_text": "View all products"
@@ -1001,8 +1001,8 @@
         "type": "custom-button",
         "settings": {
           "linktext": "VIEW ALL PRODUCTS",
-          "btn-bg-color": "#fff",
-          "btn-text-color": "#0097ce"
+          "btnBgColor": "#fff",
+          "btnTextColor": "#0097ce"
         }
       },
       "product-subscription-collection-template": {
