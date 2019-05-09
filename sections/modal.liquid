@@ -104,8 +104,22 @@
                 }
 
                 $('.gettng-started-btn').css('display','none');
-            })
-    
-        })
+                var cName = "testgmcscookie";
+                var userOptions = JSON.parse(getCookie(cName));
+                var userSelectedSlide = userOptions["currentSlideSelected"];
+                var hygeineType = userOptions['hygeineType'];
+                var currentSlideSelected = userSelectedSlide + 1;
+                alert(currentSlideSelected);
+                if(currentSlideSelected == 1 && hygeineType == 0) {
+                    // Do NOT proceed till user selects an option
+                    $("#go-next-step").attr('disabled', 'disabled'); 
+                }
+                flikityCarousel.select(currentSlideSelected, false, true);
+                userOptions["currentSlideSelected"] = currentSlideSelected;
+                setCookie(cName, userOptions);
+                $("#go-previous-step").css ('display', 'block');
+                $("#go-next-step").css ('display', 'block');  
+            });    
+        });
     
 {% endjavascript %}
