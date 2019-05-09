@@ -21,7 +21,7 @@
     }
 {%- endcapture -%}
 
-<section class="Section Section--spacingNormal featured-collections product-kit-collection" data-section-id="{{ section.id }}" data-section-type="featured-collections" data-settings='{{ section_settings }}'>
+<section class="Section Section--spacingNormal featured-collections featured-product-kit-collection" data-section-id="{{ section.id }}" data-section-type="featured-collections" data-settings='{{ section_settings }}'>
     <header class="SectionHeader SectionHeader--center">
         <div class="Container">
             {%- if section.settings.title != blank -%}
@@ -70,7 +70,7 @@
                         <div class="ProductList ProductList--grid ProductList--removeMargin Grid" data-mobile-count="{{ section.settings.grid_mobile_items_per_row }}" data-desktop-count="{{ section.settings.grid_desktop_items_per_row }}">
                             {%- for product in collection.products limit: block.settings.grid_items_count -%}
                                 <div class="Grid__Cell 1/{{ section.settings.grid_mobile_items_per_row }}--phone 1/2--tablet 1/{{ section.settings.grid_desktop_items_per_row }}--lap-and-up">
-                                    {%- include 'product-kit-item', show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+                                    {%- include 'product-kit-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true,show_Buttons: true ,show_price_info:true -%}
                                     
                                 </div>
                             {%- endfor -%}
@@ -80,14 +80,14 @@
                             {%- for product in collection.products limit: block.settings.grid_items_count -%}
                                 {% if section.settings.show_sold_out == true %}
                                     <div class="Carousel__Cell">
-                                        {%- include 'product-kit-item', show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+                                        {%- include 'product-kit-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true,show_Buttons: true ,show_price_info:true -%}
                                         
                                     </div>
 
                                 {% else %}
                                     {% if product.available == true %}
                                         <div class="Carousel__Cell">
-                                            {%- include 'product-kit-item', show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+                                            {%- include 'product-kit-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true,show_Buttons: true ,show_price_info:true -%}
                                             
                                         </div>
                                     {% endif %}
@@ -157,7 +157,7 @@
 {% schema %}
 
 {
-    "name": "Product Kit Collection",
+    "name": "Subscription Product Kit",
     "class": "shopify-section--bordered",
     "max_blocks": 2,
     "settings": [
@@ -272,7 +272,7 @@
 {% endschema %}
 {% stylesheet 'scss' %}
 
-.product-kit-collection {
+.featured-product-kit-collection {
  
     padding-bottom: 0 !important;
   
@@ -293,7 +293,7 @@
     }
   }
   @media only screen and (max-width: 600px) {
-    .product-kit-collection {
+    .featured-product-kit-collection {
    
         .ProductListWrapper{
           margin: 1px;

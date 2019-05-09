@@ -1390,13 +1390,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         // other browsers, this is the only way to achieve that
         disableBodyScroll(true, '[data-scrollable]');
         __WEBPACK_IMPORTED_MODULE_0__helper_Accessibility__["default"].trapFocus(this.element, 'drawer');
-alert('IS VISIBLE');
+
         // We attach an event to the page overlay to close it
         this.pageOverlayElement.classList.add('is-visible');
         this.pageOverlayElement.addEventListener('click', this._closeListener);
 
         this.isOpen = true;
-alert('About to call OnOpen()');
+
         this.onOpen(); // Call the callback to allow other code to hook their logic
 
         return false;
@@ -4650,7 +4650,7 @@ alert('About to call OnOpen()');
         if (this.currentSortBy === sortBy) {
           return;
         }
-alert('Sort by Changed');
+
         this.currentSortBy = sortBy;
         this._reloadProducts();
       }
@@ -4719,7 +4719,6 @@ alert('Sort by Changed');
 
         if (this.currentTags.sort().join(',') !== this.temporaryTags.sort().join(',')) {
           this.currentTags = this.temporaryTags.slice();
-          alert('Reloading Products');
           this._reloadProducts();
         }
 
@@ -4735,6 +4734,7 @@ alert('Sort by Changed');
       key: '_reloadProducts',
       value: function _reloadProducts() {
         var _this37 = this;
+
         document.dispatchEvent(new CustomEvent('theme:loading:start'));
 
         var filterElement = this.toolbarElement.querySelector('.CollectionToolbar__Item--filter');
@@ -4755,29 +4755,34 @@ alert('Sort by Changed');
         }
 
         // We also rewrite the URL if browser supports it
-         //if (history.replaceState) {
-           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
-           var newUrl = this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
-           alert('Gauri from Theme.JS - ' + this.settings['collectionUrl']);
-         //  window.history.pushState({ path: newUrl }, '', newUrl);
-        // }
+        var newUrl = "";
+        if (history.replaceState) {
+          var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
+          newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
+          if(window.location.href.indexOf('/pages/get-started') === -1){
+            window.history.pushState({ path: newUrl }, '', newUrl);
+            newUrl= location.pathname + '?view=ajax&sort_by=' + this.currentSortBy;
+          } else {
+            newUrl = this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy;
+          }
+            
+        }
 
         var formData = new FormData();
         formData.append('view', 'ajax');
         formData.append('sort_by', this.currentSortBy);
-        alert(this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy);
-        fetch(this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy, {
+
+        fetch(newUrl, {
           credentials: 'same-origin',
           method: 'GET'
         }).then(function (response) {
           response.text().then(function (content) {
             var tempElement = document.createElement('div');
             tempElement.innerHTML = content;
-            alert(content);
-            alert(tempElement.innerHTML);
+
             _this37.collectionInnerElement.innerHTML = tempElement.querySelector('.shopify-section').innerHTML;
             document.dispatchEvent(new CustomEvent('theme:loading:end'));
-            //alert(_this37.collectionInnerElement.innerHTML);
+
             _this37._setupAnimation();
 
             // We scroll to the top
