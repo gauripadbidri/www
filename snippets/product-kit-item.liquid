@@ -107,7 +107,7 @@
             {%- if product.compare_at_price > product.price -%}
                 <span class="gauri ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
                 <span class="gauri1 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-                <div>You Save: </div>
+                <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_with_currency}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
             {%- elsif product.price_varies -%}
                 {%- capture formatted_min_price -%}
                     <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
@@ -159,5 +159,8 @@
      }
      .add-only-kit-div{
         margin-top: 10px;
+     }
+     .marginTop10 {
+         margin-top:10px;
      }
 </style>

@@ -1,13 +1,10 @@
 <style>
-/* CAROUSAL flickity.css */
-/*To Display FILTERS in Sidebar for MOBILE only*/
-/*#shopify-section-product-subscription-collection-template #collection-filter-drawer {
-  position: absolute !important;
-  top: 30% !important;
-}*/
 .ProductItem__PriceList {
   opacity: 1 !important;
 }
+
+/* CAROUSAL flickity.css */
+
 .carousel-cell {
   width: 100%;
   margin-right: 10px;
@@ -85,6 +82,7 @@ function deleteCookie(cname) {
 }
 
   $(function() {
+    // Initially All Products Sections should be invisible - Only Clicking Btn will show this section.
     $("#shopify-section-product-subscription-collection-template").css('display', 'none');
       var cName = "testgmcscookie";
       var maxSlides = 3;
@@ -139,7 +137,8 @@ function deleteCookie(cname) {
           'draggable': false,
           'fade': true,
           'adaptiveHeight': true,
-          'resize': true
+          'resize': true,
+          'accessibility': false
       });  
 
       // var html = $('#collection-filter-drawer').clone();
@@ -150,6 +149,8 @@ function deleteCookie(cname) {
       $carousel.flickity( 'select', userSelectedSlide, false, true );
 
       $(".previous").on('click', function() {
+        // Hide the Filters - They show up on Step 1 in some scenarios.
+        $('#collection-filter-drawer').css('display', 'none');
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
         userSelectedSlide = userSelectedSlide - 1;
@@ -217,6 +218,7 @@ function deleteCookie(cname) {
           return false;
       });
 
+      // Step 2 - Toggle AllProducts Section
       $("#cta-custom-button").on('click', function(){
         $("#shopify-section-product-subscription-collection-template").toggle();
         $carousel.flickity('reloadCells');

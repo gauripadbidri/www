@@ -621,9 +621,14 @@
           var section = $(data).find('.CollectionInner__Products');
           $(".CollectionInner__Products").html(section);
           document.dispatchEvent(new CustomEvent('theme:loading:end'));
+
+          $([document.documentElement, document.body]).animate({
+            scrollTop: $("#shopify-section-product-subscription-collection-template").offset().top
+        }, 2000);
+
         });
     }
-    return false;
+    return;
   });
 
 </script>
