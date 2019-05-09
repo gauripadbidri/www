@@ -4735,7 +4735,6 @@ alert('Sort by Changed');
       key: '_reloadProducts',
       value: function _reloadProducts() {
         var _this37 = this;
-        alert('Calling RELOAD PRODUCTS');
         document.dispatchEvent(new CustomEvent('theme:loading:start'));
 
         var filterElement = this.toolbarElement.querySelector('.CollectionToolbar__Item--filter');
@@ -4759,7 +4758,7 @@ alert('Sort by Changed');
          //if (history.replaceState) {
            var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
            var newUrl = this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
-           alert('Gauri from Theme.JS - ' + newUrl);
+           alert('Gauri from Theme.JS - ' + this.settings['collectionUrl']);
          //  window.history.pushState({ path: newUrl }, '', newUrl);
         // }
 
