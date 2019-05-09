@@ -1,10 +1,16 @@
 <style>
 /* CAROUSAL flickity.css */
 /*To Display FILTERS in Sidebar for MOBILE only*/
-#shopify-section-product-subscription-collection-template #collection-filter-drawer {
-  position: absolute !important;
-  top: 30% !important;
+@media only screen and (max-width: 600px) {
+  #shopify-section-product-subscription-collection-template #collection-filter-drawer {
+    position: absolute !important;
+    top: 35% !important;
+    max-height:750px !important;
+  }
 
+  .PageOverlay {
+    z-index:0 !important;
+  }
 }
 
 .carousel-cell {
@@ -139,11 +145,6 @@ function deleteCookie(cname) {
           'adaptiveHeight': true,
           'resize': true
       });  
-
-      // var html = $('#collection-filter-drawer').clone();
-      // $("body").append(html)
-      // $('#collection-filter-drawer').remove();
-
         // Go to user selected Slide - without animation
       $carousel.flickity( 'select', userSelectedSlide, false, true );
 

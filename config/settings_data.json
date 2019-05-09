@@ -889,10 +889,10 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1557384402493": {
+          "1557386392350": {
             "type": "collection",
             "settings": {
-              "collection": "healthy",
+              "collection": "v-basic-kit-collection",
               "title": "",
               "grid_items_count": 8,
               "button_text": "View all products"
@@ -900,7 +900,7 @@
           }
         },
         "block_order": [
-          "1557384402493"
+          "1557386392350"
         ],
         "settings": {
           "title": "Product kit collection",
@@ -988,7 +988,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1557384432884": {
+          "1557386410925": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -999,7 +999,7 @@
           }
         },
         "block_order": [
-          "1557384432884"
+          "1557386410925"
         ],
         "settings": {
           "title": "",
@@ -1014,7 +1014,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1557384453275": {
+          "1557386437208": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1023,7 +1023,7 @@
           }
         },
         "block_order": [
-          "1557384453275"
+          "1557386437208"
         ],
         "settings": {
           "show_collection_info": true,
