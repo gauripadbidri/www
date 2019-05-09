@@ -1,0 +1,53 @@
+<section>
+    <div id="section-cta">
+        <h3> {{ section.settings.text-box }} </h3>
+        <a href="#" id="cta-custom-button" class="button">{{ section.settings.linktext }}</a>
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "View ALL Products Button",
+    "settings": [
+        {
+            "id": "linktext",
+            "type": "text",
+            "label": "Button text",
+            "default": "VIEW ALL PRODUCTS"
+        },
+        {
+            "type": "color",
+            "id": "btnBgColor",
+            "label": {
+              "en": "Button Background Color"
+            },
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "btnTextColor",
+            "label": {
+              "en": "Button Text Color"
+            },
+            "default": "#0097ce"
+        }
+    ]
+  }
+{% endschema %}
+
+<style>
+    #cta-custom-button {
+        text-align:center;
+        padding: 10px 20px;
+        color: {{ section.settings.btnTextColor }};
+        background-color: {{section.settings.btnBgColor}};
+        border: 1px solid {{section.settings.btnTextColor}};
+    }
+
+    #section-cta {
+        text-align:center;        
+        margin-top: 50px;
+    }
+</style>
+
+{% javascript %}
+{% endjavascript %}

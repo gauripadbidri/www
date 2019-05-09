@@ -87,7 +87,7 @@
     --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
-    {%- if section.settings.show_collection_info and collection.all_products_count > 0 -%}
+    {%- if  collection != empty and section.settings.show_collection_info and collection.all_products_count > 0 -%}
         <header class="PageHeader">
           <div class="Container">
             <div class="SectionHeader SectionHeader--center">
@@ -103,7 +103,7 @@
     --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
-    {%- if collection.all_products_count > 0 -%}
+    {%- if collection != empty and collection.all_products_count > 0 -%}
       {%- comment -%}
       In order to provide more predictable results (for instance not showing filters by tag even if the option is checked in settings,
       but that there are no tags for the given collection to show), we are doing some more logic here. Basically, we try to check if there
@@ -608,3 +608,22 @@
       }
   }
 {% endstylesheet %}
+
+<script>
+
+  $(document.body).on('click','.Pagination__Nav a',function(target){
+    target.preventDefault();
+    document.dispatchEvent(new CustomEvent('theme:loading:start'));
+
+    if(target.currentTarget.attributes['href']){
+        var url = window.location.origin + window.location.pathname + "?" + target.currentTarget.getAttribute('href').split('?')[1]
+        $.get(url,function(data){
+          var section = $(data).find('.CollectionInner__Products');
+          $(".CollectionInner__Products").html(section);
+          document.dispatchEvent(new CustomEvent('theme:loading:end'));
+        });
+    }
+    return false;
+  });
+
+</script>

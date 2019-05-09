@@ -1,17 +1,10 @@
 <style>
 /* CAROUSAL flickity.css */
 /*To Display FILTERS in Sidebar for MOBILE only*/
-@media only screen and (max-width: 600px) {
-  #shopify-section-product-subscription-collection-template #collection-filter-drawer {
-    position: absolute !important;
-    top: 35% !important;
-    max-height:750px !important;
-  }
-
-  .PageOverlay {
-    z-index:0 !important;
-  }
-}
+/*#shopify-section-product-subscription-collection-template #collection-filter-drawer {
+  position: absolute !important;
+  top: 30% !important;
+}*/
 
 .carousel-cell {
   width: 100%;
@@ -39,6 +32,7 @@
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
                 {% section 'step-two' %}
                 {% section 'subscription-product-kit' %}
+                {% section 'custom-button' %}
                 {% section 'product-subscription-collection-template' %} 
               </div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
@@ -89,7 +83,7 @@ function deleteCookie(cname) {
 }
 
   $(function() {
-
+  //  $("#shopify-section-product-subscription-collection-template").css('display', 'none');
       var cName = "testgmcscookie";
       var maxSlides = 3;
       var userSelectedSlide = 0;
@@ -145,6 +139,11 @@ function deleteCookie(cname) {
           'adaptiveHeight': true,
           'resize': true
       });  
+
+      // var html = $('#collection-filter-drawer').clone();
+      // $("body").append(html)
+      // $('#collection-filter-drawer').remove();
+
         // Go to user selected Slide - without animation
       $carousel.flickity( 'select', userSelectedSlide, false, true );
 
@@ -214,6 +213,10 @@ function deleteCookie(cname) {
           $("#go-previous-step").css ('display', 'block');
           $("#go-next-step").css ('display', 'block');  
           return false;
+      });
+
+      $("#cta-custom-button").on('click', function(){
+        $("#shopify-section-product-subscription-collection-template").toggle();
       });
 
       $('#skipStep2').click(function (){

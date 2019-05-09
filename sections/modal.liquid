@@ -48,9 +48,10 @@
             }
 
             $(document.body).on('click', '[aria-controls="product-info-dialog"]' ,function(ev){
-        
+                document.dispatchEvent(new CustomEvent('theme:loading:start'));
                 if (ev.currentTarget.attributes['data-handle']) {
                     $.get('/products/' + ev.currentTarget.attributes['data-handle'].value + '?view=ajax', function (data) {
+                        document.dispatchEvent(new CustomEvent('theme:loading:end'));
                         $("#product-info-data").html(data);
                         var element = document.querySelector('.product-info-slider');
                         
