@@ -14,6 +14,13 @@
 .textAlignCenter {
   text-align:center;
 }
+a.add-only-kit, a#skipStep2 {
+  color:{{section.settings.anchorColor}};
+}
+
+#product-subscription-collection-template .ProductItem__Info h2:last-of-type{
+  font-size:1em !important;
+}
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="hero-section">
     <div class="row textAlignCenter">
@@ -25,7 +32,7 @@
             <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
         </div>
         <div class="marginTop20">
-            <a id="skipStep2" class="anchor-style-{{section.settings.question_text_size}}" href="#" >NO THANKS!</a>
+            <a id="skipStep2" class="anchor-style-{{section.settings.question_text_size}}" href="#" >{{section.settings.no-thanks}}</a>
         </div>
     </div>
 </div>
@@ -44,8 +51,26 @@
         "en": "Step 2"
       },
       "default": {
-        "en": "Step 2 Settings"
+        "en": "STEP 2"
       }
+    },
+    {
+      "type": "text",
+      "id": "no-thanks",
+      "label": {
+        "en": "No Thanks !"
+      },
+      "default": {
+        "en": "NO THANKS!"
+      }
+    },
+    {
+      "type": "color",
+      "id": "anchorColor",
+      "label": {
+        "en": "Anchor Colors"
+      },
+      "default": "#56CEE8"
     },
     {
         "type": "color",

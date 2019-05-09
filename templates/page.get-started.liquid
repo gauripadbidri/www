@@ -31,7 +31,9 @@
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
                 {% section 'step-two' %}
                 {% section 'subscription-product-kit' %}
-                {% section 'custom-button' %}
+                <div class="custom-button-container"> 
+                  {% section 'custom-button' %}
+                </div>
                 {% section 'product-subscription-collection-template' %} 
               </div>
               <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
@@ -260,6 +262,9 @@ function deleteCookie(cname) {
     <style>
       .js .ProductList--grid .ProductItem {
           visibility: visible !important;
+      }
+      .custom-button-container{
+        margin-top: 50px;
       }
       
     </style>
