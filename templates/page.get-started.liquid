@@ -2,16 +2,19 @@
 .ProductItem__PriceList {
   opacity: 1 !important;
 }
+/*
+@media screen and (max-width: 576px) {
+  #collection-filter-drawer {
+    position:absolute !important;
+    top: 32% !important;
+    height: 550px;
+    /*max-height: 705px !important;*/
 
-#collection-filter-drawer {
-  position:absolute !important;
-  top: 30% !important;
-  max-height: 705px !important;
-
-}
-.PageOverlay {
-  height:auto !important;
-}
+  }
+  .PageOverlay {
+    height:auto !important;
+  }
+}*/
 /* CAROUSAL flickity.css */
 
 .carousel-cell {
@@ -263,13 +266,15 @@ function deleteCookie(cname) {
       });
     });
 
-   /* $('.CollectionToolbar__Item--filter').on('click', function(event){
+    // FILTER Container
+    $('.CollectionToolbar__Item--filter').on('click', function(event){
       var cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone();
       $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
       $('#shopify-section-back-carousal').before(cloneFilterElement);
       $(cloneFilterElement).attr('aria-hidden', 'false');
     });
     
+    // Tag CLICK Handler
     $(document).on("click", '#collection-filter-drawer li button', function(e){
       var selectedTag = $(e.target).attr('data-tag');
       var jsonP = JSON.parse($('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings'));
@@ -279,7 +284,7 @@ function deleteCookie(cname) {
       jsonP.currentTags =  arr;
       alert(JSON.stringify(jsonP));
       $('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings',JSON.stringify(jsonP));
-    }) ;*/
+    }) ;
   });
 </script>
     <style>
