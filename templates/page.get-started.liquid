@@ -268,9 +268,15 @@ function deleteCookie(cname) {
 
     // FILTER Container
     $('.CollectionToolbar__Item--filter').on('click', function(event){
-      var cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone();
-      $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
-      $('#shopify-section-back-carousal').before(cloneFilterElement);
+      var cloneFilterElement = null;
+      if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
+        cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
+       // $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
+        $('#shopify-section-back-carousal').before(cloneFilterElement);
+      } else {
+        cloneFilterElement = $('#collection-filter-drawer');
+      }
+      
       $(cloneFilterElement).attr('aria-hidden', 'false');
     });
     
@@ -282,9 +288,14 @@ function deleteCookie(cname) {
       var arr = [];
       arr.push(selectedTag);
       jsonP.currentTags =  arr;
-      alert(JSON.stringify(jsonP));
       $('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings',JSON.stringify(jsonP));
-    }) ;
+      return false;
+    });
+
+    $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
+      $('#collection-filter-drawer').attr('aria-hidden', 'true');
+      return false;
+    });
   });
 </script>
     <style>
