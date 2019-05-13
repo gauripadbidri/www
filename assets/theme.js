@@ -4657,7 +4657,7 @@ debugger;
     }, {
       key: '_toggleTag',
       value: function _toggleTag(event) {debugger;
-        var element = ((event !== undefined) ? (event.target) : (document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected')));
+        var element = event.target;
 
         if (element.classList.contains('is-active')) {
           this.temporaryTags.splice(this.temporaryTags.indexOf(element.getAttribute('data-tag')), 1); // Delete the tag if already active
@@ -4665,14 +4665,10 @@ debugger;
           var activeSibling = element.closest('.Collapsible').querySelector('.is-active');
 
           if (activeSibling) {
-            if(this.temporaryTags.length === 0){
-              this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
-            } else {
               this.temporaryTags.splice(this.temporaryTags.indexOf(activeSibling.getAttribute('data-tag')), 1);
-              this.temporaryTags.push(element.getAttribute('data-tag')); // Add if not previously active
             }            
           }          
-        }
+          this.temporaryTags.push(element.getAttribute('data-tag')); // Add if not previously active
 
         this._updateActiveTags();
 
@@ -4705,7 +4701,12 @@ debugger;
         var _this35 = this;
 
         if(this.id === "product-subscription-collection-template"){
-          this._toggleTag();
+          var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
+          
+          if(this.temporaryTags.length === 0){
+            var activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
+            this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
+          }
         }
         __WEBPACK_IMPORTED_MODULE_3__helper_Dom__["default"].nodeListToArray(this.element.querySelectorAll('.CollectionFilters [data-tag]')).forEach(function (item) {
           // IE11 and lower does not support classList.toggle...
