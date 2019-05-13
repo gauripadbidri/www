@@ -4646,7 +4646,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_sortByChanged',
-      value: function _sortByChanged(sortBy) {alert('Sort By Changed');
+      value: function _sortByChanged(sortBy) {
         if (this.currentSortBy === sortBy) {
           return;
         }
