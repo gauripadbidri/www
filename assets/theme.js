@@ -4455,7 +4455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var CollectionSection = function () {
     function CollectionSection(element) {
       _classCallCheck(this, CollectionSection);
-
+debugger;
       this.element = element;
       this.delegateElement = new domDelegate.Delegate(this.element);
       this.toolbarElement = this.element.querySelector('.CollectionToolbar');
@@ -4656,7 +4656,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_toggleTag',
-      value: function _toggleTag(event) {
+      value: function _toggleTag(event) {debugger;
         var element = event.target;
 
         if (element.classList.contains('is-active')) {
@@ -4686,7 +4686,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_applyTags',
-      value: function _applyTags() {
+      value: function _applyTags() { alert('Theme Apply Tags Non Minified');
         this._updateActiveTags();
         this._commit();
       }
@@ -4698,7 +4698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_updateActiveTags',
-      value: function _updateActiveTags() {
+      value: function _updateActiveTags() { debugger;
         var _this35 = this;
 
         __WEBPACK_IMPORTED_MODULE_3__helper_Dom__["default"].nodeListToArray(this.element.querySelectorAll('.CollectionFilters [data-tag]')).forEach(function (item) {
@@ -4714,9 +4714,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_commit',
-      value: function _commit() {
+      value: function _commit() {debugger;
         var _this36 = this;
-
         if (this.currentTags.sort().join(',') !== this.temporaryTags.sort().join(',')) {
           this.currentTags = this.temporaryTags.slice();
           this._reloadProducts();

@@ -275,15 +275,15 @@ function deleteCookie(cname) {
     });
 
     // FILTER Container
-    $('.CollectionToolbar__Item--filter').on('click', function(event){
+    $('.CollectionToolbar__Item--filter').on('click', function(event){ 
       var cloneFilterElement = null;
-      if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
+     // if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
         cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
        // $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
-        $('#shopify-section-back-carousal').before(cloneFilterElement);
-      } else {
+       // $('#shopify-section-back-carousal').before(cloneFilterElement);
+     // } else {
         cloneFilterElement = $('#collection-filter-drawer');
-      }
+    //  }
       
       $(cloneFilterElement).attr('aria-hidden', 'false');
     });
@@ -302,14 +302,28 @@ function deleteCookie(cname) {
 
     // Apply CSS Highlighted for a specific Tag.
     $('#collection-filter-drawer li').on('click', function(e){
+      var tagBtn =  $(this).find('button');
+      var tag = $(tagBtn).attr('data-tag');
       $('#collection-filter-drawer li').removeClass('is-selected');
       $('#collection-filter-drawer li button').removeClass('is-active');
+      $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
+        var tempBtn = $(this).find('button');
+        if($(tempBtn).attr('data-tag') === tag){
+          // Add CSS Classes to it.
+          $(this).addClass('is-selected');
+          $(tempBtn).addClass('is-active');
+        }
+      });
       $(this).addClass('is-selected');
       $(this).find('button').addClass('is-active');
     });
 
     $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
+      return false;
+    });
+    $('[data-action="apply-tags"]:first').on('click', function(e){alert('first CLicked');
+      $('[data-action="apply-tags"]:last').click();
       return false;
     });
 
