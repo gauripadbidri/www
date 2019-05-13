@@ -288,7 +288,7 @@ function deleteCookie(cname) {
       $(cloneFilterElement).attr('aria-hidden', 'false');
     });
     
-    // Tag CLICK Handler
+    // Tag CLICK Handler - To take TAG value and place in SECTION data-section-settings JSON Object.
     $(document).on("click", '#collection-filter-drawer li button', function(e){
       var selectedTag = $(e.target).attr('data-tag');
       var jsonP = JSON.parse($('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings'));
@@ -298,6 +298,14 @@ function deleteCookie(cname) {
       jsonP.currentTags =  arr;
       $('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings',JSON.stringify(jsonP));
       return false;
+    });
+
+    // Apply CSS Highlighted for a specific Tag.
+    $('#collection-filter-drawer li').on('click', function(e){
+      $('#collection-filter-drawer li').removeClass('is-selected');
+      $('#collection-filter-drawer li button').removeClass('is-active');
+      $(this).addClass('is-selected');
+      $(this).find('button').addClass('is-active');
     });
 
     $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
