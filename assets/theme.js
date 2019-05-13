@@ -4700,13 +4700,16 @@ debugger;
       value: function _updateActiveTags() { debugger;
         var _this35 = this;
 
-        if(this.id === "product-subscription-collection-template"){
-          var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
-          
-          if(this.temporaryTags.length === 0){
+        if(this.id === "product-subscription-collection-template") {
+          // Execute ONLY for Mobile
+          this.temporaryTags =[];
+          if(this.temporaryTags.length === 0) {
+            var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
+            var activeSibling = null;
             var activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
             this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
           }
+          
         }
         __WEBPACK_IMPORTED_MODULE_3__helper_Dom__["default"].nodeListToArray(this.element.querySelectorAll('.CollectionFilters [data-tag]')).forEach(function (item) {
           // IE11 and lower does not support classList.toggle...
