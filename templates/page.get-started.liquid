@@ -312,5 +312,17 @@ function deleteCookie(cname) {
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
       return false;
     });
+
+    // For MOBILE ONLY - Step 1 Info Display
+    $('.info-icon').on('click', function(e) {
+        console.log(e.target.id);
+        var id = e.target.id;
+        $('.info-icon-description').css('display','none');
+        var descriptionDiv = id + '-description'
+        $('#' + descriptionDiv ).toggle();
+        $('#' + descriptionDiv ).css('text-align', 'center');
+        return false;
+    });
+
   });
 </script>
