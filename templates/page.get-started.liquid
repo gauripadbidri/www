@@ -279,7 +279,7 @@ function deleteCookie(cname) {
       var cloneFilterElement = null;
       if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
         cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
-       // $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
+        $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
         $('#shopify-section-back-carousal').before(cloneFilterElement);
       } else {
         cloneFilterElement = $('#collection-filter-drawer');
@@ -315,12 +315,15 @@ function deleteCookie(cname) {
 
     // For MOBILE ONLY - Step 1 Info Display
     $('.info-icon').on('click', function(e) {
-        console.log(e.target.id);
         var id = e.target.id;
-        $('.info-icon-description').css('display','none');
         var descriptionDiv = id + '-description'
-        $('#' + descriptionDiv ).toggle();
-        $('#' + descriptionDiv ).css('text-align', 'center');
+        if($('#' + descriptionDiv).is(":visible")) { 
+          $('.info-icon-description').css('display','none');
+        } else {
+          $('.info-icon-description').css('display','none');
+          $('#' + descriptionDiv ).css('display','block');
+          $('#' + descriptionDiv ).css('text-align', 'center');
+        }
         return false;
     });
 
