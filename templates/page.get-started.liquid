@@ -303,7 +303,8 @@ function deleteCookie(cname) {
       var originalTagBtn = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').find('button[data-tag="'+selectedTag+'"]');
       if($(originalTagBtn).length > 0){
         console.log('Gauri');
-        $(originalTagBtn).trigger('click');
+        //$(originalTagBtn).trigger('click');
+        //return false;
       }
       /*$('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
         var tempBtn = $(this).find('button');
@@ -321,18 +322,17 @@ function deleteCookie(cname) {
       var tag = $(tagBtn).attr('data-tag');
       $('#collection-filter-drawer li').removeClass('is-selected');
       $('#collection-filter-drawer li button').removeClass('is-active');
-      // Add CSS Selection classes to Original Element as well.
-      $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
-        var tempBtn = $(this).find('button');
-        if($(tempBtn).attr('data-tag') === tag){
-          // Add CSS Classes to it.
-          $(this).addClass('is-selected');
-          $(tempBtn).addClass('is-active');
-        }
-      });
-
-
-      $(this).addClass('is-selected');
+    //  $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').find('button[data-tag="enjoyyourv"]').click();
+     
+    $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
+      var tempBtn = $(this).find('button');
+      if($(tempBtn).attr('data-tag') === tag){
+        // Add CSS Classes to it.
+        $(this).addClass('is-selected');
+        $(tempBtn).addClass('is-active');
+      }
+    });
+    $(this).addClass('is-selected');
       $(this).find('button').addClass('is-active');
     });
 
@@ -340,7 +340,18 @@ function deleteCookie(cname) {
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
       return false;
     });
-    $('[data-action="apply-tags"]:first').on('click', function(e){alert('first CLicked');
+    $('[data-action="apply-tags"]:first').on('click', function(e){debugger;
+        
+        // Add CSS Selection classes to Original Element as well.
+        /* $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
+          var tempBtn = $(this).find('button');
+          if($(tempBtn).attr('data-tag') === tag){
+            // Add CSS Classes to it.
+            $(this).addClass('is-selected');
+            $(tempBtn).addClass('is-active');
+          }
+        });*/
+        
       $('[data-action="apply-tags"]:last').click();
       return false;
     });
