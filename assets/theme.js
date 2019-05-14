@@ -4455,7 +4455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var CollectionSection = function () {
     function CollectionSection(element) {
       _classCallCheck(this, CollectionSection);
-debugger;
+      
       this.element = element;
       this.delegateElement = new domDelegate.Delegate(this.element);
       this.toolbarElement = this.element.querySelector('.CollectionToolbar');
@@ -4656,7 +4656,7 @@ debugger;
       }
     }, {
       key: '_toggleTag',
-      value: function _toggleTag(event) {debugger;
+      value: function _toggleTag(event) {
         var element = event.target;
 
         if (element.classList.contains('is-active')) {
@@ -4667,8 +4667,9 @@ debugger;
           if (activeSibling) {
               this.temporaryTags.splice(this.temporaryTags.indexOf(activeSibling.getAttribute('data-tag')), 1);
             }            
-          }          
-          this.temporaryTags.push(element.getAttribute('data-tag')); // Add if not previously active
+
+            this.temporaryTags.push(element.getAttribute('data-tag')); // Add if not previously active
+          }                    
 
         this._updateActiveTags();
 
@@ -4685,19 +4686,23 @@ debugger;
       }
     }, {
       key: '_applyTags',
-      value: function _applyTags() { alert('Theme Apply Tags Non Minified');
+      value: function _applyTags() {
         this._updateActiveTags();
         this._commit();
       }
     }, {
       key: '_resetTags',
-      value: function _resetTags() {
+      value: function _resetTags() {alert('GAURI RESET TAG');
         this.temporaryTags = []; // We simply remove all tags
-        this._applyTags();
+        if(this.id === "product-subscription-collection-template") {
+          this._applyTags();
+        } else {
+          this._applyTags();
+        }
       }
     }, {
       key: '_updateActiveTags',
-      value: function _updateActiveTags() { debugger;
+      value: function _updateActiveTags() {
         var _this35 = this;
 
         if(this.id === "product-subscription-collection-template") {
@@ -4724,7 +4729,7 @@ debugger;
       }
     }, {
       key: '_commit',
-      value: function _commit() {debugger;
+      value: function _commit() {
         var _this36 = this;
         if (this.currentTags.sort().join(',') !== this.temporaryTags.sort().join(',')) {
           this.currentTags = this.temporaryTags.slice();

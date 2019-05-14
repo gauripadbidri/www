@@ -340,19 +340,15 @@ function deleteCookie(cname) {
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
       return false;
     });
-    $('[data-action="apply-tags"]:first').on('click', function(e){debugger;
-        
-        // Add CSS Selection classes to Original Element as well.
-        /* $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
-          var tempBtn = $(this).find('button');
-          if($(tempBtn).attr('data-tag') === tag){
-            // Add CSS Classes to it.
-            $(this).addClass('is-selected');
-            $(tempBtn).addClass('is-active');
-          }
-        });*/
-        
+
+    $('[data-action="apply-tags"]:first').on('click', function(e){
       $('[data-action="apply-tags"]:last').click();
+      $('[data-action="reset-tags"]').css('display', 'block'); // Show RESET after atleast 1 filter is applied.
+      return false;
+    });
+
+    $('[data-action="reset-tags"]:first').on('click', function(e){
+      $('[data-action="reset-tags"]:last').click();
       return false;
     });
 
