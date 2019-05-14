@@ -11,7 +11,7 @@
         {%- else -%}
         {%- assign use_natural_size = false -%}
         {%- endif -%}
-
+        {%- assign selected_variant = product.selected_or_first_available_variant -%}
         {%- if settings.product_show_secondary_image and product.images[1] != blank and use_horizontal != true -%}
         {%- assign has_alternate_image = true -%}
         {%- else -%}
@@ -103,7 +103,7 @@
         {%- endif -%}
 
         {%- if show_price_info -%}
-        <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %} Heading">
+        <div class="ProductItem__PriceList Heading">
             {%- if product.compare_at_price > product.price -%}
                 <span class="gauri ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
                 <span class="gauri1 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
@@ -128,13 +128,16 @@
         class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'collection.product.view_product' | t }}</a>
     {%- endif -%}
 </div>
+
 {%- if show_Buttons ==true -%}
+{% assign product_data = product.selected_or_first_available_variant  %}
+ 
 <div class="bottom-buttons">
     <div>
-        <a class="Button button-add-to-kit">ADD TO EVERY KIT</a>
+        <a class="Button button-add-to-kit" data-product='{{- product_data | json | escape -}}'>ADD TO EVERY KIT</a>
     </div>
     <div class="add-only-kit-div">
-        <a class="add-only-kit">ADD TO THIS KIT ONLY</a>
+        <a class="add-only-kit" data-product='{{product_data | json | escape }}'>ADD TO THIS KIT ONLY</a>
     </div>
 </div>
 {%- endif -%}

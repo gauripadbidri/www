@@ -1,3 +1,6 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" ></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+
 <style>
 .ProductItem__PriceList {
   opacity: 1 !important;
@@ -9,20 +12,6 @@
   .custom-button-container{
     margin-top: 50px;
   }
-  
-/*
-@media screen and (max-width: 576px) {
-  #collection-filter-drawer {
-    position:absolute !important;
-    top: 32% !important;
-    height: 550px;
-    /*max-height: 705px !important;
-
-  }
-  .PageOverlay {
-    height:auto !important;
-  }
-}*/
 /* CAROUSAL flickity.css */
 
 .carousel-cell {
@@ -103,6 +92,111 @@ function deleteCookie(cname) {
     window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
 }
 
+function ResetEachStep(){
+  setTimeout(function(){$('.get-started-carousel').data('flickity').reloadCells(); }, 3000);
+}
+
+
+  function addItemToCart(product,isOneOff,isKit,quantity) {
+
+    var cookieSelection = JSON.parse(getCookie('testgmcscookie'));
+
+    document.dispatchEvent(new CustomEvent('theme:loading:start'));
+    product = JSON.parse(product);
+    if (isOneOff) {
+      data = {
+        "quantity": quantity,
+        "id": product.id,
+      }
+    } else {
+
+      data = {
+        "quantity": quantity,//product.quantity,
+        "id": product.id,
+        "properties[shipping_interval_unit_type]":"Months",
+        "properties[subscription_id]": "202238",
+        "properties[shipping_interval_frequency]": parseInt(cookieSelection.hygeineType,10),
+      }
+    }
+    let message = "Added to every kit";
+    
+    $.ajax({
+      type: 'POST',
+      url: '/cart/add.js',
+      data: data,
+      dataType: 'json',
+      success: function () {
+        if(isOneOff){
+          message = "Added to one time purchase";
+        }
+        if(isKit){
+          message = "Kit Added to cart";
+        }
+        toastr.success(product.name, message);
+        getCart();
+        
+      },
+      error:function(err){
+        document.dispatchEvent(new CustomEvent('theme:loading:end'));
+      }
+    });
+
+  }
+
+  function getCart(variant_id){
+    $.getJSON('/cart.js', function (cartItem) {
+      document.dispatchEvent(new CustomEvent('theme:loading:end'));
+      if (cartItem) {
+        $('.Header__CartCount').text(cartItem.item_count)
+      }
+      var cartKey = null;
+      var product = {};
+
+      if (window.selected_product_kit.product.variants.length > 0) {
+          product.name = window.selected_product_kit.product.title;
+          product.id = window.selected_product_kit.product.variants[0].id;
+      }
+
+      if (variant_id) {
+        for (var index = 0; index < cartItem.items.length; index++) {
+          if (variant_id) {
+            if (cartItem.items[index].variant_id == product.id) {
+              cartKey = cartItem.items[index].key;
+            }
+          }
+        }
+        if (cartKey) {
+
+          var data = {
+            'quantity': 0,
+            'id': cartKey
+          };
+
+          $.ajax({
+            type: 'POST',
+            url: '/cart/change.js',
+            data: data,
+            dataType: 'json',
+            success: function (cartItem) {
+              document.dispatchEvent(new CustomEvent('theme:loading:end'));
+              if (cartItem) {
+                $('.Header__CartCount').text(cartItem.item_count)
+                addItemToCart(JSON.stringify(product), false, true,1);
+              }
+            },
+            error: function (err) {
+              document.dispatchEvent(new CustomEvent('theme:loading:end'));
+            }
+          });
+        } else {
+
+          addItemToCart(JSON.stringify(product), false, true,1);
+        }
+      }
+
+    });
+  }
+
   $(function() {
     // Initially All Products Sections should be invisible - Only Clicking Btn will show this section.
     $("#shopify-section-product-subscription-collection-template").css('display', 'none');
@@ -161,18 +255,14 @@ function deleteCookie(cname) {
           'adaptiveHeight': true,
           'resize': true,
           'accessibility': false
-      });  
-
-      // var html = $('#collection-filter-drawer').clone();
-      // $("body").append(html)
-      // $('#collection-filter-drawer').remove();
-
-        // Go to user selected Slide - without animation
+      }); 
+      
+      // Go to user selected Slide - without animation
       $carousel.flickity( 'select', userSelectedSlide, false, true );
 
       $(".previous").on('click', function() {
         // Hide the Filters - They show up on Step 1 in some scenarios.
-        $('#collection-filter-drawer').css('display', 'none');
+        $('.CollectionFilters').css('display', 'none');
         userOptions = JSON.parse(getCookie(cName));
         userSelectedSlide = userOptions["currentSlideSelected"];
         userSelectedSlide = userSelectedSlide - 1;
@@ -221,6 +311,7 @@ function deleteCookie(cname) {
           userOptions["currentSlideSelected"] = currentSlideSelected;
           $carousel.flickity('next', false, false);
           setCookie(cName, userOptions);
+          getCart(true);
       });
 
       $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
@@ -276,18 +367,16 @@ function deleteCookie(cname) {
 
     // FILTER Container
     $('.CollectionToolbar__Item--filter').on('click', function(event){ 
-      var cloneFilterElement = null;
-     // if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
-        cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
-       // $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
-       // $('#shopify-section-back-carousal').before(cloneFilterElement);
-     // } else {
-        cloneFilterElement = $('#collection-filter-drawer');
-    //  }
-      
-      $(cloneFilterElement).attr('aria-hidden', 'false');
+       var cloneFilterElement = $('#collection-filter-drawer');
+       // cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
+       $(cloneFilterElement).attr('aria-hidden', 'false');
     });
     
+    // Hide Filter SideBar when clicked on Page Overlay Opace background
+    $('.PageOverlay').on("click", function () {
+        $('#collection-filter-drawer').attr('aria-hidden', 'true');;
+        $('.get-started-carousel').data('flickity').reloadCells();
+    });
     // Tag CLICK Handler - To take TAG value and place in SECTION data-section-settings JSON Object.
     $('#collection-filter-drawer li button').on("click", function(e){
       e.preventDefault();
@@ -315,26 +404,32 @@ function deleteCookie(cname) {
         $(tempBtn).addClass('is-active');
       }
     });
-    $(this).addClass('is-selected');
+      $(this).addClass('is-selected');
       $(this).find('button').addClass('is-active');
     });
 
     $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
+      debugger;
+
+      ResetEachStep();
+      
       return false;
     });
 
-    $('[data-action="apply-tags"]:first').on('click', function(e){
+    $('[data-action="apply-tags"]:first').on('click', function(e){debugger;
       $('[data-action="apply-tags"]:last').click();
       $('[data-action="reset-tags"]').css('display', 'block'); // Show RESET after atleast 1 filter is applied.
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
+      ResetEachStep();
       return false;
     });
 
-    $('[data-action="reset-tags"]:first').on('click', function(e){
+    $('[data-action="reset-tags"]:first').on('click', function(e){debugger;
       $('[data-action="reset-tags"]:last').click();
       $('[data-action="reset-tags"]').css('display', 'none');
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
+      ResetEachStep();
       return false;
     });
 
@@ -352,5 +447,46 @@ function deleteCookie(cname) {
         return false;
     });
 
+    $(document.body).on('click', '.button-add-to-kit' ,function(eventTarget){
+        //alert("Add to every Kit");
+        if($('#product-info-dialog').attr('aria-hidden')==="false"){
+          document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click()
+        }
+        var quantity = 1; //$(eventTarget.currentTarget.parentElement.parentElement).find('.QuantitySelector__CurrentQuantity').val()
+        quantity = parseInt(quantity,10);
+        if(eventTarget.target.getAttribute('data-product')){
+            addItemToCart(eventTarget.target.getAttribute('data-product'),false,false,quantity)
+        }
+        eventTarget.preventDefault();
+        return false;
+    });
+
+    $(document.body).on('click', '.add-only-kit' ,function(eventTarget){
+        //alert("Add to every Kit");
+        if($('#product-info-dialog').attr('aria-hidden')==="false"){
+            document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click()
+        }
+        
+        var quantity = 1 // $(eventTarget.currentTarget.parentElement.parentElement).find('.QuantitySelector__CurrentQuantity').val()
+        quantity = parseInt(quantity,10);
+        if(eventTarget.target.getAttribute('data-product')){
+            addItemToCart(eventTarget.target.getAttribute('data-product'),true,false,quantity)
+        }
+        eventTarget.preventDefault();
+        return false;
+    });
+
+    $product_link = $("#product_link_url");
+
+     if($product_link.length ===1){
+       var product_link = $product_link.attr('data-link');
+       if(product_link){
+        $.getJSON(product_link,function(product_data){
+            window.selected_product_kit = product_data;  
+        });
+       }
+     }else{
+      toastr.error("Please configure the product link in page template.", "Error");
+     }
   });
 </script>

@@ -4455,7 +4455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var CollectionSection = function () {
     function CollectionSection(element) {
       _classCallCheck(this, CollectionSection);
-      
+
       this.element = element;
       this.delegateElement = new domDelegate.Delegate(this.element);
       this.toolbarElement = this.element.querySelector('.CollectionToolbar');
@@ -4694,6 +4694,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_resetTags',
       value: function _resetTags() {
         this.temporaryTags = []; // We simply remove all tags
+		//  Genius Minds - Run this code ONLY in case of Get Started
         if(window.location.href.indexOf('/pages/get-started') > -1) {
           this._applyTags('reset');
         } else {
@@ -4735,6 +4736,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_commit',
       value: function _commit() {
         var _this36 = this;
+
         if (this.currentTags.sort().join(',') !== this.temporaryTags.sort().join(',')) {
           this.currentTags = this.temporaryTags.slice();
           this._reloadProducts();

@@ -156,6 +156,13 @@
     {%- if section.settings.hero_layout == 'fixed_width' -%}
       </div>
     {%- endif -%}
+
+    {%- if section.settings.product_link != empty -%}
+
+        <div id="product_link_url" data-link="{{section.settings.product_link}}" style="display:none"> </div>
+
+    {%- endif -%}
+
   </div>
   
   {% schema %}
@@ -355,6 +362,13 @@
         "id": "button_link",
         "label": {
           "en": "Button link"
+        }
+      },
+      {
+        "type": "url",
+        "id": "product_link",
+        "label": {
+          "en": "Product link"
         }
       },
       {

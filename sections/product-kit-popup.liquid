@@ -111,25 +111,42 @@
                             <!-- {%- endunless -%} -->
                         </div>
                     {%- endif -%}
-                  </div> 
+    </div>
+    <div class="ProductItem__PriceList Heading price-align">
+        {%- if product.compare_at_price > product.price -%}
+            <span class="gauri ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+            <span class="gauri1 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+            <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_with_currency}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
+        {%- elsif product.price_varies -%}
+            {%- capture formatted_min_price -%}
+                <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
+            {%- endcapture -%}
+            {%- capture formatted_max_price -%}
+                <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
+            {%- endcapture -%}
+            <span class="gauri2 ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+        {%- else -%}
+            <span class="gauri3 ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+        {%- endif -%}
+    </div>
     <div class="getting-started">
         <a id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn gettng-started-btn">
         LET'S GET STARTED
         </a>
     </div>
     <div class="bottom-buttons getting-started-kit-buttons">
-        <div>
-            <a class="Button button-add-to-kit">ADD TO EVERY KIT</a>
+        <div> 
+            <a class="Button button-add-to-kit" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO EVERY KIT</a> 
         </div>
         <div class="add-only-kit-div">
-            <a class="add-only-kit">ADD TO THIS KIT ONLY</a>
+            <a class="add-only-kit" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO THIS KIT ONLY</a>
         </div>
     </div>          
   </div>
   <div class="Grid__Cell 1/1--phone 1/2--tablet 1/2--lap-and-up">
 
     <div class="ProductMeta product-popup-description">
-      {% include 'product-meta-ajax', show_description: true %}
+      {% include 'product-meta-ajax', show_description: true,show_price_info:true %}
     </div>
     {% include "split" %}
   </div>
@@ -194,6 +211,14 @@
 .Modal--show-product-info .getting-started{
         display: block;
         text-align: center;
+        margin-top: 20px;
+}
+
+.Modal--show-product-info .price-align{
+    text-align: center;
+}
+.Modal--show-product-info .Product__Gallery{
+    margin-bottom: 25px !important;
 }
 
 @media only screen and (max-width: 600px) {

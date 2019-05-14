@@ -327,28 +327,7 @@
           </div>
         </div>
       {%- endif -%}
-<!-- 
-      {%- if section.settings.show_sort_by -%}
-        <div id="collection-sort-popover" class="Popover" aria-hidden="true">
-          <header class="Popover__Header">
-            <button class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% include 'icon' with 'close' %}</button>
-            <span class="Popover__Title Heading u-h4">{{ 'collection.sorting.title' | t }}</span>
-          </header>
-
-          <div class="Popover__Content">
-            <div class="Popover__ValueList" data-scrollable>
-              {% assign collection_sort_by = collection.sort_by | default: collection.default_sort_by %}
-
-              {%- for option in collection.sort_options -%}
-                <button class="Popover__Value {% if option.value == collection_sort_by %}is-selected{% endif %} Heading Link Link--primary u-h6" data-value="{{ option.value }}" data-action="select-value">
-                  {{ option.name }}
-                </button>
-              {%- endfor -%}
-            </div>
-          </div>
-        </div>
-      {%- endif -%} -->
-
+      
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
       COLLECTION PRODUCTS
