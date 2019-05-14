@@ -4706,13 +4706,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var _this35 = this;
         //  Genius Minds - Run this code ONLY in case of Get Started
         if(window.location.href.indexOf('/pages/get-started') > -1) {
-          // Execute ONLY for Mobile
-          this.temporaryTags =[];
           var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
-          if(this.temporaryTags.length === 0 && ele !== null && p !== 'reset') {
+          var activeSibling = null;
+          if(ele != null && typeof(p) === "object") {
+            this.temporaryTags =[];
+            activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
+            this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
+          }
+          
+          if(ele !== null && this.temporaryTags.length === 0 && (p !== undefined && p !== 'reset')) {            
             
-            var activeSibling = null;
-            var activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
+            activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
             this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
           }          
         }

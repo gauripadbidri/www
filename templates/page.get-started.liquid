@@ -289,31 +289,15 @@ function deleteCookie(cname) {
     });
     
     // Tag CLICK Handler - To take TAG value and place in SECTION data-section-settings JSON Object.
-   // $(document).on("click", '#collection-filter-drawer li button', function(e){debugger;
-    $('#collection-filter-drawer li button').on("click", function(e){debugger;
+    $('#collection-filter-drawer li button').on("click", function(e){
       e.preventDefault();
       var selectedTag = $(e.target).attr('data-tag');
-      var selectedTag1 = $(this).attr('data-tag');
       var jsonP = JSON.parse($('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings'));
-      console.log(selectedTag + " - " + selectedTag1);
       var arr = [];
       arr.push(selectedTag);
       jsonP.currentTags =  arr;
       $('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings',JSON.stringify(jsonP));
       var originalTagBtn = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').find('button[data-tag="'+selectedTag+'"]');
-      if($(originalTagBtn).length > 0){
-        console.log('Gauri');
-        //$(originalTagBtn).trigger('click');
-        //return false;
-      }
-      /*$('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
-        var tempBtn = $(this).find('button');
-        if($(tempBtn).attr('data-tag') === selectedTag){
-          // Trigger CLICK of the Original Tag.
-         $(tempBtn).click();
-         // break;
-        }
-      });*/
     });
 
     // Apply CSS Highlighted for a specific Tag.
@@ -322,7 +306,6 @@ function deleteCookie(cname) {
       var tag = $(tagBtn).attr('data-tag');
       $('#collection-filter-drawer li').removeClass('is-selected');
       $('#collection-filter-drawer li button').removeClass('is-active');
-    //  $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').find('button[data-tag="enjoyyourv"]').click();
      
     $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
       var tempBtn = $(this).find('button');
