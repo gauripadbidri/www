@@ -344,11 +344,14 @@ function deleteCookie(cname) {
     $('[data-action="apply-tags"]:first').on('click', function(e){
       $('[data-action="apply-tags"]:last').click();
       $('[data-action="reset-tags"]').css('display', 'block'); // Show RESET after atleast 1 filter is applied.
+      $('#collection-filter-drawer').attr('aria-hidden', 'true');
       return false;
     });
 
     $('[data-action="reset-tags"]:first').on('click', function(e){
       $('[data-action="reset-tags"]:last').click();
+      $('[data-action="reset-tags"]').css('display', 'none');
+      $('#collection-filter-drawer').attr('aria-hidden', 'true');
       return false;
     });
 

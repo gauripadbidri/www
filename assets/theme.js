@@ -4686,29 +4686,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }, {
       key: '_applyTags',
-      value: function _applyTags() {
-        this._updateActiveTags();
-        this._commit();
+      value: function _applyTags(p) {
+          this._updateActiveTags(p);
+          this._commit();
       }
     }, {
       key: '_resetTags',
-      value: function _resetTags() {alert('GAURI RESET TAG');
+      value: function _resetTags() {
         this.temporaryTags = []; // We simply remove all tags
-        if(this.id === "product-subscription-collection-template") {
-          this._applyTags();
+        if(window.location.href.indexOf('/pages/get-started') > -1) {
+          this._applyTags('reset');
         } else {
           this._applyTags();
         }
       }
     }, {
       key: '_updateActiveTags',
-      value: function _updateActiveTags() {
+      value: function _updateActiveTags(p) {
         var _this35 = this;
-
-        if(this.id === "product-subscription-collection-template") {
+        //  Genius Minds - Run this code ONLY in case of Get Started
+        if(window.location.href.indexOf('/pages/get-started') > -1) {
           // Execute ONLY for Mobile
-          this.temporaryTags =[];
-          if(this.temporaryTags.length === 0) {
+          this.temporaryTags =[];debugger;
+          if(this.temporaryTags.length === 0 && p !== 'reset') {
             var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
             var activeSibling = null;
             var activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
@@ -4768,7 +4768,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
         }
 
-        // We also rewrite the URL if browser supports it
+        // Genius Minds - We also rewrite the URL if browser supports it
         var newUrl = "";
         if (history.replaceState) {
           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
