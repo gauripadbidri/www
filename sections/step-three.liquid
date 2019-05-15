@@ -1,13 +1,32 @@
 <style>
+  .marginTop10 {
+    margin-top:10px;
+  }
+  .marginTop20 {
+    margin-top:20px;
+  }
 .marginTop40 {
   margin-top:40px;
-}
-.marginTop20 {
-  margin-top:10px;
 }
 
 .textAlignCenter {
   text-align:center;
+}
+
+.info-title-medium {
+  font-size:1.5em;
+}
+
+.info-title-large {
+  font-size:1.7em;
+}
+
+.total-title-medium {
+  font-size:1.5em;
+}
+
+.total-title-large {
+  font-size:1.7em;
 }
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="hero-section">
@@ -15,9 +34,17 @@
         <div class="marginTop40 step-title-{{section.settings.title_text_size}}">
             <span class="step-title-{{section.settings.title_text_size}}" style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
         </div>
-
         <div class="marginTop40 question-title-{{section.settings.question_text_size}}">
             <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
+        </div>
+        <div class="marginTop20 question-title-{{section.settings.question_text_size}}">
+            <span class="info-title-{{section.settings.title_text_size}}" style="color: {{section.settings.info-color}};">{{section.settings.info-title}}</span>
+        </div>
+        <div class="marginTop20 question-title-{{section.settings.question_text_size}}">
+          <span class="total-title-{{section.settings.title_text_size}}" style="color: {{section.settings.info-color}};">{{section.settings.total-title}}</span>
+        </div>
+        <div class="marginTop10 question-title-{{section.settings.question_text_size}}">
+          <span class="user-info-title-{{section.settings.title_text_size}}" style="color: {{section.settings.info-color}};">{{section.settings.user-info-title}}</span>
         </div>
     </div>
 </div>
@@ -64,51 +91,89 @@
       "default": {
         "en": "Check out what you’re getting."
       }
+  },
+  {
+    "type": "color",
+    "id": "info-color",
+    "label": {
+      "en": "Shipping Info Text Color"
     },
-    {
-      "type": "select",
-      "id": "title_text_size",
-      "label": {
-        "en": "Title Text size"
-      },
-      "default": "medium",
-      "options": [
-        {
-          "label": {
-            "en": "Medium"
-          },
-          "value": "medium"
-        },
-        {
-          "label": {
-            "en": "Large"
-          },
-          "value": "large"
-        }
-      ]
+    "default": "#0097ce"
+},
+{
+    "type": "text",
+    "id": "info-title",
+    "label": {
+      "en": "Shipping Info "
     },
-    {
-      "type": "select",
-      "id": "question_text_size",
-      "label": {
-        "en": "Step Question Text size"
-      },
-      "default": "medium",
-      "options": [
-        {
-          "label": {
-            "en": "Medium"
-          },
-          "value": "medium"
-        },
-        {
-          "label": {
-            "en": "Large"
-          },
-          "value": "large"
-        }
-      ]
+    "default": {
+      "en": "Your first box ships today"
     }
+},
+{
+  "type": "text",
+  "id": "total-title",
+  "label": {
+    "en": "Total text"
+  },
+  "default": {
+    "en": "Total: "
+  }
+},
+{
+  "type": "text",
+  "id": "user-info-title",
+  "label": {
+    "en": "User Info Title"
+  },
+  "default": {
+    "en": "SCORE! YOU GOT FREE SHIPPING"
+  }
+},
+  {
+    "type": "select",
+    "id": "title_text_size",
+    "label": {
+      "en": "Title Text size"
+    },
+    "default": "medium",
+    "options": [
+      {
+        "label": {
+          "en": "Medium"
+        },
+        "value": "medium"
+      },
+      {
+        "label": {
+          "en": "Large"
+        },
+        "value": "large"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "question_text_size",
+    "label": {
+      "en": "Step Question Text size"
+    },
+    "default": "medium",
+    "options": [
+      {
+        "label": {
+          "en": "Medium"
+        },
+        "value": "medium"
+      },
+      {
+        "label": {
+          "en": "Large"
+        },
+        "value": "large"
+      }
+    ]
+  }
   ]
 }
 {% endschema %}

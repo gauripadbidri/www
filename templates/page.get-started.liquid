@@ -12,6 +12,10 @@
   .custom-button-container{
     margin-top: 50px;
   }
+
+  .marginTop30{
+    margin-top:30px;
+  }
 /* CAROUSAL flickity.css */
 
 .carousel-cell {
@@ -45,7 +49,12 @@
                 </div>
                 {% section 'product-subscription-collection-template' %} 
               </div>
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-three' %}</div>
+              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+                {% section 'step-three' %}                
+                <div class="marginTop30"> 
+                  {% section 'checkout-button' %}
+                </div>
+              </div>
 
           </div>
           
