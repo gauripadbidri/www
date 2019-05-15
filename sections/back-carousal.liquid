@@ -52,7 +52,7 @@
         position:absolute;
         top:50%;
         width:100%;
-        z-index:100;
+        z-index:7;
     }
 
     .previous span, .next span {
@@ -92,14 +92,15 @@
         top: 50%;
         right:0;
         text-decoration: none;
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;
+        -webkit-animation: glowing 1500ms infinite;
+        -moz-animation: glowing 1500ms infinite;
+        -o-animation: glowing 1500ms infinite;
+        animation: glowing 1500ms infinite;
     }
     #go-next-step:disabled,
     #go-next-step[disabled] {
         background-color:gray;
+        animation: none;
     }
 </style>
 <div>

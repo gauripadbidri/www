@@ -96,6 +96,13 @@ function ResetEachStep(){
   setTimeout(function(){$('.get-started-carousel').data('flickity').reloadCells(); }, 3000);
 }
 
+function hideCollectionFilter(visible){
+    if(visible){
+      $('.CollectionFilters').hide()
+    }else{
+      $('.CollectionFilters').show()
+    }
+  }
 
   function addItemToCart(product,isOneOff,isKit,quantity) {
 
@@ -277,6 +284,11 @@ function ResetEachStep(){
             $("#go-next-step").css ('display', 'block');  
           }
         }
+        if(userSelectedSlide === 2){
+          hideCollectionFilter(false);
+        }else{
+          hideCollectionFilter(true);
+        }
         setCookie(cName, userOptions);
         $carousel.flickity('previous', false, false);
       });
@@ -297,6 +309,11 @@ function ResetEachStep(){
           } else {
             $("#go-next-step").css ('display', 'block');  
           }
+          if(userSelectedSlide === 2){
+          hideCollectionFilter(false);
+        }else{
+          hideCollectionFilter(true);
+        }
         setCookie(cName, userOptions);
         $carousel.flickity('next', false, false);
       });    
@@ -310,6 +327,13 @@ function ResetEachStep(){
           currentSlideSelected = userSelectedSlide + 1;
           userOptions["currentSlideSelected"] = currentSlideSelected;
           $carousel.flickity('next', false, false);
+
+          if(currentSlideSelected === 2){
+            hideCollectionFilter(false);
+          }else{
+            hideCollectionFilter(true);
+          }
+
           setCookie(cName, userOptions);
           getCart(true);
       });
@@ -335,6 +359,7 @@ function ResetEachStep(){
       $("#cta-custom-button").on('click', function(){
         $("#shopify-section-product-subscription-collection-template").toggle();
         $carousel.flickity('reloadCells');
+        hideCollectionFilter(false);
         return false;
       });
 
@@ -404,20 +429,17 @@ function ResetEachStep(){
         $(tempBtn).addClass('is-active');
       }
     });
-      $(this).addClass('is-selected');
+    $(this).addClass('is-selected');
       $(this).find('button').addClass('is-active');
     });
 
     $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
-      debugger;
-
       ResetEachStep();
-      
       return false;
     });
 
-    $('[data-action="apply-tags"]:first').on('click', function(e){debugger;
+    $('[data-action="apply-tags"]:first').on('click', function(e){
       $('[data-action="apply-tags"]:last').click();
       $('[data-action="reset-tags"]').css('display', 'block'); // Show RESET after atleast 1 filter is applied.
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
@@ -425,7 +447,7 @@ function ResetEachStep(){
       return false;
     });
 
-    $('[data-action="reset-tags"]:first').on('click', function(e){debugger;
+    $('[data-action="reset-tags"]:first').on('click', function(e){
       $('[data-action="reset-tags"]:last').click();
       $('[data-action="reset-tags"]').css('display', 'none');
       $('#collection-filter-drawer').attr('aria-hidden', 'true');
@@ -444,6 +466,8 @@ function ResetEachStep(){
           $('#' + descriptionDiv ).css('display','block');
           $('#' + descriptionDiv ).css('text-align', 'center');
         }
+
+        $carousel.flickity('reloadCells');
         return false;
     });
 

@@ -586,6 +586,52 @@
         border-top: 2px solid #0097ce; 
         padding-top : 40px;
       }
+
+      .ProductItem__Info .ProductItem__Title{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .ProductItem__Info h2:last-of-type{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .ProductItem__Info h2:last-of-type:hover{
+        text-overflow: unset;
+        white-space: unset;
+        overflow: unset;
+      }
+
+      .ProductItem__Info .ProductItem__Title:hover{
+        text-overflow: unset;
+        white-space: unset;
+        overflow: unset;
+      }
+  }
+
+  .featured-product-kit-collection{
+    .ProductItem__Info .ProductItem__Title{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .ProductItem__Info .ProductItem__Title:hover{
+      text-overflow: unset;
+      white-space: unset;
+      overflow: unset;
+    }
+    .ProductItem__Info h2:last-of-type{
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .ProductItem__Info h2:last-of-type:hover{
+      text-overflow: unset;
+      white-space: unset;
+      overflow: unset;
+    }
   }
   @media screen and (min-width: 768px) {
     #shopify-section-product-subscription-collection-template .PageHeader {
@@ -596,11 +642,14 @@
     .product-subscription-template .Container {
       padding:0 !important 
     }
+    .product-subscription-template{
+      padding : 0px;
+   }
   }
 {% endstylesheet %}
 
 <script>
-
+  
   $(document.body).on('click','.Pagination__Nav a',function(target){
     target.preventDefault();
     document.dispatchEvent(new CustomEvent('theme:loading:start'));
@@ -615,6 +664,7 @@
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#shopify-section-product-subscription-collection-template").offset().top
         }, 2000);
+        $('.get-started-carousel').data('flickity').reloadCells();
 
         });
     }
