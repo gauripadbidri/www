@@ -889,7 +889,7 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1557984460228": {
+          "1557989497675": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -900,7 +900,7 @@
           }
         },
         "block_order": [
-          "1557984460228"
+          "1557989497675"
         ],
         "settings": {
           "title": "",
@@ -991,7 +991,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1557984486198": {
+          "1557989526787": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -1002,7 +1002,7 @@
           }
         },
         "block_order": [
-          "1557984486198"
+          "1557989526787"
         ],
         "settings": {
           "title": "",
@@ -1025,7 +1025,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1557984505391": {
+          "1557989542416": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1034,7 +1034,7 @@
           }
         },
         "block_order": [
-          "1557984505391"
+          "1557989542416"
         ],
         "settings": {
           "show_collection_info": true,
@@ -1060,8 +1060,20 @@
           "title-color": "#0097ce",
           "question-color": "#0097ce",
           "question-title": "Check out what you’re getting.",
+          "info-color": "#0097ce",
+          "info-title": "Your first box ships today",
+          "total-title": "Total:",
+          "user-info-title": "SCORE! YOU GOT FREE SHIPPING",
           "title_text_size": "medium",
           "question_text_size": "medium"
+        }
+      },
+      "checkout-button": {
+        "type": "checkout-button",
+        "settings": {
+          "linktext": "CHECKOUT",
+          "btnBgColor": "#0097ce",
+          "btnTextColor": "#fff"
         }
       },
       "modal": {
