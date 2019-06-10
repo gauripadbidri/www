@@ -8,7 +8,7 @@
   margin-top:40px;
 }
 
-.marginTop20 {
+.marginTop20, .chkboxSpacing {
   margin-top:10px;
 }
 
@@ -27,8 +27,11 @@
   margin: auto !important;
   display: table;
 }
-@media only screen and (max-width: 600px) {
 
+@media only screen and (max-width: 769px) {
+  .chkboxSpacing {
+    margin-top:60px !important;
+  }
   .hideMobile{
     display: none;
   }
@@ -125,14 +128,54 @@
 	 transition: border-color ease 0.2s;
 	 cursor: pointer;
 }
- .check-box::before, .check-box::after {
+ .check-box-1::before, .check-box-1::after {
 	 -moz-box-sizing: border-box;
 	 -webkit-box-sizing: border-box;
 	 box-sizing: border-box;
 	 position: absolute;
 	 height: 0;
 	 width: 12px;
-	 background-color: #ff43b3;
+	 background-color: {{section.settings.option-1-tick-color}};
+	 display: inline-block;
+	 -moz-transform-origin: left top;
+	 -ms-transform-origin: left top;
+	 -o-transform-origin: left top;
+	 -webkit-transform-origin: left top;
+	 transform-origin: left top;
+	 border-radius: 5px;
+	 content: ' ';
+	 -webkit-transition: opacity ease 0.5;
+	 -moz-transition: opacity ease 0.5;
+	 transition: opacity ease 0.5;
+}
+.check-box-2::before, .check-box-2::after {
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	 position: absolute;
+	 height: 0;
+	 width: 12px;
+	 background-color:{{section.settings.option-2-tick-color}};
+	 display: inline-block;
+	 -moz-transform-origin: left top;
+	 -ms-transform-origin: left top;
+	 -o-transform-origin: left top;
+	 -webkit-transform-origin: left top;
+	 transform-origin: left top;
+	 border-radius: 5px;
+	 content: ' ';
+	 -webkit-transition: opacity ease 0.5;
+	 -moz-transition: opacity ease 0.5;
+	 transition: opacity ease 0.5;
+}
+.check-box-3::before, .check-box-3::after {
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+	 box-sizing: border-box;
+	 position: absolute;
+	 height: 0;
+	 width: 12px;
+	 background-color: {{section.settings.option-3-tick-color}};
 	 display: inline-block;
 	 -moz-transform-origin: left top;
 	 -ms-transform-origin: left top;
@@ -186,18 +229,11 @@
 
 <div data-section-id="{{ section.id }}" id="{{ section.id }}" class="step-one" data-section-type="hero-section">
     <div class="row textAlignCenter">
-        <div class="marginTop40 step-title-{{section.settings.title_text_size}}">
-            <span class="step-title-{{section.settings.title_text_size}}" style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
-        </div>
-
-        <div class="marginTop40 question-title-{{section.settings.question_text_size}}">
-            <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
-        </div>
 
         <div class="marginTop40 clearBoth">
-            <div class="width30 marginTop40" style="float:left;">
+            <div class="width30 chkboxSpacing" style="float:left;">
                 <input name="step-one-hygeine" type="radio" id="cbtest1" value="1" />
-                <label for="cbtest1" class="check-box"></label>     
+                <label for="cbtest1" class="check-box check-box-1"></label>     
                 <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
                     <label>{{section.settings.select-options-1}}</label> 
                 </div>
@@ -219,9 +255,9 @@
                   </div>
                 </div>
             </div>          
-            <div class="width30 marginTop40" style="float:left;">
+            <div class="width30 chkboxSpacing" style="float:left;">
                 <input name="step-one-hygeine" type="radio" id="cbtest2" value="2" />
-                <label for="cbtest2" class="check-box"></label>
+                <label for="cbtest2" class="check-box check-box-2"></label>
                 <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
                     <label>{{section.settings.select-options-2}}</label> 
                 </div>
@@ -244,9 +280,9 @@
                     </div>
                   </div>
             </div>
-            <div class="width30 marginTop40" style="float:left;"> 
+            <div class="width30 chkboxSpacing" style="float:left;"> 
                 <input name="step-one-hygeine" type="radio" id="cbtest3" value="3" />
-                <label for="cbtest3" class="check-box"></label>
+                <label for="cbtest3" class="check-box check-box-3"></label>
                 <div class="clearBoth marginTop40 option-text-{{section.settings.option-text-size}}">
                     <label>{{section.settings.select-options-3}}</label>
                 </div>
@@ -275,329 +311,250 @@
 {% schema %}
 {
     "name": {
-      "en": "Step One Settings"
+      "en": "STEP 1 - Settings"
     },
     "class": "index-section index-section--flush",
     "settings":  [
     {
-      "type": "text",
-      "id": "step-title",
-      "label": {
-        "en": "STEP 1"
-      },
-      "default": {
-        "en": "STEP 1"
-      }
-    },
-    {
         "type": "color",
-        "id": "title-color",
+        "id": "option-1-tick-color",
         "label": {
-          "en": "Step Title Color"
+          "en": "Option 1 Tick Color"
         },
         "default": "#0097ce"
     },
     {
       "type": "color",
-      "id": "option-1-tick-color",
+      "id": "option-2-tick-color",
       "label": {
-        "en": "Option 1 Tick Color"
+        "en": "Option 2 Tick Color"
       },
-      "default": "#0097ce"
-  },
-  {
-    "type": "color",
-    "id": "option-2-tick-color",
-    "label": {
-      "en": "Option 2 Tick Color"
-    },
-    "default": "#ff43b3"
-},
-{
-  "type": "color",
-  "id": "option-3-tick-color",
-  "label": {
-    "en": "Option 3 Tick Color"
-  },
-  "default": "#C0EFB4"
-},
-    {
-        "type": "color",
-        "id": "question-color",
-        "label": {
-          "en": "Step Question Color"
-        },
-        "default": "#0097ce"
+      "default": "#ff43b3"
     },
     {
-        "type": "text",
-        "id": "question-title",
-        "label": {
-          "en": "STEP 1"
-        },
-        "default": {
-          "en": "What is your typical hygiene routine?"
-        }
+      "type": "color",
+      "id": "option-3-tick-color",
+      "label": {
+        "en": "Option 3 Tick Color"
       },
+      "default": "#5AD43C"
+    },
     {
-        "type": "select",
-        "id": "title_text_size",
-        "label": {
-          "en": "Title Text size"
-        },
-        "default": "medium",
-        "options": [
-          {
-            "label": {
-              "en": "Medium"
-            },
-            "value": "medium"
-          },
-          {
-            "label": {
-              "en": "Large"
-            },
-            "value": "large"
-          }
-        ]
+      "type": "text",
+      "id": "select-options-1",
+      "label": {
+        "en": "Option 1"
       },
-      {
-        "type": "select",
-        "id": "question_text_size",
-        "label": {
-          "en": "Step Question Text size"
-        },
-        "default": "medium",
-        "options": [
-          {
-            "label": {
-              "en": "Medium"
-            },
-            "value": "medium"
-          },
-          {
-            "label": {
-              "en": "Large"
-            },
-            "value": "large"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "option-text-size",
-        "label": {
-          "en": "Options Text Size"
-        },
-        "default": "medium",
-        "options": [
-          {
-            "label": {
-              "en": "Medium"
-            },
-            "value": "medium"
-          },
-          {
-            "label": {
-              "en": "Large"
-            },
-            "value": "large"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "option-description-size",
-        "label": {
-          "en": "Options Description Size"
-        },
-        "default": "medium",
-        "options": [
-          {
-            "label": {
-              "en": "Medium"
-            },
-            "value": "medium"
-          },
-          {
-            "label": {
-              "en": "Large"
-            },
-            "value": "large"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "option-information-text-size",
-        "label": {
-          "en": "Option Information  Text size"
-        },
-        "default": "medium",
-        "options": [
-          {
-            "label": {
-              "en": "Medium"
-            },
-            "value": "medium"
-          },
-          {
-            "label": {
-              "en": "Large"
-            },
-            "value": "large"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "id": "select-options-1",
-        "label": {
-          "en": "Option 1"
-        },
-        "default": {
-          "en": "CLEAN QUEEN"
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-1-description",
-        "label": {
-          "en": "Option 1 One-Liner"
-        },
-        "default": {
-          "en": "Receive your kit every month."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-1-info-1",
-        "label": {
-          "en": "Option 1 Info 1"
-        },
-        "default": {
-          "en": "You could spend hours getting ready."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-1-info-2",
-        "label": {
-          "en": "Option 1 Info 1"
-        },
-        "default": {
-          "en": "You run out of products frequently."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-1-info-3",
-        "label": {
-          "en": "Option 1 Info 1"
-        },
-        "default": {
-          "en": "You take supplements daily."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-2-info-1",
-        "label": {
-          "en": "Option 2 Info 1"
-        },
-        "default": {
-          "en": "You spend about a half hour getting ready."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-2-info-2",
-        "label": {
-          "en": "Option 2 Info 2"
-        },
-        "default": {
-          "en": "You usually keep your bathroom stocked."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-2-info-3",
-        "label": {
-          "en": "Option 2 Info 3"
-        },
-        "default": {
-          "en": "You take supplements when you remember."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-3-info-1",
-        "label": {
-          "en": "Option 3 Info 1"
-        },
-        "default": {
-          "en": "You roll out of bed and out the door."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-3-info-2",
-        "label": {
-          "en": "Option 2 Info 1"
-        },
-        "default": {
-          "en": "You rarely try new products."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-3-info-3",
-        "label": {
-          "en": "Option 2 Info 1"
-        },
-        "default": {
-          "en": "You don’t take any supplements."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-2",
-        "label": {
-          "en": "Option 2"
-        },
-        "default": {
-          "en": "PRETTY CLEAN"
-        }
-      },{
-        "type": "text",
-        "id": "select-options-2-description",
-        "label": {
-          "en": "Option 2 One-Liner"
-        },
-        "default": {
-          "en": "Receive your kit every 2 months."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-3-description",
-        "label": {
-          "en": "Option 3 One-Liner"
-        },
-        "default": {
-          "en": "Receive your kit every 3 months."
-        }
-      },
-      {
-        "type": "text",
-        "id": "select-options-3",
-        "label": {
-          "en": "Option 3"
-        },
-        "default": {
-          "en": "CLEAN ENOUGH"
-        }
+      "default": {
+        "en": "CLEAN QUEEN"
       }
+    },
+    {
+      "type": "text",
+      "id": "select-options-2",
+      "label": {
+        "en": "Option 2"
+      },
+      "default": {
+        "en": "PRETTY CLEAN"
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-3",
+      "label": {
+        "en": "Option 3"
+      },
+      "default": {
+        "en": "CLEAN ENOUGH"
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-1-description",
+      "label": {
+        "en": "Option 1 One-Liner"
+      },
+      "default": {
+        "en": "Receive your kit every month."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-2-description",
+      "label": {
+        "en": "Option 2 One-Liner"
+      },
+      "default": {
+        "en": "Receive your kit every 2 months."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-3-description",
+      "label": {
+        "en": "Option 3 One-Liner"
+      },
+      "default": {
+        "en": "Receive your kit every 3 months."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-1-info-1",
+      "label": {
+        "en": "Option 1 Info 1"
+      },
+      "default": {
+        "en": "You could spend hours getting ready."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-1-info-2",
+      "label": {
+        "en": "Option 1 Info 1"
+      },
+      "default": {
+        "en": "You run out of products frequently."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-1-info-3",
+      "label": {
+        "en": "Option 1 Info 1"
+      },
+      "default": {
+        "en": "You take supplements daily."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-2-info-1",
+      "label": {
+        "en": "Option 2 Info 1"
+      },
+      "default": {
+        "en": "You spend about a half hour getting ready."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-2-info-2",
+      "label": {
+        "en": "Option 2 Info 2"
+      },
+      "default": {
+        "en": "You usually keep your bathroom stocked."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-2-info-3",
+      "label": {
+        "en": "Option 2 Info 3"
+      },
+      "default": {
+        "en": "You take supplements when you remember."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-3-info-1",
+      "label": {
+        "en": "Option 3 Info 1"
+      },
+      "default": {
+        "en": "You roll out of bed and out the door."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-3-info-2",
+      "label": {
+        "en": "Option 2 Info 1"
+      },
+      "default": {
+        "en": "You rarely try new products."
+      }
+    },
+    {
+      "type": "text",
+      "id": "select-options-3-info-3",
+      "label": {
+        "en": "Option 2 Info 1"
+      },
+      "default": {
+        "en": "You don’t take any supplements."
+      }
+    },
+    {
+      "type": "select",
+      "id": "option-text-size",
+      "label": {
+        "en": "Options Text Size"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "option-description-size",
+      "label": {
+        "en": "Options Description Size"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "option-information-text-size",
+      "label": {
+        "en": "Option Information  Text size"
+      },
+      "default": "medium",
+      "options": [
+        {
+          "label": {
+            "en": "Medium"
+          },
+          "value": "medium"
+        },
+        {
+          "label": {
+            "en": "Large"
+          },
+          "value": "large"
+        }
+      ]
+    }
   ],
   "presets": [
     {

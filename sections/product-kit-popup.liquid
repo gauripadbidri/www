@@ -6,13 +6,31 @@
         <h1 class="ProductMeta__Title Heading u-h2 Product-info-mobile">
             {{- product.title -}}
             {{ desc[0] }}
+            <div class="ProductItem__PriceList Heading price-align">
+                    {%- if product.compare_at_price > product.price -%}
+                        <span class="ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+                        <span class="ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                    {%- elsif product.price_varies -%}
+                        {%- capture formatted_min_price -%}
+                            <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
+                        {%- endcapture -%}
+                        {%- capture formatted_max_price -%}
+                            <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
+                        {%- endcapture -%}
+                        <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+                    {%- else -%}
+                        <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+                    {%- endif -%}
+                </div>
         </h1>
     </div>
     <div class="Product__Gallery product-popup-image  Product__Gallery--withThumbnails" > 
     {%- assign initial_image_id = product.featured_image.id -%}
     {%- assign initial_image_index = 0 -%}
     {%- assign image_count = 0 -%}
-
+    {% if product.images %}
+        {% assign image_url_cart = product.images[0] | img_url: '200x' %}   
+    {% endif %}
     {%- capture slideshow_images -%}
         {%- for image in product.images -%}
             {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
@@ -31,6 +49,7 @@
             <div id="Image{{ image.id }}" class="Product__SlideItem Product__SlideItem--{% if is_video %}video{% else %}image{% endif %} Carousel__Cell {% if initial_image_id == image.id %}is-selected{% endif %}" {% if is_video %} data-action="open-modal" aria-controls="modal-video-{{ image.id }}" {% endif %} {% unless is_video %} data-image-position-ignoring-video="{% increment image_position_without_video %}" {% endunless %} data-image-position="{% increment image_position %}" data-image-id="{{ image.id }}">
                 <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%; --aspect-ratio: {{ image.aspect_ratio }};">
                     {% assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                   
 
                     <img class="Image--lazyLoad Image--fadeIn" {% if initial_image_id == image.id %} src="{{ image | img_url: '250x' }}" {% endif %} data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" data-expand="-100" alt="{{ image.alt | escape }}" data-max-width="{{ image.width }}" data-max-height="{{ image.height }}" data-original-src="{{ image | img_url: 'master' }}">
 
@@ -101,47 +120,34 @@
                                                                                                                                                                                                                                                                                                                                         }
                             {%- endcapture -%}
 
-                            <div class="Product__Slideshow  product-info-slider {% if section.settings.enable_image_zoom %}Product__Slideshow--zoomable{% endif %} Carousel" data-flickity-config='{{ flickity_options }}'>
+                            <div class="Product__Slideshow  product-info-slider {% if section.settings.enable_image_zoom %}Product__Slideshow--zoomable{% endif %} " data-flickity-config='{{ flickity_options }}'>
                                 {{ slideshow_images }}
                             </div>
 
-                            <!-- {%- unless section.settings.stack_images -%} -->
-                            <!-- <div class="product-info-nav"> -->
                                 {{ slideshow_nav }}
-                            <!-- {%- endunless -%} -->
                         </div>
                     {%- endif -%}
     </div>
-    <div class="ProductItem__PriceList Heading price-align">
+    <div class="ProductItem__PriceList Heading price-align Product-info-mobile">
         {%- if product.compare_at_price > product.price -%}
-            <span class="gauri ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
-            <span class="gauri1 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-            <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_with_currency}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
-        {%- elsif product.price_varies -%}
-            {%- capture formatted_min_price -%}
-                <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
-            {%- endcapture -%}
-            {%- capture formatted_max_price -%}
-                <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
-            {%- endcapture -%}
-            <span class="gauri2 ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
-        {%- else -%}
-            <span class="gauri3 ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+        <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
         {%- endif -%}
     </div>
-    <div class="getting-started">
+    <div class="getting-started Product-info-mobile">
         <a id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn gettng-started-btn">
         LET'S GET STARTED
         </a>
     </div>
-    <div class="bottom-buttons getting-started-kit-buttons">
-        <div> 
-            <a class="Button button-add-to-kit" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO EVERY KIT</a> 
+    <div class="bottom-buttons Product-info-mobile">
+        <div class="getting-started-kit-buttons">
+        <div>  
+            <a class="Button button-add-to-kit" data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title }}" data-item-product-text='{{ product.handle | escape}}'' data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO EVERY KIT</a> 
         </div>
         <div class="add-only-kit-div">
-            <a class="add-only-kit" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO THIS KIT ONLY</a>
+            <a class="add-only-kit Button" data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title | escape}}" data-item-product-text-only-kit='{{ product.handle }}' data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO THIS KIT ONLY</a>
         </div>
-    </div>          
+        </div>
+    </div>
   </div>
   <div class="Grid__Cell 1/1--phone 1/2--tablet 1/2--lap-and-up">
 
@@ -208,8 +214,13 @@
     display: block;
 }
 
+.Modal--show-product-info .product-info-desktop .button-add-to-kit{
+    width: 70%;
+}
+.Modal--show-product-info .product-info-desktop .add-only-kit{
+    width: 70%;
+}
 .Modal--show-product-info .getting-started{
-        display: block;
         text-align: center;
         margin-top: 20px;
 }
@@ -221,7 +232,7 @@
     margin-bottom: 25px !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
     .Modal--show-product-info .Product-info-mobile{
         display: block;
         margin-right: 20px;
@@ -262,7 +273,7 @@
     }
   }
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 769px) {
     .ProductItem__ImageWrapper {
       .Icon--info-icon-v2 {
         height: 1.5em;

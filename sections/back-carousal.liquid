@@ -27,19 +27,21 @@
     
     .arrow-right {
         width: 0; 
-        height: 0; 
+        height: 0;
+        float:right; 
         margin:auto;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;  
-        border-left: 15px solid {{section.settings.btn_get_started_arrow_color}};
+        border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};
     }
     .arrow-left {
         width: 0; 
         height: 0; 
+        float:left;
         margin:auto;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;         
-        border-right:15px solid {{section.settings.btn_get_started_arrow_color}};
+        border-right:15px solid  {{ section.settings.btn_get_started_bg_color }};
     }
     .previous i, .next i {
         border: solid white;
@@ -48,9 +50,9 @@
         padding: 3px;
     }
     div.sticky {
-        /*position:fixed;*/
         position:absolute;
-        top:50%;
+        cursor:pointer;
+        top:30%;
         width:100%;
         z-index:7;
     }
@@ -69,46 +71,40 @@
     }
 
     #go-previous-step {
-        margin-left:10px;
+        font-weight: bold;
+        margin-left:20%;
         padding: 15px;
-        width: 50px;
-        border-radius:50%;
-        background-color: {{ section.settings.btn_get_started_bg_color }};
-        color:{{ section.settings.btn_get_started_color }};
+        width: 170px;
+        color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
         top: 50%;
         left:0;
     }
     #go-next-step {
-        margin-right:10px;
+        font-weight: bold;
+        margin-right:20%;
         padding: 15px;
-        width: 50px;
-        border-radius:50%;
-        background-color: {{ section.settings.btn_get_started_bg_color }};
-        color:{{ section.settings.btn_get_started_color }};
+        width: 150px;
+        color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
         top: 50%;
         right:0;
-        text-decoration: none;
-  -webkit-animation: glowing 1500ms infinite;
-  -moz-animation: glowing 1500ms infinite;
-  -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite;
+        text-decoration: underline;
     }
     #go-next-step:disabled,
     #go-next-step[disabled] {
-        background-color:gray;
-        animation: none;
+        color:gray;
+        text-decoration: none;
     }
 </style>
 <div>
     <div class="sticky previous">
-        <span href="#" class="carousalBack" id="go-previous-step"><div class="arrow-left"></div></span>
+        <span href="#" class="carousalBack" id="go-previous-step"><div class="arrow-left"></div><span>PREVIOUS STEP</span></div></span>
     </div>
     <div class="sticky next">
-            <span href="#" class="carousalBack" id="go-next-step"><div class="arrow-right"></div></span>            
+            <span href="#" class="carousalBack" id="go-next-step"><div class="arrow-right"></div><span>NEXT STEP</span></div></span>            
     </div>
 </div>
 

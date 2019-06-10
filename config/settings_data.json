@@ -58,7 +58,7 @@
     "social_linkedin": "",
     "social_snapchat": "",
     "social_fancy": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
     "checkout_header_image": "",
     "checkout_logo_image": "",
     "checkout_logo_position": "center",
@@ -496,7 +496,7 @@
           "slide-tagline": "V on Top of your Health with our Daily Essentials",
           "subheading_font_size": 1,
           "color_tagline": "#ffffff",
-          "slide-link-url": "shopify:\/\/collections\/our-products",
+          "slide-link-url": "shopify:\/\/pages\/get-started",
           "slide-link-title": "Let's Get Started",
           "color_link": "#ffffff",
           "color_button": "#0097ce"
@@ -889,7 +889,7 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1557989497675": {
+          "1559908452366": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -900,7 +900,7 @@
           }
         },
         "block_order": [
-          "1557989497675"
+          "1559908452366"
         ],
         "settings": {
           "title": "",
@@ -912,18 +912,65 @@
           "grid_desktop_items_per_row": 4
         }
       },
-      "back-carousal": {
-        "type": "back-carousal",
+      "subscription-settings": {
+        "type": "subscription-settings",
+        "settings": {
+          "product_link": "shopify:\/\/products\/v-basic",
+          "activeSubscription": "",
+          "activeSubscriptionBy": "Months",
+          "activeSubscriptionFrequency": "1",
+          "red": "#ff2dac",
+          "green": "#54d12b",
+          "blue": "#0091c8"
+        }
+      },
+      "back-carousal-step-one": {
+        "type": "back-carousal-step-one",
+        "settings": {
+          "btn_get_started_bg_color": "#fff",
+          "btn_get_started_color": "#0992f4",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 1",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "What is your typical hygiene routine?"
+        }
+      },
+      "back-carousal-step-two": {
+        "type": "back-carousal-step-two",
+        "settings": {
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_color": "#fff",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 2",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "Have your eye on anything else?"
+        }
+      },
+      "back-carousal-step-three": {
+        "type": "back-carousal-step-three",
         "settings": {
           "btn_get_started_bg_color": "#0992f4",
           "btn_get_started_arrow_color": "#fff",
-          "btn_get_started_color": "#fff"
+          "btn_get_started_color": "#fff",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 3",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "Check out what you’re getting.",
+          "info-color": "#0097ce",
+          "info-title": "Your first box ships today",
+          "total-title": "Total:"
         }
       },
       "image-overlay": {
         "type": "image-overlay",
         "settings": {
-          "image": "shopify:\/\/shop_images\/V-Basic-Bundle.jpg",
+          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
           "alignment": "center",
           "hero_layout": "full_width",
           "hero_size": "medium",
@@ -935,7 +982,6 @@
           "kit_price": "35",
           "shipping_type": "FREE SHIPPING",
           "button_link": "",
-          "product_link": "",
           "email_textbox_background": "#68cfe0",
           "email_text_color": "#fff",
           "shipping_type_color": "#fff",
@@ -946,20 +992,15 @@
       "step-one": {
         "type": "step-one",
         "settings": {
-          "step-title": "STEP 1",
-          "title-color": "#0097ce",
           "option-1-tick-color": "#0097ce",
           "option-2-tick-color": "#ff43b3",
-          "option-3-tick-color": "#c0efb4",
-          "question-color": "#0097ce",
-          "question-title": "What is your typical hygiene routine?",
-          "title_text_size": "medium",
-          "question_text_size": "medium",
-          "option-text-size": "medium",
-          "option-description-size": "medium",
-          "option-information-text-size": "medium",
+          "option-3-tick-color": "#5ad43c",
           "select-options-1": "CLEAN QUEEN",
+          "select-options-2": "PRETTY CLEAN",
+          "select-options-3": "CLEAN ENOUGH",
           "select-options-1-description": "Receive your kit every month.",
+          "select-options-2-description": "Receive your kit every 2 months.",
+          "select-options-3-description": "Receive your kit every 3 months.",
           "select-options-1-info-1": "You could spend hours getting ready.",
           "select-options-1-info-2": "You run out of products frequently.",
           "select-options-1-info-3": "You take supplements daily.",
@@ -969,21 +1010,20 @@
           "select-options-3-info-1": "You roll out of bed and out the door.",
           "select-options-3-info-2": "You rarely try new products.",
           "select-options-3-info-3": "You don’t take any supplements.",
-          "select-options-2": "PRETTY CLEAN",
-          "select-options-2-description": "Receive your kit every 2 months.",
-          "select-options-3-description": "Receive your kit every 3 months.",
-          "select-options-3": "CLEAN ENOUGH"
+          "option-text-size": "medium",
+          "option-description-size": "medium",
+          "option-information-text-size": "medium"
         }
       },
       "step-two": {
         "type": "step-two",
         "settings": {
           "step-title": "STEP 2",
-          "no-thanks": "NO THANKS!",
-          "anchorColor": "#56cee8",
           "title-color": "#0097ce",
           "question-color": "#0097ce",
           "question-title": "Have your eye on anything else?",
+          "no-thanks": "NO THANKS!",
+          "anchorColor": "#56cee8",
           "title_text_size": "medium",
           "question_text_size": "medium"
         }
@@ -991,7 +1031,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1557989526787": {
+          "1559908387277": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -1002,7 +1042,7 @@
           }
         },
         "block_order": [
-          "1557989526787"
+          "1559908387277"
         ],
         "settings": {
           "title": "",
@@ -1010,7 +1050,7 @@
           "show_product_info": true,
           "show_sold_out": true,
           "show_vendor": false,
-          "grid_mobile_items_per_row": "2",
+          "grid_mobile_items_per_row": "1",
           "grid_desktop_items_per_row": 4
         }
       },
@@ -1025,7 +1065,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1557989542416": {
+          "1559908430018": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1034,7 +1074,7 @@
           }
         },
         "block_order": [
-          "1557989542416"
+          "1559908430018"
         ],
         "settings": {
           "show_collection_info": true,
@@ -1049,18 +1089,18 @@
           "show_filter_color_swatch": true,
           "filter_menu": "",
           "grid_items_per_page": 16,
-          "grid_mobile_items_per_row": "2",
+          "grid_mobile_items_per_row": "1",
           "grid_desktop_items_per_row": 4
         }
       },
       "step-three": {
         "type": "step-three",
         "settings": {
-          "step-title": "STEP 3",
           "title-color": "#0097ce",
           "question-color": "#0097ce",
-          "question-title": "Check out what you’re getting.",
           "info-color": "#0097ce",
+          "step-title": "STEP 3",
+          "question-title": "Check out what you’re getting.",
           "info-title": "Your first box ships today",
           "total-title": "Total:",
           "user-info-title": "SCORE! YOU GOT FREE SHIPPING",
@@ -1072,13 +1112,17 @@
         "type": "checkout-button",
         "settings": {
           "linktext": "CHECKOUT",
+          "AddMoreLinkText": "ADD MORE PRODUCTS",
           "btnBgColor": "#0097ce",
-          "btnTextColor": "#fff"
+          "addMoreBtnBgColor": "#fff",
+          "btnTextColor": "#fff",
+          "AddMoreBtnTextColor": "#0097ce"
         }
       },
       "modal": {
         "type": "modal",
         "settings": {
+          "popup_loading_info_message": "We are loading your product information soon."
         }
       }
     },

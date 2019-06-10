@@ -4694,33 +4694,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_resetTags',
       value: function _resetTags() {
         this.temporaryTags = []; // We simply remove all tags
-		//  Genius Minds - Run this code ONLY in case of Get Started
-        if(window.location.href.indexOf('/pages/get-started') > -1) {
-          this._applyTags('reset');
-        } else {
+        // Genius Minds - Run this code ONLY in case of Get Started
+        if('undefined' === typeof(CustomTheme)) {
           this._applyTags();
+        } else {
+          var isCustomPage = CustomTheme.isCustomPage();
+          if(true === isCustomPage) {
+            this._applyTags('reset');
+          } else {
+            this._applyTags();
+          }
         }
       }
     }, {
       key: '_updateActiveTags',
       value: function _updateActiveTags(p) {
         var _this35 = this;
-        //  Genius Minds - Run this code ONLY in case of Get Started
-        if(window.location.href.indexOf('/pages/get-started') > -1) {
-          var ele = document.querySelector('.product-subscription-template .Collapsible__Inner .Linklist li.is-selected');
-          var activeSibling = null;
-          if(ele != null && typeof(p) === "object") {
-            this.temporaryTags =[];
-            activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
-            this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
-          }
-          
-          if(ele !== null && this.temporaryTags.length === 0 && (p !== undefined && p !== 'reset')) {            
-            
-            activeSibling = ele.closest('.Collapsible').querySelector('.is-active');
-            this.temporaryTags.push(activeSibling.getAttribute('data-tag'));
-          }          
-        }
+        //  Genius Minds - Run this code ONLY in case of "Get Started"
+        if('undefined' !== typeof(CustomTheme) && true === CustomTheme.isCustomPage()) {
+          this.temporaryTags = CustomTheme.pushTemperoryTags(p, this.temporaryTags);
+        } 
         __WEBPACK_IMPORTED_MODULE_3__helper_Dom__["default"].nodeListToArray(this.element.querySelectorAll('.CollectionFilters [data-tag]')).forEach(function (item) {
           // IE11 and lower does not support classList.toggle...
           if (_this35.temporaryTags.includes(item.getAttribute('data-tag'))) {
@@ -4779,15 +4772,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         if (history.replaceState) {
           var tags = this.currentTags.length > 0 ? this.currentTags.join('+') : '';
           newUrl = window.location.protocol + '//' + window.location.host + this.settings['collectionUrl'] + '/' + tags + '?sort_by=' + this.currentSortBy;
-          if(window.location.href.indexOf('/pages/get-started') === -1){
-            window.history.pushState({ path: newUrl }, '', newUrl);
-            newUrl= location.pathname + '?view=ajax&sort_by=' + this.currentSortBy;
+          var collectionURL= this.settings['collectionUrl'];
+          var sortBy = this.currentSortBy;
+          // Genius Minds Code
+          if('undefined' !== typeof(CustomTheme) && true === CustomTheme.isCustomPage()) {
+             newUrl = CustomTheme.fetchAjaxProductsURL(newUrl, tags, collectionURL, sortBy);
           } else {
-            newUrl = this.settings['collectionUrl'] + '/' + tags + '?view=ajax&sort_by=' + this.currentSortBy;
+            window.history.pushState({ path: newUrl }, '', newUrl);
+            newUrl= location.pathname + '?view=ajax&sort_by=' + sortBy;
           }
-            
         }
-
+        
         var formData = new FormData();
         formData.append('view', 'ajax');
         formData.append('sort_by', this.currentSortBy);
@@ -4804,6 +4799,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             document.dispatchEvent(new CustomEvent('theme:loading:end'));
 
             _this37._setupAnimation();
+            // Genius Minds Code
+            if('undefined' !== typeof(CustomTheme) && true === CustomTheme.isCustomPage()) {
+              CustomTheme.animateScrollBarPostFilter();
+            }
 
             // We scroll to the top
             var elementOffset = _this37.element.querySelector('.CollectionMain').getBoundingClientRect().top - parseInt(document.documentElement.style.getPropertyValue('--header-height'));

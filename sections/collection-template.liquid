@@ -70,21 +70,18 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if template == 'collection.ajax' -%}
+{%- if template == 'collection.data' -%}
+    {%- layout none -%}
+    {{- collection_subscription_inner -}}
+{%- elsif template == 'collection.ajax' -%}
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
   CONTENT FOR AJAX ALTERNATE TEMPLATE
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
-
-  {%-  assign collectionUrl =  request.path -%}
   
   {%- layout none -%}
-  {%- if collectionUrl contains "/collections/subscription-product" -%}
-      {{- collection_subscription_inner -}}
-  {%- else -%}
-    {{- collection_inner -}}
-  {%- endif -%}  
+  {{- collection_inner -}}
 
 {%- else -%}
   {%- comment -%}

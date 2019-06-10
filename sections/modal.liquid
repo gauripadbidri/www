@@ -1,16 +1,69 @@
 <div class="Modal Modal--show-product-info" id="product-info-dialog" aria-hidden="true" role="dialog" data-scrollable>
+    <button aria-expanded="false" class="customModalCloseBtn Modal__Close Modal__Close--outside Round-button-color RoundButton RoundButton--small" data-animate-bottom
+            data-action="close-modal">
+            {% include 'icon' with 'close' %}
+    </button>      
     <div class="Modal__Content">
         <div id="product-info-data" class="product-info-data-wrapper"> 
         </div>
     </div>
-
-    <button aria-expanded="false" class="Modal__Close Modal__Close--outside Round-button-color RoundButton RoundButton--small" data-animate-bottom
-    data-action="close-modal">
-        {% include 'icon' with 'close' %}
-    </button>
 </div>
 
 {% stylesheet %}
+        #shopify-section-modal #product-info-dialog {
+            overflow: hidden !important;
+        }
+
+        #product-info-dialog .Modal__Content {
+            overflow:auto !important;
+            max-height: calc(var(--window-height) - 100px)  !important;
+        }
+
+        #product-info-dialog button {
+            top:7px;
+            right:5px;
+        }
+        .isa_info {
+            color: #0097ce;
+            margin: 10px 0px;
+            padding:12px;
+            text-align: center;
+        }
+        .isa_info i {
+            margin:10px 22px;
+            font-size:2em;
+            vertical-align:middle;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 60px;
+            height: 60px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            margin:auto;
+        }
+        
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #shopify-section-modal #product-info-dialog {
+            display:block;
+        }
+        
+        #product-info-dialog button {
+            top:7px;
+            right:5px;
+        }
         .Modal--show-product-info h2 {
           font-weight: 500;
           letter-spacing: 0px;
@@ -18,7 +71,14 @@
         }
     
         .Modal--show-product-info .ProductMeta__Title{
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.1rem;            
+            text-align:center;
+        }
+        .Modal--show-product-info .ProductMeta__Type{
+            margin-bottom: 0.1rem;            
+            text-align:center;
+            font-size:1.2em;
+            font-weight:normal;
         }
         .Modal--show-product-info{
             width: 1000px !important;
@@ -36,10 +96,9 @@
         .Modal--show-product-info .gettng-started-btn{
             cursor:pointer;
         }
-        
 {% endstylesheet %}
     
-{% javascript %}
+<script>
     
         $(function () {
             
@@ -49,6 +108,8 @@
 
             $(document.body).on('click', '[aria-controls="product-info-dialog"]' ,function(ev){
                 document.dispatchEvent(new CustomEvent('theme:loading:start'));
+               $("#product-info-data").empty();
+               $("#product-info-data").html('<div class="loader"></div><div class="isa_info"><i class="fa fa-info-circle"></i>{{section.settings.popup_loading_info_message}}</div>');
                 if (ev.currentTarget.attributes['data-handle']) {
                     $.get('/products/' + ev.currentTarget.attributes['data-handle'].value + '?view=ajax', function (data) {
                         document.dispatchEvent(new CustomEvent('theme:loading:end'));
@@ -65,7 +126,7 @@
                             contain: true,
                             pageDots: true
                         });
-    
+                        
                         var sliderNav = document.querySelector('.product-info-nav');
                         if (sliderNav) {
                             var flickitySliderNav = new Flickity(sliderNav, {
@@ -81,13 +142,39 @@
                         }
 
                         var flikityCarousel = getCarousel();
-                
-                        if(flikityCarousel.selectedIndex > 0){
-                            $('.gettng-started-btn').css('display','none');
-                            $('.getting-started-kit-buttons').css('display','block');
-                        }else{
+                        
+                        if(flikityCarousel.selectedIndex === 0){
                             $('.gettng-started-btn').css('display','inline-block');
                             $('.getting-started-kit-buttons').css('display','none');
+                        }else if(flikityCarousel.selectedIndex === 3){
+                            $('.gettng-started-btn').css('display','none');
+                            $('.getting-started-kit-buttons').css('display','none');
+                        } else{
+                            $('.gettng-started-btn').css('display','none');
+                            $('.getting-started-kit-buttons').css('display','block');
+                        }
+                        
+                        var addKit = $(ev.currentTarget).parent().parent().find('.button-add-to-kit-disabled')
+
+                        var addOnly = $(ev.currentTarget).parent().parent().find('.add-only-kit-disabled')
+                         
+                        if(addKit && addKit.length > 0 ){
+                            $("#product-info-data").find('.button-add-to-kit').addClass('button-add-to-kit-disabled').text('ADDED TO EVERY KIT');
+                        } 
+
+                        if(addOnly && addOnly.length > 0 ){
+                            $("#product-info-data").find('.add-only-kit').addClass('add-only-kit-disabled').text('ADDED TO THIS KIT ONLY');
+                        } 
+
+
+                        if (BrowserDetection.isIOS()) {
+                            var css = $('#product-info-dialog').css('display');
+                            if (css == "block") {
+                                css = "flex"
+                            } else {
+                                css = "block";
+                            }
+                            $('#product-info-dialog').css('display', css);
                         }
 
                     });
@@ -104,21 +191,43 @@
                 }
 
                 $('.gettng-started-btn').css('display','none');
-                var cName = "testgmcscookie";
-                var userOptions = JSON.parse(getCookie(cName));
+                var userOptions = Cookie.getCookie();
                 var userSelectedSlide = userOptions["currentSlideSelected"];
                 var hygeineType = userOptions['hygeineType'];
                 var currentSlideSelected = userSelectedSlide + 1;
-                if(currentSlideSelected == 1 && hygeineType == 0) {
-                    // Do NOT proceed till user selects an option
-                    $("#go-next-step").attr('disabled', 'disabled'); 
-                }
-                flikityCarousel.select(currentSlideSelected, false, true);
+                FlickityCarousal.selectSlide(currentSlideSelected, true);
                 userOptions["currentSlideSelected"] = currentSlideSelected;
-                setCookie(cName, userOptions);
-                $("#go-previous-step").css ('display', 'block');
-                $("#go-next-step").css ('display', 'block');  
+                DomToggle.TogglePreviousNextButtons(currentSlideSelected, hygeineType);
+                DomToggle.ShowHideCarousalForStep(currentSlideSelected);
+                Cookie.setCookie(userOptions);
+                // Animate to the top....
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: 0
+                }, 2000);
             });    
+
         });
     
-{% endjavascript %}
+</script>
+{% schema %}
+{
+    "name": {
+      "en": "Modal Popup Settings"
+    },
+    "class": "index-section index-section--flush",
+    "settings":  [
+        {
+        
+            "type": "text",
+            "id": "popup_loading_info_message",
+            "label": {
+                "en": "Popup Content Loading Info"
+            },
+            "default": {
+                "en": "We are loading your product information soon."
+            }
+              
+        }
+    ]
+}
+{% endschema %}

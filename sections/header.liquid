@@ -315,19 +315,21 @@ HEADER CONTENT
             <li class="HorizontalList__Item">
               <a href="/search" class="Heading Link Link--primary Text--subdued u-h8" data-action="open-modal" aria-controls="Search">{{ 'header.navigation.search' | t }}</a>
             </li>
-
-            <li class="HorizontalList__Item">
-              <a href="/cart" class="Heading u-h6" {% unless template == 'cart' or settings.cart_type == 'page' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endunless %}>{{ 'header.navigation.cart' | t }} (<span class="Header__CartCount">{{ cart.item_count }}</span>)</a>
-            </li>
+            {% if page.url != "/pages/get-started" %} 
+              <li class="HorizontalList__Item">
+                <a href="/cart" class="Heading u-h6" {% unless template == 'cart' or settings.cart_type == 'page' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endunless %}>{{ 'header.navigation.cart' | t }} (<span class="Header__CartCount">{{ cart.item_count }}</span>)</a>
+              </li>
+            {%- endif -%}
           </ul>
         </nav>
       {%- endunless -%}
-
-      <a href="/cart" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
-        <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%}</span>
-        <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%}</span>
-        <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
-      </a>
+      {% if page.url != "/pages/get-started" %}
+        <a href="/cart" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
+          <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%}</span>
+          <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%}</span>
+          <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+        </a>
+      {%- endif -%}
     </div>
   </div>
 </header>

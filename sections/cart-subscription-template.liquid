@@ -1,42 +1,30 @@
 <div class="Container">
 <div class="PageContent">
-        <div class="checkout-btn-cart">
-            <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">{{ 'cart.general.checkout' | t }}</button>
-        </div>
         <form action="/cart" method="POST" class="Cart Cart--expanded" novalidate>
           <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
           <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
 
           {% include 'cart-items.ajax' %}
-
-          <footer class="Cart__Footer">
-            <!-- {%- if settings.cart_enable_notes -%}
-              <div class="Cart__NoteContainer">
-                <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}</span>
-                <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
-              </div>
-            {%- endif -%} -->
-            <!-- <h4>Due to high demand, our product will be shipping in 2-3 weeks. Thank you for your continued support, Queens!</h4> -->
-            <!-- <div class="Cart__Recap"> -->
-              <!-- {%- capture shipping_and_taxes_notice -%}{{ 'cart.general.shipping_and_taxes_notice' | t }}{%- endcapture -%} -->
-
-              
-
-              <!-- {%- if shipping_and_taxes_notice != blank -%}
-                <span class="Cart__Taxes Text--subdued">{{ shipping_and_taxes_notice }}</span>
-              {%- endif -%} -->
-
-             
-            <!-- </div> -->
-            <div>
-                    <span class="Cart__Total Heading u-h6 price-info-align">{{ 'cart.general.total' | t }}: <span data-money-convertible>{{ cart.total_price | money_without_trailing_zeros }}</span></span>
-            </div>
-
-            <div class="checkout-btn-cart"> Didn’t even break a sweat. </div>
-            <div class="checkout-btn-cart">
-                    <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">{{ 'cart.general.checkout' | t }}</button>
-            </div>
+          
+          <footer class="Cart__Footer footerTable">
+                <span class="Cart__HeadItem"></span>
+                <span class="Cart__HeadItem"></span>
+                <span class="Cart__HeadItem" style="text-align: center"></span>
+                <span class="Cart__HeadItem" style="text-align: center"> </span>
+                <span class="Cart__HeadItem text-transform-upper price-info-align price-tag-desktop-only price-font-size">
+                     {{ 'cart.general.total' | t }}  : 
+                     <span data-money-convertible>
+                        {{ cart.total_price | money_without_trailing_zeros }} 
+                    </span>
+                </span>
+                <span class="Cart__HeadItem price-tag-mobile-only text-transform-upper">
+                        {{ 'cart.general.total' | t }}  : 
+                        <span data-money-convertible>
+                           {{ cart.total_price | money_without_trailing_zeros }} 
+                       </span>
+                   </span>
           </footer>
+          <div class="checkout-btn-cart question-title-medium"> {{section.settings.checkout-info-title}} </div>
         </form>
 </div>
 </div>
@@ -45,14 +33,48 @@
         display: block;
         text-align: center;
     }
-    .price-info-align{
-        text-align: right;
-        display: block;
+    .price-tag-mobile-only{
+      font-size: 1.8em; 
     }
+
+    .price-font-size{
+      font-size: 1.8em;
+    }  
     .Cart--expanded .Cart__Checkout{
         display: inline-block;
     }
     .Cart--expanded .Cart__Checkout{
         width: 200px;
     }
-    </style>
+    .footerTable .Cart__HeadItem {
+        border: none !important;
+        text-align: center;
+    }
+    .price-info-align{
+        text-align: center;
+    }
+    .text-transform-upper{
+      text-transform: uppercase;
+    }
+  </style>
+  
+  {% schema %}
+  {
+      "name": {
+          "en": "Checkout Title"
+      },
+      "class": "cart",
+      "settings": [
+        {
+          "type": "text",
+          "id": "checkout-info-title",
+          "label": {
+            "en": "Checkout Button above info"
+          },
+          "default": {
+            "en": "Didn’t even break a sweat"
+          }
+        }
+      ]
+  }
+  {% endschema %}

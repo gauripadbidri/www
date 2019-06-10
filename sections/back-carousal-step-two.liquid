@@ -1,0 +1,334 @@
+
+<style>
+   #shopify-section-subscription-product-kit  .SectionHeader {
+     margin-bottom:40px;
+   }
+a.add-only-kit, a#skipStep2 {
+  color:{{section.settings.anchorColor}};
+}
+    .arrow-right {
+        width: 0; 
+        height: 0;
+        float:right; 
+        margin:auto;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;  
+        border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};
+    }
+    .arrow-left {
+        width: 0; 
+        height: 0; 
+        float:left;
+        margin:auto;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;         
+        border-right:15px solid  {{ section.settings.btn_get_started_bg_color }};
+    }
+    .previous i, .next i {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+    }
+    div.sticky {
+       width:100%;
+        position:fixed;
+       /* z-index:7;*/
+    }
+
+    .previous span, .next span {
+        text-align: center;    
+    }
+    .next .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .previous .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+    .previous {
+      z-index:10;
+    }
+
+    #go-previous-step {
+        cursor:pointer;
+        font-weight: bold;
+        margin-left:20%;
+        padding: 15px;
+        width: 170px;
+        color: {{ section.settings.btn_get_started_bg_color }};
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        left:0;
+    }
+    #go-next-step {
+        cursor:pointer;
+        font-weight: bold;
+        margin-right:20%;
+        padding: 15px;
+        width: 150px;
+        color: {{ section.settings.btn_get_started_bg_color }};
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        right:0;
+        text-decoration: underline;
+    }
+    #go-next-step:disabled,
+    #go-next-step[disabled] {
+        color:gray;
+        text-decoration: none;
+    }
+    .alignText{
+        text-align:center;
+    }
+    .carousalContent {        
+        min-height:200px;
+        background-color:white;
+    }
+    .marginTop50{
+        margin-top: 50px;
+    }
+
+    .step-question {
+        margin-top: 50px;
+    }
+
+    .border-line{
+       margin-top: 20px;
+       border-bottom:1px solid;
+    } 
+    
+  @media only screen and (max-width: 340px) {
+
+    #shopify-section-step-two {
+        margin-top:75% !important;
+    }
+    .ProductItem__Info h2:last-of-type {
+      margin-bottom: 5px;
+    }
+
+    #shopify-section-subscription-product-kit .featured-product-kit-collection .ProductItem__Info h2:last-of-type, 
+    #shopify-section-product-subscription-collection-template .featured-product-kit-collection .ProductItem__Info h2:last-of-type {
+        text-overflow: ellipsis;
+        white-space: nowrap !important;
+        overflow: hidden;
+    }
+} 
+@media only screen and (max-width: 399px) {
+
+    #shopify-section-step-two {
+        margin-top:55%;
+    }
+}  
+@media only screen and (min-width: 400px) {
+
+    #shopify-section-step-two {
+      margin-top:50%;
+  }
+}  
+
+@media only screen and (min-width: 500px) {
+
+    #shopify-section-step-two {
+    margin-top:40%;
+    }
+}  
+@media only screen and (min-width: 600px) {
+
+    #shopify-section-step-two {
+    margin-top:35%;
+    }
+}  
+
+@media only screen and (max-width: 769px){
+  .ContainerMobile{
+    padding: 0;
+  }  
+}
+
+@media screen and (min-width: 700px) {
+
+    #shopify-section-step-two {
+    margin-top:30%;
+    }
+}  
+@media screen and (min-width: 800px) {
+
+    #shopify-section-step-two {
+    margin-top:25%;
+    }
+}  
+
+@media screen and (min-width: 900px) {
+
+    #shopify-section-step-two {
+    margin-top:22%;
+    }
+}   
+
+@media screen and (min-width: 1000px){
+  #shopify-section-step-two {
+      margin-top: 20%;
+  }
+}
+
+@media screen and (min-width: 1100px){
+  #shopify-section-step-two {
+      margin-top: 18% !important;
+  }
+}
+
+@media screen and (min-width: 1200px){
+	#shopify-section-step-two {
+		margin-top: 17%;
+	}
+}
+
+@media screen and (max-width: 789px) {  
+  #go-previous-step, #go-next-step {
+    margin-left:0px;
+    margin-right:0px;
+  }
+
+  .step-question {
+    margin-top:10px;
+  }
+}
+</style>
+<div class="sticky alignText carousalContent">
+    <div class="sticky previous marginTop50" >
+        <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
+            <div class="arrow-left"></div>
+            <span>PREVIOUS STEP</span>
+        </span>
+    </div>
+    <div class="step-question sticky alignText step-title-{{section.settings.title_text_size}}">
+        <span class="step-title-{{section.settings.title_text_size}}" 
+              style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
+    </div> 
+    <div class="sticky next marginTop50">
+        <span href="#" class="carousalBack carousalStepNext" id="go-next-step">
+            <div class="arrow-right"></div>
+            <span>NEXT STEP</span>
+        </span>            
+    </div>      
+    <div style="clear:both; margin-top:100px;padding-top: 30px;" class="marginTop50 sticky question-title-{{section.settings.question_text_size}}">
+        <span class="question-title-{{section.settings.title_text_size}}" 
+              style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
+          <div class="Container ContainerMobile">
+              <div class="SectionHeader border-line"> 
+              </div>
+          </div>     
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "STEP 2 - Carousal Section"
+    },
+    "class": "carousalBack",
+    "settings": [
+        {
+            "type": "color",
+            "id": "btn_get_started_bg_color",
+            "label": {
+            "en": "Back Btn BG Color"
+            },
+            "default": "#0992f4"
+        }, 
+        {
+            "type": "color",
+            "id": "btn_get_started_color",
+            "label": {
+            "en": "Back Btn Text Color"
+            },
+            "default": "#fff"
+        },
+        {
+            "type": "select",
+            "id": "title_text_size",
+            "label": {
+              "en": "Title Text size"
+            },
+            "default": "medium",
+            "options": [
+              {
+                "label": {
+                  "en": "Medium"
+                },
+                "value": "medium"
+              },
+              {
+                "label": {
+                  "en": "Large"
+                },
+                "value": "large"
+              }
+            ]
+          },
+          {
+            "type": "color",
+            "id": "title-color",
+            "label": {
+              "en": "Step Title Color"
+            },
+            "default": "#0097ce"
+        },
+        {
+            "type": "text",
+            "id": "step-title",
+            "label": {
+              "en": "STEP 2 Title"
+            },
+            "default": {
+              "en": "STEP 2"
+            }
+        },
+        {
+        "type": "select",
+        "id": "question_text_size",
+        "label": {
+          "en": "Step 2 Question Text size"
+        },
+        "default": "medium",
+        "options": [
+          {
+            "label": {
+              "en": "Medium"
+            },
+            "value": "medium"
+          },
+          {
+            "label": {
+              "en": "Large"
+            },
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "question-color",
+        "label": {
+          "en": "Step 2 Question Color"
+        },
+        "default": "#0097ce"
+    },
+    {
+        "type": "text",
+        "id": "question-title",
+        "label": {
+          "en": "STEP 2 Question"
+        },
+        "default": {
+          "en": "Have your eye on anything else?"
+        }
+      }
+    ]
+}
+{% endschema %}

@@ -141,7 +141,7 @@
 {% schema %}
 
 {
-    "name": "Product Kit Collection",
+    "name": "STEP 0 - Kit Collection",
     "class": "shopify-section--bordered",
     "max_blocks": 2,
     "settings": [
@@ -221,6 +221,7 @@
                     "type": "text",
                     "id": "title",
                     "label": "Heading",
+                    "default":"Here's what you are getting.",
                     "info": "If none is set, collection title is used."
                 }, {
                     "type": "range",
@@ -276,7 +277,7 @@
       cursor: pointer;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 769px) {
     .product-kit-collection {
    
         .ProductListWrapper{

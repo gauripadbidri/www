@@ -2,25 +2,25 @@
   Password message which you can edit on http://www.shopify.com/admin/online_store/preferences
 {% endcomment %}
 <style>
-.gauri_header {
-          color: {{ section.settings.gauri_color_text }};
+.mycustom_header {
+          color: {{ section.settings.custom_color_text }};
         }
 </style>
-<div class="password-content gauri clearBoth">
+<div class="password-content clearBoth">
   {% unless shop.password_message == blank %}
     <div class="password-message">
       {{ shop.password_message }}
     </div>
   {% endunless %}
 </div>
-<div class="gauri_header">This is Subscription Content</div>
+<div class="mycustom_header">This is Subscription Content</div>
 {% if section.settings.newsletter_enable %}
   <div class="password-content password-content--rte">
-    <p class="h4 gauri_header">
+    <p class="h4 mycustom_header">
       {{ section.settings.newsletter_form_heading | escape }}
     </p>
     {% if section.settings.newsletter_form_subheading != blank %}
-      <div class="password__form-subheading rte gauri_header">{{ section.settings.newsletter_form_subheading }}</div>
+      <div class="password__form-subheading rte mycustom_header">{{ section.settings.newsletter_form_subheading }}</div>
     {% endif %}
   </div>
   {% form 'customer', id: 'ContactPassword', class: 'contact-form form-single-field' %}
@@ -81,18 +81,9 @@
   "settings": [
     {
         "type": "color",
-        "id": "gauri_color_text",
+        "id": "custom_color_text",
         "label": {
-          "de": "Titel und Links",
-          "en": "Sub Heading Color",
-          "es": "Títulos y enlaces",
-          "fr": "En-têtes et liens",
-          "it": "Titoli e link",
-          "ja": "見出しとリンク",
-          "nl": "Koppen en links",
-          "pt-BR": "Títulos e links",
-          "zh-CN": "标题和链接",
-          "zh-TW": "標題和連結"
+          "en": "Sub Heading Color"
         },
         "default": "#3d4246"
     },
@@ -100,28 +91,10 @@
       "type": "richtext",
       "id": "newsletter_form_subheading",
       "label": {
-        "de": "Unter-Überschrift",
-        "en": "Subheading",
-        "es": "Subtítulo",
-        "fr": "Sous-titre",
-        "it": "Sottotitolo",
-        "ja": "小見出し",
-        "nl": "Subkop",
-        "pt-BR": "Subtítulo",
-        "zh-CN": "副标题",
-        "zh-TW": "子標題"
+        "en": "Subheading"
       },
       "default": {
-        "de": "<p>Eine kurze Beschreibung zum Inhalt des Newsletters</p>",
-        "en": "<p>A short sentence describing what someone will receive by subscribing</p>",
-        "es": "<p>Una frase corta que describe lo que las personas recibirán al suscribirse</p>",
-        "fr": "<p>Petite phrase qui décrit ce qu'on reçoit en s'inscrivant</p>",
-        "it": "<p>Una breve frase che descrive ciò che qualcuno riceverà effettuando l'iscrizione</p>",
-        "ja": "<p>メルマガ購読者に向けたメッセージを入れましょう</p>",
-        "nl": "<p>Een korte beschrijving van wat iemand ontvangt door zich te abonneren</p>",
-        "pt-BR": "<p>Uma frase curta que descreve o que alguém receberá ao assinar</p>",
-        "zh-CN": "<p>一个简短的句子，用于描述订阅者将收到的内容</p>",
-        "zh-TW": "<p>簡短說明訂閱者可收到之內容</p>"
+        "en": "<p>A short sentence describing what someone will receive by subscribing</p>"
       }
     }
   ]

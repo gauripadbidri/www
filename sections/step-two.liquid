@@ -1,4 +1,56 @@
 <style>
+@media screen and (max-width: 769px) {
+#shopify-section-subscription-product-kit a.ProductItem__ImageWrapper, 
+#shopify-section-product-subscription-collection-template a.ProductItem__ImageWrapper{
+      width:45%;
+      float:left;
+      margin-right: 10px;
+}
+
+
+#shopify-section-subscription-product-kit .Grid__Cell, #shopify-section-product-subscription-collection-template .Grid__Cell {
+    position: relative;
+    width: 100%;
+    vertical-align: bottom;
+}
+#shopify-section-subscription-product-kit .ProductList .bottom-buttons, 
+#shopify-section-product-subscription-collection-template .ProductList .bottom-buttons{
+    float:right;
+    width:50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#shopify-section-subscription-product-kit .featured-product-kit-collection .ProductItem__Info h2:last-of-type, 
+#shopify-section-product-subscription-collection-template .featured-product-kit-collection .ProductItem__Info h2:last-of-type {
+    white-space: nowrap;
+}
+
+#shopify-section-subscription-product-kit .ProductItem__Title a,
+#shopify-section-product-subscription-collection-template .ProductItem__Title a {
+    font-size:1.2rem !important;
+}
+
+#shopify-section-subscription-product-kit .ProductItem__Info h2,
+#shopify-section-product-subscription-collection-template .ProductItem__Info h2{
+  font-size:0.9rem !important;
+}
+
+    #shopify-section-subscription-product-kit .bottom-buttons a,
+    #shopify-section-product-subscription-collection-template .bottom-buttons a {
+      margin: 0px;
+      padding: 0px;
+      font-size: 0.8rem;
+    }
+
+    #shopify-section-product-subscription-collection-template .CollectionToolbar__Group {
+      width:100%;
+    }
+}
+a#skipStep2 {
+  color:{{section.settings.anchorColor}};
+}
 .marginTop40 {
   margin-top:40px;
 }
@@ -14,9 +66,6 @@
 .textAlignCenter {
   text-align:center;
 }
-a.add-only-kit, a#skipStep2 {
-  color:{{section.settings.anchorColor}};
-}
 
 #product-subscription-collection-template .ProductItem__Info h2:last-of-type{
   font-size:1em !important;
@@ -24,13 +73,6 @@ a.add-only-kit, a#skipStep2 {
 </style>
 <div data-section-id="{{ section.id }}" data-section-type="hero-section">
     <div class="row textAlignCenter">
-        <div class="marginTop30 step-title-{{section.settings.title_text_size}}">
-            <span class="step-title-{{section.settings.title_text_size}}" style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
-        </div>
-
-        <div class="marginTop40 question-title-{{section.settings.question_text_size}}">
-            <span class="question-title-{{section.settings.title_text_size}}" style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
-        </div>
         <div class="marginTop20">
             <a id="skipStep2" class="anchor-style-{{section.settings.question_text_size}}" href="#" >{{section.settings.no-thanks}}</a>
         </div>
@@ -42,7 +84,7 @@ $(function(){
       if($('#shopify-section-product-subscription-collection-template #collection-filter-drawer').length > 0){
         cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
        // $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').remove();
-        $('#shopify-section-back-carousal').before(cloneFilterElement);
+        $('#shopify-section-back-carousal-step-one').before(cloneFilterElement);
       } else {
         cloneFilterElement = $('#collection-filter-drawer');
       }
@@ -51,7 +93,7 @@ $(function(){
 {% schema %}
 {
     "name": {
-      "en": "STEP Two Settings"
+      "en": "STEP 2 - Settings"
     },
     "class": "index-section index-section--flush",
     "settings":  [
@@ -64,24 +106,6 @@ $(function(){
       "default": {
         "en": "STEP 2"
       }
-    },
-    {
-      "type": "text",
-      "id": "no-thanks",
-      "label": {
-        "en": "No Thanks !"
-      },
-      "default": {
-        "en": "NO THANKS!"
-      }
-    },
-    {
-      "type": "color",
-      "id": "anchorColor",
-      "label": {
-        "en": "Anchor Colors"
-      },
-      "default": "#56CEE8"
     },
     {
         "type": "color",
@@ -103,11 +127,29 @@ $(function(){
       "type": "text",
       "id": "question-title",
       "label": {
-        "en": "Step One"
+        "en": "Step 2"
       },
       "default": {
         "en": "Have your eye on anything else?"
       }
+    },     
+    {
+      "type": "text",
+      "id": "no-thanks",
+      "label": {
+        "en": "No Thanks !"
+      },
+      "default": {
+        "en": "NO THANKS!"
+      }
+    },
+    {
+      "type": "color",
+      "id": "anchorColor",
+      "label": {
+        "en": "Anchor Colors"
+      },
+      "default": "#56CEE8"
     },
     {
       "type": "select",

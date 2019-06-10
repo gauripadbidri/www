@@ -19,28 +19,36 @@
         {%- endif -%}
 
         <a 
-            class="ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
+            class="ProductItem__ImageWrapper  {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
             {%- if use_horizontal -%}
             {%- assign max_width = 125 -%}
             {%- else -%}
             {%- assign max_width = product.featured_image.width -%}
             {%- endif -%}
 
-            <div class="AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}"
-                style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: product.featured_image.aspect_ratio }}%;{% endif %} --aspect-ratio: {{ product.featured_image.aspect_ratio }}">
+            <div class="product-kit-color AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}"
+                style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: product.featured_image.aspect_ratio }}%;{% endif %} --aspect-ratio: {{ product.featured_image.aspect_ratio }}"
+                
+                data-tags="{{ product.tags | json | escape }}"
+               {% if show_Buttons==true %}
+                data-item-product-id="{{ product.id }}"
+               {% endif %} >
                 {%- comment -%}
                 IMPLEMENTATION NOTE: The alternate image (not visible by default) should be the first in the DOM, as the
                 spinner (Image__Loader element) is
                 displayed based on the immediately previously shown image.
                 {%- endcomment -%}
-
+                    
                 {%- if has_alternate_image -%}
                 {%- include 'image-size', sizes: '200,300,400,600,800,900,1000,1200', image: product.images[1] -%}
                 {%- assign image_url = product.images[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                
 
                 <img class="ProductItem__Image ProductItem__Image--alternate Image--lazyLoad Image--fadeIn"
                     data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto"
-                    alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}" data-handle="{{product.handle}}">
+                    alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}" data-handle="{{product.handle}}"
+                    
+                    >
                 {%- endif -%}
 
                 {%- include 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: product.featured_image -%}
@@ -48,7 +56,8 @@
 
                 <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}"
                     data-widths="[{{ supported_sizes }}]" data-sizes="auto"
-                    alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}" data-handle="{{product.handle}}">
+                    alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}" data-handle="{{product.handle}}"
+                    >
                 <span class="Image__Loader"></span>
 
                 <noscript>
@@ -73,7 +82,11 @@
 
         {%- if product.available -%}
         {%- if product.compare_at_price > product.price -%}
-        <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.on_sale' | t }}</span>
+        <span class="ProductItem__Label Heading Text--subdued">
+            <span class="ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+            <span>&nbsp;&nbsp;</span>
+            <span class="ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+        </span>
         {%- endif -%}
         {%- else -%}
         <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.sold_out' | t }}</span>
@@ -105,9 +118,7 @@
         {%- if show_price_info -%}
         <div class="ProductItem__PriceList Heading">
             {%- if product.compare_at_price > product.price -%}
-                <span class="gauri ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
-                <span class="gauri1 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
-                <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_with_currency}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
+                <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
             {%- elsif product.price_varies -%}
                 {%- capture formatted_min_price -%}
                     <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
@@ -115,9 +126,9 @@
                 {%- capture formatted_max_price -%}
                     <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
                 {%- endcapture -%}
-                <span class="gauri2 ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+                <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
             {%- else -%}
-                <span class="gauri3 ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+                <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
             {%- endif -%}
         </div>
         {%- endif -%}
@@ -131,13 +142,16 @@
 
 {%- if show_Buttons ==true -%}
 {% assign product_data = product.selected_or_first_available_variant  %}
+{% if product.images %}
+    {% assign image_url_cart = product.images[0] | img_url: '200x' %}   
+{% endif %}
  
 <div class="bottom-buttons">
     <div>
-        <a class="Button button-add-to-kit" data-product='{{- product_data | json | escape -}}'>ADD TO EVERY KIT</a>
+        <a class="Button button-add-to-kit" data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title}}" data-item-product-text="{{ product.id }}" data-product='{{- product_data | json | escape -}}'>ADD TO EVERY KIT</a>
     </div>
     <div class="add-only-kit-div">
-        <a class="add-only-kit" data-product='{{product_data | json | escape }}'>ADD TO THIS KIT ONLY</a>
+        <a class="add-only-kit Button" data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title}}" data-item-product-text-only-kit="{{ product.id }}" data-product='{{product_data | json | escape }}'>ADD TO THIS KIT ONLY</a>
     </div>
 </div>
 {%- endif -%}
@@ -148,15 +162,30 @@
          color:white;
          border: 1px solid #0097ce;
          width: 100%;
-         margin: 5px;
+         margin: 3px;
          cursor: pointer;
-         padding: 0;
+         padding: 3px;
+     }
+     
+     .add-only-kit{
+        border: 1px solid #0097ce;
+        width: 100%;
+        color : #0097ce;
+        margin: 3px;
+        cursor: pointer;
+        padding: 3px;
      }
 
-     .add-only-kit{
-        cursor: pointer;
-        text-decoration: underline;
+    .add-only-kit-disabled {
+	    border: 1px solid #3bb1d9;
+        color: #3bb1d9;
      }
+
+     .button-add-to-kit-disabled{
+        background:#3bb1d9;
+        border: 1px solid #3bb1d9;
+     }
+
      .bottom-buttons{
          text-align: center;
          margin-top: 10px;

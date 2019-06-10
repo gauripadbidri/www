@@ -1,0 +1,144 @@
+<style>
+    .image_styles {
+        width: 10%;
+        margin-left:45%;
+        margin-top: 50px;
+    }
+    .account_content {
+        text-align:center;
+    }
+    .image_feature_list {
+        display: inline-block;
+        margin-top:50px;
+        margin-left: 10%;
+    }
+    .feature_images_queenv {
+        width:18%;
+        float:left;
+        margin-left: 30px;
+    }
+    .imageTitle {
+        margin-top: 20px;
+        font-weight: 600;
+        text-align:center;
+    }
+
+    .manageSubscription-cta {
+        text-align:center;
+        margin-top:30px;
+    }
+
+    
+    @media screen and (max-width: 769px) {
+        .feature_images_queenv {
+            width: 40%;
+            margin-left: 20px;            
+            margin-bottom: 20px;
+        }
+        .image_styles {
+            width: 15%;
+            margin-left: 45%;
+            margin-top: 50px;
+        }
+        .titleMobile {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        
+        .clearBothDiv {
+            clear:both;
+        }
+        .image_feature_list {
+            margin-left: 2%;
+        }
+    }
+</style>
+
+<section class="recharge-accounts" data-section-id="{{ section.id }}" id="{{ section.id }}">
+    <div id="victory">
+        {%- assign image_default_url = 'peace-sign.png' | asset_url  -%}
+        <img src={{image_default_url}} alt="peace_sign" class="image_styles" />
+    </div>
+    <div class="account_content">
+        <h1 class="titleMobile">WELCOME TO THE QUEENDOM.</h1>
+        <h3>Now we’re friends with benefits</h3>
+        <h3>Here’s all the cool **it you’ll be getting.</h3>
+    </div>
+    <div class="image_feature_list">
+        <div class="feature_images_queenv">
+            {%- assign image_feature1 = 'exclusive-content.png' | asset_url  -%}
+            <img src={{image_feature1}} alt="exclusive-content" />
+            <div class="imageTitle"><a href="#">EXCLUSIVE CONTENT</a></div>
+        </div>
+        <div class="feature_images_queenv">            
+            {%- assign image_feature2 = 'merch.jpg' | asset_url  -%}
+            <img src={{image_feature2}} alt="merch" />
+            <div class="imageTitle"><a href="#">MERCH</a></div>
+        </div>
+        <div class="feature_images_queenv clearBothDiv">
+            {%- assign image_feature3 = 'membership-discount.png' | asset_url  -%}
+            <img src={{image_feature3}} alt="membership-discount" />
+            <div class="imageTitle"><a href="#">MEMBERSHIP DISCOUNTS</a></div>
+        </div>
+        <div class="feature_images_queenv">
+            {%- assign image_feature4 = 'birthday-surprises.jpg' | asset_url  -%}
+            <img src={{image_feature4}} alt="birthday-surprises" />
+            <div class="imageTitle"><a href="#">BIRTHDAY SURPRISES</a></div>
+        </div>
+    </div>
+    <div class="manageSubscription-cta">
+      
+        {% if customer.metafields.subscriptions.customer_string %}
+            <a class="Button Button--primary" href="/tools/recurring/customers/{{ customer.metafields.subscriptions.customer_string }}/subscriptions/">Manage ACCOUNT</a>
+      {% else %}
+          <a> You don't have any subscriptions. Thank You !. You can subscribe product from getting started page. </a>        
+      {% endif %}
+
+    </div>
+</section>
+{% schema %}
+{
+  "name": {
+    "en": "Accounts Page Settings"
+  },
+  "class": "recharge-accounts",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "accounts_victory_image",
+        "label": {
+          "en": "Image"
+        }
+    },
+    {
+        "type": "select",
+        "id": "alignment",
+        "label": {
+          "en": "Image alignment"
+        },
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": {
+              "en": "Top"
+            }
+          },
+          {
+            "value": "center",
+            "label": {
+              "en": "Middle"
+            }
+          },
+          {
+            "value": "bottom",
+            "label": {
+              "en": "Bottom"
+            }
+          }
+        ]
+    }
+  ]
+}
+  {% endschema %}

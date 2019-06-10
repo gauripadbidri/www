@@ -12,10 +12,40 @@
     </h2>
     {%- endif -%}
 
-    <h1 class="ProductMeta__Title Heading u-h2 product-info-desktop">
-        {{- product.title -}}
-        <!-- {{ desc[0] }} -->
-    </h1>
+    <div class="product-info-desktop">
+        <div class="ProductMeta__Title Heading u-h2 ">{{- product.title -}}</div>
+        <div class="ProductMeta__Type">{{- product.type -}}</div>
+        <div class="ProductItem__PriceList Heading price-align">
+                {%- if product.compare_at_price > product.price -%}
+                    <span class="ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+                    <span class="ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                    <div class="marginTop10">You Save: {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros}} ({{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%)</div>
+                {%- elsif product.price_varies -%}
+                    {%- capture formatted_min_price -%}
+                        <span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>
+                    {%- endcapture -%}
+                    {%- capture formatted_max_price -%}
+                        <span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>
+                    {%- endcapture -%}
+                    <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+                {%- else -%}
+                    <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+                {%- endif -%}
+            </div>            
+            <div class="getting-started">
+                <a id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn gettng-started-btn">
+                LET'S GET STARTED
+                </a>
+            </div>
+            <div class="bottom-buttons getting-started-kit-buttons">
+                <div> 
+                    <a class="Button button-add-to-kit"  data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title }}" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO EVERY KIT</a> 
+                </div>
+                <div class="add-only-kit-div">
+                    <a class="add-only-kit Button"  data-img-url="{{ image_url_cart}}" data-product-title="{{ product.title }}" data-product='{{product.selected_or_first_available_variant | json  | escape }}'>ADD TO THIS KIT ONLY</a>
+                </div>
+            </div>  
+    </div>
 
     {%- if show_description and product.description != blank -%}
     <div class="ProductMeta__Description">

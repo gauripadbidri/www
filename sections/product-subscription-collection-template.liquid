@@ -80,7 +80,7 @@
   {%- endcapture -%}
 
   
-  <section data-section-id="{{ section.id }}" class="product-subscription-template" data-section-type="collection" data-section-settings='{{ section_settings }}'>
+  <section data-section-id="{{ section.id }}" class="product-subscription-template" data-url="{{collection.url}}" data-section-type="collection" data-section-settings='{{ section_settings }}'>
     {%- comment -%}
     --------------------------------------------------------------------------------------------------------------------
     COLLECTION INFO
@@ -376,7 +376,7 @@
 {%- endcapture -%}
 {% schema %}
 {
-  "name": "Collection page",
+  "name": "STEP 2 - Our Products",
   "class": "shopify-section--bordered",
   "settings": [
     {
@@ -531,7 +531,7 @@
           "label": "2"
         }
       ],
-      "default": "2"
+      "default": "1"
     },
     {
       "type": "range",
@@ -655,16 +655,23 @@
     document.dispatchEvent(new CustomEvent('theme:loading:start'));
 
     if(target.currentTarget.attributes['href']){
-        var url = window.location.origin + window.location.pathname + "?" + target.currentTarget.getAttribute('href').split('?')[1]
+        var parameters = target.currentTarget.getAttribute('href').split('?')[1];
+
+       if(parameters.indexOf('view') === -1){
+          parameters = parameters + "&view=data";
+       }
+        var url = window.location.origin + $('.product-subscription-template').attr('data-url') + '?' + parameters
         $.get(url,function(data){
-          var section = $(data).find('.CollectionInner__Products');
-          $(".CollectionInner__Products").html(section);
+          //var section = $(data).find('.CollectionInner__Products');
+          $(".CollectionInner__Products").html(data);
           document.dispatchEvent(new CustomEvent('theme:loading:end'));
 
           $([document.documentElement, document.body]).animate({
             scrollTop: $("#shopify-section-product-subscription-collection-template").offset().top
         }, 2000);
         $('.get-started-carousel').data('flickity').reloadCells();
+
+        Cart.addColorToSelectedProduct();
 
         });
     }

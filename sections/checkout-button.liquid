@@ -1,11 +1,14 @@
 <section>
     <div id="section-cta">
-        <button id="checkout-custom-button" class="button">{{ section.settings.linktext }}</button>
+        <button id="checkout-custom-button" name="checkout" class="checkout-custom-btn-bg checkout-custom-button button">{{ section.settings.linktext }}</button>
+    </div>
+    <div class="margintop" id="section-cta">
+            <button id="checkout-custom-button" name="checkout" class="addmore-products-custom-button button">{{ section.settings.AddMoreLinkText }}</button>
     </div>
 </section>
 {% schema %}
   {
-    "name": "Checkout Button",
+    "name": "STEP 3 - Checkout Button",
     "settings": [
         {
             "id": "linktext",
@@ -14,12 +17,26 @@
             "default": "CHECKOUT"
         },
         {
-            "type": "color",
+            "id": "AddMoreLinkText",
+            "type": "text",
+            "label": "Add More Text",
+            "default": "ADD MORE PRODUCTS"
+        },
+        {
+            "type": "color", 
             "id": "btnBgColor",
             "label": {
               "en": "Button Background Color"
             },
             "default": "#0097ce"
+        },
+        {
+            "type": "color", 
+            "id": "addMoreBtnBgColor",
+            "label": {
+              "en": "Add More Button Background Color"
+            },
+            "default": "#fff"
         },
         {
             "type": "color",
@@ -28,25 +45,45 @@
               "en": "Button Text Color"
             },
             "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "AddMoreBtnTextColor",
+            "label": {
+              "en": "Add More Button Text Color"
+            },
+            "default": "#0097ce"
         }
     ]
   }
 {% endschema %}
 
 <style>
-    #checkout-custom-button {
+    .addmore-products-custom-button {        
         text-align:center;
-        padding: 10px 20px;
+        padding: 7px 18px;
+        color: {{ section.settings.AddMoreBtnTextColor }};
+        background-color: {{section.settings.addMoreBtnBgColor}};
+        font-weight: 600;
+        width: 200px;
+        cursor:pointer;
+        text-decoration:underline;
+    }
+    .checkout-custom-btn-bg {
+        text-align:center;
+        padding: 7px 18px;
         color: {{ section.settings.btnTextColor }};
         background-color: {{section.settings.btnBgColor}};
-        border: 1px solid {{section.settings.btnTextColor}};
         font-weight: 600;
-        font-size: 1.3em;
-        width: 250px;
+        width: 200px;
     }
-
     #section-cta {
         text-align:center; 
+    }
+
+    .margintop {
+        margin-top:15px;
+        clear:both;
     }
 </style>
 

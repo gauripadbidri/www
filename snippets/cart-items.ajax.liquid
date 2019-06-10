@@ -6,67 +6,57 @@
                 <span class="Cart__HeadItem"></span>
                 <span class="Cart__HeadItem Heading Text--subdued u-h7" style="text-align: center">{{ 'cart.items.quantity' | t }}</span>
                 <span class="Cart__HeadItem Heading Text--subdued u-h7" style="text-align: center"> frequency </span>
-                <span class="Cart__HeadItem Heading Text--subdued u-h7" style="text-align: right"> Price </span>
+                <span class="Cart__HeadItem Heading Text--subdued u-h7 desktop-price-tag" style="text-align: center"> Price </span>
             </div>
-
-    {%- for line_item in cart.items -%}
-
+    {%- assign isKit = "" -%}
+    {%- for line_item in cart.items reversed -%}
+            {%- assign isKit = "" -%}
+            {% assign is_addOn = ""  %}
             <div class="CartItem">
-                <div class="CartItem__ImageWrapper AspectRatio">
+                <div class="CartItem__ImageWrapper AspectRatio cartItem-cursor"
+                data-action="open-modal"
+				aria-controls="product-info-dialog"
+				data-handle="{{line_item.product.handle}}">
                     <div class="AspectRatio" style="--aspect-ratio: {{ line_item.image.aspect_ratio }}">
-                        <img class="CartItem__Image" src="{{ line_item.image | img_url: '240x' }}" alt="{{ line_item.image.alt | escape }}">
+                        {%- include 'image-size', sizes: '200', image: line_item.image -%}
+                        {%- assign image_url = line_item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                        <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}"
+                            data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ line_item.image.alt | escape }}"
+                            />
+                        <span class="Image__Loader"></span>
+
                     </div>
+                    <div class="CartItem__PriceList mobilePriceInfo">
+                            {%- if line_item.product.compare_at_price > line_item.product.price -%}
+                            <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ line_item.product.compare_at_price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                                <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 price-margin-left" data-money-convertible>{{ line_item.product.price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                                <div class="marginTop10">You Save: {{ line_item.product.compare_at_price  | minus: line_item.product.price | times: line_item.quantity | money_without_trailing_zeros}} ({{ line_item.product.compare_at_price | minus: line_item.product.price | times: 100.0 | divided_by: line_item.product.compare_at_price | round }}%)</div>
+                            {%- else -%}
+                                <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 ProductItem__Price Price Text--subdued" data-money-convertible>{{ line_item.product.price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                            {%- endif -%}
+                            </div>
                 </div>
 
-
                 <div class="CartItem__Info">
-                    <h2 class="CartItem__Title Heading">
-                        <a href="{{ line_item.url }}">{{ line_item.product.title }}</a>
+                    <h2 class="CartItem__Title CartItem__Title_mobile Heading">
+                        <a  data-action="open-modal" class="cartItem-cursor" aria-controls="product-info-dialog"
+                        data-handle="{{line_item.product.handle}}" >{{ line_item.product.title }}</a>
+                        <div class="heading-margin-top"><span>{{line_item.product.type}}</span></div>
                     </h2>
 
                     <div class="CartItem__Meta Heading Text--subdued">
                         {%- unless line_item.product.has_only_default_variant -%}
                             <p class="CartItem__Variant">{{ line_item.variant.title }}</p>
-                        {%- endunless -%}
-
-                        {%- if line_item.properties != empty -%}
-                            <ul class="CartItem__PropertyList">
-                                {%- for property in line_item.properties offset: 2 -%}
-                                    {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
-
-                                    {%- if property.last == blank or first_character_in_key == '_' -%}
-                                        {%- continue -%}
-                                    {%- endif -%}
-                                    {% if property.last == "1" %}
-                                        <li class="CartItem__Property">Ships Every Month
-                                        </li>
-                                    {% else %}
-                                        <li class="CartItem__Property">Ships Every:
-                                            {{ property.last }}
-                                            Months
-                                        </li>
-                                    {% endif %}
-                                {%- endfor -%}
-                            </ul>
-                        {%- endif -%}
-
-                        <div class="CartItem__PriceList">
-                            {%- if line_item.original_price > line_item.price -%}
-                                <span class="CartItem__Price Price Price--highlight" data-money-convertible>{{ line_item.price | money_without_trailing_zeros }}</span>
-                                <span class="CartItem__OriginalPrice Price Price--compareAt" data-money-convertible>{{ line_item.original_price | money_without_trailing_zeros }}</span>
-                            {%- else -%}
-                                <span class="CartItem__Price Price" data-money-convertible>{{ line_item.price | money_without_trailing_zeros }}</span>
-                            {%- endif -%}
-                        </div>
+                        {%- endunless -%}                        
                     </div>
 
                     {%- capture item_actions -%}
-                        <div class="CartItem__Actions Heading Text--subdued" style="text-align: center">
+                        <div class="CartItem__Actions Heading Text--subdued mobileAlign" style="text-align: center">
                             <div class="CartItem__QuantitySelector">
                                 <div class="QuantitySelector">
                                     {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
 
-                                    <a class="QuantitySelector__Button Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_minus_one }}" href="/cart/change?quantity={{ quantity_minus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_minus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
+                                    <a class="QuantitySelector__Button Link Link--primary quantity-selector" data-isKit="{{show_frequency}}" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_minus_one }}" href="/cart/change?quantity={{ quantity_minus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_minus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
                                         {%- include 'icon' with 'minus' -%}
                                     </a>
 
@@ -74,33 +64,167 @@
 
                                     {%- assign quantity_plus_one = line_item.quantity | plus: 1 -%}
 
-                                    <a class="QuantitySelector__Button Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_plus_one }}" href="/cart/change?quantity={{ quantity_plus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_plus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
+                                    <a class="QuantitySelector__Button Link Link--primary quantity-selector" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_plus_one }}" href="/cart/change?quantity={{ quantity_plus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_plus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
                                         {%- include 'icon' with 'plus' -%}
                                     </a>
                                 </div>
                             </div>
-                            <div class="CartItem__LinePrice frequency-sub Price Heading Text--subdued u-h7" data-money-convertible style="text-align: center"> 
-                                    <span>  Receive every month. </span>
-                                    <div>
-                                        <a  class="CartItem__Remove Link Link--underline Link--underlineShort" data-quantity="0" data-line-id="{{ line_item.key }}" data-action="remove-item"> Edit</a>
+                            <div class="CartItem__LinePrice frequency-sub Heading Text--subdued u-h7" style="text-align: center"> 
+                                    {%- if line_item.properties != empty -%}
+                                        <ul class="CartItem__PropertyList frequecyeditor">
+                                            {%- assign selected_frequency = "0" -%}
+                                            {%- assign isKit = "" -%}
+                                            {% assign is_addOn = ""  %}
+                                            {%- for property in line_item.properties -%}
+                                                {%- assign first_character_in_key = property.last | truncate: 1, '' -%}
+                                                {%- if property.first == 'isKit' -%}
+                                                    {% assign isKit = true %} 
+                                                    {% assign is_addOn = false %}
+                                                {%- endif -%}
+                                                {%- if property.first !='shipping_interval_frequency' -%}
+                                                    {%- continue -%}
+                                                {%- endif -%}
+                                                {%- if property.first == 'shipping_interval_frequency' and first_character_in_key == blank -%}
+                                                     {% assign is_addOn = true %}
+                                                     {%- continue -%}
+                                                {%- endif -%}
+            
+                                                {%- if property.first == 'shipping_interval_frequency' and first_character_in_key != blank -%}
+                                                     {%- assign selected_frequency = property.last -%}
+                                                {%- endif -%}
+            
+                                            {%- endfor -%}
+                                           
+                                            {% if line_item.properties == null or is_addOn==true %}
+                                                <li> <span>Receive</span><p>with this kit only</p></li>
+                                                {%- assign is_addOn = true -%}  
+                                            {% endif %}
+            
+                                            {% if isKit==true %}
+                                                {% if selected_frequency == "1" %}
+                                                    <li class="CartItem__Property"><span>Receive</span><p>every month</p> 
+                                                    </li>
+                                                {% else %}
+                                                    <li class="CartItem__Property"><span>Receive</span><p>every {{ selected_frequency }}
+                                                            months</p> 
+                                                {% endif %}
+                                            {% endif %}
+                                            
+                                            {%- if isKit=="" and selected_frequency == "1" or selected_frequency == "2" or selected_frequency == "3" -%}
+                                                <li class="CartItem__Property"><span>Receive</span><p> in every kit</p> 
+                                                    {%- assign is_addOn = true -%}  
+                                            {%- endif -%}
+                                            
+                                        </ul>
+                                    {%- endif -%}
+                              
+                            {%- if is_addOn==true or isKit==true -%} 
+                                <div class="editable-frequency">
+                                    <div class="selectdivForFrequency">
+                                        <label>
+                                            <select class="frequency_selector" style="display:none;">
+                                                {% if is_addOn==true %}
+                                                    <option data-key="{{line_item.key}}" data-variantId="{{line_item.variant_id}}" data-quantity="{{line_item.quantity}}" value="Receive with this kit only" data-frequency="{{selected_frequency}}" {% if line_item.properties == null %}selected{% endif %}> Receive with this kit only</option>
+                                                    <option data-key="{{line_item.key}}" data-variantId="{{line_item.variant_id}}" data-quantity="{{line_item.quantity}}" value="Receive in every kit" data-frequency="{{selected_frequency}}" value="{{selected_frequency}}" {% if selected_frequency == "2" or selected_frequency == "3" or selected_frequency == "1" %}selected{% endif %}> Receive in every kit</option>
+                                                {% else %}
+                                                    <option value="0" {% if line_item.properties == null %}selected{% endif %}> Select Frequency </option>
+                                                    <option value="1" {% if selected_frequency == "1" %}selected{% endif %}>Every Month</option>
+                                                    <option value="2" {% if selected_frequency == "2" %}selected{% endif %}>Every Two Months</option>
+                                                    <option value="3" {% if selected_frequency == "3" %}selected{% endif %}>Every Three Months</option>
+                                                {% endif %}
+                                            </select>
+                                        </label>
                                     </div>
+                                    <a href="#" class="CartItem__Remove Link Link--underline Link--underlineShort" data-quantity="0" data-line-id="{{ line_item.key }}" data-action="remove-item"> Edit</a>
                                 </div>
-
-                            
+                            {%- endif -%}  
+                            </div>                          
                         </div>
                     {%- endcapture -%}
-
                     {{ item_actions }}
                 </div>
                 
                 {{ item_actions }}
-            <div class="CartItem__LinePrice Price Heading Text--subdued u-h7" data-money-convertible style="text-align: center"> 
-                <span>  Receive every month. </span>
-                <div>
-                    <a  class="CartItem__Remove Link Link--underline Link--underlineShort" data-quantity="0" data-line-id="{{ line_item.key }}" data-action="remove-item"> Edit</a>
+                
+                <div class="CartItem__LinePrice frequency-sub Price Heading Text--subdued u-h7 desktop-price-max-width" style="text-align: center"> 
+                        {%- if line_item.properties != empty -%}
+                            <ul class="CartItem__PropertyList frequecyeditor">
+                                {%- assign selected_frequency = "0" -%}
+                                {%- assign isKit = "" -%}
+                                {% assign is_addOn = ""  %}
+                                {%- for property in line_item.properties -%}
+                                    {%- assign first_character_in_key = property.last | truncate: 1, '' -%}
+                                    {%- if property.first == 'isKit' -%}
+                                        {% assign isKit = true %} 
+                                        {% assign is_addOn = false %}
+                                    {%- endif -%}
+                                    {%- if property.first !='shipping_interval_frequency' -%}
+                                        {%- continue -%}
+                                    {%- endif -%}
+                                    {%- if property.first == 'shipping_interval_frequency' and first_character_in_key == blank -%}
+                                         {% assign is_addOn = true %}
+                                         {%- continue -%}
+                                    {%- endif -%}
+
+                                    {%- if property.first == 'shipping_interval_frequency' and first_character_in_key != blank -%}
+                                         {%- assign selected_frequency = property.last -%}
+                                    {%- endif -%}
+
+                                {%- endfor -%}
+                               
+                                {% if line_item.properties == null or is_addOn==true %}
+                                    <li> <span>Receive</span><p>with this kit only</p></li>
+                                    {%- assign is_addOn = true -%}  
+                                {% endif %}
+
+                                {% if isKit==true %}
+                                    {% if selected_frequency == "1" %}
+                                        <li class="CartItem__Property"><span>Receive</span><p>every month</p> 
+                                        </li>
+                                    {% else %}
+                                        <li class="CartItem__Property"><span>Receive</span><p>every {{ selected_frequency }}
+                                                months</p> 
+                                    {% endif %}
+                                {% endif %}
+                                
+                                {%- if isKit=="" and selected_frequency == "1" or selected_frequency == "2" or selected_frequency == "3" -%}
+                                    <li class="CartItem__Property"><span>Receive</span><p> in every kit</p> 
+                                        {%- assign is_addOn = true -%}  
+                                {%- endif -%}
+                                
+                            </ul>
+                        {%- endif -%}
+                 {%- if is_addOn==true or isKit==true -%}
+                    <div class="editable-frequency">
+                        <div class="selectdivForFrequency">
+                            <label>
+                                <select class="frequency_selector" style="display:none;">
+                                    {% if is_addOn==true %}
+                                        <option data-key="{{line_item.key}}" data-variantId="{{line_item.variant_id}}" data-quantity="{{line_item.quantity}}" value="Receive with this kit only" data-frequency="{{selected_frequency}}" {% if line_item.properties == null %}selected{% endif %}> Receive with this kit only</option>
+                                        <option data-key="{{line_item.key}}" data-variantId="{{line_item.variant_id}}" data-quantity="{{line_item.quantity}}" value="Receive in every kit" data-frequency="{{selected_frequency}}" value="{{selected_frequency}}" {% if selected_frequency == "2" or selected_frequency == "3" or selected_frequency == "1" %}selected{% endif %}> Receive in every kit</option>
+                                    {% else %}
+                                        <option value="0" {% if line_item.properties == null %}selected{% endif %}> Select Frequency </option>
+                                        <option value="1" {% if selected_frequency == "1" %}selected{% endif %}>Every Month</option>
+                                        <option value="2" {% if selected_frequency == "2" %}selected{% endif %}>Every Two Months</option>
+                                        <option value="3" {% if selected_frequency == "3" %}selected{% endif %}>Every Three Months</option>
+                                    {% endif %}
+                                </select>
+                            </label>
+                        </div>
+                        <a href="#" class="CartItem__Remove Link Link--underline Link--underlineShort"> Edit</a>
+                    </div>
+                {% endif %}    
                 </div>
-            </div>
-                <span class="CartItem__LinePrice Price Heading Text--subdued u-h7" data-money-convertible style="text-align: right">{{ line_item.line_price | money_without_trailing_zeros }}</span>
+
+                <div class="CartItem__LinePrice Price Heading Text--subdued u-h7">
+                {%- if line_item.product.compare_at_price > line_item.product.price -%}
+                <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ line_item.product.compare_at_price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                    <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 price-margin-left priceFont" data-money-convertible>{{ line_item.product.price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                    <div class="marginTop10">You Save: {{ line_item.product.compare_at_price | minus: line_item.product.price | times: line_item.quantity | money_without_trailing_zeros}} ({{ line_item.product.compare_at_price | minus: line_item.product.price | times: 100.0 | divided_by: line_item.product.compare_at_price | round }}%)</div>
+                {%- else -%}
+                    <span class="CartItem__LinePrice Price Heading Text--subdued u-h7 ProductItem__Price Price Text--subdued priceFont" data-money-convertible>{{ line_item.product.price | times: line_item.quantity | money_without_trailing_zeros }}</span>
+                {%- endif -%}
+                </div>
             </div>
             
     {%- endfor -%}
@@ -111,12 +235,24 @@
     display: block;
 }
 .subscription-cart .CartItem__ImageWrapper{
-    width: 180px;
+    width: 170px;
 }
-
+.Cart__HeadItem {
+    font-weight:600;
+}
+.CartItem .QuantitySelector {
+    border: 1px solid #0097ce;
+    color: #0097ce;
+}
+.frequency_selector {
+    border: 1px solid #0097CF; 
+    color: #0097ce; 
+    background: white; 
+}
 .Cart--expanded .CartItem__Info {
-    max-width: 200px !important;
-    width: 200px !important;
+    max-width: 180px !important;
+    width: 180px !important;
+    text-align: center;
 }
 .subscription-cart .Text--subdued{
     color: #0097ce;
@@ -127,12 +263,69 @@
 .frequency-sub{
     margin-top: 20px;
 }
+.PageContent {
+	    margin-bottom: 20px;
+}
+.price-margin-left{
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+.cartItem-cursor{
+    cursor: pointer;
+}
+.heading-margin-top {
+    margin-top: 10px;
+}
+.CartItem__Title a {
+    font-weight:600;
+    font-size:1.3em;
+}
+
+.heading-margin-top {
+    font-weight:500;
+    font-size:1.1em;
+}
+.frequecyeditor li {
+    text-transform: none;
+    font-style:normal;
+    font-weight:600;
+    font-size:1.3em;
+    /* max-width: 200px; */
+}
+
+/* .desktop-price-max-width{
+    max-width:200px ; */
+/* } */
+.editable-frequency a {
+    color:#7FDBEE;
+    font-style:normal;
+    font-weight:600;
+    font-size:1.3em;
+}
 @media screen and (min-width: 641px){
     .subscription-cart  .CartItem__ImageWrapper {
-        width: 180px;
+        width: 170px;
     }
     .frequency-sub{
         display: none;
+    }
+    .PageContent {
+	    margin-top: 20px;
+        max-width: none;
+    }
+    
+    .mobilePriceInfo{
+        display: none;
+    }
+    .Cart--expanded .CartItem__Info ~ .CartItem__Actions, .Cart--expanded .CartItem__Info ~ .CartItem__LinePrice
+    {
+        text-align: center;
+    }
+    .price-tag-mobile-only{
+        display: none !important;
+    }
+    .price-info-align{
+        display: block;
     }
 }
 
@@ -143,7 +336,46 @@
     .price-info-align{
         margin-bottom: 10px;
         text-align:center !important;
+        display: none !important;
     }   
-}
+    .mobilePriceInfo{
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
 
+    .subscription-cart .CartItem__Info{
+        vertical-align: top;
+        width: 50% !important;
+    }
+
+    .subscription-cart .CartItem__ImageWrapper {
+        width: 42% !important;
+        vertical-align: text-bottom;
+    }
+
+    .mobileAlign{
+        display: block;
+    }
+    .selectdivForFrequency{
+        margin-top: 10px;
+    }
+    	
+    .cartAjaxSection .Container{
+        padding: 0 15px;
+    }
+
+    /* .cartAjaxSection .CartItem{
+        table-layout:auto;
+    } */
+    .price-tag-mobile-only{
+        display: block;
+        margin-bottom: 10px;
+        text-align:center !important;
+        display: block !important;
+    }
+    .CartItem__Info{
+        padding-left: 18px;
+    }
+}
 </style>

@@ -1,529 +1,331 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" ></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="{{ 'get-started.js' | asset_url }}" defer></script>
+<script src="{{ 'get-started-events.js' | asset_url }}" defer></script>
 
 <style>
-.ProductItem__PriceList {
-  opacity: 1 !important;
-}
-
-.js .ProductList--grid .ProductItem {
-      visibility: visible !important;
+  #shopify-section-back-carousal-step-one,
+  #shopify-section-back-carousal-step-two,
+  #shopify-section-back-carousal-step-three {
+    min-height: 200px;
+    background-color: white;
+    position: fixed;
   }
-  .custom-button-container{
+
+/* PAGE PRE LOADER CSS BEGINS */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url("{{ 'Preloader_2.gif' | asset_url }}") center no-repeat #fff;
+}
+/* PAGE PRE LOADER CSS ENDS */
+  #shopify-section-back-carousal-step-one, 
+  #shopify-section-back-carousal-step-two,
+  #shopify-section-back-carousal-step-three {
+    min-height:200px;
+    background-color:white;
+    position:fixed;
+    z-index: 9;
+  }
+
+  #shopify-section-step-one {
+    margin-top: 16%;
+  }
+
+  .CartItem__Image {
+    max-height: 170px !important;
+  }
+
+  @media screen and (max-width: 359px) {
+    .CartItem__Image {
+      max-height: 125px !important;
+    }
+  }
+
+  @media screen and (min-width: 360px) {
+    .CartItem__Image {
+      max-height: 150px !important;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    .CartItem__Image {
+      max-height: 170px !important;
+    }
+  }
+
+  .ProductItem__PriceList {
+    opacity: 1 !important;
+  }
+
+  .js .ProductList--grid .ProductItem {
+    visibility: visible !important;
+  }
+
+  .custom-button-container {
     margin-top: 50px;
   }
 
-  .marginTop30{
-    margin-top:30px;
+  .marginTop30 {
+    margin-top: 30px;
   }
-/* CAROUSAL flickity.css */
 
-.carousel-cell {
-  width: 100%;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-.get-started-carousel .grid-cell-padding{
+  /* CAROUSAL flickity.css */
+
+  .carousel-cell {
+    width: 100%;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  .get-started-carousel .grid-cell-padding {
     padding-left: 0;
-}
-</style>
+  }
+  .toast-success{
+    background: #0097ce;
+    display: block; 
+  }
+  .cart-toaster-container{
+    background: #0097ce;
+    vertical-align: middle;
+    color: white;
+    display: none;
+    text-transform: uppercase
+  }
+  .cart-toaster-sub-con{
+      /* width: 60%; */
+      padding:20px 0; 
+      display: table-cell;
+      text-align: center;
+  }
+  .cart-toaster-img-con{
+    display: inline-block;
+    /* width: 20%; */
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
+    
+  }
+  .cart-toaster-img-con-img{
+    display: inline;
+    height: 50px;
+    width: 50px;
+  }
+  .step-check{
+    font-size:35px;
+    font-weight: bold;
+  }
 
+  .product-name-change{
+    font-weight: normal;
+  }
+  .toast-title{
+    display: inline-block;
+ }
+.message-change{
+  font-weight: 700;
+  text-align: center; 
+}
+.check-container{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+#toast-container>div{
+  width: auto;
+}
+
+a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
+  color:lightblue !important; 
+}
+
+@media screen and (max-width: 768px) {
+  #shopify-section-back-carousal-step-one, 
+  #shopify-section-back-carousal-step-two,
+  #shopify-section-back-carousal-step-three {
+    /* min-height:100%; */
+    min-height: 0;
+    background-color:white;
+    position:relative;
+    z-index: 3;
+  }
+
+  div.sticky {
+    width:100%;
+      position:absolute !important;
+      /* z-index: 0 !important; */
+  }
+
+  /* .carousalContent {
+    min-height:100% !important;
+  } */
+}
+
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) {
+  #shopify-section-back-carousal-step-one, 
+  #shopify-section-back-carousal-step-two,
+  #shopify-section-back-carousal-step-three {
+    /* min-height:100%; */
+    min-height: 0;
+    background-color:white;
+    position:relative;
+    z-index: 3;
+  }
+
+  div.sticky {
+    width:100%;
+      position:absolute !important;
+      /* z-index: 0 !important; */
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) and (orientation:landscape){
+  #shopify-section-back-carousal-step-one, 
+  #shopify-section-back-carousal-step-two,
+  #shopify-section-back-carousal-step-three {
+    /* min-height:100%; */
+    min-height: 0;
+    background-color:white;
+    position:relative;
+    z-index: 3;
+  }
+
+  div.sticky {
+    width:100%;
+      position:absolute !important;
+      /* z-index: 0 !important; */
+  }
+}
+
+.Carousel{
+  outline: none;
+}
+
+/* .subscription-page-only{
+    margin-bottom: env(safe-area-inset-bottom)
+} */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+ ::i-block-chrome, 
+  .subscription-page-only{
+        margin-bottom: 25px;
+  }
+}
+
+@media all and (-ms-high-contrast:none)
+     {
+      _:-ms-fullscreen, :root .question-title-medium,_:-ms-fullscreen, :root .question-title-large  { background: white;z-index: 100; } 
+   } 
+
+
+</style>
 <div class="page-width">
   <div class="grid">
-      <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-          <!-- Flickity HTML init -->
-         
-          {% section 'back-carousal' %}
-          <div class="carousel get-started-carousel">
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
-                {% section 'image-overlay' %}
-                {% section 'product-kit-collection' %}
-                
-            </div>
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">{% section 'step-one' %}</div>
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
-                {% section 'step-two' %}
-                {% section 'subscription-product-kit' %}
-                <div class="custom-button-container"> 
-                  {% section 'custom-button' %}
-                </div>
-                {% section 'product-subscription-collection-template' %} 
-              </div>
-              <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
-                {% section 'step-three' %}                
-                <div id="cartSection"></div>
-              </div>
-              
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <!-- Flickity HTML init -->
+      {% section 'subscription-settings' %}
+
+      {% section 'back-carousal-step-one' %}
+      {% section 'back-carousal-step-two' %}
+      {% section 'back-carousal-step-three' %}
+      <div class="carousel get-started-carousel">
+        <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+          {% section 'image-overlay' %}
+          {% section 'product-kit-collection' %}
+        </div>
+        <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+          {% section 'step-one' %}
+        </div>
+        <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+          {% section 'step-two' %}
+          {% section 'subscription-product-kit' %}
+          <div class="custom-button-container">
+            {% section 'custom-button' %}
           </div>
-          
+          {% section 'product-subscription-collection-template' %}
+        </div>
+        <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
+          {% section 'step-three' %}
+          <div class="marginTop30">
+            {% section 'checkout-button' %}
+          </div>
+          <div id="cartSection" class="cartAjaxSection">
+          </div>
+          {% section 'checkout-button' %}
+        </div>
+
       </div>
+
+    </div>
   </div>
   {%section 'modal' %}
-  
+  <div class="cart-toaster-container" id="cart-toaster-container">
+      
+      <div class="cart-toaster-sub-con">
+        <div class="message-change">
+       </div>
+          <div class="product-name-change"> </div>
+      </div>
+      <div class="cart-toaster-img-con"> 
+        <img  class="cart-toaster-img-con-img product-img-change" /> 
+      </div>
+    </div>
 </div>
 <script>
-  // Cookie Code
-function checkCookie(cookieName) {
-    var cookie = getCookie(cookieName);
-    if (cookie == "") {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function setCookie(cookieName, cvalue) {
-    var cookieContent = cookieName + "=" + JSON.stringify(cvalue) ; 
-    document.cookie = cookieContent;    
-}
-  
-function getCookie(cookieName) {
-    var name = cookieName + "=";
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-}
-
-function deleteCookie(cname) {
-    var d = new Date(); //Create an date object
-    d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
-    var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
-    window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
-}
-
-function ResetEachStep(){
-  setTimeout(function(){$('.get-started-carousel').data('flickity').reloadCells(); }, 3000);
-}
-
-function hideCollectionFilter(visible){
-    if(visible){
-      $('.CollectionFilters').hide()
-    }else{
-      $('.CollectionFilters').show()
-    }
-  }
-
-  function addItemToCart(product,isOneOff,isKit,quantity) {
-
-    var cookieSelection = JSON.parse(getCookie('testgmcscookie'));
-
-    document.dispatchEvent(new CustomEvent('theme:loading:start'));
-    product = JSON.parse(product);
-    if (isOneOff) {
-      data = {
-        "quantity": quantity,
-        "id": product.id,
-      }
-    } else {
-
-      data = {
-        "quantity": quantity,//product.quantity,
-        "id": product.id,
-        "properties[shipping_interval_unit_type]":"Months",
-        "properties[subscription_id]": "202238",
-        "properties[shipping_interval_frequency]": parseInt(cookieSelection.hygeineType,10),
-      }
-    }
-    let message = "Added to every kit";
-    
-    $.ajax({
-      type: 'POST',
-      url: '/cart/add.js',
-      data: data,
-      dataType: 'json',
-      success: function () {
-        if(isOneOff){
-          message = "Added to one time purchase";
-        }
-        if(isKit){
-          message = "Kit Added to cart";
-        }
-        toastr.success(product.name, message);
-        getCart();
-        
-      },
-      error:function(err){
-        document.dispatchEvent(new CustomEvent('theme:loading:end'));
-      }
-    });
-
-  }
-
-  function getCart(variant_id){
-    $.getJSON('/cart.js', function (cartItem) {
-      document.dispatchEvent(new CustomEvent('theme:loading:end'));
-      if (cartItem) {
-        $('.Header__CartCount').text(cartItem.item_count)
-      }
-      var cartKey = null;
-      var product = {};
-
-      if (window.selected_product_kit.product.variants.length > 0) {
-          product.name = window.selected_product_kit.product.title;
-          product.id = window.selected_product_kit.product.variants[0].id;
-      }
-
-      if (variant_id) {
-        for (var index = 0; index < cartItem.items.length; index++) {
-          if (variant_id) {
-            if (cartItem.items[index].variant_id == product.id) {
-              cartKey = cartItem.items[index].key;
-            }
-          }
-        }
-        if (cartKey) {
-
-          var data = {
-            'quantity': 0,
-            'id': cartKey
-          };
-
-          $.ajax({
-            type: 'POST',
-            url: '/cart/change.js',
-            data: data,
-            dataType: 'json',
-            success: function (cartItem) {
-              document.dispatchEvent(new CustomEvent('theme:loading:end'));
-              if (cartItem) {
-                $('.Header__CartCount').text(cartItem.item_count)
-                addItemToCart(JSON.stringify(product), false, true,1);
-              }
-            },
-            error: function (err) {
-              document.dispatchEvent(new CustomEvent('theme:loading:end'));
-            }
-          });
-        } else {
-
-          addItemToCart(JSON.stringify(product), false, true,1);
-        }
-      }
-
-    });
-  }
 
   $(function() {
-    // Initially All Products Sections should be invisible - Only Clicking Btn will show this section.
-    $("#shopify-section-product-subscription-collection-template").css('display', 'none');
-      var cName = "testgmcscookie";
-      var maxSlides = 3;
-      var userSelectedSlide = 0;
-      var currentSlideSelected = userSelectedSlide;
-      var userOptions = {
-          currentSlideSelected : userSelectedSlide,
-          hygeineType : 0,
-          addons:[],
-      };
-      var addonProduct = {
-          name:'',
-          id:'',
-          quantity: '',
-          addType: '' // Subscription or One Time
-      };
-
-      var isCookiePresent = checkCookie(cName);
-      if(true == isCookiePresent) {
-          // get user selection for ALL Steps
-          userOptions = JSON.parse(getCookie(cName));
-          userSelectedSlide = userOptions["currentSlideSelected"];
-          hygeineType = userOptions["hygeineType"];
-          if(hygeineType !== 0){
-            // Mark user selected hygeine option
-            $("input[name=step-one-hygeine]").val([hygeineType]);
-          } else {
-            $("#go-next-step").attr('disabled', 'disabled');  
-          }
-      } else {
-          setCookie(cName, userOptions);
-      }
-      
-      // Dont show Prev - Next on STEP 0 and STEP 3 i.e. Cart Page as we have everything to edit there.
-      if(userSelectedSlide < 1 || userSelectedSlide > 3 ) {
-          $("#go-previous-step").css ('display', 'none');
-          $("#go-next-step").css ('display', 'none');          
-      } else {
-          $("#go-previous-step").css ('display', 'block');
-          if(userSelectedSlide == 3) {
-            $("#go-next-step").css ('display', 'none');      
-          } else {
-            $("#go-next-step").css ('display', 'block');  
-          }
-      }
-      
-      var $carousel = $('.get-started-carousel').flickity({
-          'selectedAttraction': 0.01,
-          'friction': 0.15,
-          'prevNextButtons': false,
-          'pageDots': false,
-          'draggable': false,
-          'fade': true,
-          'adaptiveHeight': true,
-          'resize': true,
-          'accessibility': false
-      }); 
-      
-      // Go to user selected Slide - without animation
-      $carousel.flickity( 'select', userSelectedSlide, false, true );
-
-      $(".previous").on('click', function() {
-        // Hide the Filters - They show up on Step 1 in some scenarios.
-        $('.CollectionFilters').css('display', 'none');
-        userOptions = JSON.parse(getCookie(cName));
-        userSelectedSlide = userOptions["currentSlideSelected"];
-        userSelectedSlide = userSelectedSlide - 1;
-        userOptions["currentSlideSelected"] = userSelectedSlide;
-        if(userSelectedSlide < 1 || userSelectedSlide > 3 ) {
-            $("#go-previous-step").css ('display', 'none');
-            $("#go-next-step").css ('display', 'none');          
-        } else {
-          if(userSelectedSlide == 3) {
-            $("#go-next-step").css ('display', 'none');      
-          } else {
-            $("#go-next-step").css ('display', 'block');  
-          }
-        }
-        if(userSelectedSlide === 2){
-          hideCollectionFilter(false);
-        }else{
-          hideCollectionFilter(true);
-        }
-        setCookie(cName, userOptions);
-        $carousel.flickity('previous', false, false);
-      });
-
-      $(".next").on('click', function() {
-        userOptions = JSON.parse(getCookie(cName));
-        userSelectedSlide = userOptions["currentSlideSelected"];
-        var hygeineType = userOptions['hygeineType'];
-        if(userSelectedSlide == 1 && hygeineType == 0) {
-          // Do NOT proceed till user selects an option
-          return false;
-        }
-
-        userSelectedSlide = userSelectedSlide + 1;
-        userOptions["currentSlideSelected"] = userSelectedSlide;
-        if(userSelectedSlide == 3) {
-            $("#go-next-step").css ('display', 'none');      
-          } else {
-            $("#go-next-step").css ('display', 'block');  
-          }
-          if(userSelectedSlide === 2){
-          hideCollectionFilter(false);
-        }else{
-          hideCollectionFilter(true);
-        }
-        setCookie(cName, userOptions);
-        $carousel.flickity('next', false, false);
-      });    
-
-     $('input[name=step-one-hygeine]').on('change', function() {
-          $("#go-next-step").removeAttr('disabled');
-          userOptions = JSON.parse(getCookie(cName));
-          userOptions['hygeineType'] = $(this).val();
-
-          userSelectedSlide = userOptions["currentSlideSelected"];
-          currentSlideSelected = userSelectedSlide + 1;
-          userOptions["currentSlideSelected"] = currentSlideSelected;
-          $carousel.flickity('next', false, false);
-
-          if(currentSlideSelected === 2){
-            hideCollectionFilter(false);
-          }else{
-            hideCollectionFilter(true);
-          }
-
-          setCookie(cName, userOptions);
-          getCart(true);
-      });
-
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function() {
-          userOptions = JSON.parse(getCookie(cName));
-          userSelectedSlide = userOptions["currentSlideSelected"];
-          var hygeineType =  userOptions['hygeineType'];
-          currentSlideSelected = userSelectedSlide + 1;
-          if(currentSlideSelected == 1 && hygeineType == 0) {
-            // Do NOT proceed till user selects an option
-            $("#go-next-step").attr('disabled', 'disabled'); 
-          }
-          $carousel.flickity('next', false, false);
-          userOptions["currentSlideSelected"] = currentSlideSelected;
-          setCookie(cName, userOptions);
-          $("#go-previous-step").css ('display', 'block');
-          $("#go-next-step").css ('display', 'block');  
-          return false;
-      });
-
-      // Step 2 - Toggle AllProducts Section
-      $("#cta-custom-button").on('click', function(){
-        $("#shopify-section-product-subscription-collection-template").toggle();
-        $carousel.flickity('reloadCells');
-        hideCollectionFilter(false);
-        return false;
-      });
-
-      $('#skipStep2').click(function (){
-        userOptions = JSON.parse(getCookie(cName));
-        userSelectedSlide = userOptions["currentSlideSelected"];
-        userSelectedSlide = userSelectedSlide + 1;
-
-        userOptions["currentSlideSelected"] = userSelectedSlide;
-        setCookie(cName, userOptions);
-        $carousel.flickity('next', false, false);
-        if(userSelectedSlide == 3) {
-            $("#go-next-step").css ('display', 'none');      
-          } else {
-            $("#go-next-step").css ('display', 'block');  
-          }
-        return false;
-      });
-
-      $('#viewAllProd').on('click', function () {
-
-      $.get('/collections/subscription-product?view=ajax', function (data) {
-
-        $("#viewAllProductListing").html(data);
-        //$('.js .ProductList--grid .ProductItem').css('visibility', 'visible');
-        $carousel.flickity('reloadCells');
-
-      });
-    });
-
-    // FILTER Container
-    $('.CollectionToolbar__Item--filter').on('click', function(event){ 
-       var cloneFilterElement = $('#collection-filter-drawer');
-       // cloneFilterElement = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').clone(true);
-       $(cloneFilterElement).attr('aria-hidden', 'false');
-    });
-    
-    // Hide Filter SideBar when clicked on Page Overlay Opace background
-    $('.PageOverlay').on("click", function () {
-        $('#collection-filter-drawer').attr('aria-hidden', 'true');;
-        $('.get-started-carousel').data('flickity').reloadCells();
-    });
-    // Tag CLICK Handler - To take TAG value and place in SECTION data-section-settings JSON Object.
-    $('#collection-filter-drawer li button').on("click", function(e){
-      e.preventDefault();
-      var selectedTag = $(e.target).attr('data-tag');
-      var jsonP = JSON.parse($('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings'));
-      var arr = [];
-      arr.push(selectedTag);
-      jsonP.currentTags =  arr;
-      $('[data-section-id="product-subscription-collection-template"]').attr('data-section-settings',JSON.stringify(jsonP));
-      var originalTagBtn = $('#shopify-section-product-subscription-collection-template #collection-filter-drawer').find('button[data-tag="'+selectedTag+'"]');
-    });
-
-    // Apply CSS Highlighted for a specific Tag.
-    $('#collection-filter-drawer li').on('click', function(e){
-      var tagBtn =  $(this).find('button');
-      var tag = $(tagBtn).attr('data-tag');
-      $('#collection-filter-drawer li').removeClass('is-selected');
-      $('#collection-filter-drawer li button').removeClass('is-active');
-     
-    $('#shopify-section-product-subscription-collection-template #collection-filter-drawer li').each(function( index ) {
-      var tempBtn = $(this).find('button');
-      if($(tempBtn).attr('data-tag') === tag){
-        // Add CSS Classes to it.
-        $(this).addClass('is-selected');
-        $(tempBtn).addClass('is-active');
-      }
-    });
-    $(this).addClass('is-selected');
-      $(this).find('button').addClass('is-active');
-    });
-
-    $(document).on("click", '[data-drawer-id="collection-filter-drawer"]:first', function(e){
-      $('#collection-filter-drawer').attr('aria-hidden', 'true');
-      ResetEachStep();
-      return false;
-    });
-
-    $('[data-action="apply-tags"]:first').on('click', function(e){
-      $('[data-action="apply-tags"]:last').click();
-      $('[data-action="reset-tags"]').css('display', 'block'); // Show RESET after atleast 1 filter is applied.
-      $('#collection-filter-drawer').attr('aria-hidden', 'true');
-      ResetEachStep();
-      return false;
-    });
-
-    $('[data-action="reset-tags"]:first').on('click', function(e){
-      $('[data-action="reset-tags"]:last').click();
-      $('[data-action="reset-tags"]').css('display', 'none');
-      $('#collection-filter-drawer').attr('aria-hidden', 'true');
-      ResetEachStep();
-      return false;
-    });
-
-    // For MOBILE ONLY - Step 1 Info Display
-    $('.info-icon').on('click', function(e) {
-        var id = e.target.id;
-        var descriptionDiv = id + '-description'
-        if($('#' + descriptionDiv).is(":visible")) { 
-          $('.info-icon-description').css('display','none');
-        } else {
-          $('.info-icon-description').css('display','none');
-          $('#' + descriptionDiv ).css('display','block');
-          $('#' + descriptionDiv ).css('text-align', 'center');
-        }
-
-        $carousel.flickity('reloadCells');
-        return false;
-    });
-
-    $(document.body).on('click', '.button-add-to-kit' ,function(eventTarget){
-        //alert("Add to every Kit");
-        if($('#product-info-dialog').attr('aria-hidden')==="false"){
-          document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click()
-        }
-        var quantity = 1; //$(eventTarget.currentTarget.parentElement.parentElement).find('.QuantitySelector__CurrentQuantity').val()
-        quantity = parseInt(quantity,10);
-        if(eventTarget.target.getAttribute('data-product')){
-            addItemToCart(eventTarget.target.getAttribute('data-product'),false,false,quantity)
-        }
-        eventTarget.preventDefault();
-        return false;
-    });
-
-    $(document.body).on('click', '.add-only-kit' ,function(eventTarget){
-        //alert("Add to every Kit");
-        if($('#product-info-dialog').attr('aria-hidden')==="false"){
-            document.querySelector('.Modal--show-product-info [data-action="close-modal"]').click()
-        }
-        
-        var quantity = 1 // $(eventTarget.currentTarget.parentElement.parentElement).find('.QuantitySelector__CurrentQuantity').val()
-        quantity = parseInt(quantity,10);
-        if(eventTarget.target.getAttribute('data-product')){
-            addItemToCart(eventTarget.target.getAttribute('data-product'),true,false,quantity)
-        }
-        eventTarget.preventDefault();
-        return false;
-    });
-
     $product_link = $("#product_link_url");
 
-     if($product_link.length ===1){
+     if($product_link.length === 1){
        var product_link = $product_link.attr('data-link');
        if(product_link){
         $.getJSON(product_link,function(product_data){
             window.selected_product_kit = product_data;  
         });
        }
-     }else{
+     } else {
       toastr.error("Please configure the product link in page template.", "Error");
-     }
+    }
 
-     $.get('/cart?view=data',function(data){
-        $('#cartSection').html(data);
-        $carousel.flickity('reloadCells');
+    
+
+    $(document.body).on('click', '.checkout-custom-button', function (eventTarget) {
+        DomToggle.showLoading();
+        Cookie.deleteCookie();
+        window.location.href =  reChargeBuildCheckoutURL();
      });
+
+     function reChargeGetCookie(name) {
+					return (document.cookie.match('(^|; )' + name + '=([^;]*)')||0)[2];
+     }
+        
+     function reChargeBuildCheckoutURL() {
+					// Build the Checkout URL
+					var myshopify_domain = '{{ shop.permanent_domain }}';
+					var token = reChargeGetCookie('cart');
+					try {
+						// Cross-domain tracking with Google Analytics
+						var ga_linker = ga.getAll()[0].get('linkerParam');
+					} catch (e) {
+						// 'ga' is not available
+						var ga_linker = '';
+					}
+					// Customer email address for use in the Checkout URL
+					var customer_param = '{% if customer %}customer_id={{ customer.id }}&customer_email={{ customer.email }}{% endif %}';
+					var checkout_url = 'https://shopifysubscriptions.com/r/checkout?myshopify_domain=' + myshopify_domain + '&cart_token=' + token + '&' + ga_linker + '&' + customer_param
+					return checkout_url;
+      }        
+
+      // $.fn.noop = function () { return this; };
+      // toastr.options.hideMethod = 'noop';
 
   });
 </script>
+

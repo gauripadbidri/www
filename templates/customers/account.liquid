@@ -1,96 +1,196 @@
-<!-- Begin ReCharge code -->
-{% if customer.metafields.subscriptions.customer_string %}
-    <p><a href="/tools/recurring/customers/{{ customer.metafields.subscriptions.customer_string }}/subscriptions/">Manage Subscriptions</a></p>
-{% endif %}
-<!-- End ReCharge code -->
-<div class="Container Container--narrow">
-  <header class="PageHeader">
-    <a href="/account/logout" class="PageHeader__Back Heading Text--subdued Link Link--primary u-h7">{{ 'customer.account.logout' | t }}</a>
+<style>
+    .tabs-nav ul, .tabs-nav li, .tabs-nav div {
+        background: hsla(0, 0%, 0%, 0);
+        border: 0;
+        font-size: 100%;
+        margin: 0;
+        outline: 0;
+        padding: 0;
+        vertical-align: baseline;
+        font: 13px/20px "Droid Sans", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+        text-shadow: 0 1px 0 hsl(0, 100%, 100%);
+    }
+    .tabs-nav li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+        width: 50%;
+    }
+    .tabs-nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .tabs-nav li:first-child a {
+        border-right: 0;
+        -moz-border-radius-topleft: 6px;
+        -webkit-border-top-left-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+    .tabs-nav .tab-active a {
+        background:#0097ce;
+        border-bottom-color:#0097ce;
+        color:white;
+        /* color: hsl(85, 54%, 51%); */
+        cursor: default;
+    }
+    .tabs-nav a {
+        /* background: hsl(120, 11%, 96%); */
+        border: 1px solid #0097ce;
+        /* color: hsl(215, 6%, 57%); */
+        display: block;
+        font-size: 11px;
+        font-weight: bold;
+        height: 40px;
+        line-height: 44px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .tabs-nav li {
+        float: left;
+    }
+    .tabs-stage {
+       /* border: 1px solid hsl(210, 6%, 79%);*/
+        -webkit-border-radius: 0 0 6px 6px;
+        -moz-border-radius: 0 0 6px 6px;
+        -ms-border-radius: 0 0 6px 6px;
+        -o-border-radius: 0 0 6px 6px;
+        border-radius: 0 0 6px 6px;
+        border-top: 0;
+        clear: both;
+        margin-bottom: 20px;
+        position: relative;
+        top: -1px;
+        width: 100%;
+    }
+    .tabs-stage p {
+        margin: 0;
+        padding: 20px;
+        /* color: hsl(0, 0%, 33%); */
+    }
+</style>
 
-    <div class="SectionHeader">
-      <h1 class="SectionHeader__Heading Heading u-h1">{{ 'customer.account.title' | t }}</h1>
-      <p class="SectionHeader__Description">{{ 'customer.account.welcome' | t: first_name: customer.first_name }}</p>
-    </div>
-  </header>
+<script>
+  $(function() {
+      $('.tabs-nav a').on('click', function (event) {
+          event.preventDefault();
+          
+          $('.tab-active').removeClass('tab-active');
+          $(this).parent().addClass('tab-active');
+          $('.tabs-stage div[id^=tab-]').hide();
+          $($(this).attr('href')).show();
+      });
 
-  <div class="PageLayout PageLayout--breakLap">
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    ORDER HISTORY
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
+      $('.tabs-nav a:last').trigger('click');
+  });
+</script>
+<ul class="tabs-nav">
+    <li class="">
+      <a href="#tab-1" rel="nofollow">MY ACCOUNT</a>
+    </li>
+    <li class="tab-active">
+      <a href="#tab-2" rel="nofollow">MY SUBSCRIPTIONS</a>
+    </li>
+</ul>
+<div class="tabs-stage">
+    <div id="tab-1" style="display: none;">
+        <!-- Begin ReCharge code -->
+    
+      <!-- End ReCharge code -->
+      <div class="Container Container--narrow">
+      <header class="PageHeader">
+      <a href="/account/logout" class="PageHeader__Back Heading Text--subdued Link Link--primary u-h7">{{ 'customer.account.logout' | t }}</a>
 
-    <div class="PageLayout__Section">
-      {%- if customer.orders.size == 0 -%}
-        <div class="Segment">
-          <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.no_orders_title' | t }}</h2>
+      <div class="SectionHeader">
+        <h1 class="SectionHeader__Heading Heading u-h1">{{ 'customer.account.title' | t }}</h1>
+        <p class="SectionHeader__Description">{{ 'customer.account.welcome' | t: first_name: customer.first_name }}</p>
+      </div>
+      </header>
 
-          <div class="Segment__Content">
-            <p>{{ 'customer.account.no_orders_content' | t }}</p>
-          </div>
-        </div>
-      {%- else -%}
-        {%- paginate customer.orders by 25 -%}
-          <div class="TableWrapper">
-            <table class="AccountTable Table Table--large">
-              <thead class="Text--subdued">
-                <tr>
-                  <th>{{ 'customer.orders.order_number' | t }}</th>
-                  <th>{{ 'customer.orders.date' | t }}</th>
-                  <th>{{ 'customer.orders.payment_status' | t }}</th>
-                  <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
-                  <th class="Text--alignRight">{{ 'customer.orders.total' | t }}</th>
-                </tr>
-              </thead>
+      <div class="PageLayout PageLayout--breakLap">
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      ORDER HISTORY
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
 
-              <tbody class="Heading u-h7">
-                {%- for order in customer.orders -%}
-                  <tr>
-                    <td><a href="{{ order.customer_url }}" class="Link Link--underline">{{ order.name }}</a></td>
-                    <td>{{ order.created_at | date: format: 'month_day_year' }}</td>
-                    <td>{{ order.financial_status_label }}</td>
-                    <td>{{ order.fulfillment_status_label }}</td>
-                    <td class="Text--alignRight">{{ order.total_price | money_without_trailing_zeros }}</td>
-                  </tr>
-                {%- endfor -%}
-              </tbody>
-            </table>
-          </div>
+      <div class="PageLayout__Section">
+        {%- if customer.orders.size == 0 -%}
+          <div class="Segment">
+            <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.no_orders_title' | t }}</h2>
 
-          {%- include 'pagination' -%}
-        {%- endpaginate -%}
-      {%- endif -%}
-    </div>
-
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    ADDRESS
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-
-    <div class="PageLayout__Section PageLayout__Section--secondary">
-      <div class="Segment">
-        {%- if customer.addresses_count == 0 -%}
-          <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.no_addresses_title' | t }}</h2>
-
-          <div class="Segment__Content">
-            <p>{{ 'customer.account.no_addresses_content' | t }}</p>
-
-            <div class="Segment__ButtonWrapper">
-              <a href="/account/addresses" class="Button Button--primary">{{ 'customer.account.manage_addresses' | t }}</a>
+            <div class="Segment__Content">
+              <p>{{ 'customer.account.no_orders_content' | t }}</p>
             </div>
           </div>
         {%- else -%}
-          <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.default_address' | t }}</h2>
+          {%- paginate customer.orders by 25 -%}
+            <div class="TableWrapper">
+              <table class="AccountTable Table Table--large">
+                <thead class="Text--subdued">
+                  <tr>
+                    <th>{{ 'customer.orders.order_number' | t }}</th>
+                    <th>{{ 'customer.orders.date' | t }}</th>
+                    <th>{{ 'customer.orders.payment_status' | t }}</th>
+                    <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+                    <th class="Text--alignRight">{{ 'customer.orders.total' | t }}</th>
+                  </tr>
+                </thead>
 
-          <div class="Segment__Content">
-            {{ customer.default_address | format_address | replace: '<p>', '<p class="AccountAddress"><span>' | replace_first: '<br>', '</span><br>' }}
-            <div class="Segment__ButtonWrapper">
-              <a href="/account/addresses" class="Button Button--primary">{{ 'customer.account.edit_addresses' | t }}</a>
+                <tbody class="Heading u-h7">
+                  {%- for order in customer.orders -%}
+                    <tr>
+                      <td><a href="{{ order.customer_url }}" class="Link Link--underline">{{ order.name }}</a></td>
+                      <td>{{ order.created_at | date: format: 'month_day_year' }}</td>
+                      <td>{{ order.financial_status_label }}</td>
+                      <td>{{ order.fulfillment_status_label }}</td>
+                      <td class="Text--alignRight">{{ order.total_price | money_without_trailing_zeros }}</td>
+                    </tr>
+                  {%- endfor -%}
+                </tbody>
+              </table>
             </div>
-          </div>
+
+            {%- include 'pagination' -%}
+          {%- endpaginate -%}
         {%- endif -%}
       </div>
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      ADDRESS
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      <div class="PageLayout__Section PageLayout__Section--secondary">
+        <div class="Segment">
+          {%- if customer.addresses_count == 0 -%}
+            <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.no_addresses_title' | t }}</h2>
+
+            <div class="Segment__Content">
+              <p>{{ 'customer.account.no_addresses_content' | t }}</p>
+
+              <div class="Segment__ButtonWrapper">
+                <a href="/account/addresses" class="Button Button--primary">{{ 'customer.account.manage_addresses' | t }}</a>
+              </div>
+            </div>
+          {%- else -%}
+            <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.default_address' | t }}</h2>
+
+            <div class="Segment__Content">
+              {{ customer.default_address | format_address | replace: '<p>', '<p class="AccountAddress"><span>' | replace_first: '<br>', '</span><br>' }}
+              <div class="Segment__ButtonWrapper">
+                <a href="/account/addresses" class="Button Button--primary">{{ 'customer.account.edit_addresses' | t }}</a>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      </div>
+      </div>
     </div>
-  </div>
+    <div id="tab-2" style="display: block;">
+        <div>
+            {% section 'recharge-account' %}
+        </div>
+    </div>
 </div>
