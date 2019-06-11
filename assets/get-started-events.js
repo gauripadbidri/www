@@ -1,13 +1,5 @@
 $(function(){
 
-    var colors = [];
-    var colorElement = $('.data-colors').attr('data-colors-settings');
-    if (colorElement) {
-      colors = JSON.parse(colorElement); //['green','blue','red'] //
-    } 
-
-    window.glogalDatatags = colors;
-    
     DomToggle.ShowPreLoader();
     // Hide ALL Sticky Headers for Each Step initially.
     DomToggle.ShowHideCarousalForStep(-1);
@@ -362,8 +354,8 @@ $(function(){
           if(selectedValue=="Receive in every kit"){
             data = {
               "quantity": $selectedItem.attr('data-quantity'),
-              "properties[shipping_interval_unit_type]": "Months",
-              "properties[subscription_id]": "202238",
+              "properties[shipping_interval_unit_type]": subscriptionSettings.frequency,
+              "properties[subscription_id]": subscriptionSettings.id,
               "properties[shipping_interval_frequency]": parseInt(cookieSelection.hygeineType, 10),
               "id": $selectedItem.attr('data-key'),
             };

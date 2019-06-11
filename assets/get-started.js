@@ -133,8 +133,8 @@ var Cart = {
       data = {
         "quantity": quantity,//product.quantity,
         "id": product.id,
-        "properties[shipping_interval_unit_type]": "Months",
-        "properties[subscription_id]": "202238",
+        "properties[shipping_interval_unit_type]": subscriptionSettings.frequency,
+        "properties[subscription_id]": subscriptionSettings.id,
         "properties[shipping_interval_frequency]": parseInt(cookieSelection.hygeineType, 10),
       }
 
@@ -234,7 +234,7 @@ var Cart = {
             }
 
             if (datatags.length > 0) {
-              var datatag = Cart.findSimilar(datatags, glogalDatatags);
+              var datatag = Cart.findSimilar(datatags, subscriptionSettings.glogalDatatags);
               datatag = datatag[0];
 
               if(quantity > 0){
@@ -304,8 +304,8 @@ var Cart = {
 
           var data = {
             "quantity": cartItem.items[index].quantity,
-            "properties[shipping_interval_unit_type]": "Months",
-            "properties[subscription_id]": "202238",
+            "properties[shipping_interval_unit_type]": subscriptionSettings.frequency,
+            "properties[subscription_id]": subscriptionSettings.id,
             "properties[shipping_interval_frequency]": parseInt(selectedValue, 10),
             "id": cartItem.items[index].key,
           };
@@ -409,7 +409,7 @@ var Cart = {
       if(isPopup && cartItem.items.length > 0){
         $('[data-item-product-text]').text('ADD TO EVERY KIT').removeClass('button-add-to-kit-disabled');
         $('[data-item-product-text-only-kit]').text('ADD TO THIS KIT ONLY').removeClass('add-only-kit-disabled');
-        $('[data-item-product-id]').removeClass(window.glogalDatatags.join(' '));
+        $('[data-item-product-id]').removeClass(subscriptionSettings.glogalDatatags.join(' '));
       }
 
       for (var index = 0; index < cartItem.items.length; index++) {
@@ -440,7 +440,7 @@ var Cart = {
         var dataTags = dataTagElement.attr('data-tags');
         if (dataTags) {
           dataTags = JSON.parse(dataTags);
-          var datatag = Cart.findSimilar(dataTags, window.glogalDatatags);
+          var datatag = Cart.findSimilar(dataTags, subscriptionSettings.glogalDatatags);
           datatag = datatag[0];
 
           if (dataTags.length > 0 && datatag != '') {

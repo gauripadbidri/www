@@ -40,6 +40,9 @@
                             <ul class="CartItem__PropertyList">
                                 {%- for property in line_item.properties offset: 2 -%}
                                     {%- assign first_character_in_key = property.first | truncate: 1, '' -%}
+                                    {%- if property.first == 'isKit' -%}
+                                        {%- continue -%}
+                                    {%- endif -%}
 
                                     {%- if property.last == blank or first_character_in_key == '_' -%}
                                         {%- continue -%}

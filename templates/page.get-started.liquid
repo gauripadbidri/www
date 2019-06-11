@@ -225,6 +225,9 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
    } 
 
 
+   .Cart--expanded .Cart__Footer{
+      border-top: 1px solid #0097ce;
+   }
 </style>
 <div class="page-width">
   <div class="grid">
@@ -281,20 +284,14 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
 <script>
 
   $(function() {
-    $product_link = $("#product_link_url");
 
-     if($product_link.length === 1){
-       var product_link = $product_link.attr('data-link');
-       if(product_link){
-        $.getJSON(product_link,function(product_data){
+       if(subscriptionSettings.kitProduct){
+        $.getJSON(subscriptionSettings.kitProduct,function(product_data){
             window.selected_product_kit = product_data;  
         });
-       }
-     } else {
-      toastr.error("Please configure the product link in page template.", "Error");
-    }
-
-    
+      }else {
+        toastr.error("Please configure the product link in page template.", "Error");
+      }
 
     $(document.body).on('click', '.checkout-custom-button', function (eventTarget) {
         DomToggle.showLoading();

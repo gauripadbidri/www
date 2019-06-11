@@ -1,14 +1,21 @@
 
 <div data-section-id="{{ section.id }}" data-section-type="section">
-    {%- if section.settings.product_link != empty -%}
+    <!-- {%- if section.settings.product_link != empty -%}
         <div id="product_link_url" data-link="{{section.settings.product_link}}" style="display:none"> </div>
-    {%- endif -%}
-    {%- assign colors = "green,red,blue" | split: ","  -%}
-    <div class="data-colors" data-colors-settings="{{ colors  | json | escape }}" style="display:none"> </div>
-    
-    <div data-active-subscriptionBy="{{ section.settings.activeSubscriptionBy }}" style="display:none"> </div>
+    {%- endif -%} -->
+    <!-- {%- assign colors = "green,red,blue" | split: ","  -%} -->
+    <!-- <div class="data-colors" data-colors-settings="{{ colors  | json | escape }}" style="display:none"> </div> -->
+    <!-- <div data-active-subscriptionBy="{{ section.settings.activeSubscriptionBy }}" style="display:none"> </div>
     <div data-active-SubscriptionFrequency="{{ section.settings.activeSubscriptionFrequency }}" style="display:none"> </div>
-
+    <div data-active-activeSubscriptionId="{{ section.settings.activeSubscriptionId }}" style="display:none"> </div> -->
+    <script> 
+    
+    window.subscriptionSettings = { "id" : '{{ section.settings.activeSubscriptionId }}',
+       "frequency" : '{{section.settings.activeSubscriptionFrequency}}',
+       'kitProduct' : '{{section.settings.product_link}}',
+       'glogalDatatags' : ['green','red','blue']
+    } 
+    </script>
 </div>
 <style>
 
@@ -39,76 +46,23 @@
         },
         {
           "type": "text",
-          "id": "activeSubscription",
+          "id": "activeSubscriptionId",
           "label": {
             "en": "Active Subscription Id"
-            }
+            },
+            "default":   "202238"
         },
         {
           "type":      "select",
-          "id":        "activeSubscriptionBy",
-          "label":     "Active Subscription By",
+          "id":        "activeSubscriptionFrequency",
+          "label":     "Subscription Frequency",
           "options": [
             {
               "value": "Months",
               "label": "Months"
-            },
-            {
-              "value": "Weekly",
-              "label": "Weekly"
             }
           ],
           "default":   "Months"
-       },
-        {
-          "type":      "select",
-          "id":        "activeSubscriptionFrequency",
-          "label":     "Active Subscription Frequency",
-          "options": [
-            {
-              "value": "1",
-              "label": "1"
-            },
-            {
-              "value": "2",
-              "label": "2"
-            },
-            {
-              "value": "3",
-              "label": "3"
-            },
-            {
-              "value": "4",
-              "label": "4"
-            },
-            {
-              "value": "5",
-              "label": "5"
-            },
-            {
-              "value": "6",
-              "label": "6"
-            },
-            {
-              "value": "7",
-              "label": "7"
-            }
-            ,
-            {
-              "value": "8",
-              "label": "8"
-            }
-            ,
-            {
-              "value": "9",
-              "label": "9"
-            }
-            ,
-            {
-              "value": "10",
-              "label": "10"
-            }
-          ]
        },
         {
           "type": "color",
