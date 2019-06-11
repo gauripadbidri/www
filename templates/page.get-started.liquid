@@ -15,7 +15,7 @@
 /* PAGE PRE LOADER CSS BEGINS */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
+/*.se-pre-con {
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -23,7 +23,27 @@
 	height: 100%;
 	z-index: 9999;
 	background: url("{{ 'Preloader_2.gif' | asset_url }}") center no-repeat #fff;
+}*/
+
+.se-pre-con {
+  position: absolute;
+  display: block;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 160px;
+  height: 160px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  z-index: -1;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  overflow: hidden;
 }
+
 /* PAGE PRE LOADER CSS ENDS */
   #shopify-section-back-carousal-step-one, 
   #shopify-section-back-carousal-step-two,
