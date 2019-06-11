@@ -53,7 +53,7 @@
 
                     <img class="Image--lazyLoad Image--fadeIn" {% if initial_image_id == image.id %} src="{{ image | img_url: '250x' }}" {% endif %} data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" data-expand="-100" alt="{{ image.alt | escape }}" data-max-width="{{ image.width }}" data-max-height="{{ image.height }}" data-original-src="{{ image | img_url: 'master' }}">
 
-                        <span class="Image__Loader customImageLoader"></span>
+                        <span class="Image__Loader"></span>
 
                         <noscript>
                             <img src="{{ image | img_url: '800x' }}" alt="{{ image.alt | escape }}"></noscript>
