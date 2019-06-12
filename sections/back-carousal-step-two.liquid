@@ -88,7 +88,7 @@ a.add-only-kit, a#skipStep2 {
         text-align:center;
     }
     .carousalContent {        
-        min-height:200px;
+        height:150px;
         background-color:white;
     }
     .marginTop50{
@@ -106,9 +106,9 @@ a.add-only-kit, a#skipStep2 {
     
   @media only screen and (max-width: 340px) {
 
-    #shopify-section-step-two {
+    /*#shopify-section-step-two {
         margin-top:75% !important;
-    }
+    }*/
     .ProductItem__Info h2:last-of-type {
       margin-bottom: 5px;
     }
@@ -120,10 +120,11 @@ a.add-only-kit, a#skipStep2 {
         overflow: hidden;
     }
 } 
+/*
 @media only screen and (max-width: 399px) {
 
     #shopify-section-step-two {
-        margin-top:55%;
+        margin-top:15%;
     }
 }  
 @media only screen and (min-width: 400px) {
@@ -144,14 +145,14 @@ a.add-only-kit, a#skipStep2 {
     #shopify-section-step-two {
     margin-top:35%;
     }
-}  
+}  */
 
 @media only screen and (max-width: 769px){
   .ContainerMobile{
     padding: 0;
   }  
 }
-
+/*
 @media screen and (min-width: 700px) {
 
     #shopify-section-step-two {
@@ -188,7 +189,7 @@ a.add-only-kit, a#skipStep2 {
 	#shopify-section-step-two {
 		margin-top: 17%;
 	}
-}
+}*/
 
 @media screen and (max-width: 789px) {  
   #go-previous-step, #go-next-step {
@@ -200,25 +201,29 @@ a.add-only-kit, a#skipStep2 {
     margin-top:10px;
   }
 }
+
+.stickyPosition {
+  position:relative;
+}
 </style>
 <div class="sticky alignText carousalContent">
-    <div class="sticky previous marginTop50" >
+    <div class="stickyPosition previous marginTop50" >
         <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
             <div class="arrow-left"></div>
             <span>{{section.settings.previous-step-text}}</span>
         </span>
     </div>
-    <div class="step-question sticky alignText step-title-{{section.settings.title_text_size}}">
-        <span class="step-title-{{section.settings.title_text_size}}" 
-              style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
-    </div> 
-    <div class="sticky next marginTop50">
+    <div class="stickyPosition next marginTop50">
         <span href="#" class="carousalBack carousalStepNext" id="go-next-step">
             <div class="arrow-right"></div>
             <span>{{section.settings.next-step-text}}</span>
         </span>            
+    </div> 
+    <div class="step-question stickyPosition alignText step-title-{{section.settings.title_text_size}}">
+        <span class="step-title-{{section.settings.title_text_size}}" 
+              style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
     </div>      
-    <div style="clear:both; margin-top:100px;padding-top: 30px;" class="marginTop50 sticky question-title-{{section.settings.question_text_size}}">
+    <div style="clear:both;background-color: white;" class="stickyPosition marginTop50 question-title-{{section.settings.question_text_size}}">
         <span class="question-title-{{section.settings.title_text_size}}" 
               style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
           <div class="Container ContainerMobile">

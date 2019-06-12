@@ -104,7 +104,7 @@
         text-align:center;
     }
     .carousalContent {        
-        min-height:200px;
+        height:150px;
         background-color:white;
     }
     .marginTop50{
@@ -118,7 +118,7 @@
 @media screen and (max-width: 399px) {
 
 #shopify-section-step-three {
-    margin-top:55%;
+    margin-top:15%;
 }
 }  
 @media screen and (max-width: 355px) {
@@ -211,6 +211,10 @@
     margin-right:0 !important;
   }
 }  
+
+.stickyPosition {
+  position:relative;
+}
 /* @media screen and (min-width: 940px){
 	#shopify-section-step-three{
 	    margin-top: 21%;
@@ -226,25 +230,25 @@ and (max-device-width : 1024px){
 
 </style>
 <div class="sticky alignText carousalContent">
-    <div class="sticky previous marginTop50" >
+    <div class="stickyPosition previous marginTop50" >
         <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
             <div class="arrow-left"></div>
             <span>{{section.settings.previous-step-text}}</span>
         </span>
     </div>
-    <div class="step-question sticky alignText step-title-{{section.settings.title_text_size}}">
-        <span class="step-title-{{section.settings.title_text_size}}" 
-              style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
-    </div> 
-    <div class="sticky marginTop50">
+    <div class="stickyPosition marginTop50">
         <span class="checkoutStyles">
             <div id="section-cta">
                 <div class="arrow-right"></div>
                 <button id="checkout-custom-button" name="checkout" class="checkout-custom-button checkout-custom-sticky button">CHECKOUT</button>
             </div>
         </span>            
-    </div>      
-    <div style="clear:both; margin-top:100px;padding-top: 30px;" class="marginTop50 sticky question-title-{{section.settings.question_text_size}}">
+    </div>  
+    <div class="step-question stickyPosition alignText step-title-{{section.settings.title_text_size}}">
+        <span class="step-title-{{section.settings.title_text_size}}" 
+              style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
+    </div>     
+    <div style="clear:both;background-color: white;" class="marginTop50 stickyPosition question-title-{{section.settings.question_text_size}}">
         <span class="question-title-{{section.settings.title_text_size}}" 
               style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
     

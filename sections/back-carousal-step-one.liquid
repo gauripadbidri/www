@@ -107,7 +107,7 @@
         text-align:center;
     }
     .carousalContent {        
-        min-height:200px;
+        height:150px;
         background-color:white;
     }
     .marginTop50{
@@ -122,11 +122,11 @@
     .step-question {
         margin-top: 50px;
     }
-
+/*
 @media screen and (max-width: 399px) {
 
-    #shopify-section-step-one {
-        margin-top:55%;
+    #shopify-section-step-one, #shopify-section-step-two, #shopify-section-step-three {
+        margin-top:15%;
     }
 }  
 @media screen and (min-width: 400px) {
@@ -186,7 +186,7 @@
     padding: 0;
   }  
 }
-
+*/
 @media screen and (max-width: 789px) {  
   #go-previous-step, #go-next-step {
     margin-left:0px;
@@ -219,7 +219,7 @@
         <span class="step-title-{{section.settings.title_text_size}}" 
               style="color: {{section.settings.title-color}};">{{section.settings.step-title}}</span>
     </div>   
-    <div style="clear:both;" class="stickyPosition marginTop50 question-title-{{section.settings.question_text_size}}">
+    <div style="clear:both;background-color: white;" class="stickyPosition marginTop50 question-title-{{section.settings.question_text_size}}">
         <span class="question-title-{{section.settings.title_text_size}}" 
               style="color: {{section.settings.question-color}};">{{section.settings.question-title}}</span>
 
