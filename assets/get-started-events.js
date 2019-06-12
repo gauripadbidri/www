@@ -62,8 +62,8 @@ $(function(){
         if(!userOptions){
           window.location.reload()
         }
-        eventTarget.stopImmediatePropagation();  
-        eventTarget.stopPropagation();
+        // eventTarget.stopImmediatePropagation();  
+        // eventTarget.stopPropagation();
         eventTarget.preventDefault();
 
         userSelectedSlide = userOptions["currentSlideSelected"];
@@ -107,8 +107,8 @@ $(function(){
           console.log("Return false")
           return false; }
 
-        eventTarget.stopImmediatePropagation();  
-        eventTarget.stopPropagation();
+        // eventTarget.stopImmediatePropagation();  
+        // eventTarget.stopPropagation();
         eventTarget.preventDefault();
   
 
@@ -157,6 +157,7 @@ $(function(){
         DomToggle.ShowHideCarousalForStep(2);
         Cookie.setCookie(userOptions);
         FlickityCarousal.navigateToPreviousSlide(2);
+        CustomTheme.animateToTop();
       });
 
      $('input[name=step-one-hygeine]').on('change', function() {
@@ -177,7 +178,7 @@ $(function(){
           Cart.updateFrequency(true);
       });
 
-      $('#btn_email_to_shopifyregister_and_newsletter').click(function(eventTarget) {
+      $('.btn_email_to_shopifyregister_and_newsletter').click(function(eventTarget) {
         if(eventTarget && eventTarget.originalEvent && eventTarget.originalEvent.detail > 1){ 
           return false; 
         }
@@ -216,6 +217,7 @@ $(function(){
           userOptions["currentSlideSelected"] = currentSlideSelected;
           DomToggle.ShowHideCarousalForStep(currentSlideSelected);
           Cookie.setCookie(userOptions);
+          CustomTheme.animateToTop();
           return false;
       });
 
@@ -324,14 +326,14 @@ $(function(){
     // For MOBILE ONLY - Step 1 Info Display
     $('.info-icon').on('click', function(e) {
         var id = e.target.id;
-        var descriptionDiv = id + '-description'
-        if($('#' + descriptionDiv).is(":visible")) { 
-          $('.info-icon-description').css('display','none');
-        } else {
-          $('.info-icon-description').css('display','none');
-          $('#' + descriptionDiv ).css('display','block');
+        var descriptionDiv = id + '-description';
+       // if($('#' + descriptionDiv).is(":visible")) { 
+       //   $('.info-icon-description').css('display','none');
+       // } else {
+          //$('.info-icon-description').css('display','none');
+          $('#' + descriptionDiv ).toggle();
           $('#' + descriptionDiv ).css('text-align', 'center');
-        }
+        //}
         var $carousal= FlickityCarousal.getCarousalInstance();
         $carousal.flickity('reloadCells');
         return false;

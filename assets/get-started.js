@@ -257,19 +257,13 @@ var Cart = {
     $.get('/cart?view=data', function (data) {
       DomToggle.hideLoading();
       $('#cartSection').html(data);
-      //$('.get-started-carousel').data('flickity').reloadCells();
       $('.total-title-medium').text($('.price-info-align').text());
-      // TODO :: Change the code..
-     // $('.price-tag-desktop-only').css('width', $('.desktop-price-tag').width());
 
+      // TODO :: Change the code..
+      $('.get-started-carousel').data('flickity').reloadCells(); 
+      
       if(BrowserDetection.isIOS()){
         $('.get-started-carousel').data('flickity').resize();
-      }
-
-      $('.get-started-carousel').data('flickity').reloadCells(); 
-
-      if(BrowserDetection.isIE11()){
-         DomToggle.ResetEachStep();
       }
 
     });
@@ -538,6 +532,11 @@ var CustomTheme = {
   },
   resetFilterProducts: function(e) {
 
+  },
+  animateToTop: function(){
+    $([document.documentElement, document.body]).animate({
+      scrollTop: 0
+    }, 1800);
   },
   animateScrollBarPostFilter: function(){
       $([document.documentElement, document.body]).animate({

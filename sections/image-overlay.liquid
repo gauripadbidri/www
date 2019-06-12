@@ -83,7 +83,7 @@
               <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom40 shipping_type_color">{{ section.settings.shipping_type }}</div>
             {%- endif -%}
             {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-              <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
+              <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn btn_email_to_shopifyregister_and_newsletter">
                 {{ section.settings.button_label | escape }}
               </a>
             {%- endif -%}
@@ -143,7 +143,7 @@
               <div class="rte-setting mega-subtitle mega-shipping--{{section.settings.text_size}} marginBottom40 shipping_type_color">{{ section.settings.shipping_type }}</div>
             {%- endif -%}
            
-              <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn">
+              <a href="{{ section.settings.button_link }}" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn btn_email_to_shopifyregister_and_newsletter">
                 {{ section.settings.button_label | escape }}
               </a>
           </div>

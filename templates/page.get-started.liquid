@@ -26,19 +26,16 @@
 }*/
 
 .se-pre-con {
-  position: absolute;
-  display: block;
+  position: fixed;
+	left: 45%;
+	top: 40%;
   border: 5px solid #f3f3f3;
   border-radius: 50%;
   border-top: 5px solid #3498db;
   width: 160px;
   height: 160px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
   margin: auto;
-  z-index: -1;
+  z-index: 9999;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   overflow: hidden;
@@ -48,7 +45,7 @@
   #shopify-section-back-carousal-step-one, 
   #shopify-section-back-carousal-step-two,
   #shopify-section-back-carousal-step-three {
-    min-height:200px;
+    min-height:150px;
     background-color:white;
     position:fixed;
     z-index: 9;
@@ -242,12 +239,29 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
 @media all and (-ms-high-contrast:none)
      {
       _:-ms-fullscreen, :root .question-title-medium,_:-ms-fullscreen, :root .question-title-large  { background: white;z-index: 100; } 
-   } 
 
+      _:-ms-fullscreen, :root 
+          .ie-size  {
+              height: 200px;
+              width: 200px;
+          }
+   } 
 
    .Cart--expanded .Cart__Footer{
       border-top: 1px solid #0097ce;
    }
+
+   #shopify-section-cart-subscription-template .PageContent{
+     display: flex;
+   }
+
+   .getting-start-bottom-btn{
+      clear: both;
+      margin-top: 60px;
+      text-align: center;
+      margin-bottom: 33px;
+   }
+
 </style>
 <div class="page-width">
   <div class="grid">
@@ -262,6 +276,11 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
         <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
           {% section 'image-overlay' %}
           {% section 'product-kit-collection' %}
+          <div class="getting-start-bottom-btn">
+              <a href="" id="btn_email_to_shopifyregister_and_newsletter" class="btn hero__btn btn_email_to_shopifyregister_and_newsletter">
+                  LET'S GET STARTED
+                </a>
+          </div>  
         </div>
         <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
           {% section 'step-one' %}
@@ -314,6 +333,13 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
       }
 
     $(document.body).on('click', '.checkout-custom-button', function (eventTarget) {
+
+       if($(".subscription-cart [data-handle='"+selected_product_kit.product.handle+"']").length === 0){
+          Cookie.deleteCookie();
+          
+          window.location.reload();
+          return;
+       }
         DomToggle.showLoading();
         Cookie.deleteCookie();
         window.location.href =  reChargeBuildCheckoutURL();

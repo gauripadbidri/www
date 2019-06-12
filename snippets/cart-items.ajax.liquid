@@ -20,9 +20,9 @@
                     <div class="AspectRatio" style="--aspect-ratio: {{ line_item.image.aspect_ratio }}">
                         {%- include 'image-size', sizes: '200', image: line_item.image -%}
                         {%- assign image_url = line_item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-                        <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}"
+                        <img class="Image--lazyLoad ie-size Image--fadeIn" data-src="{{ image_url }}"
                             data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ line_item.image.alt | escape }}"
-                            />
+                         />
                         <span class="Image__Loader"></span>
 
                     </div>

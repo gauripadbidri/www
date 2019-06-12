@@ -889,7 +889,7 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1559908452366": {
+          "1560320637900": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -900,7 +900,7 @@
           }
         },
         "block_order": [
-          "1559908452366"
+          "1560320637900"
         ],
         "settings": {
           "title": "",
@@ -916,9 +916,8 @@
         "type": "subscription-settings",
         "settings": {
           "product_link": "shopify:\/\/products\/v-basic",
-          "activeSubscription": "",
-          "activeSubscriptionBy": "Months",
-          "activeSubscriptionFrequency": "1",
+          "activeSubscriptionId": "202238",
+          "activeSubscriptionFrequency": "Months",
           "red": "#ff2dac",
           "green": "#54d12b",
           "blue": "#0091c8"
@@ -1031,7 +1030,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1559908387277": {
+          "1560320656315": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -1042,7 +1041,7 @@
           }
         },
         "block_order": [
-          "1559908387277"
+          "1560320656315"
         ],
         "settings": {
           "title": "",
@@ -1065,7 +1064,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1559908430018": {
+          "1560320673580": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1074,7 +1073,7 @@
           }
         },
         "block_order": [
-          "1559908430018"
+          "1560320673580"
         ],
         "settings": {
           "show_collection_info": true,
@@ -1122,7 +1121,7 @@
       "modal": {
         "type": "modal",
         "settings": {
-          "popup_loading_info_message": "We are loading your product information soon."
+          "popup_loading_info_message": "More information coming right up!"
         }
       }
     },

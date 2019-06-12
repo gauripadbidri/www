@@ -57,7 +57,7 @@ a.add-only-kit, a#skipStep2 {
         font-weight: bold;
         margin-left:20%;
         padding: 15px;
-        width: 170px;
+        width: 130px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
@@ -69,7 +69,7 @@ a.add-only-kit, a#skipStep2 {
         font-weight: bold;
         margin-right:20%;
         padding: 15px;
-        width: 150px;
+        width: 100px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
@@ -203,7 +203,7 @@ a.add-only-kit, a#skipStep2 {
     <div class="sticky previous marginTop50" >
         <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
             <div class="arrow-left"></div>
-            <span>PREVIOUS STEP</span>
+            <span>{{section.settings.previous-step-text}}</span>
         </span>
     </div>
     <div class="step-question sticky alignText step-title-{{section.settings.title_text_size}}">
@@ -213,7 +213,7 @@ a.add-only-kit, a#skipStep2 {
     <div class="sticky next marginTop50">
         <span href="#" class="carousalBack carousalStepNext" id="go-next-step">
             <div class="arrow-right"></div>
-            <span>NEXT STEP</span>
+            <span>{{section.settings.next-step-text}}</span>
         </span>            
     </div>      
     <div style="clear:both; margin-top:100px;padding-top: 30px;" class="marginTop50 sticky question-title-{{section.settings.question_text_size}}">
@@ -288,7 +288,27 @@ a.add-only-kit, a#skipStep2 {
             "default": {
               "en": "STEP 2"
             }
+        },        
+        {
+          "type": "text",
+          "id": "previous-step-text",
+          "label": {
+            "en": "Previous Step text"
+          },
+          "default": {
+            "en": "PREVIOUS"
+          }
+      },      
+      {
+        "type": "text",
+        "id": "next-step-text",
+        "label": {
+          "en": "Next Step text"
         },
+        "default": {
+          "en": "NEXT"
+        }
+      },
         {
         "type": "select",
         "id": "question_text_size",

@@ -70,7 +70,7 @@
         font-weight: bold;
         margin-left:20%;
         padding: 15px;
-        width: 170px;
+        width: 130px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
@@ -82,7 +82,7 @@
         font-weight: bold;
         margin-right:20%;
         padding: 15px;
-        width: 150px;
+        width: 100px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
@@ -224,7 +224,7 @@ and (max-device-width : 1024px){
     <div class="sticky previous marginTop50" >
         <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
             <div class="arrow-left"></div>
-            <span>PREVIOUS STEP</span>
+            <span>{{section.settings.previous-step-text}}</span>
         </span>
     </div>
     <div class="step-question sticky alignText step-title-{{section.settings.title_text_size}}">
@@ -360,7 +360,17 @@ and (max-device-width : 1024px){
       "default": {
         "en": "Check out what you’re getting."
       }
-  },
+    },        
+    {
+      "type": "text",
+      "id": "previous-step-text",
+      "label": {
+        "en": "Previous Step text"
+      },
+      "default": {
+        "en": "PREVIOUS"
+      }
+    }, 
     {
       "type": "color",
       "id": "info-color",
