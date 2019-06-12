@@ -18,6 +18,9 @@
       background-color:transparent;
       color:#0992f4;
       text-decoration:underline;
+      font-size: 1.2em;
+      font-weight: 600;
+      line-height: 50%;
     }
     .arrow-right {
         width: 0; 
@@ -61,16 +64,18 @@
         transform: rotate(135deg);
         -webkit-transform: rotate(135deg);
     }
-    .previous {
+    .previous, .next {
       z-index:10;
+      font-size:1.2em;
+      line-height: 100%;
     }
 
     #go-previous-step {
         cursor:pointer;
-        font-weight: bold;
+        font-weight: 600;
         margin-left:20%;
         padding: 15px;
-        width: 130px;
+        width: 150px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
@@ -79,10 +84,10 @@
     }
     #go-next-step {
         cursor:pointer;
-        font-weight: bold;
+        font-weight: 600;
         margin-right:20%;
         padding: 15px;
-        width: 100px;
+        width: 120px;
         color: {{ section.settings.btn_get_started_bg_color }};
         position: absolute;
         z-index: 100;
