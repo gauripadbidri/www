@@ -889,7 +889,7 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1560320637900": {
+          "1560431958215": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -900,7 +900,7 @@
           }
         },
         "block_order": [
-          "1560320637900"
+          "1560431958215"
         ],
         "settings": {
           "title": "",
@@ -931,6 +931,8 @@
           "title_text_size": "medium",
           "title-color": "#0097ce",
           "step-title": "STEP 1",
+          "previous-step-text": "PREVIOUS",
+          "next-step-text": "NEXT",
           "question_text_size": "medium",
           "question-color": "#0097ce",
           "question-title": "What is your typical hygiene routine?"
@@ -944,6 +946,8 @@
           "title_text_size": "medium",
           "title-color": "#0097ce",
           "step-title": "STEP 2",
+          "previous-step-text": "PREVIOUS",
+          "next-step-text": "NEXT",
           "question_text_size": "medium",
           "question-color": "#0097ce",
           "question-title": "Have your eye on anything else?"
@@ -961,6 +965,7 @@
           "question_text_size": "medium",
           "question-color": "#0097ce",
           "question-title": "Check out what you’re getting.",
+          "previous-step-text": "PREVIOUS",
           "info-color": "#0097ce",
           "info-title": "Your first box ships today",
           "total-title": "Total:"
@@ -1030,7 +1035,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1560320656315": {
+          "1560431972171": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -1041,7 +1046,7 @@
           }
         },
         "block_order": [
-          "1560320656315"
+          "1560431972171"
         ],
         "settings": {
           "title": "",
@@ -1064,7 +1069,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1560320673580": {
+          "1560431984565": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1073,7 +1078,7 @@
           }
         },
         "block_order": [
-          "1560320673580"
+          "1560431984565"
         ],
         "settings": {
           "show_collection_info": true,
