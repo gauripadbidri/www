@@ -16,7 +16,10 @@
 
         #product-info-dialog .Modal__Content {
             overflow:auto !important;
-            max-height: calc(var(--window-height) - 100px)  !important;
+            max-height: calc(100vh - 100px)  !important;
+            @supports (--css: variables) {
+                max-height: calc(var(--window-height) - 40px);
+            }
         }
 
         #product-info-dialog button {
