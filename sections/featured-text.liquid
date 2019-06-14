@@ -1,0 +1,97 @@
+{% assign sect = section.settings %}
+{% stylesheet 'scss' %}
+    .featured-text {
+        section {
+            margin: 10vh auto;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+
+            div {
+                margin: 1rem 0;
+            }
+            .btn {
+                a {
+
+                transition: none !important;
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 1rem;
+                font-family: inherit;
+                padding: 3px 35px;
+                border-radius: 0;
+                text-transform: uppercase;
+                position: relative;
+                display: inline-block;
+                line-height: normal;
+                }
+            }
+        }
+    }
+{% endstylesheet %}
+
+<style>
+    .featured-text .btn a {
+        background-color: {{ sect.button-background-color }};
+        color: {{ sect.button-text-color }};
+    }
+</style>
+
+
+<section>
+<div><h1>{{ sect.heading }}</h1></div>
+<div class="text-body">{{ sect.body-text }}</div>
+<div class="btn"><a href="{{ sect.button-url }}">{{ sect.button-text }}</a></div>
+</section>
+
+{% schema %}
+    {
+    "name": "Featured Text",
+    "class": "featured-text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Title"
+        }, 
+        {
+        "type": "richtext",
+        "id": "body-text",
+        "label": "text",
+        "default": "<p>hello</p>"
+        },
+        {
+            "type": "text",
+            "id": "button-text",
+            "label": "Button Text",
+            "default": "Learn More"
+        },
+        {
+            "type": "url",
+            "id": "button-url",
+            "label": "Button URL"
+        },
+        {
+            "type": "color",
+            "id": "button-text-color",
+            "label": "Button Text Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "button-background-color",
+            "label": "Button Background Color",
+            "default": "#222"
+        }
+
+    ],
+    "presets": [
+        {
+            "category": "Text",
+            "name": "Featured Text",
+            "settings": {}
+        }
+    ]
+    }
+{% endschema %}

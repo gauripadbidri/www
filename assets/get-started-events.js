@@ -489,4 +489,19 @@ $(function(){
     Cart.addColorToSelectedProduct();
     Cart.loadCartData();
 
+    // This setting is done so that STICKY Header does not show below content on SCROLL. 
+    // This happens ONLY WHEN Announcement Bar is visible
+    $(window).on('scroll', function(){
+      if(window.location.pathname.indexOf('/get-started')> -1){
+        var scrollPos = $(window).scrollTop();
+        var len = $('#section-announcement').length;
+        if(len > 0){
+          if(scrollPos > 40){
+            $('#section-announcement').css('height','0');
+          } else if(scrollPos === 0){
+            $('#section-announcement').css('height','40px');
+          }
+        }
+      }
+    });
 });

@@ -14,7 +14,112 @@ $color-trans: rgba(0, 0, 0, 0);
 
 // FONTS =====================================================
 
-@import url('https://fonts.googleapis.com/css?family=Saira+Condensed:400,500,600,900');
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Saira Condensed Regular'), local('SairaCondensed-Regular'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJROQgErUN8XuHNEtX81i9TmEkrvretFyIw.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Saira Condensed Regular'), local('SairaCondensed-Regular'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJROQgErUN8XuHNEtX81i9TmEkrvrOtFyIw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Saira Condensed Regular'), local('SairaCondensed-Regular'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJROQgErUN8XuHNEtX81i9TmEkrvoutF.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Saira Condensed Medium'), local('SairaCondensed-Medium'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnUchQ-K2fli0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Saira Condensed Medium'), local('SairaCondensed-Medium'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnUchQ-a2fli0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Saira Condensed Medium'), local('SairaCondensed-Medium'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnUchQ962f.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Saira Condensed SemiBold'), local('SairaCondensed-SemiBold'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q-K2fli0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Saira Condensed SemiBold'), local('SairaCondensed-SemiBold'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q-a2fli0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Saira Condensed SemiBold'), local('SairaCondensed-SemiBold'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnfc9Q962f.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Saira Condensed Black'), local('SairaCondensed-Black'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnIcxQ-K2fli0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Saira Condensed Black'), local('SairaCondensed-Black'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnIcxQ-a2fli0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Saira Condensed Black'), local('SairaCondensed-Black'), url(https://fonts.gstatic.com/s/sairacondensed/v4/EJRLQgErUN8XuHNEtX81i9TmEkrnIcxQ962f.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 $heading: 'Saira Condensed',
 sans-serif;
@@ -22,6 +127,7 @@ $body: 'Saira Condensed',
 sans-serif;
 
 h1,
+.Rte h1,
 h2,
 h3,
 .Rte h3,
@@ -275,11 +381,11 @@ ArticleItem__Title {
 
     grid-template-columns: 1fr;
     grid-template-areas: "title"
-      "right-top"
-      "left-img"
       "left-top"
-      "right-img"
+      "left-img"
       "left-bot"
+      "right-top"
+      "right-img"
       "right-bot"
       "button";
     justify-items: center;
@@ -457,6 +563,12 @@ ArticleItem__Title {
   }
 }
 
+.rc_block {
+  select {
+    background-color: $color-white;
+  }
+}
+
 .featured-bundle {
   select {
     color: initial;
@@ -622,21 +734,138 @@ ArticleItem__Title {
   }
 }
 
+.shop-custom-carousel {
+
+  .previous {
+    left: 0;
+    top: 25%;
+  }
+
+  .next {
+    right: 0;
+    top: 25%;
+  }
+
+  .icon-text-container-caroucell {
+    padding: 2rem 3rem 0rem;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+  }
+
+  .flickity-viewport {
+    transition: height 0.5s;
+  }
+
+
+
+  @media (min-width: $laptop-min) {
+    .flickity-slider {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .icon-text-container-caroucell {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+.rc_subscription-only {
+  text-align: center;
+
+  .rc_select {
+    background-color: $color-white;
+  }
+
+  .rc_label {
+    padding-top: 0;
+  }
+}
+
+.Header--transparent {
+  .Header__LogoImage--primary {
+    display: none;
+  }
+
+  .Header__LogoImage--transparent {
+    position: relative;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.strikeout-text {
+  text-decoration-line: line-through;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 // HOMEPAGE ==================================
 
+.featured-bundle {
+  .Button {
+    padding: 3px 25px;
+  }
+}
 
 // SHOP ======================================
 
 .CollectionMain {
 
+  button[data-tag="walmart"] {
+    display: none;
+  }
+
+  .ProductListWrapper {
+    @media (min-width: $laptop-min) {
+      .flickity-page-dots {
+        display: none;
+      }
+    }
+  }
+
   .u-h1 {
     margin: 1rem;
+    margin-top: 3rem;
+    text-transform: uppercase;
   }
 
   .blue-bottom-line {
     border-bottom: 1px solid $color-blue;
-    margin: auto;
+    margin: 2rem auto 0;
     width: 93%;
+  }
+}
+
+.video-hero,
+.CollectionMain {
+  .Button--secondary {
+    margin: auto;
+    padding: 3px 20px;
+  }
+}
+
+.shop-custom-carousel {
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: $tablet-min) {
+  .shopify-custom-collection {
+    .PageHeader {
+      min-height: 300px;
+
+      .PageHeader__ImageWrapper {
+        max-height: 100vh;
+        background-size: 170%;
+      }
+    }
   }
 }
 
@@ -791,8 +1020,79 @@ ArticleItem__Title {
     display: none;
   }
 
+
+  .Collapsible {
+    .Rte h3 {
+      margin: 0 0 1.2rem;
+    }
+  }
+
   .kit-product-image {
     display: none;
+  }
+
+  @media (max-width: $laptop-min) {
+    .kit-product-image {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: $laptop-min) {
+
+    .collapse-image {
+      display: none;
+    }
+
+    .Product__Wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "main sidebar"
+        "image content"
+        "reviews reviews";
+      width: 100%;
+      max-width: $max-width;
+
+      .ProductMeta {
+        text-align: center;
+      }
+
+      .Product__Gallery {
+        grid-area: main;
+      }
+
+      .Product__InfoWrapper {
+        grid-area: sidebar;
+        position: relative;
+
+        .Product__Info {
+          position: static;
+          padding-bottom: 1rem;
+          padding-top: 50px;
+        }
+      }
+
+      .Product__Aside {
+        grid-area: content;
+        min-height: 0px !important;
+
+        .Product__Tabs {
+          margin-top: 2rem;
+        }
+      }
+
+      .product_image_container {
+        grid-area: image;
+      }
+
+      .shopify-product-reviews {
+        grid-area: reviews;
+
+        h1 {
+          text-align: center;
+        }
+      }
+    }
   }
 }
 

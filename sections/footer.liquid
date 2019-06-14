@@ -1,5 +1,5 @@
 {%- if template.name == 'page' or template.name == 'blog' or template == 'customers/account' or template == 'customers/order' or template == 'customers/addresses' -%}
-    {%- assign add_top_margin = true -%}
+    {% comment %} {%- assign add_top_margin = true -%} {% endcomment %}
 {%- else -%}
     {%- assign add_top_margin = false -%}
 {%- endif -%}

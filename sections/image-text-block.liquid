@@ -1,0 +1,144 @@
+{% assign sect = section.settings %}
+{% assign image_url = sect.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+{% stylesheet 'scss' %}
+
+.image-text-block {
+
+    text-align: center;
+    margin: 3rem 0;
+        
+    .block-container {
+        display: flex;
+        flex-flow: row wrap;
+
+        >div {
+            flex: 1 400px;
+        }
+
+        .image-block {
+            overflow: hidden;
+            max-height: 500px;
+
+            img {
+                height: 100%;
+                width: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+                font-family: 'object-fit: cover; object-position: center;';
+            }
+        }
+
+        .text-block {
+            padding: 2rem;
+
+            h1 {
+                margin-bottom: 0;  
+            }
+        }
+    }
+
+    @media (min-width: 1008px) {
+        text-align: left;
+        
+        .block-container {
+         .text-block {
+            padding: 4rem;
+        }
+        }
+
+    }
+}   
+
+    
+{% endstylesheet %}
+
+<section id="{{ section.id }}" class="{{ section.id }} Container tex">
+<div class="block-container" style="background-color: {{ sect.backgroundColor }}; color: {{ sect.textColor }};">
+    <div class="image-block">
+
+        <img class="Image--lazyLoad lazyautosizes" data-src="{{ image_url }}" data-optimumx="1.2" data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800]" data-sizes="auto" alt="{{ block.settings.image.alt | escape }}">
+    </div>
+    <div class="text-block">
+        <h1>{{ sect.heading }}</h1>
+        <h3>{{ sect.subheading }}</h3>
+        <h4>{{ sect.bodyText }}</h4>
+        <a href="{{ sect.buttonLink }}" class="Button" style="background-color: {{ sect.buttonColor }}; color: {{ sect.buttonTextColor }};">{{ sect.buttonText }}</a>
+    </div>
+</div>
+</section>
+
+{% schema %}
+    {
+        "name": "Image Text Block",
+        "class": "image-text-block",
+        "settings": [
+            {
+                "type": "color",
+                "id": "backgroundColor",
+                "label": "Background Color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "textColor",
+                "label": "Text Color",
+                "default": "#222"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Choose an image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Insert Heading Here"
+            },
+            {
+                "type": "text",
+                "id": "subheading",
+                "label": "SubHeading",
+                "default": "Insert SubHeading Here" 
+            },
+            {
+                "type": "textarea",
+                "id": "bodyText",
+                "label": "Body Text",
+                "default": "Insert Body Text Here"
+            },
+            {
+                "type": "text",
+                "id": "buttonText",
+                "label": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "buttonLink",
+                "label": "Button Link"
+            },
+            {
+                "type": "color",
+                "id": "buttonColor",
+                "label": "Button Color",
+                "default": "#222"
+            },
+            {
+                "type": "color",
+                "id": "buttonTextColor",
+                "label": "Button Text Color",
+                "default": "#fff"
+            }
+            ],
+        "presets": [
+        {
+            "category": "Text",
+            "name": "Image Text Block",
+            "settings": {}
+        }
+    ]
+}
+{% endschema %}

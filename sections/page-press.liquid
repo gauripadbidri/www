@@ -1,0 +1,124 @@
+{% assign sect = section.settings %}
+
+{% stylesheet 'scss' %}
+.press-page {
+
+    margin-bottom: 3rem;
+    
+    .center {
+        text-align: center;
+    }
+    .quote-container {
+            display: flex;
+            flex-flow: row wrap;
+        
+        .quote-item {
+
+            margin: 3rem 1rem 0;
+            flex: 1 200px;
+
+            &:nth-child(3n+1) img{
+                filter: brightness(0) saturate(100%) invert(51%) sepia(39%) saturate(7344%) hue-rotate(299deg) brightness(100%) contrast(102%);
+            }
+            &:nth-child(3n+2) img {
+                filter: brightness(0) saturate(100%) invert(41%) sepia(79%) saturate(2278%) hue-rotate(167deg) brightness(93%) contrast(103%);
+            }
+            &:nth-child(3n) img {
+                filter: brightness(0) saturate(100%) invert(88%) sepia(36%) saturate(4876%) hue-rotate(61deg) brightness(89%) contrast(90%);
+            }
+        }
+    }
+    
+    .ButtonGroup {
+        margin-top: 3rem;
+    }
+}
+{% endstylesheet %}
+
+{% capture com_page %}
+<section class="Container">
+
+<div><h1 class="center">{{ sect.heading }}</h1></div>
+<div class="quote-container">
+{% for block in section.blocks %}
+    <div class="quote-item center">
+    <img class="svg-logo center" src="{{ block.settings.svg_url }}">
+    <blockquote class="quote center" >{{ block.settings.quote }}</blockquote>
+    <p class="text-uppercase quote-date center" >{{ block.settings.date }}</p>
+    </div>
+{% endfor %}
+</div>
+<div class="ButtonGroup">
+<a href="/pages/press" class="Button Button--primary text-center text-uppercase">View All</a>
+</div>
+</section>
+{% endcapture %}
+
+{% capture press_page %}
+<section class="Container">
+
+<div><h1 class="center">{{ sect.heading }}</h1></div>
+<div class="quote-container">
+{% for block in section.blocks %}
+    <div class="quote-item center">
+    <img class="svg-logo center" src="{{ block.settings.svg_url }}">
+    <blockquote class="quote center" >{{ block.settings.quote }}</blockquote>
+    <p class="text-uppercase quote-date center" >{{ block.settings.date }}</p>
+    </div>
+{% endfor %}
+</div>
+</section>
+{% endcapture %}
+
+{% if page.handle == "press" %}
+{{ press_page }}
+    {% else %}
+    {{ com_page }}
+{% endif %}
+
+
+<script>
+
+
+</script>
+
+
+{% schema %}
+    {
+        "name": "Press Page",
+        "class": "press-page",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Press Heading",
+                "default": "Place Heading Here"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "quotes",
+                "name": "Quotes",
+                "settings": [
+                    {
+                        "type": "url",
+                        "id": "svg_url",
+                        "label": "SVG Url"
+                    },
+                    {
+                        "type": "text",
+                        "id": "quote",
+                        "label": "Quote",
+                        "default": "Place Quote Here"
+                    },
+                    {
+                        "type": "text",
+                        "id": "date",
+                        "label": "Date",
+                        "default": "Place Date Here"
+                    }   
+                ]
+            }
+        ]
+    }
+{% endschema %}

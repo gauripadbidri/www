@@ -7,3 +7,28 @@
     {%- endif -%}
     {%- endfor -%}
 </div>
+
+
+<script>
+
+$(document).ready(function() {
+  
+$('.Collapsible__Button').click(function() {
+
+$(".kit-product-image").hide();
+
+console.log("working");
+var id = $(this).attr('id');
+console.log(id);
+
+window.setTimeout(function() {
+
+if ( $("#" + id).attr('aria-expanded') == "true" ) {
+$(".kit-product-image[data-item=" + id + "]").show();
+}
+}
+, 250);
+});
+});
+
+</script>

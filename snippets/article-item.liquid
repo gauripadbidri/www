@@ -4,7 +4,8 @@
     {%- assign image_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
     <a class="ArticleItem__ImageWrapper AspectRatio AspectRatio--withFallback" style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }}); padding-bottom: 58%; --aspect-ratio: 1.7" href="{{ article.url }}">
-      <img class="ArticleItem__Image Image--lazyLoad Image--fadeIn"
+      <img class="ArticleItem__Image Image--lazyLoad Image--fadeIn lazyloadagc"
+           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
            data-src="{{ image_url }}"
            data-widths="[{{ supported_sizes }}]"
            data-sizes="auto"

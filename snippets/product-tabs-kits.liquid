@@ -8,13 +8,19 @@
 
     <div class="Collapsible Collapsible--large">
       <button id="{{ product.handle }}" class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
-        {{ product.title }}{{ desc[0] }} <span class="Collapsible__Plus"></span>
+        {{ product.title }}            
+            {{ desc[0] }} 
+            {% if product.metafields.stamped.reviews_count != _blank %}
+                    <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" style="display: inline-block; font-size: 1rem; font-weight: normal;">{{ product.metafields.stamped.badge }}</span>
+                {% else %}
+            {% endif %}
+            <span class="Collapsible__Plus"></span>
       </button>
 
       <div class="Collapsible__Inner">
         <div class="Collapsible__Content">
           <div class="Rte">
-            <img src="{{ product | img_url: '1000x' }}">
+            <img class="collapse-image" src="{{ product | img_url: '1000x' }}">
             {{ desc[1] }}
             {{ desc[2] }}
             {{ desc[3] }}

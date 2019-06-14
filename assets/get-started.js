@@ -406,6 +406,8 @@ var Cart = {
         $('[data-item-product-id]').removeClass(subscriptionSettings.glogalDatatags.join(' '));
       }
 
+      var isKitProductPresent = false;
+
       for (var index = 0; index < cartItem.items.length; index++) {
         var cartProduct = cartItem.items[index];
 
@@ -415,6 +417,10 @@ var Cart = {
         var product_text_element =  null;
         var product_text = ""
         var product_class = "";
+
+        if(window.selected_product_kit && window.selected_product_kit.product.variants[0].id==cartProduct.variant_id){
+            isKitProductPresent = true;
+        }
 
         if (cartProduct.properties && cartProduct.properties.subscription_id) {
            product_text = "ADDED TO EVERY KIT";   
@@ -441,6 +447,20 @@ var Cart = {
             dataTagElement.addClass(datatag)
           }
         }
+      }
+     
+      var cookie =  Cookie.getCookie();
+
+     // Meaning of this cart is empty and remove 
+      if(window.selected_product_kit && isKitProductPresent===false 
+        && cookie.currentSlideSelected > 1){
+          var userOptions = {
+              currentSlideSelected : 0,
+              hygeineType : 0,
+              addons:[],
+          };
+          Cookie.setCookie(userOptions);
+          window.location.reload();
       }
     });
   },

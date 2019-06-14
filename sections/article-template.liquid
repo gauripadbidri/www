@@ -1,7 +1,58 @@
+{% stylesheet 'scss' %}
+  
+  .article-banner {
+
+    padding: 2rem;
+
+    .ArticleToolbar__Nav {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0;
+
+      h3,
+      a {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: 900;
+      }
+    }
+  }
+
+{% endstylesheet %}
+<style>
+
+  .article-banner {
+    background-color: {{ section.settings.banner_background_color }};
+  }
+
+  .article-banner h3 {
+    color: {{ section.settings.banner_text_color }};
+  }
+
+</style>
+
 {%- assign share_url = shop.url | append: article.url -%}
 {%- assign twitter_text = article.title -%}
 {%- assign pinterest_description = article.description | strip_html | truncatewords: 15 | url_param_escape -%}
 {%- assign pinterest_image = article.image | img_url: '750x' | prepend: 'https:' -%}
+
+<div class="article-banner">
+  {%- if blog.next_article or blog.previous_article -%}
+    <div class="ArticleToolbar__Nav">
+      {%- if blog.next_article -%}
+        <a href="{{ blog.next_article }}" class="ArticleToolbar__NavItem ArticleToolbar__NavItem--next Heading Text--subdued Link u-h8">{% include 'icon' with 'select-arrow-left' %}</a>
+      {%- endif -%}
+      
+      <h3 class="text-center text-uppercase">Our Blog</h3>
+
+      {%- if blog.previous_article -%}
+        <a href="{{ blog.previous_article }}" class="ArticleToolbar__NavItem ArticleToolbar__NavItem--prev Heading Text--subdued Link u-h8">{% include 'icon' with 'select-arrow-right' %}</a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
 
 <article class="Article" data-section-id="{{ section.id }}" data-section-type="article">
   <aside class="ArticleToolbar hidden-phone">
@@ -252,6 +303,18 @@
       "id": "show_share_buttons",
       "label": "Show share buttons",
       "default": true
+    },
+    {
+      "type": "color",
+      "id": "banner_background_color",
+      "label": "Banner Background Color",
+      "default": "#222"
+    },
+    {
+      "type": "color",
+      "id": "banner_text_color",
+      "label": "Banner Text Color",
+      "default": "#fff"
     }
   ]
 }

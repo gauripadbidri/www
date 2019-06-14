@@ -25,11 +25,16 @@
             }
         {%- endcapture -%}
         <div class="video-container Grid Grid--m Grid--center">
-            <div class="video Grid__Cell 1/2--tablet 2/3--lap-and-up hidden-tablet" data-section-id="{{ section.id }}" data-section-type="background-video" data-section-settings='{{ video_settings }}'>
+            <div class="Grid__Cell 1/2--tablet 2/3--lap-and-up hidden-tablet">
+                <div class="video-wrapper">
+                <iframe width="560" height="315" src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            {% comment %} <div class="video Grid__Cell 1/2--tablet 2/3--lap-and-up hidden-tablet" data-section-id="{{ section.id }}" data-section-type="background-video" data-section-settings='{{ video_settings }}'>
                 <div class="ImageHero {% if section.settings.section_size != 'normal' %}ImageHero--{{ section.settings.section_size }}{% endif %}">
                     <div class="ImageHero__VideoHolder"></div>
                 </div>
-            </div>
+            </div> {% endcomment %}
             <div class="video-text Grid__Cell 1/2--tablet 1/3--lap-and-up hidden-tablet">
                 <h3>{{ section.settings.video_heading }}</h3>
                 <p>{{ section.settings.video_text }}</p>

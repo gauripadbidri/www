@@ -1,5 +1,6 @@
 {%- assign for_drawer = true -%}
 
+
 {%- if template == 'cart' or template == 'cart.ajax' -%}
     {%- assign for_drawer = false -%}
 {%- endif -%}
@@ -49,11 +50,25 @@
                                     {%- endif -%}
                                     {% if property.last == "1" %}
                                         <li class="CartItem__Property">Ships Every Month
+                                        {% comment %} <br>
+                                        {{ line_item.product.metafields.subscriptions.original_handle }}
+                                        {% assign subprod = line_item.product.metafields.subscriptions.original_handle %}
+                                        {% for product in collections.all.products %}
+                                        {% if product.handle == subprod %}
+                                                {% include 'product-form' %}
+                                        {% endif %}
+                                        {% endfor %} {% endcomment %}
                                         </li>
                                     {% else %}
-                                        <li class="CartItem__Property">Ships Every:
-                                            {{ property.last }}
-                                            Months
+                                        <li class="CartItem__Property">Ships Every: {{ property.last }} Months
+                                        {% comment %} <br>
+                                        {{ line_item.product.metafields.subscriptions.original_handle }}
+                                        {% assign subprod = line_item.product.metafields.subscriptions.original_handle %}
+                                        {% for product in collections.all.products %}
+                                        {% if product.handle == subprod %}
+                                                {% include 'product-form' %}
+                                        {% endif %}
+                                        {% endfor %} {% endcomment %}
                                         </li>
                                     {% endif %}
                                 {%- endfor -%}

@@ -3,13 +3,13 @@
          data-section-id="{{ section.id }}">
     <div class="hero hero--main">
 
-          <video autoplay="true" class="js-switchVideoSrc is-playing" loop="true" muted="" playsinline="" src="{{ section.settings.video-link-url }}" webkit-playsinline=""></video>
+          <video poster="{{ section.settings.image | img_url: '720x', format: 'jpg' }}" autoplay="true" class="js-switchVideoSrc is-playing" loop="true" muted="" playsinline="" src="{{ section.settings.video-link-url }}" webkit-playsinline=""></video>
             <div class="hero__content hero__content--white js-scroll js-scroll--fade is-in-view is-past-half is-past-quarter is-past-bottom">
         <div class="video-heading">
-          <h1 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1" style="color: {{ section.settings.color_heading }}; font-size:{{ section.settings.heading_font_size }}rem;">{{ section.settings.slide-title }}</h1>
+          <h1 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1" style="color: {{ section.settings.color_heading }};">{{ section.settings.slide-title }}</h1>
         </div>
         <div class="video-tagline">
-          <h3 class="SectionHeader__SubHeading Heading u-h6" style="color: {{ section.settings.color_tagline }}; font-size: {{ section.settings.subheading_font_size }}rem;">{{ section.settings.slide-tagline }}</h3>
+          <h3 class="SectionHeader__SubHeading Heading u-h6" style="color: {{ section.settings.color_tagline }};">{{ section.settings.slide-tagline }}</h3>
         </div>
         <a class="ButtonGroup__Item Button Button--secondary" href="{{ section.settings.slide-link-url }}" style="background-color: {{ section.settings.color_button }}; color: {{ section.settings.color_link }};">{{ section.settings.slide-link-title }}</a>
       </div>
@@ -17,12 +17,42 @@
 </section>
 
 
+{% comment %} <div class="Slideshow__ImageContainer {% if block.settings.apply_overlay %}Image--contrast{% endif %} {% unless section.settings.show_fullscreen %}AspectRatio AspectRatio--withFallback{% endunless %} hidden-phone" style="{% unless section.settings.show_fullscreen %}padding-bottom: {{ 100.0 | divided_by: block.settings.image.aspect_ratio }}%; --aspect-ratio: {{ block.settings.image.aspect_ratio }};{% endunless %} background-image: url({{ block.settings.image | img_url: '720x', format: 'jpg' }})"> {% endcomment %}
+
+
+
 <style>
+
   .video-hero-{{ section.id }} .button {
         background: {{ section.settings.color_button }} !important;
         border-color: {{ section.settings.color_button }} !important;
         color: {{ section.settings.color_link }} !important;
   }
+
+.video-hero .u-h1 {
+font-size:{{ section.settings.heading_font_size_mobile }}rem;
+padding-top: 5rem;
+}
+.video-hero .u-h6 {
+font-size: {{ section.settings.subheading_font_size_mobile }}rem;
+}
+
+.video-hero .Button {
+font-size: {{ section.settings.button_font_size_mobile }}rem;
+}
+
+@media (min-width: 1024px) {
+  .video-hero .u-h1 {
+font-size:{{ section.settings.heading_font_size }}rem;
+}
+  .video-hero .u-h6 {
+font-size: {{ section.settings.subheading_font_size }}rem;
+}
+.video-hero .Button {
+font-size: {{ section.settings.button_font_size }}rem;
+}
+}
+
 </style>
 
 {% schema %}
@@ -46,7 +76,8 @@
           "id": "slide-title",
           "label": "Heading",
           "default": "Video-Hero"
-        },{
+        },
+        {
             "type": "range",
             "id": "heading_font_size",
             "min": 1,
@@ -54,6 +85,16 @@
             "step": 0.5,
             "unit": "rem",
             "label": "Heading Font Size",
+            "default": 3
+        }, 
+        {
+            "type": "range",
+            "id": "heading_font_size_mobile",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Mobile Heading Font Size",
             "default": 3
         }, 
       {
@@ -66,7 +107,8 @@
           "type": "text",
           "id": "slide-tagline",
           "label": "Subheading"
-        }, {
+        }, 
+        {
             "type": "range",
             "id": "subheading_font_size",
             "min": 1,
@@ -74,6 +116,16 @@
             "step": 0.5,
             "unit": "rem",
             "label": "Subheading Font Size",
+            "default": 2
+        },
+        {
+            "type": "range",
+            "id": "subheading_font_size_mobile",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Mobile Subheading Font Size",
             "default": 2
         },
       {
@@ -92,6 +144,26 @@
           "id": "slide-link-title",
           "label": "Button label",
           "default": "Link to content"
+        },
+                {
+            "type": "range",
+            "id": "button_font_size_mobile",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Mobile Button Font Size ",
+            "default": 2
+        },
+                {
+            "type": "range",
+            "id": "button_font_size",
+            "min": 1,
+            "max": 10,
+            "step": 0.5,
+            "unit": "rem",
+            "label": "Button Font Size",
+            "default": 2
         },
       {
         "type": "color",

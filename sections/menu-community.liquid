@@ -1,0 +1,57 @@
+{% stylesheet 'scss' %}
+    .community-menu {
+        ul {
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            margin: 2rem 0 1rem;
+
+            li {
+            font-weight: 900;
+            text-align: center;
+                display: flex;
+                justify-content: center;
+                flex: 1 100px; 
+                text-transform: uppercase;
+                margin-bottom: 0.7rem;
+
+                a {
+                    color: #0097CE;
+
+                    &:hover {
+                        color: #36C9FF;
+                    }
+                }
+
+                .active-link {
+                    color: #36C9FF;
+                }
+            }
+        }
+    }
+{% endstylesheet %}
+
+{% assign comNav = linklists[section.settings.communityNav] %}
+
+<section class="menu {{section.id}} Container">
+<ul>
+{% for link in comNav.links %}
+    <li><a class="{% if link.active %}active-link{% else %}{% endif %}" href="{{ link.url }}">
+    {{ link.title }}
+    </a>
+    </li>
+{% endfor %}
+</ul>
+</section>
+
+{% schema %}
+    {
+        "name": "Community Menu",
+        "class": "community-menu Section",
+        "settings": [{
+            "type": "link_list",
+            "id": "communityNav",
+            "label": "Community Nav"
+        }]
+    }
+{% endschema %}

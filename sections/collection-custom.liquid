@@ -1,3 +1,20 @@
+{% stylesheet 'scss' %}
+  .Section-footer {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 0;
+  }
+
+.shopify-custom-collection .ProductForm {
+  margin-top: 0;
+}
+
+.shopify-custom-collection .ProductItem__Info h2:last-of-type {
+margin-bottom: 0;
+}
+  
+{% endstylesheet %}
+
 {%- if section.settings.show_layout_switch -%}
   {%- assign desktop_items_per_row = cart.attributes.collection_desktop_items_per_row | default: section.settings.grid_desktop_items_per_row | times: 1 -%}
   {%- assign mobile_items_per_row  = cart.attributes.collection_mobile_items_per_row | default: section.settings.grid_mobile_items_per_row | times: 1 -%}
@@ -25,7 +42,7 @@
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
-              {%- include 'product-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+              {%- include 'product-item-collection', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
             </div>
           {%- endfor -%}
         </div>
@@ -92,14 +109,15 @@
       {% if section.settings.pick_header_image != blank %}
         <div class="FlexboxIeFix">
         {% assign header_image = section.settings.pick_header_image %}
-        <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ header_image | img_url: '1x1', format: 'jpg' }})">
+        <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ header_image | img_url: '1x1', format: 'jpg' }});">
           <div class="PageHeader__ImageWrapper Image--lazyLoad Image--fadeIn {% if section.settings.apply_overlay %}Image--contrast{% endif %}"
+          style="background-position: {{ section.settings.image_position_x }}% {{ section.settings.image_position_y }}%;"
                data-optimumx="1.2"
                data-bgset="{{ header_image | img_url: 'x600' }} 600w, {{ header_image | img_url: '800x' }} 800w, {{ header_image | img_url: '1200x' }} 1200w, {{ header_image | img_url: '1400x' }} 1400w, {{ header_image | img_url: '1600x' }} 1600w">
           </div>
 
           <noscript>
-            <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ header_image | img_url: '800x' }})"></div>
+            <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ header_image | img_url: '800x' }});"></div>
           </noscript>
 
           <div class="Container">
@@ -108,7 +126,6 @@
               {% if section.settings.change_heading != blank %}
               {{ section.settings.change_heading }}
                   {% else %}
-              {{ collection.title }}
               {% endif %}
               </h1>
 
@@ -123,14 +140,15 @@
         </div>
     {% else %}
         <div class="FlexboxIeFix">
-        <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ collection.image | img_url: '1x1', format: 'jpg' }})">
+        <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ collection.image | img_url: '1x1', format: 'jpg' }});">
           <div class="PageHeader__ImageWrapper Image--lazyLoad Image--fadeIn {% if section.settings.apply_overlay %}Image--contrast{% endif %}"
+          style="background-position: {{ section.settings.image_position_x }}% {{ section.settings.image_position_y }}%;"
                data-optimumx="1.2"
                data-bgset="{{ collection.image | img_url: 'x600' }} 600w, {{ collection.image | img_url: '800x' }} 800w, {{ collection.image | img_url: '1200x' }} 1200w, {{ collection.image | img_url: '1400x' }} 1400w, {{ collection.image | img_url: '1600x' }} 1600w">
           </div>
 
           <noscript>
-            <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }})"></div>
+            <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }});"></div>
           </noscript>
 
           <div class="Container">
@@ -139,7 +157,6 @@
               {% if section.settings.change_heading != blank %}
               {{ section.settings.change_heading }}
                   {% else %}
-              {{ collection.title }}
               {% endif %}
               </h1>
 
@@ -428,36 +445,72 @@
       --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
-      <div class="CollectionMain">
-    {% for collection in collections %}
-    {% if collection.title == "Kits" %}
-      <div class="SectionHeader--center">
-              <h1 class="u-h1">
-              {{ collection.title }}
+    <div class="CollectionMain">
+
+        {%- capture flickity_options -%}
+        {
+        "prevNextButtons": true,
+        "pageDots": true,
+        "wrapAround": false,
+        "contain": true,
+        "cellAlign": "center",
+        "watchCSS": false,
+        "dragThreshold": 8,
+        "groupCells": true,
+        "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+        }
+    {%- endcapture -%}
+
+    <div class="ProductListWrapper">
+            {% for product in collections.all.products %}
+                {% if section.settings.featured_kit != empty %}
+                    {% if product.handle == section.settings.featured_kit %}
+                    {% assign prod = section.settings.featured_kit | replace: '-', ' ' %}
+                          <div class="SectionHeader SectionHeader--center">
+                          <div class="Container">
+              <h1 class="SectionHeader__Heading Heading u-h1 v basic">
+              {% if section.settings.prod-header != blank %}
+              {{ section.settings.prod-header }}
+              {% else %}
+              {{ product.title }}
+              {% endif %}
               </h1>
+              <h2 class="SectionHeader__SubHeading Heading u-h6">
+              {% if section.settings.prod-subheader != blank %}
+              {{ section.settings.prod-subheader }}
+              {% else %}
+              {% endif %}
+              </h2>
               </div>
+                          </div>
+                        <div class="ProductList ProductList--carousel Carousel shop-custom-carousel" data-flickity='{{ flickity_options }}'>
+                            <div class="Carousel__Cell">
+                              {% assign bundleUrl = product.url %}
+                                {%- include 'bundle-carousel-item', show_product_info: true, show_labels: true, bundle_url: bundleUrl -%}
+                            </div>
+                            {%- for product in collections.all.products -%}
+                                {% if product.tags contains prod  %}
+                                    <div class="Carousel__Cell">
+                                        {%- include 'bundle-carousel-item', show_product_info: true, show_labels: true, bundle_url: bundleUrl -%}
+                                    </div>
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                                    {% comment %} 
+                                        <p class="text-center"><span class="strikeout-text">${{ product.price | times: 1.1 | money_without_currency | ceil }}</span> {{ product.price | money_without_trailing_zeros }}</p>
 
-        <div class="CollectionInner">
-          <div class="CollectionInner__Products">
-            {%- if collection.products_count > 0 -%}
-      <div class="ProductListWrapper">
-        <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
-          {%- for product in collection.products -%}
-            <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
-              {%- include 'product-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
-            </div>
-          {%- endfor -%}
-        </div>
-      </div>
-  {%- endif -%}
-          </div>
+                                    <a class="Button Button--secondary" href="{{ bundleUrl }}">Get Started</a> {% endcomment %}
+                                    <div class="text-center Section-footer">
+                                    {% include 'product-form' %}
+                                    </div>
+                    {%- endif -%}
+                {%- endif -%}
+            {% endfor %}
         </div>
 
-    {% endif %}
-    {% endfor %}
-    <div class="blue-bottom-line"></div>
+        <div class="blue-bottom-line"></div>
       <div class="SectionHeader--center">
-              <h1 class="u-h1">
+              <h1 class="u-h1 uppercase">
       {{ collection.title }}
               </h1>
               </div>
@@ -476,14 +529,44 @@
             </div>
           {%- endif -%}
 
-          <div class="CollectionInner__Products">
+          <div class="CollectionInner__Products prods">
             {{ collection_inner }}
           </div>
         </div>
+        <div class="blue-bottom-line"></div>
 
-        {%- if section.settings.toolbar_position == 'bottom' -%}
-          {{- collection_toolbar -}}
-        {%- endif -%}
+      {%- if section.settings.toolbar_position == 'bottom' -%}
+        {{- collection_toolbar -}}
+      {%- endif -%}
+      
+    {% for collection in collections %}
+    {% assign coll_title = collection.title | downcase %}
+    {% if coll_title == "merch" %}
+      <div class="SectionHeader--center">
+              <h1 class="u-h1 uppercase">
+              {{ collection.title }}
+              </h1>
+              </div>
+
+        <div class="CollectionInner prods">
+          <div class="CollectionInner__Products">
+            {%- if collection.products_count > 0 -%}
+      <div class="ProductListWrapper">
+        <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
+          {%- for product in collection.products -%}
+            <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
+              {%- include 'product-item-collection', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+  {%- endif -%}
+          </div>
+        </div>
+
+    {% endif %}
+    {% endfor %}
+
       </div>
     {%- else -%}
       <div class="EmptyState">
@@ -501,10 +584,17 @@
 {{ settings.product_list_horizontal_spacing }},{{ settings.product_list_vertical_spacing }}
 {%- endcapture -%}
 
+<script>
+$( document ).ready(function() {
+$('select option[value="2"]').attr("selected",true);
+
+});
+</script>
+
 {% schema %}
 {
   "name": "Collection Custom Page",
-  "class": "shopify-section--bordered",
+  "class": "shopify-custom-collection",
   "settings": [
     {
       "type": "checkbox",
@@ -527,6 +617,26 @@
       "type": "image_picker",
       "id": "pick_header_image",
       "label": "Choose Header Image"
+    },
+    {
+      "type": "range",
+      "id": "image_position_x",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image Position X",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "image_position_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image Position Y",
+      "default": 50
     },
     {
       "type": "checkbox",
@@ -568,6 +678,40 @@
       ],
       "default": "normal"
     },
+    {
+      "type": "header",
+      "content": "Featured Kit"
+    },
+    {
+      "type": "product",
+      "id": "featured_kit",
+      "label": "Feature Kit"
+    },
+    {
+      "type": "text",
+      "id": "prod-header",
+      "label": "Product Header"
+    },
+    {
+      "type": "text",
+      "id": "prod-subheader",
+      "label": "Product SubHeader"
+    },
+    {
+            "type": "radio",
+            "id": "choose_image",
+            "label": "Choose Image",
+            "options": [
+                {
+                    "value": "1",
+                    "label": "First"
+                }, {
+                    "value": "3",
+                    "label": "Third"
+                }
+            ],
+            "default": "1"
+        },
     {
       "type": "header",
       "content": "Toolbar"

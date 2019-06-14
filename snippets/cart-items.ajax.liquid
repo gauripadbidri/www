@@ -327,6 +327,17 @@
     .price-info-align{
         display: block;
     }
+    
+}
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .cart-item-landscape-width{
+            width: 0;
+    }
+    .Cart--expanded .CartItem__Info {
+        max-width: 160px !important;
+        width: 160px !important;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 640px){
@@ -360,9 +371,15 @@
     .selectdivForFrequency{
         margin-top: 10px;
     }
-    	
+
+    .cartAjaxSection .PageContent{
+        margin-top: 0;
+    }    
+
     .cartAjaxSection .Container{
         padding: 0 15px;
+        border-top: 1px solid;
+        margin-top: 25px
     }
 
     /* .cartAjaxSection .CartItem{
@@ -377,5 +394,6 @@
     .CartItem__Info{
         padding-left: 18px;
     }
+    
 }
 </style>

@@ -1,0 +1,278 @@
+{% stylesheet 'scss' %}
+
+    .video-container {
+        margin-bottom: 0;
+  
+    .video-wrapper {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        height: auto;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    h2 {
+        margin: 1rem 0;
+    }
+    }
+
+{% endstylesheet %}
+
+<div id="section-{{ section.id }}" class="Section" data-section-id="{{ section.id }}" data-section-type="article-list">
+  {%- if blog.articles_count == 0 -%}
+    <div class="EmptyState">
+      <div class="Container">
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'blog.general.no_articles' | t: blog_title: blog.title }}</h1>
+        <a href="/" class="EmptyState__Action Button Button--primary">{{ 'blog.general.empty_button' | t }}</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Blog">
+      <div class="Container">
+        <header class="PageHeader">
+          <div class="SectionHeader SectionHeader--center">
+            <h1 class="SectionHeader__Heading Heading u-h1">
+              {{- blog.title -}}
+
+              {%- if section.settings.show_rss -%}
+                <a href="{{ blog.url }}.atom" target="_blank" class="Blog__RssLink Link Link--secondary">{% include 'icon' with 'rss' %}</a>
+              {%- endif -%}
+            </h1>
+
+            {% if section.settings.show_tags %}
+            <div class="Tags__Tab">
+              <div class="Collapsible Collapsible--large">
+                <button class="Collapsible__Button Heading u-h6 text-center" data-action="toggle-collapsible" aria-expanded="false">
+                  TOPICS
+                </button>
+                <div class="Collapsible__Inner">
+                  <div class="Collapsible__Content">
+            {%- if section.settings.show_tags and blog.all_tags.size > 0 -%}
+              <ul class="Blog__TagList HorizontalList HorizontalList--spacingExtraLoose">
+                <li class="HorizontalList__Item">
+                  <a href="/blogs/{{ blog.handle }}" class="Heading Link Link--primary Text--subdued u-h8 {% if current_tags == blank %}is-active{% endif %}">{{ 'blog.general.all_tag' | t }}</a>
+                </li>
+
+                {%- for tag in blog.all_tags -%}
+                  <li class="HorizontalList__Item">
+                    <a href="/blogs/{{ blog.handle }}/tagged/{{ tag | handle }}" class="Heading Link Link--primary Text--subdued u-h8 {% if current_tags contains tag %}is-active{% endif %}">{{ tag }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </header>
+
+        {%- if section.settings.show_featured_article and current_tags == blank -%}
+          {%- assign articles_per_page = 3 -%}
+        {%- else -%}
+          {%- assign articles_per_page = 3 -%}
+        {%- endif -%}
+
+        {%- paginate blog.articles by articles_per_page -%}
+          {% assign is_first_article_featured = false %}
+
+          {%- if section.settings.show_featured_article and current_tags == blank and blog.articles.first.image -%}
+            {%- assign is_first_article_featured = true -%}
+          {%- endif -%}
+
+            {% if section.settings.video_url != blank %}
+            <div class="video-container Grid Grid--m Grid--center">
+              <div class="Grid__Cell">
+                <div class="video-wrapper">
+                  <iframe width="560" height="315" src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="video-text Grid__Cell">
+                  <h2 class="text-center text-uppercase">{{ section.settings.video_heading }}</h2>
+                  <p>{{ section.settings.video_text }}</p>
+                  {% if section.settings.video_button_text != blank %}
+                  <a class="Button" href="{{ section.settings.video_button_url }}">{{ section.settings.video_button_text }}</a>
+                  {% endif %}
+              </div>
+            </div>
+            {% else %}
+            <div class="Grid Grid--m Grid--center">
+              <div class="Grid__Cell">
+                <div class="">
+                {% assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  {% comment %} <img src="{{ section.settings.image | img_url: '560x' }}"> {% endcomment %}
+                  <img class="Image--lazyLoad" data-src="{{ image_url }}" data-optimumx="1.2" data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
+                </div>
+              </div>
+              <div class="video-text Grid__Cell">
+                  <h2 class="text-center text-uppercase">{{ section.settings.video_heading }}</h2>
+                  <p>{{ section.settings.video_text }}</p>
+                  {% if section.settings.video_button_text != blank %}
+                  <a class="Button" href="{{ section.settings.video_button_url }}">{{ section.settings.video_button_text }}</a>
+                  {% endif %}
+              </div>
+            </div>
+            {% endif %}
+
+          <div class="ArticleListWrapper">
+            <div class="ArticleList {% if is_first_article_featured %}ArticleList--withFeatured{% endif %} Grid Grid--m">
+              {%- for article in blog.articles -%}
+                {%- if is_first_article_featured and forloop.first -%}
+                  <div class="Grid__Cell hidden-phone">
+                    <div class="FlexboxIeFix">
+                      <div class="ImageHero ImageHero--small" style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }})">
+                        <div class="ImageHero__ImageWrapper">
+                          <div class="ImageHero__Image Image--lazyLoad Image--zoomOut"
+                               data-optimumx="1.4"
+                               data-bgset="{{ article.image | img_url: mobile_size, crop: 'center' }} 750w, {{ article.image | img_url: '1000x' }} 1000w, {{ article.image | img_url: '1500x' }} 1500w">
+                          </div>
+
+                          <noscript>
+                            <div class="ImageHero__Image" style="background-image: url({{ article.image | img_url: '1000x' }})"></div>
+                          </noscript>
+                        </div>
+
+                        <div class="ImageHero__TextContent">
+                          <header class="SectionHeader">
+                            {%- if section.settings.show_category and article.tags != empty -%}
+                              <span class="SectionHeader__SubHeading Heading u-h6">{{ article.tags.first }}</span>
+                            {%- endif -%}
+
+                            <h2 class="SectionHeader__Heading Heading u-h1">
+                              <a href="{{ article.url }}">{{ article.title }}</a>
+                            </h2>
+
+                            <div class="SectionHeader__ButtonWrapper">
+                              <a href="{{ article.url }}" class="Button Button--primary">Listen Now</a>
+                            </div>
+                          </header>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                <div class="Grid__Cell {% if is_first_article_featured and forloop.first %}hidden-tablet-and-up{% else %}1/2--tablet 1/3--lap-and-up{% endif %}">
+                  {%- include 'article-item', article: article -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {%- include 'pagination' -%}
+        {%- endpaginate -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  #section-{{ section.id }} .ImageHero,
+  #section-{{ section.id }} .ImageHero .Heading {
+    color: #ffffff;
+  }
+
+  #section-{{ section.id }} .ImageHero .Button {
+    color: #1c1c1c;
+    border-color: #ffffff;
+  }
+
+  #section-{{ section.id }} .ImageHero .Button::before {
+    background-color: #ffffff;
+  }
+
+  {%- if settings.show_button_transition -%}
+    @media (-moz-touch-enabled: 0), (hover: hover) {
+      #section-{{ section.id }} .ImageHero .Button:hover {
+        color: #ffffff;
+      }
+    }
+  {%- endif -%}
+</style>
+
+<script>
+$( document ).ready(function() {
+$(".ArticleItem__Link").text("Listen Now")
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "Blog page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_rss",
+      "label": "Show RSS",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show filters",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_article",
+      "label": "Show featured article",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show article category",
+      "info": "The first article's tag is used as the main category.",
+      "default": false
+    },
+    {
+            "id": "video_url",
+            "type": "video_url",
+            "label": "Video URL",
+            "accept": [
+                "youtube",
+                "vimeo"
+            ],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "info": "Text",
+            "placeholder": "Text"
+        },
+    {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+        },
+     {
+            "type": "text",
+            "id": "video_heading",
+            "label": "Video Heading text",
+            "default": "Learn More"
+        }, {
+            "type": "text",
+            "id": "video_text",
+            "label": "Video text",
+            "default": "Learn More"
+        }, {
+            "id": "video_button_url",
+            "type": "url",
+            "label": "Video Button Url"
+        }, {
+            "type": "text",
+            "id": "video_button_text",
+            "label": "Button text",
+            "default": "Learn More"
+        }
+  ]
+}
+{% endschema %}

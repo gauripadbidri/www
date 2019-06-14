@@ -12409,3 +12409,13 @@ $vertical-spacing-two-products-per-row  : 0px;
      padding: 10px 60px !important;
    }
 }
+
+#product-info-dialog .Modal__Content {
+  overflow:auto !important;
+  max-width: calc(100vw - 100px);
+  max-height: calc(100vh - 100px);
+
+  @supports (--css: variables) {
+    max-height: calc(var(--window-height) - 100px) !important;
+  }
+}

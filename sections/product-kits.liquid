@@ -1,3 +1,16 @@
+{% stylesheet 'scss' %}
+    {% comment %} .rc_block {
+        display: none;
+    } {% endcomment %}
+    .strikeout-text {
+        text-decoration-line: line-through;
+    }
+
+    .ProductMeta__PriceList {
+        display: none;
+    }
+{% endstylesheet %}
+
 {%- capture section_settings -%}
     {
       "enableHistoryState": true,
@@ -244,7 +257,20 @@
                                     {%- include 'product-meta', show_description: true -%}
 
                                     {%- if product.template_suffix != 'coming-soon' -%}
-                                        {%- include 'product-form' -%}
+                                            {%- include 'product-form' -%}
+                                        {% comment %} <div class="price-top">
+                                            <h4 class="u-h4 text-center">
+                                            <span class="strikeout-text subactive">
+                                            ${{ product.price | times: discount_percentage | money_without_currency | ceil }}
+                                            </span> {{ product.price | money_without_trailing_zeros }}
+                                            </h4>
+                                            <h4 class="u-h4 text-center subnotactive">
+                                            ${{ product.price | times: discount_percentage | money_without_currency | ceil }}
+                                            <span class="strikeout-text">
+                                            {{ product.price | money_without_trailing_zeros }}
+                                            </span> 
+                                            </h4>
+                                        </div> {% endcomment %}
                                     {%- endif -%}
 
                                     {%- if section.settings.description_below_add_to_cart -%}
@@ -280,9 +306,6 @@
                             </div>
                             {% include 'tab-image' %}
                         {%- endif -%}
-                      <div class="shopify-product-reviews">
-                        {% include 'reviews' %}
-                      </div>
                     </div>
 
                     {%- comment -%}
@@ -406,6 +429,13 @@ This is the root container for the zoom functionality. Must not be removed, as o
     </div>
   </div>
 {%- endif -%}
+
+<script>
+$( document ).ready(function() {
+$('select option[value="2"]').attr("selected",true);
+
+});
+</script>
 
 {% schema %}
 

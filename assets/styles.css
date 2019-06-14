@@ -1,0 +1,15 @@
+.article-banner{padding:2rem}.article-banner .ArticleToolbar__Nav{display:flex;flex-flow:row nowrap;justify-content:space-between;align-items:center;margin-left:0}.article-banner .ArticleToolbar__Nav h3,.article-banner .ArticleToolbar__Nav a{margin-bottom:0;font-size:1.5rem;font-weight:900}
+
+.video-container{margin-bottom:0}.video-container .video-wrapper{position:relative;overflow:hidden;max-width:100%;padding-bottom:56.25%;height:0;height:auto}.video-container .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-container h2{margin:1rem 0}
+
+.blog-w-video-community{margin-bottom:3rem}@media (max-width: 641px){.blog-w-video-community .ArticleList .Grid__Cell:nth-child(1n+2){display:none}}.blog-w-video-community .video-wrapper{position:relative;overflow:hidden;max-width:100%;padding-bottom:56.25%;height:0;height:auto}.blog-w-video-community .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}.blog-w-video-community .video-container{margin-bottom:0}.blog-w-video-community .video-container h2{margin:1rem 0}
+
+.rc_block{display:none}
+
+.featured-text section{margin:10vh auto;max-width:500px;width:90%;text-align:center}.featured-text section div{margin:1rem 0}.featured-text section .btn a{transition:none !important;font-weight:600;letter-spacing:1px;font-size:1rem;font-family:inherit;padding:3px 35px;border-radius:0;text-transform:uppercase;position:relative;display:inline-block;line-height:normal}
+
+.community-menu ul{display:flex;justify-content:space-around;flex-flow:row wrap;margin:2rem 0 1rem}.community-menu ul li{font-weight:900;text-align:center;display:flex;justify-content:center;flex:1 100px;text-transform:uppercase;margin-bottom:0.7rem}.community-menu ul li a{color:#0097CE}.community-menu ul li a:hover{color:#36C9FF}.community-menu ul li .active-link{color:#36C9FF}
+
+.press-page{margin-bottom:3rem}.press-page .center{text-align:center}.press-page .quote-container{display:flex;flex-flow:row wrap}.press-page .quote-container .quote-item{margin:3rem 1rem 0;flex:1 200px}.press-page .quote-container .quote-item:nth-child(3n+1) img{filter:brightness(0) saturate(100%) invert(51%) sepia(39%) saturate(7344%) hue-rotate(299deg) brightness(100%) contrast(102%)}.press-page .quote-container .quote-item:nth-child(3n+2) img{filter:brightness(0) saturate(100%) invert(41%) sepia(79%) saturate(2278%) hue-rotate(167deg) brightness(93%) contrast(103%)}.press-page .quote-container .quote-item:nth-child(3n) img{filter:brightness(0) saturate(100%) invert(88%) sepia(36%) saturate(4876%) hue-rotate(61deg) brightness(89%) contrast(90%)}.press-page .ButtonGroup{margin-top:3rem}
+
+.rc_block{display:none}.strikeout-text{text-decoration-line:line-through}.ProductMeta__PriceList{display:none}

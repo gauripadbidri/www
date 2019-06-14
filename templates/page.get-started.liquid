@@ -30,7 +30,7 @@
 
 .se-pre-con {
   position: fixed;
-	left: 40%;
+	left: 45%;
 	top: 40%;
   border: 5px solid #f3f3f3;
   border-radius: 50%;
@@ -212,6 +212,15 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
   .next span {
     width :100px !important;
   }
+  
+  #shopify-section-subscription-product-kit .SectionHeader
+  {
+      margin-bottom: 14px !important;
+  }
+
+  /* .carousalContent {
+    min-height:100% !important;
+  } */
 }
 
 @media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) {
@@ -272,6 +281,10 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
               height: 200px;
               width: 200px;
           }
+
+          _:-ms-fullscreen, :root .custom-button-container {
+              margin-bottom: 20px;
+            }
    } 
 
    .Cart--expanded .Cart__Footer{
@@ -287,6 +300,10 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
       margin-top: 60px;
       text-align: center;
       margin-bottom: 33px;
+   }
+
+   .page-width{
+     margin-bottom: 80px;
    }
 
 </style>
@@ -358,17 +375,16 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
       }else {
         toastr.error("Please configure the product link in page template.", "Error");
       }
-
     $(document.body).on('click', '.checkout-custom-button', function (eventTarget) {
 
        if($(".subscription-cart [data-handle='"+selected_product_kit.product.handle+"']").length === 0){
+          toastr.error("At least one kit should be present in cart.", "Error");
           Cookie.deleteCookie();
-          
-          window.location.reload();
+          setTimeout(function(){window.location.reload()},0);
           return;
        }
         DomToggle.showLoading();
-        Cookie.deleteCookie();
+        //Cookie.deleteCookie();
         window.location.href =  reChargeBuildCheckoutURL();
      });
 

@@ -265,10 +265,15 @@ for size, we use it to display a size chart (if applicable)
   ADD TO CART BUTTON
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
-
+                            {% if selected_variant.available %}
                             <button type="submit" class="ProductForm__AddToCart Button {% if selected_variant.available and section.settings.show_payment_button == false %}Button--primary{% else %}Button--secondary{% endif %}" {% if selected_variant.available %} data-action="add-to-cart" {% else %} disabled="disabled" {% endif %}>
                                 {%- if selected_variant.available -%}
                                     <span>
+                                    {% comment %} {%- if product.type == "Bundle" -%}
+                                    SAVE 10% - 
+                                    {% elsif template == 'collection.custom' %}
+                                    {{ product.price | money_without_trailing_zeros }} - 
+                                    {%- endif -%} {% endcomment %}
                                         {% if product.template_suffix == 'pre-order' %}
                                             {{ 'product.form.pre_order' | t }}
                                         {% else %}
@@ -280,10 +285,14 @@ for size, we use it to display a size chart (if applicable)
                                         <span class="Button__SeparatorDot"></span>
                                         <span data-money-convertible>{{ selected_variant.price | money_without_trailing_zeros }}</span>
                                     {%- endif -%}
-                                {%- else -%}
-                                    {{- 'product.form.sold_out' | t -}}
                                 {%- endif -%}
                             </button>
+                            {% else %}
+                                <a class="ProductForm__AddToCart Button {% if selected_variant.available and section.settings.show_payment_button == false %}Button--primary{% else %}Button--secondary{% endif %}" target="_blank" href="https://www.walmart.com/search/?cat_id=0&facet=brand%3AQueen+V&grid=true&query=queen+v#searchProductResult">
+                                    Available At Walmart
+                                </a>
+
+                            {% endif %}
 
                             {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
                                 {% unless shop.metafields.subscriptions.subscription_active and product.metafields.subscriptions.subscription_id %}
@@ -330,7 +339,10 @@ THE EXACT SAME ATTRIBUTES.
 
                             <script type="application/json" data-product-json>
   {
-    "product": {{ product | json }},
+    "product": 
+{%- include 'saw_product_json' with product -%}
+{{- saw_json -}}
+,
     "selected_variant_id": {{ selected_variant.id }}
     {%- if section.settings.show_inventory_quantity -%}
       ,"inventories": {
