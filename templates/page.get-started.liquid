@@ -4,6 +4,11 @@
 <script src="{{ 'get-started-events.js' | asset_url }}" defer></script>
 
 <style>
+  #shopify-section-step-one,
+  #shopify-section-step-two,
+  #shopify-section-step-three {
+    height:100%;
+  }
   #shopify-section-back-carousal-step-one,
   #shopify-section-back-carousal-step-two,
   #shopify-section-back-carousal-step-three {
@@ -312,9 +317,8 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
     width: 150px;
     color: #0992f4;
     position: relative;
-    z-index: 100;
-    top: 50%;
-    left: 0;
+    z-index: 100;   
+    margin-left: 20%;
   }
 
   #go-next-step-bottom {
@@ -324,9 +328,8 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
     width: 120px;
     color: #0992f4;
     position: relative;
-    z-index: 100;
-    top: 50%;
-    right: 0;
+    z-index: 100;    
+    margin-right: 20%;
     text-decoration: underline;
   }
   .previous-bottom, .next-bottom {

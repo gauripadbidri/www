@@ -1,10 +1,4 @@
 <style>
-
-.bottomRow {
-  clear: both;
-    height: 100%;
-    display: inline;
-}
 .step-one-tick {
   font-weight:bold;
   margin-right:5px;
@@ -314,6 +308,28 @@
                     </div>
                   </div>
             </div>
+            <div class="chkboxSpacing" style="width:100%;float:left;"> 
+                <input name="step-one-hygeine" type="radio" id="cbtest3" value="3" />
+                <label for="cbtest3" class="check-box check-box-3"></label>
+                <div class="clearBoth marginTop20 option-text-{{section.settings.option-text-size}}">
+                    <label>{{section.settings.select-options-3}}</label>
+                </div>
+                <div class="clearBoth marginTop20 option-text-{{section.settings.option-text-size}}">
+                    <label>{{section.settings.select-options-3}}</label>
+                </div>
+                <div class="previous-bottom marginTop20" >
+                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step-bottom">
+                        <div class="arrow-left-bottom"></div>
+                        <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
+                    </span>
+                </div>  
+                <div class="next-bottom marginTop20">
+                    <span href="#" class="carousalBack carousalStepNext" id="go-next-step-bottom">
+                        <div class="arrow-right-bottom"></div>
+                        <span style="color: {{section.settings.btn_get_started_color}};">NEXT</span>
+                    </span>            
+                </div>   
+            </div>
         </div>
     </div>
 </div>
@@ -564,26 +580,6 @@
           "value": "large"
         }
       ]
-    },
-    {
-      "type": "text",
-      "id": "previous-step-text",
-      "label": {
-        "en": "BOTTOM Previous Step text"
-      },
-      "default": {
-        "en": "PREVIOUS"
-      }
-    },      
-    {
-      "type": "text",
-      "id": "next-step-text",
-      "label": {
-        "en": "BOTTOM Next Step text"
-      },
-      "default": {
-        "en": "NEXT"
-      }
     }
   ],
   "presets": [
