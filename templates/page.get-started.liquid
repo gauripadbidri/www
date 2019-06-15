@@ -314,29 +314,33 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
     cursor: pointer;
     font-weight: 600;
     padding: 15px;
-    width: 150px;
     color: #0992f4;
     position: relative;
     z-index: 100;   
-    margin-left: 20%;
+    margin-left: 33%;
+    width: 150px;
+    float: right;
   }
 
   #go-next-step-bottom {
     cursor: pointer;
     font-weight: 600;
     padding: 15px;
-    width: 120px;
     color: #0992f4;
     position: relative;
     z-index: 100;    
-    margin-right: 20%;
+    margin-right: 33%;
+    float:right;
     text-decoration: underline;
+    width: 120px;
   }
   .previous-bottom, .next-bottom {
     display: inline;
     z-index: 10;
     font-size: 1.2em;
     line-height: 100%;
+    float: left;
+    width: 30%;
   }
   .arrow-left-bottom {
     width: 0; 
@@ -358,6 +362,10 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
     border-bottom: 10px solid transparent;  
     border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};
     margin-right: 20%;
+  }
+  .marginAlign {
+    margin-top:5% !important;
+    margin-bottom:0px !important;
   }
 </style>
 <div class="page-width">
