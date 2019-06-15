@@ -1,4 +1,10 @@
 <style>
+
+.bottomRow {
+  clear: both;
+    height: 100%;
+    display: inline;
+}
 .step-one-tick {
   font-weight:bold;
   margin-right:5px;
@@ -558,6 +564,26 @@
           "value": "large"
         }
       ]
+    },
+    {
+      "type": "text",
+      "id": "previous-step-text",
+      "label": {
+        "en": "BOTTOM Previous Step text"
+      },
+      "default": {
+        "en": "PREVIOUS"
+      }
+    },      
+    {
+      "type": "text",
+      "id": "next-step-text",
+      "label": {
+        "en": "BOTTOM Next Step text"
+      },
+      "default": {
+        "en": "NEXT"
+      }
     }
   ],
   "presets": [

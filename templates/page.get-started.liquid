@@ -305,14 +305,63 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
    .page-width{
      margin-bottom: 80px;
    }
+   #go-previous-step-bottom {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px;
+    width: 150px;
+    color: #0992f4;
+    position: relative;
+    z-index: 100;
+    top: 50%;
+    left: 0;
+  }
 
+  #go-next-step-bottom {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 15px;
+    width: 120px;
+    color: #0992f4;
+    position: relative;
+    z-index: 100;
+    top: 50%;
+    right: 0;
+    text-decoration: underline;
+  }
+  .previous-bottom, .next-bottom {
+    display: inline;
+    z-index: 10;
+    font-size: 1.2em;
+    line-height: 100%;
+  }
+  .arrow-left-bottom {
+    width: 0; 
+    height: 0; 
+    float:left;
+    margin:auto;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;         
+    border-right:15px solid  {{ section.settings.btn_get_started_bg_color }};
+    margin-left: 20%;
+  }
+
+  .arrow-right-bottom {
+    width: 0; 
+    height: 0;
+    float:right; 
+    margin:auto;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;  
+    border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};
+    margin-right: 20%;
+  }
 </style>
 <div class="page-width">
   <div class="grid">
     <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
       <!-- Flickity HTML init -->
       {% section 'subscription-settings' %}
-
       {% section 'back-carousal-step-one' %}
       {% section 'back-carousal-step-two' %}
       {% section 'back-carousal-step-three' %}
