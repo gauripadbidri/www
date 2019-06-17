@@ -50,7 +50,7 @@ $(function(){
 
      /****************************************** */
 
-     $(".previous, .previous-bottom").on('click', function(eventTarget) {
+     $(".previous").on('click', function(eventTarget) {
         if(eventTarget && eventTarget.originalEvent && eventTarget.originalEvent.detail > 1){ 
           console.log("Return false")
           return false; }
@@ -84,13 +84,10 @@ $(function(){
         Cookie.setCookie(userOptions);
         DomToggle.AnimateScrollTop();
         FlickityCarousal.navigateToPreviousSlide(userSelectedSlide);
-        
-        var $carousal= FlickityCarousal.getCarousalInstance();
-        $carousal.flickity('reloadCells');
 
       });
       
-      $(".next, .next-bottom").on('click ', function(eventTarget) {
+      $(".next").on('click ', function(eventTarget) {
 
           userOptions = Cookie.getCookie();
 
@@ -229,12 +226,6 @@ $(function(){
         var $carousal= FlickityCarousal.getCarousalInstance();
         $carousal.flickity('reloadCells');
         DomToggle.hideCollectionFilter(false);
-        
-        if($('#shopify-section-product-subscription-collection-template').is(':visible'))
-          $('.page-width').css('margin-bottom', 0);
-        else {
-          $('.page-width').css('margin-bottom', '80px');
-        }
         return false;
       });
 
