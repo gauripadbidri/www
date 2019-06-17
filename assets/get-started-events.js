@@ -86,7 +86,15 @@ $(function(){
         FlickityCarousal.navigateToPreviousSlide(userSelectedSlide);
 
       });
-      
+
+      // $(".next").on('dblclick',function(e){
+      //     /*  Prevents default behaviour  */
+      //       e.preventDefault();
+      //       /*  Prevents event bubbling  */
+      //       e.stopPropagation();
+      //       return;
+      // });
+
       $(".next").on('click ', function(eventTarget) {
 
           userOptions = Cookie.getCookie();
