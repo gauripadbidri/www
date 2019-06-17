@@ -233,7 +233,6 @@
 
 <div data-section-id="{{ section.id }}" id="{{ section.id }}" class="step-one" data-section-type="hero-section">
     <div class="row textAlignCenter">
-
         <div class="marginTop40 clearBoth">
             <div class="width30 chkboxSpacing" style="float:left;">
                 <input name="step-one-hygeine" type="radio" id="cbtest1" value="1" />
@@ -308,55 +307,28 @@
                     </div>
                   </div>
             </div>
-            <div class="chkboxSpacing" style="width:100%;float:left;"> 
+            <div class="stepTransitionBottom1 chkboxSpacing mobileOnly" style="width:100%;float:left;"> 
                 <div class="Container ContainerMobile">
                     <div class="SectionHeader border-line marginAlign"> 
                     </div>
                 </div>
                 <div class="previous-bottom" >
-                  <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
-                      <div class="arrow-left"></div>
-                      <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
-                  </span>
-              </div> 
-                {% comment %} <div class="previous-bottom marginTop10" >
-                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step-bottom">
-                        <div class="arrow-left-bottom"></div>
-                        <span class="marginLeft20" style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
-                    </span>
-                </div>  {% endcomment %}
-                <div class="stepAlignBottom marginTop10">
-                        <span class="step-title-medium" style="color: {{section.settings.btn_get_started_color}};">STEP 1</span>
-                </div>    
-              <!-- 
-                <div class="previous-bottom marginTop20" >
-                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step-bottom">
-                        <div class="arrow-left-bottom"></div>
+                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
+                        <div class="arrow-left"></div>
                         <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
                     </span>
-                </div> 
-                <div class="next-bottom marginTop20">
-                    <span href="#" style="font-size: 1.6em;font-weight: 700;cursor: pointer;
-                    font-weight: 600;
-                    padding: 15px;
-                    color: #0992f4;
-                    position: relative;
-                    z-index: 100;
-                    margin-left: 33%;
-                    width: 150px;
-                    float: right;
-                ">
-                        <span class="step-title-medium" style="color: {{section.settings.btn_get_started_color}};">STEP 1</span>
-                    </span>            
-                </div>    
-                <div class="next-bottom marginTop20">
-                    <span href="#" class="carousalBack carousalStepNext" id="go-next-step-bottom">
-                        <div class="arrow-right-bottom"></div>
+                </div>  
+                <div class="next-bottom">
+                    <span href="#" class="carousalBack carousalStepNext" id="go-next-step">
+                        <div class="arrow-right"></div>
                         <span style="color: {{section.settings.btn_get_started_color}};">NEXT</span>
                     </span>            
-                </div>    -->
+                </div>   
+                <div class="step-question alignText step-title-{{section.settings.title_text_size}}">
+                    <span class="step-title-medium" 
+                          style="color: {{section.settings.title-color}};">STEP 1</span>
+                </div> 
             </div>
-        </div>
     </div>
 </div>
 

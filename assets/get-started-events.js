@@ -1,6 +1,6 @@
 $(function(){
 
-    $($('.page-width')[0]).css('margin-bottom',0);
+   
     DomToggle.ShowPreLoader();
     // Hide ALL Sticky Headers for Each Step initially.
     DomToggle.ShowHideCarousalForStep(-1);
@@ -51,7 +51,7 @@ $(function(){
 
      /****************************************** */
 
-     $(".previous").on('click', function(eventTarget) {
+     $(".previous, .previous-bottom").on('click', function(eventTarget) {
         if(eventTarget && eventTarget.originalEvent && eventTarget.originalEvent.detail > 1){ 
           console.log("Return false")
           return false; }
@@ -87,16 +87,8 @@ $(function(){
         FlickityCarousal.navigateToPreviousSlide(userSelectedSlide);
 
       });
-
-      // $(".next").on('dblclick',function(e){
-      //     /*  Prevents default behaviour  */
-      //       e.preventDefault();
-      //       /*  Prevents event bubbling  */
-      //       e.stopPropagation();
-      //       return;
-      // });
-
-      $(".next").on('click ', function(eventTarget) {
+      
+      $(".next, .next-bottom").on('click ', function(eventTarget) {
 
           userOptions = Cookie.getCookie();
 

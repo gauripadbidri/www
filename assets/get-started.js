@@ -50,21 +50,28 @@ var DomToggle = {
     ShowHideCarousalForStep: function (userSelectedSlide){
     if(userSelectedSlide === 1){
       $('#shopify-section-back-carousal-step-one').css('display', 'block');
+      $('.stepTransitionBottom1').css('display', 'block');
       $('#shopify-section-back-carousal-step-two').css('display', 'none');
       $('#shopify-section-back-carousal-step-three').css('display', 'none');
     } else if(userSelectedSlide === 2) {
       this.hideCollectionFilter(false);
       $('#shopify-section-back-carousal-step-one').css('display', 'none');
+      $('.stepTransitionBottom1').css('display', 'none');
+      $('.stepTransitionBottom2').css('display', 'block');
       $('#shopify-section-back-carousal-step-two').css('display', 'block');
       $('#shopify-section-back-carousal-step-three').css('display', 'none');
     } else if(userSelectedSlide === 3) {
       $('#shopify-section-back-carousal-step-one').css('display', 'none');
+      $('.stepTransitionBottom1').css('display', 'none');
       $('#shopify-section-back-carousal-step-two').css('display', 'none');
+      $('.stepTransitionBottom2').css('display', 'none');
       $('#shopify-section-back-carousal-step-three').css('display', 'block');
     } else {
       $('#shopify-section-back-carousal-step-one').css('display', 'none');
       $('#shopify-section-back-carousal-step-two').css('display', 'none');
       $('#shopify-section-back-carousal-step-three').css('display', 'none');
+      $('.stepTransitionBottom1').css('display', 'none');
+      $('.stepTransitionBottom2').css('display', 'none');
     }
   },
   showLoading: function(){
