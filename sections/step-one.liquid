@@ -313,12 +313,21 @@
                     <div class="SectionHeader border-line marginAlign"> 
                     </div>
                 </div>
-                <div class="previous-bottom marginTop10" >
+                <div class="previous-bottom" >
+                  <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
+                      <div class="arrow-left"></div>
+                      <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
+                  </span>
+              </div> 
+                {% comment %} <div class="previous-bottom marginTop10" >
                     <span href="#" class="carousalBack carousalStepBack" id="go-previous-step-bottom">
                         <div class="arrow-left-bottom"></div>
-                        <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
+                        <span class="marginLeft20" style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
                     </span>
-                </div> 
+                </div>  {% endcomment %}
+                <div class="stepAlignBottom marginTop10">
+                        <span class="step-title-medium" style="color: {{section.settings.btn_get_started_color}};">STEP 1</span>
+                </div>    
               <!-- 
                 <div class="previous-bottom marginTop20" >
                     <span href="#" class="carousalBack carousalStepBack" id="go-previous-step-bottom">
