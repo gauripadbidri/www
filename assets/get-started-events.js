@@ -332,7 +332,7 @@ $(function(){
        // } else {
           //$('.info-icon-description').css('display','none');
           $('#' + descriptionDiv ).toggle();
-          $('#' + descriptionDiv ).css('text-align', 'center');
+          $('#' + descriptionDiv ).css('text-align', 'left');
         //}
         var $carousal= FlickityCarousal.getCarousalInstance();
         $carousal.flickity('reloadCells');
