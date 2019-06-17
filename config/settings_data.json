@@ -531,7 +531,7 @@
           "subheading_font_size": 3,
           "subheading_font_size_mobile": 2,
           "color_tagline": "#ffffff",
-          "slide-link-url": "shopify:\/\/pages\/get-started",
+          "slide-link-url": "shopify:\/\/collections\/shop",
           "slide-link-title": "Let's Get Started",
           "button_font_size_mobile": 1.5,
           "button_font_size": 1.5,
@@ -931,7 +931,7 @@
       "product-kit-collection": {
         "type": "product-kit-collection",
         "blocks": {
-          "1560510503236": {
+          "1560767032504": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -942,7 +942,7 @@
           }
         },
         "block_order": [
-          "1560510503236"
+          "1560767032504"
         ],
         "settings": {
           "title": "",
@@ -1551,7 +1551,7 @@
       "subscription-product-kit": {
         "type": "subscription-product-kit",
         "blocks": {
-          "1560510516318": {
+          "1560767051252": {
             "type": "collection",
             "settings": {
               "collection": "v-basic-kit-collection",
@@ -1562,7 +1562,7 @@
           }
         },
         "block_order": [
-          "1560510516318"
+          "1560767051252"
         ],
         "settings": {
           "title": "",
@@ -1585,7 +1585,7 @@
       "product-subscription-collection-template": {
         "type": "product-subscription-collection-template",
         "blocks": {
-          "1560510531953": {
+          "1560767068158": {
             "type": "collection",
             "settings": {
               "collection": "subscription-product",
@@ -1594,7 +1594,7 @@
           }
         },
         "block_order": [
-          "1560510531953"
+          "1560767068158"
         ],
         "settings": {
           "show_collection_info": true,

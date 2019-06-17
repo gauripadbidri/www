@@ -4,11 +4,12 @@
 <script src="{{ 'get-started-events.js' | asset_url }}" defer></script>
 
 <style>
-  #shopify-section-step-one,
-  #shopify-section-step-two,
-  #shopify-section-step-three {
-    height:100%;
+  #shopify-section-step-one,		
+  #shopify-section-step-two,		
+  #shopify-section-step-three {		
+    height:100%;		
   }
+
   #shopify-section-back-carousal-step-one,
   #shopify-section-back-carousal-step-two,
   #shopify-section-back-carousal-step-three {
@@ -23,7 +24,8 @@
 /* PAGE PRE LOADER CSS BEGINS */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
-/*.se-pre-con {
+/*
+.se-pre-con {
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -47,7 +49,7 @@
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   overflow: hidden;
-}
+} 
 
 /* PAGE PRE LOADER CSS ENDS */
   #shopify-section-back-carousal-step-one, 
@@ -171,13 +173,13 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
   #shopify-section-step-one, #shopify-section-step-two, #shopify-section-step-three {
     margin-top:13%;
   }
-  
-  .mobileOnly {
-    display:none !important;
-  }
-  
-  .page-width {
-    margin-bottom:80px;
+  		
+  .mobileOnly {		
+    display:none !important;		
+  }		
+  		
+  .page-width {		
+    margin-bottom:80px;		
   }
 }
 @media screen and (max-width: 768px) {
@@ -191,12 +193,13 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
     z-index: 3;
   }
 
-  .mobileOnly {
-    display:block;
+  .mobileOnly {		
+    display:block;		
+  }		
+  .page-width {		
+    margin-bottom:10px;		
   }
-  .page-width {
-    margin-bottom:10px;
-  }
+
   div.sticky {
     width:100%;
     position:absolute !important;
@@ -320,84 +323,73 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
       text-align: center;
       margin-bottom: 33px;
    }
-   #go-previous-step-bottom {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 15px;
-    color: #0992f4;
-    position: relative;
-    z-index: 100;       
-    margin-right: 15px;
-    width: 170px;
-    float: right;
-  }
-
-.marginLeft20 {
+   .marginLeft20 {		   
       margin-left: 20px;
+    }		  
+  #go-next-step-bottom {		
+    cursor: pointer;		
+    font-weight: 600;		
+    padding: 15px;		
+    color: #0992f4;		
+    position: relative;		
+    z-index: 100;    		
+    margin-right: 33%;		
+    float:right;		
+    text-decoration: underline;		
+    width: 120px;		
+  }		
+  .previous-bottom {		
+    display: inline;		
+    z-index: 10;		
+    line-height: 100%;		
+    float: left;		
+    width: 33%;		
+    position:relative;		
+  }		
+  .next-bottom {		
+    display: inline;		
+    z-index: 10;		
+    line-height: 100%;		
+    float: right;		
+    width: 33%;		
+    position:relative;		
+  }		
+  .arrow-left-bottom {		
+    width: 0; 		
+    height: 0; 		
+    float:left;		
+    margin:auto;		
+    border-top: 10px solid transparent;		
+    border-bottom: 10px solid transparent;         		
+    border-right:15px solid  {{ section.settings.btn_get_started_bg_color }};		
+    margin-left: 20%;		
+  }		
+  .arrow-right-bottom {		
+    width: 0; 		
+    height: 0;		
+    float:right; 		
+    margin:auto;		
+    border-top: 10px solid transparent;		
+    border-bottom: 10px solid transparent;  		
+    border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};		
+    margin-right: 20%;		
+  }		
+  .marginAlign {		
+    margin-top:5% !important;		
+    margin-bottom:0px !important;		
+  }		
+  .marginTop10 {		
+    margin-top:5px;		
+  }		
+  .stepAlignBottom {		
+    float: left;		
+    width: 37%;		
+    font-size:1.6em;		
+  }
+
+.marginTop30Step {
+  margin-top:30px;
 }
-  #go-next-step-bottom {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 15px;
-    color: #0992f4;
-    position: relative;
-    z-index: 100;    
-    margin-right: 33%;
-    float:right;
-    text-decoration: underline;
-    width: 120px;
-  }
-  .previous-bottom {
-    display: inline;
-    z-index: 10;
-    line-height: 100%;
-    float: left;
-    width: 33%;
-    position:relative;
-  }
-
-  .next-bottom {
-    display: inline;
-    z-index: 10;
-    line-height: 100%;
-    float: right;
-    width: 33%;
-    position:relative;
-  }
-  .arrow-left-bottom {
-    width: 0; 
-    height: 0; 
-    float:left;
-    margin:auto;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;         
-    border-right:15px solid  {{ section.settings.btn_get_started_bg_color }};
-    margin-left: 20%;
-  }
-
-  .arrow-right-bottom {
-    width: 0; 
-    height: 0;
-    float:right; 
-    margin:auto;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;  
-    border-left: 15px solid {{ section.settings.btn_get_started_bg_color }};
-    margin-right: 20%;
-  }
-  .marginAlign {
-    margin-top:5% !important;
-    margin-bottom:0px !important;
-  }
-
-  .marginTop10 {
-    margin-top:5px;
-  }
-  .stepAlignBottom {
-    float: left;
-    width: 37%;
-    font-size:1.6em;
-  }
 </style>
 <div class="page-width">
   <div class="grid">
@@ -428,28 +420,27 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
             {% section 'custom-button' %}
           </div>
           {% section 'product-subscription-collection-template' %}
-          
-            <div class="stepTransitionBottom2 chkboxSpacing mobileOnly" style="width:100%;float:left;"> 
-               <div class="Container ContainerMobile">
-                    <div class="SectionHeader border-line marginAlign"> 
-                    </div>
-                </div>
-                <div class="previous previous-bottom" >
-                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">
-                        <div class="arrow-left"></div>
-                        <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>
-                    </span>
-                </div>  
-                <div class="next next-bottom">
-                    <span href="#" class="carousalBack carousalStepNext" id="go-next-step">
-                        <div class="arrow-right"></div>
-                        <span style="color: {{section.settings.btn_get_started_color}};">NEXT</span>
-                    </span>            
-                </div>   
-                <div class="step-question alignText">
-                    <span class="step-title-medium" 
-                          style="color: {{section.settings.title-color}};">STEP 2</span>
-                </div>
+          <div class="stepTransitionBottom2 chkboxSpacing mobileOnly" style="width:100%;float:left;"> 		
+               <div class="Container ContainerMobile">		
+                    <div class="SectionHeader border-line marginAlign"> 		
+                    </div>		
+                </div>		
+                <div class="previous previous-bottom" >		
+                    <span href="#" class="carousalBack carousalStepBack" id="go-previous-step">		
+                        <div class="arrow-left"></div>		
+                        <span style="color: {{section.settings.btn_get_started_color}};">PREVIOUS</span>		
+                    </span>		
+                </div>  		
+                <div class="next next-bottom">		
+                    <span href="#" class="carousalBack carousalStepNext" id="go-next-step">		
+                        <div class="arrow-right"></div>		
+                        <span style="color: {{section.settings.btn_get_started_color}};">NEXT</span>		
+                    </span>            		
+                </div>   		
+                <div class="step-question alignText">		
+                    <span class="step-title-medium question-title-medium" 		
+                          style="color: {{section.settings.title-color}};">STEP 2</span>		
+                </div>		
             </div>
         </div>
         <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
@@ -526,6 +517,20 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
 
       // $.fn.noop = function () { return this; };
       // toastr.options.hideMethod = 'noop';
+
+    $(window).on('scroll', function(){
+      if(window.location.pathname.indexOf('/get-started')> -1){
+        var scrollPos = $(window).scrollTop();
+        var len = $('#section-announcement').length;
+        if(len > 0){
+          if(scrollPos > 40){
+            $('#section-announcement').css('height','0');
+          } else if(scrollPos === 0){
+            $('#section-announcement').css('height','40px');
+          }
+        }
+      }
+    });
 
   });
 </script>
