@@ -1,6 +1,5 @@
 $(function(){
 
-   
     DomToggle.ShowPreLoader();
     // Hide ALL Sticky Headers for Each Step initially.
     DomToggle.ShowHideCarousalForStep(-1);
@@ -85,6 +84,9 @@ $(function(){
         Cookie.setCookie(userOptions);
         DomToggle.AnimateScrollTop();
         FlickityCarousal.navigateToPreviousSlide(userSelectedSlide);
+        
+        var $carousal= FlickityCarousal.getCarousalInstance();
+        $carousal.flickity('reloadCells');
 
       });
       
@@ -227,6 +229,12 @@ $(function(){
         var $carousal= FlickityCarousal.getCarousalInstance();
         $carousal.flickity('reloadCells');
         DomToggle.hideCollectionFilter(false);
+        
+        if($('#shopify-section-product-subscription-collection-template').is(':visible'))
+          $('.page-width').css('margin-bottom', 0);
+        else {
+          $('.page-width').css('margin-bottom', '80px');
+        }
         return false;
       });
 

@@ -53,6 +53,7 @@ var DomToggle = {
       $('.stepTransitionBottom1').css('display', 'block');
       $('#shopify-section-back-carousal-step-two').css('display', 'none');
       $('#shopify-section-back-carousal-step-three').css('display', 'none');
+      $('.get-started-carousel').data('flickity').reloadCells(); 
     } else if(userSelectedSlide === 2) {
       this.hideCollectionFilter(false);
       $('#shopify-section-back-carousal-step-one').css('display', 'none');
@@ -60,6 +61,7 @@ var DomToggle = {
       $('.stepTransitionBottom2').css('display', 'block');
       $('#shopify-section-back-carousal-step-two').css('display', 'block');
       $('#shopify-section-back-carousal-step-three').css('display', 'none');
+      $('.get-started-carousel').data('flickity').reloadCells(); 
     } else if(userSelectedSlide === 3) {
       $('#shopify-section-back-carousal-step-one').css('display', 'none');
       $('.stepTransitionBottom1').css('display', 'none');

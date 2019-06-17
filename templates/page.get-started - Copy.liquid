@@ -173,7 +173,7 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
   }
   
   .mobileOnly {
-    display:none !important;
+    display:none;
   }
   
    .page-width{
@@ -431,7 +431,7 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
           </div>
           {% section 'product-subscription-collection-template' %}
           
-            <div class="stepTransitionBottom2 chkboxSpacing mobileOnly" style="width:100%;float:left;"> 
+            {% comment %}  <div class="stepTransitionBottom2 chkboxSpacing mobileOnly" style="width:100%;float:left;"> 
                <div class="Container ContainerMobile">
                     <div class="SectionHeader border-line marginAlign"> 
                     </div>
@@ -452,7 +452,7 @@ a:hover,button:hover,#go-previous-step span:hover,#go-next-step span:hover{
                     <span class="step-title-medium" 
                           style="color: {{section.settings.title-color}};">STEP 2</span>
                 </div>
-            </div>
+            </div>  {% endcomment %}
         </div>
         <div class="grid-cell-padding Grid__Cell 1/1--phone 1/1--tablet 1/1--lap-and-up">
           {% section 'step-three' %}
