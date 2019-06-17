@@ -1,5 +1,6 @@
 $(function(){
 
+    $($('.page-width')[0]).css('margin-bottom',0);
     DomToggle.ShowPreLoader();
     // Hide ALL Sticky Headers for Each Step initially.
     DomToggle.ShowHideCarousalForStep(-1);
