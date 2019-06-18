@@ -13,20 +13,20 @@
     window.subscriptionSettings = { "id" : '{{ section.settings.activeSubscriptionId }}',
        "frequency" : '{{section.settings.activeSubscriptionFrequency}}',
        'kitProduct' : '{{section.settings.product_link}}',
-       'glogalDatatags' : ['green','red','blue']
+       'glogalDatatags' : ['maintainyourv','enjoyyourv','healyourv']
     } 
     </script>
 </div>
 <style>
 
-.red{
-  border:4px solid {{section.settings.red}};
+.enjoyyourv{
+  border:4px solid {{section.settings.enjoyyourv}};
 }
-.green {
-  border:4px solid {{section.settings.green}};
+.healyourv {
+  border:4px solid {{section.settings.healyourv}};
 }
-.blue {
-  border:4px solid {{section.settings.blue}};
+.maintainyourv {
+  border:4px solid {{section.settings.maintainyourv}};
 }
 </style>    
 
@@ -66,27 +66,27 @@
        },
         {
           "type": "color",
-          "id": "red",
+          "id": "enjoyyourv",
           "label": {
-            "en": "Red"
+            "en": "enjoyyourv"
           },
           "default": "#ff2dac"
         }
         ,
         {
           "type": "color",
-          "id": "green",
+          "id": "healyourv",
           "label": {
-            "en": "green"
+            "en": "healyourv"
           },
           "default": "#54d12b"
         }
         ,
         {
           "type": "color",
-          "id": "blue",
+          "id": "maintainyourv",
           "label": {
-            "en": "blue"
+            "en": "maintainyourv"
           },
           "default": "#0091c8"
         }

@@ -29,7 +29,7 @@
             <div class="product-kit-color AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}"
                 style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: product.featured_image.aspect_ratio }}%;{% endif %} --aspect-ratio: {{ product.featured_image.aspect_ratio }}"
                 
-                data-tags="{{ product.tags | json | escape }}"
+                data-tags="{{ product.tags | json | downcase | replace:'#','' | escape  }}"
                {% if show_Buttons==true %}
                 data-item-product-id="{{ product.id }}"
                {% endif %} >

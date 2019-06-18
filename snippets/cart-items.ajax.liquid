@@ -17,14 +17,14 @@
                 data-action="open-modal"
 				aria-controls="product-info-dialog"
 				data-handle="{{line_item.product.handle}}">
-                    <div class="AspectRatio" style="--aspect-ratio: {{ line_item.image.aspect_ratio }}">
+                    <div class="AspectRatio cart-info-icon" style="--aspect-ratio: {{ line_item.image.aspect_ratio }}">
                         {%- include 'image-size', sizes: '200', image: line_item.image -%}
                         {%- assign image_url = line_item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                         <img class="Image--lazyLoad ie-size Image--fadeIn" data-src="{{ image_url }}"
                             data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ line_item.image.alt | escape }}"
                          />
                         <span class="Image__Loader"></span>
-
+                        {% include 'icon' with 'info-icon-v2' %} 
                     </div>
                     <div class="CartItem__PriceList mobilePriceInfo">
                             {%- if line_item.product.compare_at_price > line_item.product.price -%}
@@ -293,6 +293,14 @@
     /* max-width: 200px; */
 }
 
+.cart-info-icon .Icon--info-icon-v2 {
+	color: white;
+	height: 2em;
+	width: 2em;
+	position: absolute;
+	bottom: 12px;
+	right: 10px
+}
 /* .desktop-price-max-width{
     max-width:200px ; */
 /* } */
