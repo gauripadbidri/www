@@ -60,7 +60,7 @@
     "social_fancy": "",
     "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/QV-OfficialLogo-2018-gradient.png",
+    "checkout_logo_image": "",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
     "checkout_body_background_image": "",
@@ -83,7 +83,7 @@
           "1558051808832": {
             "type": "blog",
             "settings": {
-              "blog": "our-blog"
+              "blog": ""
             }
           }
         },
@@ -106,7 +106,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "main-menu-left",
+          "primary_menu": "",
           "secondary_menu": "main-menu",
           "show_social_media": true
         }
@@ -129,7 +129,7 @@
           "logo": "",
           "logo_max_width": 140,
           "mobile_logo_max_width": 90,
-          "navigation_menu": "main-menu-left",
+          "navigation_menu": "",
           "navigation_style": "inline",
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
@@ -144,13 +144,13 @@
           "1552602046282": {
             "type": "links",
             "settings": {
-              "menu": "footer-left"
+              "menu": ""
             }
           },
           "footer-1": {
             "type": "links",
             "settings": {
-              "menu": "footer-right"
+              "menu": ""
             }
           },
           "footer-2": {
@@ -278,8 +278,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/Homepage_Subbanner.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/Web_Subbanner2.jpg",
+              "image": "",
+              "mobile_image": "",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "So why use dirty ingredients? We don't.",
@@ -352,10 +352,10 @@
           "text_color": "#ffffff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
+          "image_l": "",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
+          "image_r": "",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "ADD QUEEN V TO YOUR ROUTINE",
           "link_url": "shopify:\/\/collections\/shop",
@@ -483,7 +483,7 @@
           "1552416598996-0": {
             "type": "bundle",
             "settings": {
-              "product": "queen-v-essentials-kit",
+              "product": "",
               "title": "Start Here - Queen V Essentials"
             }
           }
@@ -521,7 +521,7 @@
       "1552603766602": {
         "type": "video-hero",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-026_f3cf3dec-fc0e-45a5-98bc-5e18ee93d3f7.png",
+          "image": "",
           "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
           "slide-title": "Self-Care for Everywhere",
           "heading_font_size": 5,
@@ -545,7 +545,7 @@
           "1552607708117-0": {
             "type": "blog",
             "settings": {
-              "blog": "our-blog"
+              "blog": ""
             }
           }
         },
@@ -627,7 +627,7 @@
           "1553108836073-0": {
             "type": "collection",
             "settings": {
-              "collection": "our-products",
+              "collection": "",
               "title": "",
               "grid_items_count": 50,
               "button_text": "View all products"
@@ -651,7 +651,7 @@
       "video-hero": {
         "type": "video-hero",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-0246.png",
+          "image": "",
           "video-link-url": "https:\/\/cdn.shopify.com\/s\/files\/1\/1862\/4397\/files\/Website_Bannerv1.mp4?3334",
           "slide-title": "Self-Care for Everywhere",
           "heading_font_size": 5,
@@ -677,10 +677,10 @@
           "text_color": "#ffffff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
+          "image_l": "",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
+          "image_r": "",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "ADD QUEEN V TO YOUR ROUTINE",
           "link_url": "https:\/\/www.walmart.com\/store\/finder",
@@ -847,7 +847,7 @@
           "1553623108782": {
             "type": "collection",
             "settings": {
-              "collection": "available-at-walmart-1",
+              "collection": "",
               "title": "",
               "grid_items_count": 50,
               "button_text": ""
@@ -876,8 +876,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/Homepage_Subbanner.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/Web_Subbanner2.jpg",
+              "image": "",
+              "mobile_image": "",
               "apply_overlay": false,
               "content_position": "middleCenter",
               "subheading": "So why use dirty ingredients? We don't.",
@@ -930,8 +930,22 @@
       },
       "product-kit-collection": {
         "type": "product-kit-collection",
+        "blocks": {
+          "1560854639919": {
+            "type": "collection",
+            "settings": {
+              "collection": "v-basic-kit-collection",
+              "title": "Here's what you are getting.",
+              "grid_items_count": 8,
+              "button_text": "View all products"
+            }
+          }
+        },
+        "block_order": [
+          "1560854639919"
+        ],
         "settings": {
-          "title": "Product kit collection",
+          "title": "",
           "layout_mode": "grid",
           "show_product_info": true,
           "show_sold_out": true,
@@ -946,14 +960,14 @@
           "show_collection_info": true,
           "change_heading": "",
           "show_collection_image": true,
-          "pick_header_image": "shopify:\/\/shop_images\/Queen_V_Website_3.4.19-026_f3cf3dec-fc0e-45a5-98bc-5e18ee93d3f7.png",
+          "pick_header_image": "",
           "image_position_x": 50,
           "image_position_y": 77,
           "apply_overlay": false,
           "show_color_swatch": false,
           "show_vendor": false,
           "collection_image_size": "large",
-          "featured_kit": "queen-v-essentials-kit",
+          "featured_kit": "",
           "prod-header": "START HERE - QUEEN V ESSENTIALS",
           "prod-subheader": "PH-BALANCED STARTER KIT THAT CLEANSES, BALANCES AND REFRESHES YOUR QUEEN V SO YOU CAN STAY ON TOP",
           "choose_image": "1",
@@ -976,7 +990,7 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/3F2A6158_2_1.jpg",
+              "image": "",
               "mobile_image": "",
               "apply_overlay": false,
               "content_position": "middleCenter",
@@ -1017,7 +1031,7 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/About_SUbbanner.jpg",
+              "image": "",
               "mobile_image": "",
               "apply_overlay": false,
               "content_position": "middleCenter",
@@ -1066,10 +1080,10 @@
           "text_color": "#ffffff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
+          "image_l": "",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
+          "image_r": "",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "Add queen v to your routine",
           "link_url": "shopify:\/\/collections\/shop",
@@ -1117,7 +1131,7 @@
       "menu-community": {
         "type": "menu-community",
         "settings": {
-          "communityNav": "community-nav"
+          "communityNav": ""
         }
       },
       "slideshow-community": {
@@ -1127,7 +1141,7 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/QV-CommunityCollage02.jpg",
+              "image": "",
               "mobile_image": "",
               "apply_overlay": false,
               "content_position": "bottomCenter",
@@ -1173,8 +1187,8 @@
             "type": "image",
             "settings": {
               "video-link-url": "",
-              "image": "shopify:\/\/shop_images\/Sequence-04.00_00_02_23.Still001-web.png",
-              "mobile_image": "shopify:\/\/shop_images\/Sequence-04.00_00_02_23.Still001-web_mobile.jpg",
+              "image": "",
+              "mobile_image": "",
               "apply_overlay": true,
               "content_position": "bottomCenter",
               "subheading": "",
@@ -1286,10 +1300,10 @@
           "text_color": "#ffffff",
           "background_color": "#ff40b4",
           "content_lt": "<p>Most cleansers and soaps have a pH that ranges from 9 to 10.<\/p>",
-          "image_l": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-soap.gif",
+          "image_l": "",
           "content_lb": "<p>This can cause an overgrowth of bad bacteria that&nbsp;leads to irritation.<\/p>",
           "content_rt": "<p>A healthy vaginal pH is acidic, somewhere between 3.8 to 4.5.<\/p>",
-          "image_r": "shopify:\/\/shop_images\/QV-Website2.0-Assets-pHInfographic-v2-skin.gif",
+          "image_r": "",
           "content_rb": "<p>Queen V products have a healthy pH of 4.5 to 5.<\/p>",
           "link_text": "",
           "link_url": "",
@@ -1302,7 +1316,7 @@
         "settings": {
           "backgroundColor": "#0097ce",
           "textColor": "#ffffff",
-          "image": "shopify:\/\/shop_images\/HomePage_Maintain.jpg",
+          "image": "",
           "heading": "#MAINTAINYOURV",
           "subheading": "",
           "bodyText": "Queen V's MAINTAIN products keep your V fresh with the power of healthy pH levels. Whether you are out and about or cozy on the couch, Queen has your back (and front).",
@@ -1317,7 +1331,7 @@
         "settings": {
           "backgroundColor": "#ff40b4",
           "textColor": "#ffffff",
-          "image": "shopify:\/\/shop_images\/Homepage_Enjoy.jpg",
+          "image": "",
           "heading": "#ENJOYYOURV",
           "subheading": "",
           "bodyText": "Part-time wingwoman, full-time bodyguard, Queen V's ENJOY line will keep your V fun, flirty and safe from harmful bacteria.",
@@ -1332,7 +1346,7 @@
         "settings": {
           "backgroundColor": "#38d430",
           "textColor": "#ffffff",
-          "image": "shopify:\/\/shop_images\/HomePage_Heal-min.jpg",
+          "image": "",
           "heading": "#HEALYOURV",
           "subheading": "",
           "bodyText": "We know that dealing with vaginal health can be embarrassing and stressful. Queen V's HEAL products are effective remedies that will soothe period pain and kick uncomfortable infections to the curb.",
@@ -1348,21 +1362,21 @@
           "1559367629971": {
             "type": "collection",
             "settings": {
-              "collectionPicked": "maintain",
+              "collectionPicked": "",
               "backgroundColor": "#0097ce"
             }
           },
           "1559367639077": {
             "type": "collection",
             "settings": {
-              "collectionPicked": "enjoy",
+              "collectionPicked": "",
               "backgroundColor": "#ff40b4"
             }
           },
           "1559367646247": {
             "type": "collection",
             "settings": {
-              "collectionPicked": "heal",
+              "collectionPicked": "",
               "backgroundColor": "#38d430"
             }
           }
@@ -1376,14 +1390,14 @@
           "show_collection_info": false,
           "change_heading": "",
           "show_collection_image": true,
-          "pick_header_image": "shopify:\/\/shop_images\/3F2A6158_2_1.jpg",
+          "pick_header_image": "",
           "image_position_x": 50,
           "image_position_y": 50,
           "apply_overlay": false,
           "show_color_swatch": false,
           "show_vendor": false,
           "collection_image_size": "large",
-          "featured_kit": "queen-v-essentials-kit",
+          "featured_kit": "",
           "prod-header": "START HERE - QUEEN V ESSENTIALS",
           "prod-subheader": "PH-BALANCED STARTER KIT THAT CLEANSES, BALANCES AND REFRESHES YOUR QUEEN V SO YOU CAN STAY ON TOP",
           "choose_image": "1",
@@ -1407,11 +1421,228 @@
           "show_featured_article": false,
           "show_category": false,
           "video_url": "",
-          "image": "shopify:\/\/shop_images\/QV-PODCAST-WEB-v1.png",
+          "image": "",
           "video_heading": "",
           "video_text": "",
           "video_button_url": "",
           "video_button_text": ""
+        }
+      },
+      "subscription-settings": {
+        "type": "subscription-settings",
+        "settings": {
+          "product_link": "shopify:\/\/products\/v-basic",
+          "activeSubscriptionId": "202238",
+          "activeSubscriptionFrequency": "Months",
+          "enjoyyourv": "#ff2dac",
+          "healyourv": "#54d12b",
+          "maintainyourv": "#0091c8"
+        }
+      },
+      "back-carousal-step-one": {
+        "type": "back-carousal-step-one",
+        "settings": {
+          "btn_get_started_bg_color": "#fff",
+          "btn_get_started_color": "#0992f4",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 1",
+          "previous-step-text": "PREVIOUS",
+          "next-step-text": "NEXT",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "What is your typical hygiene routine?"
+        }
+      },
+      "back-carousal-step-two": {
+        "type": "back-carousal-step-two",
+        "settings": {
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_color": "#fff",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 2",
+          "previous-step-text": "PREVIOUS",
+          "next-step-text": "NEXT",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "Have your eye on anything else?"
+        }
+      },
+      "back-carousal-step-three": {
+        "type": "back-carousal-step-three",
+        "settings": {
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_arrow_color": "#fff",
+          "btn_get_started_color": "#fff",
+          "title_text_size": "medium",
+          "title-color": "#0097ce",
+          "step-title": "STEP 3",
+          "question_text_size": "medium",
+          "question-color": "#0097ce",
+          "question-title": "Check out what you’re getting.",
+          "previous-step-text": "PREVIOUS",
+          "info-color": "#0097ce",
+          "info-title": "Your first box ships today",
+          "total-title": "Total:"
+        }
+      },
+      "image-overlay": {
+        "type": "image-overlay",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/V_Basic_Bundle.jpg",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "medium",
+          "title": "V BASIC KIT",
+          "text": "<p>Get ready for your daily vaginal routine.<\/p>",
+          "button_label": "LET'S GET STARTED",
+          "kit_currency": "$",
+          "kit_price": "35",
+          "shipping_type": "FREE SHIPPING",
+          "button_link": "",
+          "email_textbox_background": "#68cfe0",
+          "email_text_color": "#fff",
+          "shipping_type_color": "#fff",
+          "btn_get_started_bg_color": "#0992f4",
+          "btn_get_started_color": "#fff"
+        }
+      },
+      "step-one": {
+        "type": "step-one",
+        "settings": {
+          "option-1-tick-color": "#0097ce",
+          "option-2-tick-color": "#ff43b3",
+          "option-3-tick-color": "#5ad43c",
+          "select-options-1": "CLEAN QUEEN",
+          "select-options-2": "PRETTY CLEAN",
+          "select-options-3": "CLEAN ENOUGH",
+          "select-options-1-description": "Receive your kit every month.",
+          "select-options-2-description": "Receive your kit every 2 months.",
+          "select-options-3-description": "Receive your kit every 3 months.",
+          "select-options-1-info-1": "You could spend hours getting ready.",
+          "select-options-1-info-2": "You run out of products frequently.",
+          "select-options-1-info-3": "You take supplements daily.",
+          "select-options-2-info-1": "You spend about a half hour getting ready.",
+          "select-options-2-info-2": "You usually keep your bathroom stocked.",
+          "select-options-2-info-3": "You take supplements when you remember.",
+          "select-options-3-info-1": "You roll out of bed and out the door.",
+          "select-options-3-info-2": "You rarely try new products.",
+          "select-options-3-info-3": "You don’t take any supplements.",
+          "option-text-size": "medium",
+          "option-description-size": "medium",
+          "option-information-text-size": "medium"
+        }
+      },
+      "step-two": {
+        "type": "step-two",
+        "settings": {
+          "step-title": "STEP 2",
+          "title-color": "#0097ce",
+          "question-color": "#0097ce",
+          "question-title": "Have your eye on anything else?",
+          "no-thanks": "NO THANKS!",
+          "anchorColor": "#56cee8",
+          "title_text_size": "medium",
+          "question_text_size": "medium"
+        }
+      },
+      "subscription-product-kit": {
+        "type": "subscription-product-kit",
+        "blocks": {
+          "1560854656575": {
+            "type": "collection",
+            "settings": {
+              "collection": "v-basic-kit-collection",
+              "title": "",
+              "grid_items_count": 8,
+              "button_text": "View all products"
+            }
+          }
+        },
+        "block_order": [
+          "1560854656575"
+        ],
+        "settings": {
+          "title": "",
+          "layout_mode": "grid",
+          "show_product_info": true,
+          "show_sold_out": true,
+          "show_vendor": false,
+          "grid_mobile_items_per_row": "1",
+          "grid_desktop_items_per_row": 4
+        }
+      },
+      "custom-button": {
+        "type": "custom-button",
+        "settings": {
+          "linktext": "VIEW ALL PRODUCTS",
+          "btnBgColor": "#fff",
+          "btnTextColor": "#0097ce"
+        }
+      },
+      "product-subscription-collection-template": {
+        "type": "product-subscription-collection-template",
+        "blocks": {
+          "1560854670114": {
+            "type": "collection",
+            "settings": {
+              "collection": "subscription-product",
+              "title": ""
+            }
+          }
+        },
+        "block_order": [
+          "1560854670114"
+        ],
+        "settings": {
+          "show_collection_info": true,
+          "title": "Our Products",
+          "show_color_swatch": false,
+          "show_vendor": false,
+          "collection_image_size": "normal",
+          "show_layout_switch": false,
+          "toolbar_position": "top",
+          "filter_position": "sidebar",
+          "filter_mode": "tag",
+          "show_filter_color_swatch": true,
+          "filter_menu": "",
+          "grid_items_per_page": 16,
+          "grid_mobile_items_per_row": "1",
+          "grid_desktop_items_per_row": 4
+        }
+      },
+      "step-three": {
+        "type": "step-three",
+        "settings": {
+          "title-color": "#0097ce",
+          "question-color": "#0097ce",
+          "info-color": "#0097ce",
+          "step-title": "STEP 3",
+          "question-title": "Check out what you’re getting.",
+          "info-title": "Your first box ships today",
+          "total-title": "Total:",
+          "user-info-title": "SCORE! YOU GOT FREE SHIPPING",
+          "title_text_size": "medium",
+          "question_text_size": "medium"
+        }
+      },
+      "checkout-button": {
+        "type": "checkout-button",
+        "settings": {
+          "linktext": "CHECKOUT",
+          "AddMoreLinkText": "ADD MORE PRODUCTS",
+          "btnBgColor": "#0097ce",
+          "addMoreBtnBgColor": "#fff",
+          "btnTextColor": "#fff",
+          "AddMoreBtnTextColor": "#0097ce"
+        }
+      },
+      "modal": {
+        "type": "modal",
+        "settings": {
+          "popup_loading_info_message": "More information coming right up!"
         }
       }
     },
